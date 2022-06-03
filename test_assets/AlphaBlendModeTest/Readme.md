@@ -31,7 +31,10 @@ _glTF reference_
 
 ## License Information
 
+This conversion bears the same license as the [source asset](https://github.com/KhronosGroup/glTF-Sample-Models/blob/master/2.0/AlphaBlendModeTest/README.md).  
+
 Copyright 2018 Analytical Graphics, Inc.
 CC-BY 4.0 https://creativecommons.org/licenses/by/4.0/
-Model and textures by Ed Mackey.
+Model and textures by Ed Mackey.  
+
 Conversion by Felix Herbst.
