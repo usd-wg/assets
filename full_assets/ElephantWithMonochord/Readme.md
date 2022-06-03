@@ -10,12 +10,16 @@ _Video with Audio_
 ![omniverse](screenshots/20220604-omniverse.png)  
 _Oniverse CREATE with skeleton hierarchies and UsdAudio_
 
+## Augmented Reality
+
+Open this page on iOS and click on the image:  
+
+<a rel="ar" href="https://github.com/prefrontalcortex/usd-wg-assets/raw/soc-elephant/full_assets/ElephantWithMonochord/SoC-ElephantWithMonochord.usdz"><img src="screenshots/20220604-screenshot.png"/></a>
+
 ## Description
 
 This production model is designed for Augmented Reality playback via Apple's QuickLook.  
 It contains both Skeletal Animation on two meshes (elephant and monochord) as well as [UsdAudio](https://graphics.pixar.com/usd/release/wp_usdaudio.html) data.  
-
-Live web version: [songsofcultures.com/en/ar-collection](https://songsofcultures.com/en/ar-collection)
 
 ## Shading
 
@@ -35,7 +39,7 @@ _Extents leading to wrong start view. Note the small displayed box gizmo in the 
 
 ## License Information
 
-The model has been kindly donated by [A.MUSE – Interactive Design Studio](https://amuse.vision) from their project [Songs of Cultures](https://songsofcultures.com/en/).  
+This asset has been kindly donated by [A.MUSE – Interactive Design Studio](https://amuse.vision) from their project [Songs of Cultures](https://songsofcultures.com/en/).  
 USDZ version by Felix Herbst / prefrontal cortex
 
 > [![CC-BY-SA](https://licensebuttons.net/l/by-sa/4.0/88x31.png)](http://creativecommons.org/licenses/by-sa/4.0/)  
