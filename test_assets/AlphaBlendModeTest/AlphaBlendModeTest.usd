@@ -1,0 +1,706 @@
+#usda 1.0
+(
+    defaultPrim = "AlphaBlendModeTest"
+    endTimeCode = 0
+    startTimeCode = 0
+    upAxis = "Y"
+)
+
+def Xform "AlphaBlendModeTest"
+{
+    matrix4d xformOp:transform = ( (-100, 0, -0.000008742277714191005, 0), (0, 100, 0, 0), (0.000008742277714191005, 0, -100, 0), (0, 1.9839999675750732, 0, 1) )
+    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+    def Scope "Materials"
+    {
+        def Material "Mat_Opaque__165642"
+        {
+            token outputs:displacement
+            token outputs:surface.connect = </AlphaBlendModeTest/Materials/Mat_Opaque__165642/PreviewSurface.outputs:surface>
+            token[] requiredKeywords
+
+            def Shader "PreviewSurface"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                float inputs:clearcoat = 0
+                float inputs:clearcoatRoughness = 0.01
+                float3 inputs:diffuseColor = (0.18, 0.18, 0.18)
+                float3 inputs:diffuseColor.connect = </AlphaBlendModeTest/Materials/Mat_Opaque__165642/PreviewSurface/_BaseColorTexture.outputs:rgb>
+                float inputs:displacement = 0
+                float3 inputs:emissiveColor = (0, 0, 0)
+                float inputs:ior = 1.5
+                float inputs:metallic = 0
+                float3 inputs:normal = (0, 0, 1)
+                float inputs:occlusion = 1
+                float inputs:opacity = 1
+                float inputs:opacityThreshold = 0
+                float inputs:roughness = 0.8
+                float3 inputs:specularColor = (0, 0, 0)
+                int inputs:useSpecularWorkflow = 1
+                token outputs:displacement
+                token outputs:surface
+                token[] unity:shaderKeywords
+                string unity:shaderName
+
+                def Shader "uvReader"
+                {
+                    uniform token info:id = "UsdPrimvarReader_float2"
+                    float2 inputs:fallback = (0, 0)
+                    token inputs:varname = "st"
+                    float2 outputs:result
+                }
+
+                def Shader "_BaseColorTexture"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    float4 inputs:bias = (0, 0, 0, 0)
+                    float4 inputs:fallback = (0, 0, 0, 1)
+                    asset inputs:file = @0/AlphaBlendModeTest_image3_801ab6939d4d9c35de01996b52bc1650.png@
+                    token inputs:isSRGB = "auto"
+                    float4 inputs:scale = (1, 1, 1, 1)
+                    float2 inputs:st = (0, 0)
+                    float2 inputs:st.connect = </AlphaBlendModeTest/Materials/Mat_Opaque__165642/PreviewSurface/uvReader.outputs:result>
+                    token inputs:wrapS = "repeat"
+                    token inputs:wrapT = "repeat"
+                    float outputs:a
+                    float outputs:b
+                    float outputs:g
+                    float outputs:r
+                    float3 outputs:rgb
+                    float4 outputs:rgba
+                }
+            }
+        }
+
+        def Material "Mat_Blend__165610"
+        {
+            token outputs:displacement
+            token outputs:surface.connect = </AlphaBlendModeTest/Materials/Mat_Blend__165610/PreviewSurface.outputs:surface>
+            token[] requiredKeywords
+
+            def Shader "PreviewSurface"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                float inputs:clearcoat = 0
+                float inputs:clearcoatRoughness = 0.01
+                float3 inputs:diffuseColor = (0.18, 0.18, 0.18)
+                float3 inputs:diffuseColor.connect = </AlphaBlendModeTest/Materials/Mat_Blend__165610/PreviewSurface/_BaseColorTexture.outputs:rgb>
+                float inputs:displacement = 0
+                float3 inputs:emissiveColor = (0, 0, 0)
+                float inputs:ior = 1.5
+                float inputs:metallic = 0
+                float3 inputs:normal = (0, 0, 1)
+                float inputs:occlusion = 1
+                float inputs:opacity = 1
+                float inputs:opacity.connect = </AlphaBlendModeTest/Materials/Mat_Blend__165610/PreviewSurface/_BaseColorTexture.outputs:a>
+                float inputs:opacityThreshold = 0
+                float inputs:roughness = 0.8
+                float3 inputs:specularColor = (0, 0, 0)
+                int inputs:useSpecularWorkflow = 1
+                token outputs:displacement
+                token outputs:surface
+                token[] unity:shaderKeywords
+                string unity:shaderName
+
+                def Shader "uvReader"
+                {
+                    uniform token info:id = "UsdPrimvarReader_float2"
+                    float2 inputs:fallback = (0, 0)
+                    token inputs:varname = "st"
+                    float2 outputs:result
+                }
+
+                def Shader "_BaseColorTexture"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    float4 inputs:bias = (0, 0, 0, 0)
+                    float4 inputs:fallback = (0, 0, 0, 1)
+                    asset inputs:file = @0/AlphaBlendModeTest_image3_801ab6939d4d9c35de01996b52bc1650.png@
+                    token inputs:isSRGB = "auto"
+                    float4 inputs:scale = (1, 1, 1, 1)
+                    float2 inputs:st = (0, 0)
+                    float2 inputs:st.connect = </AlphaBlendModeTest/Materials/Mat_Blend__165610/PreviewSurface/uvReader.outputs:result>
+                    token inputs:wrapS = "repeat"
+                    token inputs:wrapT = "repeat"
+                    float outputs:a
+                    float outputs:b
+                    float outputs:g
+                    float outputs:r
+                    float3 outputs:rgb
+                    float4 outputs:rgba
+                }
+            }
+        }
+
+        def Material "Mat_Cutoff_75__165626"
+        {
+            token outputs:displacement
+            token outputs:surface.connect = </AlphaBlendModeTest/Materials/Mat_Cutoff_75__165626/PreviewSurface.outputs:surface>
+            token[] requiredKeywords
+
+            def Shader "PreviewSurface"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                float inputs:clearcoat = 0
+                float inputs:clearcoatRoughness = 0.01
+                float3 inputs:diffuseColor = (0.18, 0.18, 0.18)
+                float3 inputs:diffuseColor.connect = </AlphaBlendModeTest/Materials/Mat_Cutoff_75__165626/PreviewSurface/_BaseColorTexture.outputs:rgb>
+                float inputs:displacement = 0
+                float3 inputs:emissiveColor = (0, 0, 0)
+                float inputs:ior = 1.5
+                float inputs:metallic = 0
+                float3 inputs:normal = (0, 0, 1)
+                float inputs:occlusion = 1
+                float inputs:opacity = 1
+                float inputs:opacity.connect = </AlphaBlendModeTest/Materials/Mat_Cutoff_75__165626/PreviewSurface/_BaseColorTexture.outputs:a>
+                float inputs:opacityThreshold = 0.75
+                float inputs:roughness = 0.8
+                float3 inputs:specularColor = (0, 0, 0)
+                int inputs:useSpecularWorkflow = 1
+                token outputs:displacement
+                token outputs:surface
+                token[] unity:shaderKeywords
+                string unity:shaderName
+
+                def Shader "uvReader"
+                {
+                    uniform token info:id = "UsdPrimvarReader_float2"
+                    float2 inputs:fallback = (0, 0)
+                    token inputs:varname = "st"
+                    float2 outputs:result
+                }
+
+                def Shader "_BaseColorTexture"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    float4 inputs:bias = (0, 0, 0, 0)
+                    float4 inputs:fallback = (0, 0, 0, 1)
+                    asset inputs:file = @0/AlphaBlendModeTest_image3_801ab6939d4d9c35de01996b52bc1650.png@
+                    token inputs:isSRGB = "auto"
+                    float4 inputs:scale = (1, 1, 1, 1)
+                    float2 inputs:st = (0, 0)
+                    float2 inputs:st.connect = </AlphaBlendModeTest/Materials/Mat_Cutoff_75__165626/PreviewSurface/uvReader.outputs:result>
+                    token inputs:wrapS = "repeat"
+                    token inputs:wrapT = "repeat"
+                    float outputs:a
+                    float outputs:b
+                    float outputs:g
+                    float outputs:r
+                    float3 outputs:rgb
+                    float4 outputs:rgba
+                }
+            }
+        }
+
+        def Material "Mat_Cutoff_Default__165634"
+        {
+            token outputs:displacement
+            token outputs:surface.connect = </AlphaBlendModeTest/Materials/Mat_Cutoff_Default__165634/PreviewSurface.outputs:surface>
+            token[] requiredKeywords
+
+            def Shader "PreviewSurface"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                float inputs:clearcoat = 0
+                float inputs:clearcoatRoughness = 0.01
+                float3 inputs:diffuseColor = (0.18, 0.18, 0.18)
+                float3 inputs:diffuseColor.connect = </AlphaBlendModeTest/Materials/Mat_Cutoff_Default__165634/PreviewSurface/_BaseColorTexture.outputs:rgb>
+                float inputs:displacement = 0
+                float3 inputs:emissiveColor = (0, 0, 0)
+                float inputs:ior = 1.5
+                float inputs:metallic = 0
+                float3 inputs:normal = (0, 0, 1)
+                float inputs:occlusion = 1
+                float inputs:opacity = 1
+                float inputs:opacity.connect = </AlphaBlendModeTest/Materials/Mat_Cutoff_Default__165634/PreviewSurface/_BaseColorTexture.outputs:a>
+                float inputs:opacityThreshold = 0.5
+                float inputs:roughness = 0.8
+                float3 inputs:specularColor = (0, 0, 0)
+                int inputs:useSpecularWorkflow = 1
+                token outputs:displacement
+                token outputs:surface
+                token[] unity:shaderKeywords
+                string unity:shaderName
+
+                def Shader "uvReader"
+                {
+                    uniform token info:id = "UsdPrimvarReader_float2"
+                    float2 inputs:fallback = (0, 0)
+                    token inputs:varname = "st"
+                    float2 outputs:result
+                }
+
+                def Shader "_BaseColorTexture"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    float4 inputs:bias = (0, 0, 0, 0)
+                    float4 inputs:fallback = (0, 0, 0, 1)
+                    asset inputs:file = @0/AlphaBlendModeTest_image3_801ab6939d4d9c35de01996b52bc1650.png@
+                    token inputs:isSRGB = "auto"
+                    float4 inputs:scale = (1, 1, 1, 1)
+                    float2 inputs:st = (0, 0)
+                    float2 inputs:st.connect = </AlphaBlendModeTest/Materials/Mat_Cutoff_Default__165634/PreviewSurface/uvReader.outputs:result>
+                    token inputs:wrapS = "repeat"
+                    token inputs:wrapT = "repeat"
+                    float outputs:a
+                    float outputs:b
+                    float outputs:g
+                    float outputs:r
+                    float3 outputs:rgb
+                    float4 outputs:rgba
+                }
+            }
+        }
+
+        def Material "Mat_Cutoff_25__165618"
+        {
+            token outputs:displacement
+            token outputs:surface.connect = </AlphaBlendModeTest/Materials/Mat_Cutoff_25__165618/PreviewSurface.outputs:surface>
+            token[] requiredKeywords
+
+            def Shader "PreviewSurface"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                float inputs:clearcoat = 0
+                float inputs:clearcoatRoughness = 0.01
+                float3 inputs:diffuseColor = (0.18, 0.18, 0.18)
+                float3 inputs:diffuseColor.connect = </AlphaBlendModeTest/Materials/Mat_Cutoff_25__165618/PreviewSurface/_BaseColorTexture.outputs:rgb>
+                float inputs:displacement = 0
+                float3 inputs:emissiveColor = (0, 0, 0)
+                float inputs:ior = 1.5
+                float inputs:metallic = 0
+                float3 inputs:normal = (0, 0, 1)
+                float inputs:occlusion = 1
+                float inputs:opacity = 1
+                float inputs:opacity.connect = </AlphaBlendModeTest/Materials/Mat_Cutoff_25__165618/PreviewSurface/_BaseColorTexture.outputs:a>
+                float inputs:opacityThreshold = 0.25
+                float inputs:roughness = 0.8
+                float3 inputs:specularColor = (0, 0, 0)
+                int inputs:useSpecularWorkflow = 1
+                token outputs:displacement
+                token outputs:surface
+                token[] unity:shaderKeywords
+                string unity:shaderName
+
+                def Shader "uvReader"
+                {
+                    uniform token info:id = "UsdPrimvarReader_float2"
+                    float2 inputs:fallback = (0, 0)
+                    token inputs:varname = "st"
+                    float2 outputs:result
+                }
+
+                def Shader "_BaseColorTexture"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    float4 inputs:bias = (0, 0, 0, 0)
+                    float4 inputs:fallback = (0, 0, 0, 1)
+                    asset inputs:file = @0/AlphaBlendModeTest_image3_801ab6939d4d9c35de01996b52bc1650.png@
+                    token inputs:isSRGB = "auto"
+                    float4 inputs:scale = (1, 1, 1, 1)
+                    float2 inputs:st = (0, 0)
+                    float2 inputs:st.connect = </AlphaBlendModeTest/Materials/Mat_Cutoff_25__165618/PreviewSurface/uvReader.outputs:result>
+                    token inputs:wrapS = "repeat"
+                    token inputs:wrapT = "repeat"
+                    float outputs:a
+                    float outputs:b
+                    float outputs:g
+                    float outputs:r
+                    float3 outputs:rgb
+                    float4 outputs:rgba
+                }
+            }
+        }
+
+        def Material "Mat_Bed__165602"
+        {
+            token outputs:displacement
+            token outputs:surface.connect = </AlphaBlendModeTest/Materials/Mat_Bed__165602/PreviewSurface.outputs:surface>
+            token[] requiredKeywords
+
+            def Shader "PreviewSurface"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                float inputs:clearcoat = 0
+                float inputs:clearcoatRoughness = 0.01
+                float3 inputs:diffuseColor = (0.18, 0.18, 0.18)
+                float3 inputs:diffuseColor.connect = </AlphaBlendModeTest/Materials/Mat_Bed__165602/PreviewSurface/_BaseColorTexture.outputs:rgb>
+                float inputs:displacement = 0
+                float3 inputs:emissiveColor = (0, 0, 0)
+                float inputs:ior = 1.5
+                float inputs:metallic = 0
+                float inputs:metallic.connect = </AlphaBlendModeTest/Materials/Mat_Bed__165602/PreviewSurface/_MetallicRoughnessTexture.outputs:b>
+                float3 inputs:normal = (0, 0, 1)
+                float3 inputs:normal.connect = </AlphaBlendModeTest/Materials/Mat_Bed__165602/PreviewSurface/_NormalTexture.outputs:rgb>
+                float inputs:occlusion = 1
+                float inputs:opacity = 1
+                float inputs:opacityThreshold = 0
+                float inputs:roughness = 0.5
+                float inputs:roughness.connect = </AlphaBlendModeTest/Materials/Mat_Bed__165602/PreviewSurface/_MetallicRoughnessTexture.outputs:g>
+                float3 inputs:specularColor = (0, 0, 0)
+                int inputs:useSpecularWorkflow = 1
+                token outputs:displacement
+                token outputs:surface
+                token[] unity:shaderKeywords
+                string unity:shaderName
+
+                def Shader "uvReader"
+                {
+                    uniform token info:id = "UsdPrimvarReader_float2"
+                    float2 inputs:fallback = (0, 0)
+                    token inputs:varname = "st"
+                    float2 outputs:result
+                }
+
+                def Shader "_BaseColorTexture"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    float4 inputs:bias = (0, 0, 0, 0)
+                    float4 inputs:fallback = (0, 0, 0, 1)
+                    asset inputs:file = @0/AlphaBlendModeTest_image2_d151f95487c02f2a13820ace88f0370d.png@
+                    token inputs:isSRGB = "auto"
+                    float4 inputs:scale = (1, 1, 1, 1)
+                    float2 inputs:st = (0, 0)
+                    float2 inputs:st.connect = </AlphaBlendModeTest/Materials/Mat_Bed__165602/PreviewSurface/uvReader.outputs:result>
+                    token inputs:wrapS = "repeat"
+                    token inputs:wrapT = "repeat"
+                    float outputs:a
+                    float outputs:b
+                    float outputs:g
+                    float outputs:r
+                    float3 outputs:rgb
+                    float4 outputs:rgba
+                }
+
+                def Shader "_NormalTexture"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    float4 inputs:bias = (0, 0, 0, 0)
+                    float4 inputs:fallback = (0, 0, 0, 1)
+                    asset inputs:file = @0/AlphaBlendModeTest_image0_e93a912e744ba8675c680a67d486a70c.png@
+                    token inputs:isSRGB = "auto"
+                    float4 inputs:scale = (1, 1, 1, 1)
+                    float2 inputs:st = (0, 0)
+                    float2 inputs:st.connect = </AlphaBlendModeTest/Materials/Mat_Bed__165602/PreviewSurface/uvReader.outputs:result>
+                    token inputs:wrapS = "repeat"
+                    token inputs:wrapT = "repeat"
+                    float outputs:a
+                    float outputs:b
+                    float outputs:g
+                    float outputs:r
+                    float3 outputs:rgb
+                    float4 outputs:rgba
+                }
+
+                def Shader "_MetallicRoughnessTexture"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    float4 inputs:bias = (0, 0, 0, 0)
+                    float4 inputs:fallback = (0, 0, 0, 1)
+                    asset inputs:file = @0/AlphaBlendModeTest_image1_b7b61473c6009b01dfe9c6950d4d5ed6.png@
+                    token inputs:isSRGB = "auto"
+                    float4 inputs:scale = (1, 1, 1, 1)
+                    float2 inputs:st = (0, 0)
+                    float2 inputs:st.connect = </AlphaBlendModeTest/Materials/Mat_Bed__165602/PreviewSurface/uvReader.outputs:result>
+                    token inputs:wrapS = "repeat"
+                    token inputs:wrapT = "repeat"
+                    float outputs:a
+                    float outputs:b
+                    float outputs:g
+                    float outputs:r
+                    float3 outputs:rgb
+                    float4 outputs:rgba
+                }
+            }
+        }
+    }
+
+    def Mesh "GreenArrows"
+    {
+        uniform bool doubleSided
+        float3[] extent = [(-3.0900002, -0.48159602, 0), (0, 0.4833804, 0)]
+        int[] faceVertexCounts = [3, 3, 3]
+        int[] faceVertexIndices = [1, 2, 0, 4, 5, 3, 7, 8, 6]
+        rel material:binding = </AlphaBlendModeTest/Materials/Mat_Opaque__165642>
+        normal3f[] normals = [(0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1)] (
+            interpolation = "vertex"
+        )
+        uniform token orientation
+        point3f[] points = [(-1.5, 0, 0), (-1.59, -0.095, 0), (-1.59, 0.095, 0), (0, 0.3883804, 0), (-0.09000003, 0.2933804, 0), (-0.09000003, 0.4833804, 0), (-3, -0.38659602, 0), (-3.0900002, -0.48159602, 0), (-3.0900002, -0.29159603, 0)]
+        color4f[] primvars:colors (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        float2[] primvars:st = [(0.8133797, 0.3877269), (0.81690603, 0.38423264), (0.81690603, 0.39133883), (0.8133797, 0.3877269), (0.81690603, 0.38423264), (0.81690603, 0.39133883), (0.8133797, 0.3877269), (0.81690603, 0.38423264), (0.81690603, 0.39133883)] (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        int[] primvars:st:indices
+        float4[] primvars:tangents = [(-0.99984765, -0.01745681, 0, -1), (-0.99984765, -0.01745681, 0, -1), (-0.99984765, -0.01745681, 0, -1), (-0.99984765, -0.01745681, 0, -1), (-0.99984765, -0.01745681, 0, -1), (-0.99984765, -0.01745681, 0, -1), (-0.99984765, -0.017456789, 0, -1), (-0.99984765, -0.017456789, 0, -1), (-0.99984765, -0.017456789, 0, -1)] (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        uniform token purpose
+        uniform token subdivisionScheme = "none"
+        token visibility
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (-0.5, 1.068150520324707, -0.004999999888241291, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+
+    def Mesh "DecalBlend"
+    {
+        uniform bool doubleSided
+        float3[] extent = [(0.992, -0.114, -0.01), (1.2080001, 0.114, -0.01)]
+        int[] faceVertexCounts = [3, 3]
+        int[] faceVertexIndices = [1, 2, 0, 3, 1, 0]
+        rel material:binding = </AlphaBlendModeTest/Materials/Mat_Blend__165610>
+        normal3f[] normals = [(0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1)] (
+            interpolation = "vertex"
+        )
+        uniform token orientation
+        point3f[] points = [(0.992, 0.114, -0.01), (1.2080001, -0.114, -0.01), (0.992, -0.114, -0.01), (1.2080001, 0.114, -0.01)]
+        color4f[] primvars:colors (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        float2[] primvars:st = [(0.9825, 0.33749998), (0.8924999, 0.24249995), (0.9825, 0.24249995), (0.8924999, 0.33749998)] (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        int[] primvars:st:indices
+        float4[] primvars:tangents = [(-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1)] (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        uniform token purpose
+        uniform token subdivisionScheme = "none"
+        token visibility
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 0.554699182510376, 0.8320509195327759, 0), (0, -0.8320509195327759, 0.554699182510376, 0), (0, 0, -0.4090209901332855, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+
+    def Mesh "DecalOpaque"
+    {
+        uniform bool doubleSided
+        float3[] extent = [(-3.29, -0.156, -0.00999999), (3.29, 0.156, 5.364418e-7)]
+        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+        int[] faceVertexIndices = [1, 2, 0, 3, 1, 0, 5, 6, 4, 7, 5, 4, 9, 10, 8, 11, 9, 8, 13, 14, 12, 15, 13, 12, 17, 18, 16, 19, 17, 16, 21, 22, 20, 23, 21, 20, 25, 26, 24, 27, 25, 24, 29, 30, 28, 31, 29, 28]
+        rel material:binding = </AlphaBlendModeTest/Materials/Mat_Opaque__165642>
+        normal3f[] normals = [(0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1)] (
+            interpolation = "vertex"
+        )
+        uniform token orientation
+        point3f[] points = [(0.992, 0.11400002, 5.364418e-7), (1.208, -0.11400001, 5.364418e-7), (0.992, -0.11400001, 5.364418e-7), (1.208, 0.11400002, 5.364418e-7), (2.4919996, 0.11400002, 5.364418e-7), (2.7080002, -0.11400001, 5.364418e-7), (2.4919996, -0.11400001, 5.364418e-7), (2.7080002, 0.11400002, 5.364418e-7), (2.4919999, 0.114, -0.00999999), (2.708, -0.114, -0.00999999), (2.4919999, -0.114, -0.00999999), (2.708, 0.114, -0.00999999), (-0.29, 0.156, 2.3841858e-7), (0.29000005, -0.156, 2.3841858e-7), (-0.29, -0.156, 2.3841858e-7), (0.29000005, 0.156, 2.3841858e-7), (-1.79, 0.15599997, 2.3841858e-7), (-1.21, -0.156, 2.3841858e-7), (-1.79, -0.156, 2.3841858e-7), (-1.21, 0.15599997, 2.3841858e-7), (-3.29, 0.15599999, 2.3841858e-7), (-2.71, -0.15599993, 2.3841858e-7), (-3.29, -0.15599993, 2.3841858e-7), (-2.71, 0.15599999, 2.3841858e-7), (1.2099999, 0.15599999, 2.3841858e-7), (1.7900001, -0.15599993, 2.3841858e-7), (1.2099999, -0.15599993, 2.3841858e-7), (1.7900001, 0.15599999, 2.3841858e-7), (2.71, 0.15599999, 5.364418e-7), (3.29, -0.15599993, 5.364418e-7), (2.71, -0.15599993, 5.364418e-7), (3.29, 0.15599999, 5.364418e-7)]
+        color4f[] primvars:colors (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        float2[] primvars:st = [(0.87, 0.45499992), (0.78000003, 0.36), (0.87, 0.36), (0.78000003, 0.45499992), (0.9825, 0.45499992), (0.8924999, 0.36), (0.9825, 0.36), (0.8924999, 0.45499992), (0.87, 0.33749998), (0.78000003, 0.24249995), (0.87, 0.24249995), (0.78000003, 0.33749998), (0.97499996, 0.5950001), (0.83000004, 0.517), (0.97499996, 0.517), (0.83000004, 0.5950001), (0.97499996, 0.70500004), (0.83000004, 0.627), (0.97499996, 0.627), (0.83000004, 0.70500004), (0.97499996, 0.82), (0.83000004, 0.74200004), (0.97499996, 0.74200004), (0.83000004, 0.82), (0.97499996, 0.91), (0.83000004, 0.8320001), (0.97499996, 0.8320001), (0.83000004, 0.91), (0.97499996, 0.9802226), (0.83000004, 0.90222263), (0.97499996, 0.90222263), (0.83000004, 0.9802226)] (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        int[] primvars:st:indices
+        float4[] primvars:tangents = [(-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1)] (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        uniform token purpose
+        uniform token subdivisionScheme = "none"
+        token visibility
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 0.554699182510376, 0.8320509195327759, 0), (0, -0.8320509195327759, 0.554699182510376, 0), (0, 0, -0.4090207517147064, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+
+    def Mesh "TestCutoff75"
+    {
+        uniform bool doubleSided
+        float3[] extent = [(-0.55, 0.10000014, 0), (0.55, 1.9699998, 0)]
+        int[] faceVertexCounts = [3, 3]
+        int[] faceVertexIndices = [1, 2, 0, 3, 1, 0]
+        rel material:binding = </AlphaBlendModeTest/Materials/Mat_Cutoff_75__165626>
+        normal3f[] normals = [(0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1)] (
+            interpolation = "vertex"
+        )
+        uniform token orientation
+        point3f[] points = [(-0.55, 1.9699998, 0), (0.55, 0.10000008, 0), (-0.55, 0.10000008, 0), (0.55, 1.9699998, 0)]
+        color4f[] primvars:colors (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        float2[] primvars:st = [(0.675, 0.95), (0.12500022, 0.014999986), (0.675, 0.014999986), (0.12500022, 0.95)] (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        int[] primvars:st:indices
+        float4[] primvars:tangents = [(-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1)] (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        uniform token purpose
+        uniform token subdivisionScheme = "none"
+        token visibility
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (-3, 0, 0, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+
+    def Mesh "TestCutoffDefault"
+    {
+        uniform bool doubleSided
+        float3[] extent = [(-0.55, 0.10000014, 0), (0.55, 1.9699998, 0)]
+        int[] faceVertexCounts = [3, 3]
+        int[] faceVertexIndices = [1, 2, 0, 3, 1, 0]
+        rel material:binding = </AlphaBlendModeTest/Materials/Mat_Cutoff_Default__165634>
+        normal3f[] normals = [(0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1)] (
+            interpolation = "vertex"
+        )
+        uniform token orientation
+        point3f[] points = [(-0.55, 1.9699998, 0), (0.55, 0.10000008, 0), (-0.55, 0.10000008, 0), (0.55, 1.9699998, 0)]
+        color4f[] primvars:colors (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        float2[] primvars:st = [(0.675, 0.95), (0.12500022, 0.014999986), (0.675, 0.014999986), (0.12500022, 0.95)] (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        int[] primvars:st:indices
+        float4[] primvars:tangents = [(-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1)] (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        uniform token purpose
+        uniform token subdivisionScheme = "none"
+        token visibility
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (-1.5, 0, 0, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+
+    def Mesh "TestCutoff25"
+    {
+        uniform bool doubleSided
+        float3[] extent = [(-0.55, 0.10000014, 0), (0.55, 1.9699998, 0)]
+        int[] faceVertexCounts = [3, 3]
+        int[] faceVertexIndices = [1, 2, 0, 3, 1, 0]
+        rel material:binding = </AlphaBlendModeTest/Materials/Mat_Cutoff_25__165618>
+        normal3f[] normals = [(0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1)] (
+            interpolation = "vertex"
+        )
+        uniform token orientation
+        point3f[] points = [(-0.55, 1.9699998, 0), (0.55, 0.10000008, 0), (-0.55, 0.10000008, 0), (0.55, 1.9699998, 0)]
+        color4f[] primvars:colors (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        float2[] primvars:st = [(0.675, 0.95), (0.12500022, 0.014999986), (0.675, 0.014999986), (0.12500022, 0.95)] (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        int[] primvars:st:indices
+        float4[] primvars:tangents = [(-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1)] (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        uniform token purpose
+        uniform token subdivisionScheme = "none"
+        token visibility
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+
+    def Mesh "TestBlend"
+    {
+        uniform bool doubleSided
+        float3[] extent = [(-0.55, 0.10000014, 0), (0.55, 1.9699998, 0)]
+        int[] faceVertexCounts = [3, 3]
+        int[] faceVertexIndices = [1, 2, 0, 3, 1, 0]
+        rel material:binding = </AlphaBlendModeTest/Materials/Mat_Blend__165610>
+        normal3f[] normals = [(0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1)] (
+            interpolation = "vertex"
+        )
+        uniform token orientation
+        point3f[] points = [(-0.55, 1.9699998, 0), (0.55, 0.10000008, 0), (-0.55, 0.10000008, 0), (0.55, 1.9699998, 0)]
+        color4f[] primvars:colors (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        float2[] primvars:st = [(0.675, 0.95), (0.12500022, 0.014999986), (0.675, 0.014999986), (0.12500022, 0.95)] (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        int[] primvars:st:indices
+        float4[] primvars:tangents = [(-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1)] (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        uniform token purpose
+        uniform token subdivisionScheme = "none"
+        token visibility
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (1.5, 0, 0, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+
+    def Mesh "TestOpaque"
+    {
+        uniform bool doubleSided
+        float3[] extent = [(-0.55, 0.10000014, 0), (0.55, 1.9699998, 0)]
+        int[] faceVertexCounts = [3, 3]
+        int[] faceVertexIndices = [1, 2, 0, 3, 1, 0]
+        rel material:binding = </AlphaBlendModeTest/Materials/Mat_Opaque__165642>
+        normal3f[] normals = [(0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1)] (
+            interpolation = "vertex"
+        )
+        uniform token orientation
+        point3f[] points = [(-0.55, 1.9699998, 0), (0.55, 0.10000008, 0), (-0.55, 0.10000008, 0), (0.55, 1.9699998, 0)]
+        color4f[] primvars:colors (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        float2[] primvars:st = [(0.675, 0.95), (0.12500022, 0.014999986), (0.675, 0.014999986), (0.12500022, 0.95)] (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        int[] primvars:st:indices
+        float4[] primvars:tangents = [(-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1), (-1, 0, 0, -1)] (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        uniform token purpose
+        uniform token subdivisionScheme = "none"
+        token visibility
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (3, 0, 0, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+
+    def Mesh "Bed"
+    {
+        uniform bool doubleSided
+        float3[] extent = [(-4.3, -0.099999905, -0.54999995), (4.3, 2.2995334, 0.75)]
+        int[] faceVertexCounts = [3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+        int[] faceVertexIndices = [1, 2, 0, 4, 5, 3, 7, 8, 6, 10, 11, 9, 13, 14, 12, 16, 17, 15, 19, 20, 18, 22, 23, 21, 25, 26, 24, 28, 29, 27, 31, 32, 30, 34, 35, 33, 37, 38, 36, 39, 1, 0, 40, 4, 3, 42, 43, 41, 44, 10, 9, 45, 13, 12, 46, 16, 15, 47, 19, 18, 49, 50, 48, 52, 53, 51, 55, 56, 54, 57, 25, 24, 59, 60, 58, 61, 31, 30, 62, 34, 33, 64, 65, 63, 67, 68, 66, 70, 71, 69]
+        rel material:binding = </AlphaBlendModeTest/Materials/Mat_Bed__165602>
+        normal3f[] normals = [(1, 0, 0), (1, 0, 0), (1, 0, 0), (0, 0, 0.99999994), (0, 0, 0.99999994), (0, 0, 0.99999994), (-1, 0, 0), (-1, 0, 0), (-1, 0, 0), (0, 0.83205026, -0.5547003), (0, 0.83205026, -0.5547003), (0, 0.83205026, -0.5547003), (0, -1, 0), (0, -1, 0), (0, -1, 0), (0, 1, 0), (0, 1, 0), (0, 1, 0), (0, 1, 0), (0, 1, 0), (0, 1, 0), (0, 2.7093018e-8, 1), (0, 2.7093018e-8, 1), (0, 2.7093018e-8, 1), (1, 0, 0), (1, 0, 0), (1, 0, 0), (-0.99999994, 0, 0), (-0.99999994, 0, 0), (-0.99999994, 0, 0), (0.70710677, 0.70710677, 0), (0.70710677, 0.70710677, 0), (0.70710677, 0.70710677, 0), (-0.70710677, 0.70710677, 0), (-0.70710677, 0.70710677, 0), (-0.70710677, 0.70710677, 0), (0, -2.7093018e-8, -1), (0, -2.7093018e-8, -1), (0, -2.7093018e-8, -1), (1, 0, 0), (0, 0, 0.99999994), (-1, 0, 0), (-1, 0, 0), (-1, 0, 0), (0, 0.83205026, -0.5547003), (0, -1, 0), (0, 1, 0), (0, 1, 0), (-2.8815645e-8, 2.8815645e-8, 1), (-2.8815645e-8, 2.8815645e-8, 1), (-2.8815645e-8, 2.8815645e-8, 1), (2.8815645e-8, 2.8815645e-8, 1), (2.8815645e-8, 2.8815645e-8, 1), (2.8815645e-8, 2.8815645e-8, 1), (0, 2.709302e-8, 0.99999994), (0, 2.709302e-8, 0.99999994), (0, 2.709302e-8, 0.99999994), (1, 0, 0), (-1, 0, 0), (-1, 0, 0), (-1, 0, 0), (0.70710677, 0.70710677, 0), (-0.70710677, 0.70710677, 0), (-2.8815645e-8, -2.8815645e-8, -1), (-2.8815645e-8, -2.8815645e-8, -1), (-2.8815645e-8, -2.8815645e-8, -1), (2.8815645e-8, -2.8815645e-8, -1), (2.8815645e-8, -2.8815645e-8, -1), (2.8815645e-8, -2.8815645e-8, -1), (0, -2.709302e-8, -0.99999994), (0, -2.709302e-8, -0.99999994), (0, -2.709302e-8, -0.99999994)] (
+            interpolation = "vertex"
+        )
+        uniform token orientation
+        point3f[] points = [(4.3, 0.100000024, -0.25), (4.3, -0.100000024, 0.75), (4.3, -0.100000024, -0.55), (4.3, 0.100000024, 0.75), (-4.3, -0.100000024, 0.75), (4.3, -0.100000024, 0.75), (-4.3, -0.100000024, 0.75), (-4.3, 0.100000024, -0.25), (-4.3, -0.100000024, -0.55), (-4.3, 0.100000024, -0.25), (4.3, -0.100000024, -0.55), (-4.3, -0.100000024, -0.55), (-4.3, -0.100000024, 0.75), (4.3, -0.100000024, -0.55), (4.3, -0.100000024, 0.75), (4.3, 0.100000024, 0.75), (-4.3, 0.100000024, -0.25), (-4.3, 0.100000024, 0.75), (-4.0566263, 2.2995334, 0.56723493), (4.0566263, 2.2995334, 0.46723485), (-4.0566263, 2.2995334, 0.46723485), (4.188144, 0.09953336, 0.567235), (-4.0566263, 2.2995334, 0.56723493), (-4.188144, 0.09953336, 0.567235), (4.188144, 2.1680155, 0.56723493), (4.188144, 0.09953336, 0.4672349), (4.188144, 2.1680155, 0.46723485), (-4.188144, 0.09953336, 0.567235), (-4.188144, 2.1680155, 0.46723485), (-4.188144, 0.09953336, 0.4672349), (4.0566263, 2.2995334, 0.56723493), (4.188144, 2.1680155, 0.46723485), (4.0566263, 2.2995334, 0.46723485), (-4.0566263, 2.2995334, 0.46723485), (-4.188144, 2.1680155, 0.56723493), (-4.0566263, 2.2995334, 0.56723493), (-4.188144, 0.09953336, 0.4672349), (4.0566263, 2.2995334, 0.46723485), (4.188144, 0.09953336, 0.4672349), (4.3, 0.100000024, 0.75), (-4.3, 0.100000024, 0.75), (-4.3, -0.100000024, 0.75), (-4.3, 0.100000024, 0.75), (-4.3, 0.100000024, -0.25), (4.3, 0.100000024, -0.25), (-4.3, -0.100000024, -0.55), (4.3, 0.100000024, -0.25), (4.0566263, 2.2995334, 0.56723493), (-4.188144, 2.1680155, 0.56723493), (-4.188144, 0.09953336, 0.567235), (-4.0566263, 2.2995334, 0.56723493), (4.188144, 0.09953336, 0.567235), (4.188144, 2.1680155, 0.56723493), (4.0566263, 2.2995334, 0.56723493), (4.0566263, 2.2995334, 0.56723493), (-4.0566263, 2.2995334, 0.56723493), (4.188144, 0.09953336, 0.567235), (4.188144, 0.09953336, 0.567235), (-4.188144, 0.09953336, 0.567235), (-4.188144, 2.1680155, 0.56723493), (-4.188144, 2.1680155, 0.46723485), (4.188144, 2.1680155, 0.56723493), (-4.188144, 2.1680155, 0.46723485), (4.188144, 2.1680155, 0.46723485), (4.188144, 0.09953336, 0.4672349), (4.0566263, 2.2995334, 0.46723485), (-4.188144, 0.09953336, 0.4672349), (-4.188144, 2.1680155, 0.46723485), (-4.0566263, 2.2995334, 0.46723485), (-4.0566263, 2.2995334, 0.46723485), (4.0566263, 2.2995334, 0.46723485), (-4.188144, 0.09953336, 0.4672349)]
+        color4f[] primvars:colors (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        float2[] primvars:st = [(0.9717224, 0.11805558), (0.9974293, 0.002314806), (0.9974293, 0.15277779), (0.9228791, 0.9976852), (0.9485858, 0.002314806), (0.948586, 0.9976852), (0.9974293, 0.3078704), (0.9717224, 0.19212961), (0.9974293, 0.1574074), (0.61696637, 0.002314806), (0.57840616, 0.9976851), (0.578406, 0.002314806), (0.7506424, 0.002314806), (0.91773754, 0.9976851), (0.7506426, 0.9976851), (0.7455011, 0.9976851), (0.61696637, 0.002314806), (0.7455009, 0.002314806), (0.96658087, 0.01753676), (0.9537276, 0.9565705), (0.9537274, 0.01753676), (0.5732646, 0.9717926), (0.29048833, 0.01753676), (0.5732644, 0.002314806), (0.9717225, 0.55190766), (0.9845759, 0.3125), (0.9845759, 0.55190766), (0.9845759, 0.5565373), (0.9717224, 0.7959449), (0.9717224, 0.5565373), (0.96658105, 0.9565705), (0.9537276, 0.9717925), (0.9537276, 0.9565705), (0.9537274, 0.01753676), (0.96658087, 0.002314806), (0.96658087, 0.01753676), (0.0025706913, 0.002314806), (0.28534696, 0.9565706), (0.0025708657, 0.9717926), (0.9717224, 0.002314806), (0.9228789, 0.002314806), (0.9974293, 0.3078704), (0.9717224, 0.3078704), (0.9717224, 0.19212961), (0.61696655, 0.9976851), (0.91773736, 0.002314806), (0.61696655, 0.9976851), (0.96658105, 0.9565705), (0.3073929, 0.002314806), (0.5732644, 0.002314806), (0.29048833, 0.01753676), (0.5732646, 0.9717926), (0.30739307, 0.9717926), (0.29048848, 0.9565706), (0.29048848, 0.9565706), (0.29048833, 0.01753676), (0.5732646, 0.9717926), (0.9717224, 0.3125), (0.9845759, 0.5565373), (0.9845759, 0.7959449), (0.9717224, 0.7959449), (0.96658105, 0.9717925), (0.9537274, 0.002314806), (0.2684424, 0.9717926), (0.0025708657, 0.9717926), (0.28534696, 0.9565706), (0.0025706913, 0.002314806), (0.2684422, 0.002314806), (0.28534684, 0.01753676), (0.28534684, 0.01753676), (0.28534696, 0.9565706), (0.0025706913, 0.002314806)] (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        int[] primvars:st:indices
+        float4[] primvars:tangents = [(0, -1, 0, -1), (0, -1, 0, -1), (0, -1, 0, -1), (0, -1, 0, -1), (0, -1, 0, -1), (0, -1, 0, -1), (0, -1, 3.3810102e-7, -1), (0, -1, 3.3810102e-7, -1), (0, -1, 3.3810102e-7, -1), (0, 0.55470026, 0.83205026, -1), (0, 0.55470026, 0.83205026, -1), (0, 0.55470026, 0.83205026, -1), (0, 0, -1, -1), (0, 0, -1, -1), (0, 0, -1, -1), (0, 0, 1, -1), (0, 0, 1, -1), (0, 0, 1, -1), (0, 0, 1, -1), (0, 0, 1, -1), (0, 0, 1, -1), (-4.471359e-7, -1, 1.1320715e-8, -1), (-4.471359e-7, -1, 1.1320715e-8, -1), (-4.471359e-7, -1, 1.1320715e-8, -1), (0, 0, -1, -1), (0, 0, -1, -1), (0, 0, -1, -1), (0, 0, 1, -1), (0, 0, 1, -1), (0, 0, 1, -1), (0, 0, 1, -1), (0, 0, 1, -1), (0, 0, 1, -1), (0, 0, 1, -1), (0, 0, 1, -1), (0, 0, 1, -1), (-4.471359e-7, 1, -5.4177704e-8, -1), (-4.471359e-7, 1, -5.4177704e-8, -1), (-4.471359e-7, 1, -5.4177704e-8, -1), (0, -1, 0, -1), (0, -1, 0, -1), (0, -1, 1.7304203e-7, -1), (0, -1, 1.7304203e-7, -1), (0, -1, 1.7304203e-7, -1), (0, 0.55470026, 0.83205026, -1), (0, 0, -1, -1), (0, 0, 1, -1), (0, 0, 1, -1), (-7.480326e-16, -1, 5.477498e-8, -1), (-7.480326e-16, -1, 5.477498e-8, -1), (-7.480326e-16, -1, 5.477498e-8, -1), (7.480378e-16, -1, 5.4775096e-8, -1), (7.480378e-16, -1, 5.4775096e-8, -1), (7.480378e-16, -1, 5.4775096e-8, -1), (9.737556e-8, -1, 3.5527137e-15, -1), (9.737556e-8, -1, 3.5527137e-15, -1), (9.737556e-8, -1, 3.5527137e-15, -1), (0, 0, -1, -1), (0, 0, 1, -1), (0, 0, 1, -1), (0, 0, 1, -1), (0, 0, 1, -1), (0, 0, 1, -1), (4.115304e-17, 1, -2.738749e-8, -1), (4.115304e-17, 1, -2.738749e-8, -1), (4.115304e-17, 1, -2.738749e-8, -1), (-4.115144e-17, 1, -2.7387548e-8, -1), (-4.115144e-17, 1, -2.7387548e-8, -1), (-4.115144e-17, 1, -2.7387548e-8, -1), (1.0819507e-8, 1, -3.5527137e-15, -1), (1.0819507e-8, 1, -3.5527137e-15, -1), (1.0819507e-8, 1, -3.5527137e-15, -1)] (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        uniform token purpose
+        uniform token subdivisionScheme = "none"
+        token visibility
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+}
+
