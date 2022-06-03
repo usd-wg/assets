@@ -32,7 +32,9 @@ A different interpretation will lead to incorrect results.
  _QuickLook on iOS 15.6_
 
 ## License Information
+This conversion bears the same license as the [source asset](https://github.com/KhronosGroup/glTF-Sample-Models/blob/master/2.0/TextureTransformTest/README.md).  
 
 [![CC0](http://i.creativecommons.org/p/zero/1.0/88x31.png)](http://creativecommons.org/publicdomain/zero/1.0/)  
 To the extent possible under law, Microsoft has waived all copyright and related or neighboring rights to this asset.  
+
 Conversion by Felix Herbst / prefrontal cortex
