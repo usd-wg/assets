@@ -39,7 +39,7 @@ Some viewers ignore audio bitrate and instead assume a specific bitrate. The MP3
 
 This model may have incorrect extents. Some viewers may calculate new mesh bounds from the actual skinned data / bones, others may use the provided extents data and thus show only a small part by default.  
 
-![usdview](screenshots/20220604-usview-wrong-bounds.png)  
+![usdview](screenshots/20220604-usdview-wrong-bounds.png)  
 _usdview: Extents leading to wrong start view. Note the small displayed box gizmo in the center of the model._
 
 ## License Information
