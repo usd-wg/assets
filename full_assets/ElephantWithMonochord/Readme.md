@@ -2,7 +2,9 @@
 
 ## Video
 
-https://github.com/prefrontalcortex/usd-wg-assets/raw/soc-elephant/full_assets/ElephantWithMonochord/screenshots/20220604-video.mp4  
+
+https://user-images.githubusercontent.com/2693840/172025793-d4898e67-8640-47ab-ad8a-36d05375f08d.mp4  
+
 _Video with Audio_
 
 ## Screenshot
