@@ -2,17 +2,18 @@
 
 ## Video
 
-screenshots/20220604-video.mp4  
+https://github.com/prefrontalcortex/usd-wg-assets/raw/soc-elephant/full_assets/ElephantWithMonochord/screenshots/20220604-video.mp4  
 _Video with Audio_
 
 ## Screenshot
 
 ![omniverse](screenshots/20220604-omniverse.png)  
-_Oniverse CREATE with skeleton hierarchies and UsdAudio_
+_NVidia Omniverse CREATE: skeletal hierarchies and UsdAudio spatial audio_
 
-## Augmented Reality
+## QuickLook / Augmented Reality
 
 Open this page on iOS and click on the image:  
+On Mac OS, if you download the file it can be viewed with audio directly from Finder.  
 
 <a rel="ar" href="https://github.com/prefrontalcortex/usd-wg-assets/raw/soc-elephant/full_assets/ElephantWithMonochord/SoC-ElephantWithMonochord.usdz"><img src="screenshots/20220604-screenshot.png"/></a>
 
@@ -23,19 +24,23 @@ It contains both Skeletal Animation on two meshes (elephant and monochord) as we
 
 ## Shading
 
-The model uses the same texture for diffuseColor and emission. This creates an apperance of being "unlit", with no actual Unlit shading model currently being available in QuickLook.  
+The model uses the same texture for `diffuseColor` and `emission`. This creates an apperance of being "unlit", with no actual Unlit shading model currently being available in QuickLook.  
+
+## Problem: Audio plays faster/slower
+
+Some viewers ignore audio bitrate and instead assume a specific bitrate. The MP3 used here is an 48KHz file; QuickLook always assumes 48KHz, so 44.1KHz files will play incorrectly.  
 
 ## Problem: Only one mesh plays skeletal animation
 
  ![usdview](screenshots/20220604-usdview-missing-skinned-animation.gif)  
- _The monochord doesn't play the correct skinned animation here._
+ _usdview: The monochord doesn't play the correct skinned animation._
 
 ## Known Issue: Bounds calculations
 
 This model may have incorrect extents. Some viewers may calculate new mesh bounds from the actual skinned data / bones, others may use the provided extents data and thus show only a small part by default.  
 
 ![usdview](screenshots/20220604-usview-wrong-bounds.png)  
-_Extents leading to wrong start view. Note the small displayed box gizmo in the center of the model._
+_usdview: Extents leading to wrong start view. Note the small displayed box gizmo in the center of the model._
 
 ## License Information
 
