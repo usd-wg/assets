@@ -1,0 +1,992 @@
+#usda 1.0
+(
+    defaultPrim = "TextureTransformTest"
+    endTimeCode = 0
+    startTimeCode = 0
+    upAxis = "Y"
+)
+
+def Xform "TextureTransformTest"
+{
+    matrix4d xformOp:transform = ( (-100, 0, -0.000008742277714191005, 0), (0, 100, 0, 0), (0.000008742277714191005, 0, -100, 0), (0, 0, 0, 1) )
+    uniform token[] xformOpOrder = ["xformOp:transform"]
+
+    def Scope "Materials"
+    {
+        def Material "Offset_U_53148"
+        {
+            token outputs:displacement
+            token outputs:surface.connect = </TextureTransformTest/Materials/Offset_U_53148/PreviewSurface.outputs:surface>
+            token[] requiredKeywords
+
+            def Shader "PreviewSurface"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                float inputs:clearcoat = 0
+                float inputs:clearcoatRoughness = 0.01
+                float3 inputs:diffuseColor = (0.18, 0.18, 0.18)
+                float3 inputs:diffuseColor.connect = </TextureTransformTest/Materials/Offset_U_53148/PreviewSurface/_BaseColorTexture.outputs:rgb>
+                float inputs:displacement = 0
+                float3 inputs:emissiveColor = (0, 0, 0)
+                float inputs:ior = 1.5
+                float inputs:metallic = 0
+                float3 inputs:normal = (0, 0, 1)
+                float inputs:occlusion = 1
+                float inputs:opacity = 1
+                float inputs:opacityThreshold = 0
+                float inputs:roughness = 1
+                float3 inputs:specularColor = (0, 0, 0)
+                int inputs:useSpecularWorkflow = 1
+                token outputs:displacement
+                token outputs:surface
+                token[] unity:shaderKeywords
+                string unity:shaderName
+
+                def Shader "uvReader"
+                {
+                    uniform token info:id = "UsdPrimvarReader_float2"
+                    float2 inputs:fallback = (0, 0)
+                    token inputs:varname = "st"
+                    float2 outputs:result
+                }
+
+                def Shader "usdTransform"
+                {
+                    uniform token info:id = "UsdTransform2d"
+                    token inputs:in.connect = </TextureTransformTest/Materials/Offset_U_53148/PreviewSurface/uvReader.outputs:result>
+                    float inputs:rotation = 0
+                    float2 inputs:scale = (1, 1)
+                    float2 inputs:translation = (0.5, 0)
+                    float2 outputs:result
+                }
+
+                def Shader "_BaseColorTexture"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    float4 inputs:bias = (0, 0, 0, 0)
+                    float4 inputs:fallback = (0, 0, 0, 1)
+                    asset inputs:file = @0/TextureTransformTest UV_244266e87c0f006acef7f70b1ae83a8f.png@
+                    token inputs:isSRGB = "auto"
+                    float4 inputs:scale = (1, 1, 1, 1)
+                    float2 inputs:st = (0, 0)
+                    float2 inputs:st.connect = </TextureTransformTest/Materials/Offset_U_53148/PreviewSurface/usdTransform.outputs:result>
+                    token inputs:wrapS = "clamp"
+                    token inputs:wrapT = "clamp"
+                    float outputs:a
+                    float outputs:b
+                    float outputs:g
+                    float outputs:r
+                    float3 outputs:rgb
+                    float4 outputs:rgba
+                }
+            }
+        }
+
+        def Material "Offset_V_53152"
+        {
+            token outputs:displacement
+            token outputs:surface.connect = </TextureTransformTest/Materials/Offset_V_53152/PreviewSurface.outputs:surface>
+            token[] requiredKeywords
+
+            def Shader "PreviewSurface"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                float inputs:clearcoat = 0
+                float inputs:clearcoatRoughness = 0.01
+                float3 inputs:diffuseColor = (0.18, 0.18, 0.18)
+                float3 inputs:diffuseColor.connect = </TextureTransformTest/Materials/Offset_V_53152/PreviewSurface/_BaseColorTexture.outputs:rgb>
+                float inputs:displacement = 0
+                float3 inputs:emissiveColor = (0, 0, 0)
+                float inputs:ior = 1.5
+                float inputs:metallic = 0
+                float3 inputs:normal = (0, 0, 1)
+                float inputs:occlusion = 1
+                float inputs:opacity = 1
+                float inputs:opacityThreshold = 0
+                float inputs:roughness = 1
+                float3 inputs:specularColor = (0, 0, 0)
+                int inputs:useSpecularWorkflow = 1
+                token outputs:displacement
+                token outputs:surface
+                token[] unity:shaderKeywords
+                string unity:shaderName
+
+                def Shader "uvReader"
+                {
+                    uniform token info:id = "UsdPrimvarReader_float2"
+                    float2 inputs:fallback = (0, 0)
+                    token inputs:varname = "st"
+                    float2 outputs:result
+                }
+
+                def Shader "usdTransform"
+                {
+                    uniform token info:id = "UsdTransform2d"
+                    token inputs:in.connect = </TextureTransformTest/Materials/Offset_V_53152/PreviewSurface/uvReader.outputs:result>
+                    float inputs:rotation = 0
+                    float2 inputs:scale = (1, 1)
+                    float2 inputs:translation = (0, -0.5)
+                    float2 outputs:result
+                }
+
+                def Shader "_BaseColorTexture"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    float4 inputs:bias = (0, 0, 0, 0)
+                    float4 inputs:fallback = (0, 0, 0, 1)
+                    asset inputs:file = @0/TextureTransformTest UV_244266e87c0f006acef7f70b1ae83a8f.png@
+                    token inputs:isSRGB = "auto"
+                    float4 inputs:scale = (1, 1, 1, 1)
+                    float2 inputs:st = (0, 0)
+                    float2 inputs:st.connect = </TextureTransformTest/Materials/Offset_V_53152/PreviewSurface/usdTransform.outputs:result>
+                    token inputs:wrapS = "clamp"
+                    token inputs:wrapT = "clamp"
+                    float outputs:a
+                    float outputs:b
+                    float outputs:g
+                    float outputs:r
+                    float3 outputs:rgb
+                    float4 outputs:rgba
+                }
+            }
+        }
+
+        def Material "Offset_UV_53150"
+        {
+            token outputs:displacement
+            token outputs:surface.connect = </TextureTransformTest/Materials/Offset_UV_53150/PreviewSurface.outputs:surface>
+            token[] requiredKeywords
+
+            def Shader "PreviewSurface"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                float inputs:clearcoat = 0
+                float inputs:clearcoatRoughness = 0.01
+                float3 inputs:diffuseColor = (0.18, 0.18, 0.18)
+                float3 inputs:diffuseColor.connect = </TextureTransformTest/Materials/Offset_UV_53150/PreviewSurface/_BaseColorTexture.outputs:rgb>
+                float inputs:displacement = 0
+                float3 inputs:emissiveColor = (0, 0, 0)
+                float inputs:ior = 1.5
+                float inputs:metallic = 0
+                float3 inputs:normal = (0, 0, 1)
+                float inputs:occlusion = 1
+                float inputs:opacity = 1
+                float inputs:opacityThreshold = 0
+                float inputs:roughness = 1
+                float3 inputs:specularColor = (0, 0, 0)
+                int inputs:useSpecularWorkflow = 1
+                token outputs:displacement
+                token outputs:surface
+                token[] unity:shaderKeywords
+                string unity:shaderName
+
+                def Shader "uvReader"
+                {
+                    uniform token info:id = "UsdPrimvarReader_float2"
+                    float2 inputs:fallback = (0, 0)
+                    token inputs:varname = "st"
+                    float2 outputs:result
+                }
+
+                def Shader "usdTransform"
+                {
+                    uniform token info:id = "UsdTransform2d"
+                    token inputs:in.connect = </TextureTransformTest/Materials/Offset_UV_53150/PreviewSurface/uvReader.outputs:result>
+                    float inputs:rotation = 0
+                    float2 inputs:scale = (1, 1)
+                    float2 inputs:translation = (0.5, -0.5)
+                    float2 outputs:result
+                }
+
+                def Shader "_BaseColorTexture"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    float4 inputs:bias = (0, 0, 0, 0)
+                    float4 inputs:fallback = (0, 0, 0, 1)
+                    asset inputs:file = @0/TextureTransformTest UV_244266e87c0f006acef7f70b1ae83a8f.png@
+                    token inputs:isSRGB = "auto"
+                    float4 inputs:scale = (1, 1, 1, 1)
+                    float2 inputs:st = (0, 0)
+                    float2 inputs:st.connect = </TextureTransformTest/Materials/Offset_UV_53150/PreviewSurface/usdTransform.outputs:result>
+                    token inputs:wrapS = "clamp"
+                    token inputs:wrapT = "clamp"
+                    float outputs:a
+                    float outputs:b
+                    float outputs:g
+                    float outputs:r
+                    float3 outputs:rgb
+                    float4 outputs:rgba
+                }
+            }
+        }
+
+        def Material "Rotation_53154"
+        {
+            token outputs:displacement
+            token outputs:surface.connect = </TextureTransformTest/Materials/Rotation_53154/PreviewSurface.outputs:surface>
+            token[] requiredKeywords
+
+            def Shader "PreviewSurface"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                float inputs:clearcoat = 0
+                float inputs:clearcoatRoughness = 0.01
+                float3 inputs:diffuseColor = (0.18, 0.18, 0.18)
+                float3 inputs:diffuseColor.connect = </TextureTransformTest/Materials/Rotation_53154/PreviewSurface/_BaseColorTexture.outputs:rgb>
+                float inputs:displacement = 0
+                float3 inputs:emissiveColor = (0, 0, 0)
+                float inputs:ior = 1.5
+                float inputs:metallic = 0
+                float3 inputs:normal = (0, 0, 1)
+                float inputs:occlusion = 1
+                float inputs:opacity = 1
+                float inputs:opacityThreshold = 0
+                float inputs:roughness = 1
+                float3 inputs:specularColor = (0, 0, 0)
+                int inputs:useSpecularWorkflow = 1
+                token outputs:displacement
+                token outputs:surface
+                token[] unity:shaderKeywords
+                string unity:shaderName
+
+                def Shader "uvReader"
+                {
+                    uniform token info:id = "UsdPrimvarReader_float2"
+                    float2 inputs:fallback = (0, 0)
+                    token inputs:varname = "st"
+                    float2 outputs:result
+                }
+
+                def Shader "usdTransform"
+                {
+                    uniform token info:id = "UsdTransform2d"
+                    token inputs:in.connect = </TextureTransformTest/Materials/Rotation_53154/PreviewSurface/uvReader.outputs:result>
+                    float inputs:rotation = 22.5
+                    float2 inputs:scale = (1, 1)
+                    float2 inputs:translation = (0.38268343, 0.076120496)
+                    float2 outputs:result
+                }
+
+                def Shader "_BaseColorTexture"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    float4 inputs:bias = (0, 0, 0, 0)
+                    float4 inputs:fallback = (0, 0, 0, 1)
+                    asset inputs:file = @0/TextureTransformTest Arrow_3f19c4b30ba512b6ada648d0556dd5cb.png@
+                    token inputs:isSRGB = "auto"
+                    float4 inputs:scale = (1, 1, 1, 1)
+                    float2 inputs:st = (0, 0)
+                    float2 inputs:st.connect = </TextureTransformTest/Materials/Rotation_53154/PreviewSurface/usdTransform.outputs:result>
+                    token inputs:wrapS = "clamp"
+                    token inputs:wrapT = "clamp"
+                    float outputs:a
+                    float outputs:b
+                    float outputs:g
+                    float outputs:r
+                    float3 outputs:rgb
+                    float4 outputs:rgba
+                }
+            }
+        }
+
+        def Material "Correct_53142"
+        {
+            token outputs:displacement
+            token outputs:surface.connect = </TextureTransformTest/Materials/Correct_53142/PreviewSurface.outputs:surface>
+            token[] requiredKeywords
+
+            def Shader "PreviewSurface"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                float inputs:clearcoat = 0
+                float inputs:clearcoatRoughness = 0.01
+                float3 inputs:diffuseColor = (0.18, 0.18, 0.18)
+                float3 inputs:diffuseColor.connect = </TextureTransformTest/Materials/Correct_53142/PreviewSurface/_BaseColorTexture.outputs:rgb>
+                float inputs:displacement = 0
+                float3 inputs:emissiveColor = (0, 0, 0)
+                float inputs:ior = 1.5
+                float inputs:metallic = 0
+                float3 inputs:normal = (0, 0, 1)
+                float inputs:occlusion = 1
+                float inputs:opacity = 1
+                float inputs:opacityThreshold = 0
+                float inputs:roughness = 1
+                float3 inputs:specularColor = (0, 0, 0)
+                int inputs:useSpecularWorkflow = 1
+                token outputs:displacement
+                token outputs:surface
+                token[] unity:shaderKeywords
+                string unity:shaderName
+
+                def Shader "uvReader"
+                {
+                    uniform token info:id = "UsdPrimvarReader_float2"
+                    float2 inputs:fallback = (0, 0)
+                    token inputs:varname = "st"
+                    float2 outputs:result
+                }
+
+                def Shader "_BaseColorTexture"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    float4 inputs:bias = (0, 0, 0, 0)
+                    float4 inputs:fallback = (0, 0, 0, 1)
+                    asset inputs:file = @0/TextureTransformTest Correct_1707e3f51203d3718e177cac0feb30a8.png@
+                    token inputs:isSRGB = "auto"
+                    float4 inputs:scale = (1, 1, 1, 1)
+                    float2 inputs:st = (0, 0)
+                    float2 inputs:st.connect = </TextureTransformTest/Materials/Correct_53142/PreviewSurface/uvReader.outputs:result>
+                    token inputs:wrapS = "repeat"
+                    token inputs:wrapT = "repeat"
+                    float outputs:a
+                    float outputs:b
+                    float outputs:g
+                    float outputs:r
+                    float3 outputs:rgb
+                    float4 outputs:rgba
+                }
+            }
+        }
+
+        def Material "Not_Supported_53146"
+        {
+            token outputs:displacement
+            token outputs:surface.connect = </TextureTransformTest/Materials/Not_Supported_53146/PreviewSurface.outputs:surface>
+            token[] requiredKeywords
+
+            def Shader "PreviewSurface"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                float inputs:clearcoat = 0
+                float inputs:clearcoatRoughness = 0.01
+                float3 inputs:diffuseColor = (0.18, 0.18, 0.18)
+                float3 inputs:diffuseColor.connect = </TextureTransformTest/Materials/Not_Supported_53146/PreviewSurface/_BaseColorTexture.outputs:rgb>
+                float inputs:displacement = 0
+                float3 inputs:emissiveColor = (0, 0, 0)
+                float inputs:ior = 1.5
+                float inputs:metallic = 0
+                float3 inputs:normal = (0, 0, 1)
+                float inputs:occlusion = 1
+                float inputs:opacity = 1
+                float inputs:opacityThreshold = 0
+                float inputs:roughness = 1
+                float3 inputs:specularColor = (0, 0, 0)
+                int inputs:useSpecularWorkflow = 1
+                token outputs:displacement
+                token outputs:surface
+                token[] unity:shaderKeywords
+                string unity:shaderName
+
+                def Shader "uvReader"
+                {
+                    uniform token info:id = "UsdPrimvarReader_float2"
+                    float2 inputs:fallback = (0, 0)
+                    token inputs:varname = "st"
+                    float2 outputs:result
+                }
+
+                def Shader "_BaseColorTexture"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    float4 inputs:bias = (0, 0, 0, 0)
+                    float4 inputs:fallback = (0, 0, 0, 1)
+                    asset inputs:file = @0/TextureTransformTest Not Supported_94a69d32159b22ca3b96ab8e43432351.png@
+                    token inputs:isSRGB = "auto"
+                    float4 inputs:scale = (1, 1, 1, 1)
+                    float2 inputs:st = (0, 0)
+                    float2 inputs:st.connect = </TextureTransformTest/Materials/Not_Supported_53146/PreviewSurface/uvReader.outputs:result>
+                    token inputs:wrapS = "repeat"
+                    token inputs:wrapT = "repeat"
+                    float outputs:a
+                    float outputs:b
+                    float outputs:g
+                    float outputs:r
+                    float3 outputs:rgb
+                    float4 outputs:rgba
+                }
+            }
+        }
+
+        def Material "Error_53144"
+        {
+            token outputs:displacement
+            token outputs:surface.connect = </TextureTransformTest/Materials/Error_53144/PreviewSurface.outputs:surface>
+            token[] requiredKeywords
+
+            def Shader "PreviewSurface"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                float inputs:clearcoat = 0
+                float inputs:clearcoatRoughness = 0.01
+                float3 inputs:diffuseColor = (0.18, 0.18, 0.18)
+                float3 inputs:diffuseColor.connect = </TextureTransformTest/Materials/Error_53144/PreviewSurface/_BaseColorTexture.outputs:rgb>
+                float inputs:displacement = 0
+                float3 inputs:emissiveColor = (0, 0, 0)
+                float inputs:ior = 1.5
+                float inputs:metallic = 0
+                float3 inputs:normal = (0, 0, 1)
+                float inputs:occlusion = 1
+                float inputs:opacity = 1
+                float inputs:opacityThreshold = 0
+                float inputs:roughness = 1
+                float3 inputs:specularColor = (0, 0, 0)
+                int inputs:useSpecularWorkflow = 1
+                token outputs:displacement
+                token outputs:surface
+                token[] unity:shaderKeywords
+                string unity:shaderName
+
+                def Shader "uvReader"
+                {
+                    uniform token info:id = "UsdPrimvarReader_float2"
+                    float2 inputs:fallback = (0, 0)
+                    token inputs:varname = "st"
+                    float2 outputs:result
+                }
+
+                def Shader "_BaseColorTexture"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    float4 inputs:bias = (0, 0, 0, 0)
+                    float4 inputs:fallback = (0, 0, 0, 1)
+                    asset inputs:file = @0/TextureTransformTest Error_3cb6f7004e7fc2a5bd84948bbfc8d2c5.png@
+                    token inputs:isSRGB = "auto"
+                    float4 inputs:scale = (1, 1, 1, 1)
+                    float2 inputs:st = (0, 0)
+                    float2 inputs:st.connect = </TextureTransformTest/Materials/Error_53144/PreviewSurface/uvReader.outputs:result>
+                    token inputs:wrapS = "repeat"
+                    token inputs:wrapT = "repeat"
+                    float outputs:a
+                    float outputs:b
+                    float outputs:g
+                    float outputs:r
+                    float3 outputs:rgb
+                    float4 outputs:rgba
+                }
+            }
+        }
+
+        def Material "Scale_53156"
+        {
+            token outputs:displacement
+            token outputs:surface.connect = </TextureTransformTest/Materials/Scale_53156/PreviewSurface.outputs:surface>
+            token[] requiredKeywords
+
+            def Shader "PreviewSurface"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                float inputs:clearcoat = 0
+                float inputs:clearcoatRoughness = 0.01
+                float3 inputs:diffuseColor = (0.18, 0.18, 0.18)
+                float3 inputs:diffuseColor.connect = </TextureTransformTest/Materials/Scale_53156/PreviewSurface/_BaseColorTexture.outputs:rgb>
+                float inputs:displacement = 0
+                float3 inputs:emissiveColor = (0, 0, 0)
+                float inputs:ior = 1.5
+                float inputs:metallic = 0
+                float3 inputs:normal = (0, 0, 1)
+                float inputs:occlusion = 1
+                float inputs:opacity = 1
+                float inputs:opacityThreshold = 0
+                float inputs:roughness = 1
+                float3 inputs:specularColor = (0, 0, 0)
+                int inputs:useSpecularWorkflow = 1
+                token outputs:displacement
+                token outputs:surface
+                token[] unity:shaderKeywords
+                string unity:shaderName
+
+                def Shader "uvReader"
+                {
+                    uniform token info:id = "UsdPrimvarReader_float2"
+                    float2 inputs:fallback = (0, 0)
+                    token inputs:varname = "st"
+                    float2 outputs:result
+                }
+
+                def Shader "usdTransform"
+                {
+                    uniform token info:id = "UsdTransform2d"
+                    token inputs:in.connect = </TextureTransformTest/Materials/Scale_53156/PreviewSurface/uvReader.outputs:result>
+                    float inputs:rotation = 0
+                    float2 inputs:scale = (1.5, 1.5)
+                    float2 inputs:translation = (0, -0.5)
+                    float2 outputs:result
+                }
+
+                def Shader "_BaseColorTexture"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    float4 inputs:bias = (0, 0, 0, 0)
+                    float4 inputs:fallback = (0, 0, 0, 1)
+                    asset inputs:file = @0/TextureTransformTest Arrow_3f19c4b30ba512b6ada648d0556dd5cb.png@
+                    token inputs:isSRGB = "auto"
+                    float4 inputs:scale = (1, 1, 1, 1)
+                    float2 inputs:st = (0, 0)
+                    float2 inputs:st.connect = </TextureTransformTest/Materials/Scale_53156/PreviewSurface/usdTransform.outputs:result>
+                    token inputs:wrapS = "clamp"
+                    token inputs:wrapT = "clamp"
+                    float outputs:a
+                    float outputs:b
+                    float outputs:g
+                    float outputs:r
+                    float3 outputs:rgb
+                    float4 outputs:rgba
+                }
+            }
+        }
+
+        def Material "All_53140"
+        {
+            token outputs:displacement
+            token outputs:surface.connect = </TextureTransformTest/Materials/All_53140/PreviewSurface.outputs:surface>
+            token[] requiredKeywords
+
+            def Shader "PreviewSurface"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                float inputs:clearcoat = 0
+                float inputs:clearcoatRoughness = 0.01
+                float3 inputs:diffuseColor = (0.18, 0.18, 0.18)
+                float3 inputs:diffuseColor.connect = </TextureTransformTest/Materials/All_53140/PreviewSurface/_BaseColorTexture.outputs:rgb>
+                float inputs:displacement = 0
+                float3 inputs:emissiveColor = (0, 0, 0)
+                float inputs:ior = 1.5
+                float inputs:metallic = 0
+                float3 inputs:normal = (0, 0, 1)
+                float inputs:occlusion = 1
+                float inputs:opacity = 1
+                float inputs:opacityThreshold = 0
+                float inputs:roughness = 1
+                float3 inputs:specularColor = (0, 0, 0)
+                int inputs:useSpecularWorkflow = 1
+                token outputs:displacement
+                token outputs:surface
+                token[] unity:shaderKeywords
+                string unity:shaderName
+
+                def Shader "uvReader"
+                {
+                    uniform token info:id = "UsdPrimvarReader_float2"
+                    float2 inputs:fallback = (0, 0)
+                    token inputs:varname = "st"
+                    float2 outputs:result
+                }
+
+                def Shader "usdTransform"
+                {
+                    uniform token info:id = "UsdTransform2d"
+                    token inputs:in.connect = </TextureTransformTest/Materials/All_53140/PreviewSurface/uvReader.outputs:result>
+                    float inputs:rotation = 17.188734
+                    float2 inputs:scale = (1.5, 1.5)
+                    float2 inputs:translation = (0.24328034, -0.33300462)
+                    float2 outputs:result
+                }
+
+                def Shader "_BaseColorTexture"
+                {
+                    uniform token info:id = "UsdUVTexture"
+                    float4 inputs:bias = (0, 0, 0, 0)
+                    float4 inputs:fallback = (0, 0, 0, 1)
+                    asset inputs:file = @0/TextureTransformTest Arrow_3f19c4b30ba512b6ada648d0556dd5cb.png@
+                    token inputs:isSRGB = "auto"
+                    float4 inputs:scale = (1, 1, 1, 1)
+                    float2 inputs:st = (0, 0)
+                    float2 inputs:st.connect = </TextureTransformTest/Materials/All_53140/PreviewSurface/usdTransform.outputs:result>
+                    token inputs:wrapS = "clamp"
+                    token inputs:wrapT = "clamp"
+                    float outputs:a
+                    float outputs:b
+                    float outputs:g
+                    float outputs:r
+                    float3 outputs:rgb
+                    float4 outputs:rgba
+                }
+            }
+        }
+    }
+
+    def Mesh "Offset_U"
+    {
+        uniform bool doubleSided
+        float3[] extent = [(-0.5, -0.5, 0), (0.5, 0.5, 0)]
+        int[] faceVertexCounts = [3, 3]
+        int[] faceVertexIndices = [2, 1, 0, 0, 3, 2]
+        rel material:binding = </TextureTransformTest/Materials/Offset_U_53148>
+        normal3f[] normals = [(0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1)] (
+            interpolation = "vertex"
+        )
+        uniform token orientation
+        point3f[] points = [(0.5, 0.5, 0), (-0.5, 0.5, 0), (-0.5, -0.5, 0), (0.5, -0.5, 0)]
+        color4f[] primvars:colors (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        float2[] primvars:st = [(0, 1), (0.5, 1), (0.5, 0.5), (0, 0.5)] (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        int[] primvars:st:indices
+        float4[] primvars:tangents = [] (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        uniform token purpose
+        uniform token subdivisionScheme = "none"
+        token visibility
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (1.100000023841858, 0.550000011920929, 0, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+
+    def Mesh "Offset_V"
+    {
+        uniform bool doubleSided
+        float3[] extent = [(-0.5, -0.5, 0), (0.5, 0.5, 0)]
+        int[] faceVertexCounts = [3, 3]
+        int[] faceVertexIndices = [2, 1, 0, 0, 3, 2]
+        rel material:binding = </TextureTransformTest/Materials/Offset_V_53152>
+        normal3f[] normals = [(0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1)] (
+            interpolation = "vertex"
+        )
+        uniform token orientation
+        point3f[] points = [(0.5, 0.5, 0), (-0.5, 0.5, 0), (-0.5, -0.5, 0), (0.5, -0.5, 0)]
+        color4f[] primvars:colors (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        float2[] primvars:st = [(0, 1), (0.5, 1), (0.5, 0.5), (0, 0.5)] (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        int[] primvars:st:indices
+        float4[] primvars:tangents = [] (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        uniform token purpose
+        uniform token subdivisionScheme = "none"
+        token visibility
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0.550000011920929, 0, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+
+    def Mesh "Offset_UV"
+    {
+        uniform bool doubleSided
+        float3[] extent = [(-0.5, -0.5, 0), (0.5, 0.5, 0)]
+        int[] faceVertexCounts = [3, 3]
+        int[] faceVertexIndices = [2, 1, 0, 0, 3, 2]
+        rel material:binding = </TextureTransformTest/Materials/Offset_UV_53150>
+        normal3f[] normals = [(0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1)] (
+            interpolation = "vertex"
+        )
+        uniform token orientation
+        point3f[] points = [(0.5, 0.5, 0), (-0.5, 0.5, 0), (-0.5, -0.5, 0), (0.5, -0.5, 0)]
+        color4f[] primvars:colors (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        float2[] primvars:st = [(0, 1), (0.5, 1), (0.5, 0.5), (0, 0.5)] (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        int[] primvars:st:indices
+        float4[] primvars:tangents = [] (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        uniform token purpose
+        uniform token subdivisionScheme = "none"
+        token visibility
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (-1.100000023841858, 0.550000011920929, 0, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+
+    def Mesh "Rotation"
+    {
+        uniform bool doubleSided
+        float3[] extent = [(-0.5, -0.5, 0), (0.5, 0.5, 0)]
+        int[] faceVertexCounts = [3, 3]
+        int[] faceVertexIndices = [2, 1, 0, 0, 3, 2]
+        rel material:binding = </TextureTransformTest/Materials/Rotation_53154>
+        normal3f[] normals = [(0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1)] (
+            interpolation = "vertex"
+        )
+        uniform token orientation
+        point3f[] points = [(0.5, 0.5, 0), (-0.5, 0.5, 0), (-0.5, -0.5, 0), (0.5, -0.5, 0)]
+        color4f[] primvars:colors (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        float2[] primvars:st = [(0, 1), (1, 1), (1, 0), (0, 0)] (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        int[] primvars:st:indices
+        float4[] primvars:tangents = [] (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        uniform token purpose
+        uniform token subdivisionScheme = "none"
+        token visibility
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (1.100000023841858, -0.550000011920929, 0, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Rotation___Correct"
+        {
+            uniform bool doubleSided
+            float3[] extent = [(-0.5, -0.5, 0), (0.5, 0.5, 0)]
+            int[] faceVertexCounts = [3, 3]
+            int[] faceVertexIndices = [2, 1, 0, 0, 3, 2]
+            rel material:binding = </TextureTransformTest/Materials/Correct_53142>
+            normal3f[] normals = [(0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1)] (
+                interpolation = "vertex"
+            )
+            uniform token orientation
+            point3f[] points = [(0.5, 0.5, 0), (-0.5, 0.5, 0), (-0.5, -0.5, 0), (0.5, -0.5, 0)]
+            color4f[] primvars:colors (
+                elementSize = 1
+                interpolation = "vertex"
+            )
+            float2[] primvars:st = [(0, 1), (1, 1), (1, 0), (0, 0)] (
+                elementSize = 1
+                interpolation = "vertex"
+            )
+            int[] primvars:st:indices
+            float4[] primvars:tangents = [] (
+                elementSize = 1
+                interpolation = "vertex"
+            )
+            uniform token purpose
+            uniform token subdivisionScheme = "none"
+            token visibility
+            matrix4d xformOp:transform = ( (0.15000000596046448, 0, 0, 0), (0, 0.15000000596046448, 0, 0), (0, 0, 0.15000000596046448, 0), (0.07904822379350662, -0.5162674784660339, -0.009999999776482582, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Mesh "Rotation___Not_Supported"
+        {
+            uniform bool doubleSided
+            float3[] extent = [(-0.5, -0.5, 0), (0.5, 0.5, 0)]
+            int[] faceVertexCounts = [3, 3]
+            int[] faceVertexIndices = [2, 1, 0, 0, 3, 2]
+            rel material:binding = </TextureTransformTest/Materials/Not_Supported_53146>
+            normal3f[] normals = [(0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1)] (
+                interpolation = "vertex"
+            )
+            uniform token orientation
+            point3f[] points = [(0.5, 0.5, 0), (-0.5, 0.5, 0), (-0.5, -0.5, 0), (0.5, -0.5, 0)]
+            color4f[] primvars:colors (
+                elementSize = 1
+                interpolation = "vertex"
+            )
+            float2[] primvars:st = [(0, 1), (1, 1), (1, 0), (0, 0)] (
+                elementSize = 1
+                interpolation = "vertex"
+            )
+            int[] primvars:st:indices
+            float4[] primvars:tangents = [] (
+                elementSize = 1
+                interpolation = "vertex"
+            )
+            uniform token purpose
+            uniform token subdivisionScheme = "none"
+            token visibility
+            matrix4d xformOp:transform = ( (0.15000000596046448, 0, 0, 0), (0, 0.15000000596046448, 0, 0), (0, 0, 0.15000000596046448, 0), (-0.2778174579143524, -0.2778174579143524, -0.009999999776482582, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Mesh "Rotation___Error"
+        {
+            uniform bool doubleSided
+            float3[] extent = [(-0.5, -0.5, 0), (0.5, 0.5, 0)]
+            int[] faceVertexCounts = [3, 3]
+            int[] faceVertexIndices = [2, 1, 0, 0, 3, 2]
+            rel material:binding = </TextureTransformTest/Materials/Error_53144>
+            normal3f[] normals = [(0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1)] (
+                interpolation = "vertex"
+            )
+            uniform token orientation
+            point3f[] points = [(0.5, 0.5, 0), (-0.5, 0.5, 0), (-0.5, -0.5, 0), (0.5, -0.5, 0)]
+            color4f[] primvars:colors (
+                elementSize = 1
+                interpolation = "vertex"
+            )
+            float2[] primvars:st = [(0, 1), (1, 1), (1, 0), (0, 0)] (
+                elementSize = 1
+                interpolation = "vertex"
+            )
+            int[] primvars:st:indices
+            float4[] primvars:tangents = [] (
+                elementSize = 1
+                interpolation = "vertex"
+            )
+            uniform token purpose
+            uniform token subdivisionScheme = "none"
+            token visibility
+            matrix4d xformOp:transform = ( (0.15000000596046448, 0, 0, 0), (0, 0.15000000596046448, 0, 0), (0, 0, 0.15000000596046448, 0), (-0.5162674784660339, 0.07904822379350662, -0.009999999776482582, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+    }
+
+    def Mesh "Scale"
+    {
+        uniform bool doubleSided
+        float3[] extent = [(-0.5, -0.5, 0), (0.5, 0.5, 0)]
+        int[] faceVertexCounts = [3, 3]
+        int[] faceVertexIndices = [2, 1, 0, 0, 3, 2]
+        rel material:binding = </TextureTransformTest/Materials/Scale_53156>
+        normal3f[] normals = [(0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1)] (
+            interpolation = "vertex"
+        )
+        uniform token orientation
+        point3f[] points = [(0.5, 0.5, 0), (-0.5, 0.5, 0), (-0.5, -0.5, 0), (0.5, -0.5, 0)]
+        color4f[] primvars:colors (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        float2[] primvars:st = [(0, 1), (1, 1), (1, 0), (0, 0)] (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        int[] primvars:st:indices
+        float4[] primvars:tangents = [] (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        uniform token purpose
+        uniform token subdivisionScheme = "none"
+        token visibility
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, -0.550000011920929, 0, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "Scale___Correct"
+        {
+            uniform bool doubleSided
+            float3[] extent = [(-0.5, -0.5, 0), (0.5, 0.5, 0)]
+            int[] faceVertexCounts = [3, 3]
+            int[] faceVertexIndices = [2, 1, 0, 0, 3, 2]
+            rel material:binding = </TextureTransformTest/Materials/Correct_53142>
+            normal3f[] normals = [(0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1)] (
+                interpolation = "vertex"
+            )
+            uniform token orientation
+            point3f[] points = [(0.5, 0.5, 0), (-0.5, 0.5, 0), (-0.5, -0.5, 0), (0.5, -0.5, 0)]
+            color4f[] primvars:colors (
+                elementSize = 1
+                interpolation = "vertex"
+            )
+            float2[] primvars:st = [(0, 1), (1, 1), (1, 0), (0, 0)] (
+                elementSize = 1
+                interpolation = "vertex"
+            )
+            int[] primvars:st:indices
+            float4[] primvars:tangents = [] (
+                elementSize = 1
+                interpolation = "vertex"
+            )
+            uniform token purpose
+            uniform token subdivisionScheme = "none"
+            token visibility
+            matrix4d xformOp:transform = ( (0.10000000149011612, 0, 0, 0), (0, 0.10000000149011612, 0, 0), (0, 0, 0.10000000149011612, 0), (-0.01854497194290161, -0.01854497194290161, -0.009999999776482582, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Mesh "Scale___Not_Supported"
+        {
+            uniform bool doubleSided
+            float3[] extent = [(-0.5, -0.5, 0), (0.5, 0.5, 0)]
+            int[] faceVertexCounts = [3, 3]
+            int[] faceVertexIndices = [2, 1, 0, 0, 3, 2]
+            rel material:binding = </TextureTransformTest/Materials/Not_Supported_53146>
+            normal3f[] normals = [(0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1)] (
+                interpolation = "vertex"
+            )
+            uniform token orientation
+            point3f[] points = [(0.5, 0.5, 0), (-0.5, 0.5, 0), (-0.5, -0.5, 0), (0.5, -0.5, 0)]
+            color4f[] primvars:colors (
+                elementSize = 1
+                interpolation = "vertex"
+            )
+            float2[] primvars:st = [(0, 1), (1, 1), (1, 0), (0, 0)] (
+                elementSize = 1
+                interpolation = "vertex"
+            )
+            int[] primvars:st:indices
+            float4[] primvars:tangents = [] (
+                elementSize = 1
+                interpolation = "vertex"
+            )
+            uniform token purpose
+            uniform token subdivisionScheme = "none"
+            token visibility
+            matrix4d xformOp:transform = ( (0.15000000596046448, 0, 0, 0), (0, 0.15000000596046448, 0, 0), (0, 0, 0.15000000596046448, 0), (-0.2778174579143524, -0.2778174579143524, -0.009999999776482582, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+    }
+
+    def Mesh "All"
+    {
+        uniform bool doubleSided
+        float3[] extent = [(-0.5, -0.5, 0), (0.5, 0.5, 0)]
+        int[] faceVertexCounts = [3, 3]
+        int[] faceVertexIndices = [2, 1, 0, 0, 3, 2]
+        rel material:binding = </TextureTransformTest/Materials/All_53140>
+        normal3f[] normals = [(0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1)] (
+            interpolation = "vertex"
+        )
+        uniform token orientation
+        point3f[] points = [(0.5, 0.5, 0), (-0.5, 0.5, 0), (-0.5, -0.5, 0), (0.5, -0.5, 0)]
+        color4f[] primvars:colors (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        float2[] primvars:st = [(0, 1), (1, 1), (1, 0), (0, 0)] (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        int[] primvars:st:indices
+        float4[] primvars:tangents = [] (
+            elementSize = 1
+            interpolation = "vertex"
+        )
+        uniform token purpose
+        uniform token subdivisionScheme = "none"
+        token visibility
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (-1.100000023841858, -0.550000011920929, 0, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Mesh "All___Correct"
+        {
+            uniform bool doubleSided
+            float3[] extent = [(-0.5, -0.5, 0), (0.5, 0.5, 0)]
+            int[] faceVertexCounts = [3, 3]
+            int[] faceVertexIndices = [2, 1, 0, 0, 3, 2]
+            rel material:binding = </TextureTransformTest/Materials/Correct_53142>
+            normal3f[] normals = [(0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1)] (
+                interpolation = "vertex"
+            )
+            uniform token orientation
+            point3f[] points = [(0.5, 0.5, 0), (-0.5, 0.5, 0), (-0.5, -0.5, 0), (0.5, -0.5, 0)]
+            color4f[] primvars:colors (
+                elementSize = 1
+                interpolation = "vertex"
+            )
+            float2[] primvars:st = [(0, 1), (1, 1), (1, 0), (0, 0)] (
+                elementSize = 1
+                interpolation = "vertex"
+            )
+            int[] primvars:st:indices
+            float4[] primvars:tangents = [] (
+                elementSize = 1
+                interpolation = "vertex"
+            )
+            uniform token purpose
+            uniform token subdivisionScheme = "none"
+            token visibility
+            matrix4d xformOp:transform = ( (0.10000000149011612, 0, 0, 0), (0, 0.10000000149011612, 0, 0), (0, 0, 0.10000000149011612, 0), (0.07000000029802322, -0.25, -0.009999999776482582, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+    }
+}
+
