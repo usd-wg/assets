@@ -2,7 +2,7 @@
 
 ## Video
 
----
+https://user-images.githubusercontent.com/2693840/178115484-82ace076-0a34-4635-8ec7-e9dd89e26dbd.mp4
 
 _Explosion View Loop_
 
@@ -19,18 +19,22 @@ _Top View_
 
 ## QuickLook / Augmented Reality
 
-[Link to Interactive Version](https://prefrontalcortex.de/labs/model-viewer/upload/CarbonFrameBike/) – Browser uses glTF, iOS AR uses USDZ  
+[Link to Interactive Web Player](https://prefrontalcortex.de/labs/model-viewer/upload/CarbonFrameBike/) – Browser uses glTF, iOS AR uses USDZ  
 
 Open this page on iOS and click on the image:  
 On Mac OS, if you download the file it can be viewed with audio directly from Finder.  
 
-<a rel="ar" href="https://github.com/prefrontalcortex/usd-wg-assets/raw/soc-elephant/full_assets/ElephantWithMonochord/SoC-ElephantWithMonochord.usdz"><img src="screenshots/20220617-interactive-preview.png"/></a>
+<a rel="ar" href="https://github.com/prefrontalcortex/usd-wg-assets/raw/carbon-frame-bike/full_assets/CarbonFrameBike/CarbonFrameBike.usdz"><img src="screenshots/20220617-interactive-preview.png"/></a>
 
 ## Description
 
 This is a production model a mountain bike, with a focus on correct playback in Apple's USDZ QuickLook.  
 It contains lots of animated parts, skeletal animation for the wires, and materials using UsdTransform2d.  
 The textures are a mix of pre-baked (baked tiling) and tiled textures using UsdTransform2d.  
+
+A matching glTF file is available on the KhronosGroup/glTF-Sample-Models repository:  
+https://github.com/prefrontalcortex/glTF-Sample-Models/tree/carbon-frame-bike/2.0/CarbonFrameBike
+_Link will be updated once the PR to include the asset has been merged_
 
 ## License Information
 
