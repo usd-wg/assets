@@ -10,7 +10,7 @@ _usdview 20-08_
 This file contains six meshes, the first three specify roughness values of 0.0, 0.33, and 0.66 specified via a texture.
 The next three meshes similarly specify roughness, however the value is authored as a constant on the UsdPreviewSurface material.
 
-Specification: https://graphics.pixar.com/usd/release/spec_usdpreviewsurface.html#transform2d
+Specification: https://graphics.pixar.com/usd/release/spec_usdpreviewsurface.html#roughness-vs-glossiness
 
 ## License Information
 
