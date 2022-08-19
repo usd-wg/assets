@@ -1,0 +1,14 @@
+#usda 1.0
+(
+    subLayers = [
+        @file_does_not_exist.usda@
+    ]
+    customLayerData = {
+        string copyright = '''Copyright 2022 Apple Inc. All rights reserved.'''
+    }
+)
+
+def Cube "cube"
+{
+
+}

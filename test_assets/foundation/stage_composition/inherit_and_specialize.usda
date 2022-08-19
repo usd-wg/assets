@@ -1,0 +1,49 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    customLayerData = {
+        string copyright = '''Copyright 2022 Apple Inc. All rights reserved.'''
+    }
+)
+
+def Scope "World" {
+
+    def Xform "cubeScene" {
+        def Cube "source" {
+            color3f[] primvars:displayColor = [(0.8, 0, 0)]
+        }
+
+        def Cube "specializes" (
+            specializes = </World/cubeScene/source>
+        )
+        {
+            color3f[] primvars:displayColor = [(0.8, 0.8, 0)]
+
+            double3 xformOp:translate = (3, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Cube "inherits" (
+            inherits = </World/cubeScene/source>
+        )
+        {
+            color3f[] primvars:displayColor = [(0.8, 0.8, 0)]
+
+            double3 xformOp:translate = (6, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+    }
+
+    def Xform "cubeSceneReferenced" (
+        references = </World/cubeScene>
+    )
+    {
+        double3 xformOp:translate = (0, 3, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def "source"
+        {
+            color3f[] primvars:displayColor = [(0, 0.8, 0)]
+        }
+    }
+}

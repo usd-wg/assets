@@ -1,0 +1,15 @@
+#usda 1.0
+(
+    defaultPrim = "Cone"
+    customLayerData = {
+        string copyright = '''Copyright 2022 Apple Inc. All rights reserved.'''
+    }
+)
+
+def Cone "Cone"
+{
+    double height = 2.0
+    double radius = 1.0
+    uniform token axis = "Z"
+    float3[] extent = [(-1.0, -1.0, -1.0), (1.0, 1.0, 1.0)]
+}

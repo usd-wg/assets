@@ -1,0 +1,11 @@
+#usda 1.0
+(
+    defaultPrim = "invalidDefaultPrim"
+    customLayerData = {
+        string copyright = '''Copyright 2022 Apple Inc. All rights reserved.'''
+    }
+)
+
+def Cube "Cube"
+{
+}
