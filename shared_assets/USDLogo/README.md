@@ -6,7 +6,7 @@
 
 ## Description
 
-A 3D version of the standard USD logo, created on contract by [Nika Somkhishvili](https://www.fiverr.com/nikasomkhishvil).
+A 3D version of the standard USD logo, created on contract by Nika Somkhishvili.
 
 ## License
 
