@@ -12,9 +12,10 @@ USD specifies five types of interpolation for primvars in the documentation on [
 
 These follow [Renderman conventions](https://renderman.pixar.com/resources/RenderMan_20/appnote.22.html#Class%20Specifiers) for primitive variables.
 
-This example asset demonstrates each primvar interpolation type. The example was inspired by / plagiarized from a [usd-interest post by Jeremy Cowles](https://groups.google.com/g/usd-interest/c/MqYLLkp-rYA). 
+This example asset demonstrates each primvar interpolation type on Mesh prims. The example was inspired by / plagiarized from a [usd-interest post by Jeremy Cowles](https://groups.google.com/g/usd-interest/c/MqYLLkp-rYA). 
+These interpolation types have different meanings and behaviors on other types of geometry prims (BasisCurve, etc) - a useful further contribution to this asset would be examples and documentation of primvar interpolation with other prim types.
 
-# Mesh construction
+## Mesh construction
 
 It will be helpful to review how mesh geometry is defined in USD. For this example, we define a mesh with two faces:
 
@@ -55,13 +56,13 @@ int[] faceVertexIndices = [3, 2, 1, 0, 5, 4, 2, 3]
 
 ![faces defined from faceVertexIndices](images/faces_defined.png)
 
-# Primvar interpolation with Mesh prims
+## Primvar interpolation with Mesh prims
 
 For these examples, we'll use the displayColor primvar, because Storm and most other render delegates can display it natively.
 
 The example file [primvar_interpolation.usda](primvar_interpolation.usda) was used to generated the screenshot in the overview of this document, and contains all of the examples discussed below.
 
-## constant
+### Constant
 
 ![constant interpolation](images/constant.png)
 
@@ -80,9 +81,9 @@ color3f[] primvars:displayColor = [(1, 0.3, 0.3)] (
 
 **Notes**
 
-With constant interpolation, a single value is specified for the entire prim. It is important to note, this is still specified as an array, even though it will only have a single entry.
+With constant interpolation, a single value is specified for the entire prim. It is important to note, this is still specified as an array, even though it will only have a single entry. For a color3f (which is a tuple of three values) primvar like displayColor, a constant primvar is an array of a single tuple, as in the example above.
 
-## uniform
+### Uniform
 
 ![uniform interpolation](images/uniform.png)
 
@@ -97,7 +98,7 @@ color3f[] primvars:displayColor = [(1, 0.3, 0.3), (0.3, 0.3, 1)] (
 
 **Size of primvar array**
 
-number of faces on the mesh, which is the same as the length of **faceVertexCounts** array
+The number of faces on the mesh, which is the same as the length of **faceVertexCounts** array.
 
 **Notes**
 
@@ -115,7 +116,7 @@ color3f[] primvars:displayColor = [(1, 0.3, 0.3), (0.3, 0.3, 1)] (
 #)
 ```
 
-## varying
+### Varying
 
 ![varying interpolation](images/varying.png)
 
@@ -130,11 +131,11 @@ color3f[] primvars:displayColor = [(1, 0, 0), (1, 1, 0), (1, 1, 1), (0, 1, 0), (
 
 **Size of primvar array**
 
-number of vertices on the mesh, which is the same as the length of **points** array
+The number of vertices on the mesh, which is the same as the length of **points** array.
 
 **Notes**
 
-With varying interpolation, one value is specified for each vertex of the mesh. The order of the array matches the order of the **points** array:
+With varying interpolation, one value is specified for each vertex of the mesh - in game engines, this is generally known as "vertex colors". The order of the array matches the order of the **points** array:
 
 ```
 point3f[] points = [(-1, 0, 0), (-1, 1, 0), (0, 1, 0), (0, 0, 0), (1, 1, 0), (1, 0, 0)]
@@ -148,7 +149,7 @@ color3f[] primvars:displayColor = [(1, 0, 0), (1, 1, 0), (1, 1, 1), (0, 1, 0), (
 #)
 ```
 
-## vertex
+### Vertex
 
 ![vertex interpolation](images/vertex.png)
 
@@ -163,7 +164,7 @@ color3f[] primvars:displayColor = [(1, 0, 0), (1, 1, 0), (1, 1, 1), (0, 1, 0), (
 
 **Size of primvar array**
 
-number of vertices on the mesh, which is the same as the length of **points** array
+The number of vertices on the mesh, which is the same as the length of **points** array.
 
 **Notes**
 
@@ -181,11 +182,11 @@ color3f[] primvars:displayColor = [(1, 0, 0), (1, 1, 0), (1, 1, 1), (0, 1, 0), (
 #)
 ```
 
-You probably noticed that **varying** and **vertex** interpolation are quite similar. The differences between them are subtle, and relate to how they interact with subdivision on the mesh. You can see some differences in the example below, where the Mesh prims have a duplicate to their side that sets `token interpolateBoundary = "edgeOnly"`, which causes the corners of the mesh to be rounded when subdivision is applied. **varying** is on top, **vertex** is on the bottom. Note the stronger colors in the "corners" of the rounded mesh with **varying** interpolation.
+You probably noticed that **varying** and **vertex** interpolation are quite similar. The differences between them are subtle, and relate to how they interact with subdivision on the mesh. You can see some differences in the example below, where the Mesh prims have a duplicate to their side that sets `token interpolateBoundary = "edgeOnly"`, which causes the corners of the mesh to be rounded when subdivision is applied. **varying** is on top, **vertex** is on the bottom. Note the stronger colors in the "corners" of the rounded mesh with **varying** interpolation. Tools that export polygonal mesh data that is explicitly not intended to be subdivided should use **varying** interpolation in addition to setting the mesh subdivision scheme to **none** - this will ensure that the mesh renders correctly for downstream consumers that _do_ support subdivision.
 
 ![varying vs vertex interpolation](images/varying_vs_vertex.png)
 
-## faceVarying
+### Face-varying
 
 ![faceVarying interpolation](images/faceVarying.png)
 
@@ -200,11 +201,11 @@ color3f[] primvars:displayColor = [(0, 1, 0), (0, 0, 1), (1, 1, 0), (1, 0, 0), (
 
 **Size of primvar array**
 
-the sum of number of vertices on each face of the mesh, which is the same as the length of **faceVertexIndices** array
+The sum of number of vertices on each face of the mesh, which is the same as the length of **faceVertexIndices** array.
 
 **Notes**
 
-With faceVertex interpolation, one value is specified for each vertex of of each face. The order of the primvar array matches the order of the **faceVertexIndices** array:
+With faceVarying interpolation, one value is specified for each vertex of each face. The order of the primvar array matches the order of the **faceVertexIndices** array:
 
 ```
 int[] faceVertexIndices = [3, 2, 1, 0, 5, 4, 2, 3]
