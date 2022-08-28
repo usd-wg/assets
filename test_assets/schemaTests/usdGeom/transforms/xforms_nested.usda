@@ -1,0 +1,35 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    customLayerData = {
+        string copyright = '''Copyright 2022 Apple Inc. All rights reserved.'''
+    }
+)
+
+def Scope "World"
+{
+    over "axis" (references = [@../../../_common/axis.usda@]){}
+
+    def Xform "A"
+    {
+        double3 xformOp:translate = (1, 2, 3)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Xform "B"
+        {
+            double3 xformOp:translate = (0.1, 0.2, 0.3)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+
+            def Xform "C"
+            {
+                double3 xformOp:translate = (0.01, 0.02, 0.03)
+                uniform token[] xformOpOrder = ["xformOp:translate"]
+
+                def Cube "Cube"
+                {
+                }
+            }
+        }
+    }
+}
+

@@ -8,7 +8,7 @@
 
 def Scope "World"
 {
-    over "axis" (references = [@../../../../_common/axis.usda@]){}
+    over "axis" (references = [@../../../_common/axis.usda@]){}
 
     def Xform "A"
     {
