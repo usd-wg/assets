@@ -1,0 +1,28 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    customLayerData = {
+        string copyright = '''Copyright 2022 Apple Inc. All rights reserved.'''
+    }
+)
+
+def Scope "World"
+{
+    def Cube "CubeInactive" (
+        active=false
+    )
+    {
+        color3f[] primvars:displayColor = [(0.8, 0, 0)]
+    }
+
+    def Cube "CubeActive" (
+        active=true
+    )
+    {
+        color3f[] primvars:displayColor = [(0, 0.8, 0)]
+
+        double3 xformOp:translate = (3, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+    }
+}
+

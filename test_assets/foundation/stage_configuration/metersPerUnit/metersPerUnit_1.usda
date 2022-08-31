@@ -1,0 +1,15 @@
+#usda 1.0
+(
+    metersPerUnit = 1
+    subLayers = [
+        @../../../_common/axis.usda@
+    ]
+
+    customLayerData = {
+        string copyright = '''Copyright 2022 Apple Inc. All rights reserved.'''
+    }
+)
+
+def Cube "cube_1" {
+
+}

@@ -1,0 +1,19 @@
+#usda 1.0
+(
+    customLayerData = {
+        string copyright = '''Copyright 2022 Apple Inc. All rights reserved.'''
+    }
+)
+
+def "World"
+{
+    def "invalid_payload" (
+        payload = [@file_does_not_exist.usda@]
+    )
+    {
+    }
+
+    def Cube "cube"
+    {
+    }
+}

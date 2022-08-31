@@ -1,0 +1,32 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    customLayerData = {
+        string copyright = '''Copyright 2022 Apple Inc. All rights reserved.'''
+    }
+)
+
+def Scope "World" {
+
+    def Cube "Cube"
+    {
+    }
+
+    def "Cube_with_reference" (
+        references = </World/cube>
+    )
+    {
+        color3f[] primvars:displayColor = [(0.8, 0, 0)]
+        double3 xformOp:translate = (3, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+    }
+
+    def "Cube_with_invalid_reference" (
+        references = </World/cube_does_not_exist>
+    )
+    {
+        color3f[] primvars:displayColor = [(0.8, 0, 0)]
+        double3 xformOp:translate = (6, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+    }
+}

@@ -1,0 +1,11 @@
+#usda 1.0
+(
+    defaultPrim = "mesh"
+    customLayerData = {
+        string copyright = '''Copyright 2022 Apple Inc. All rights reserved.'''
+    }
+)
+
+def Mesh "mesh"
+{
+}
