@@ -6,13 +6,12 @@ To enable materialx, build USD with `--materialx` option
 
 ```python build_scripts\build_usd.py  --materialx ```
 
-### USD files
-Simple USD files with MaterialX based on ASWF Open Source 2021 talk
-https://materialx.org/assets/ASWF_OSD2021_MaterialX_slides_final.pdf
+### Sample USD files
+For details on how to use MaterialX in USD see ASWF Open Source 2021 [talk](https://materialx.org/assets/ASWF_OSD2021_MaterialX_slides_final.pdf).
 
-MaterialX files referenced are from ASWF MaterialX repository.
+The MaterialX files referenced in these samples are from ASWF MaterialX [repository](https://github.com/AcademySoftwareFoundation/MaterialX/tree/main/resources/Materials/Examples). 
 
-Example 1: Basic
+**Example 1: Basic**
 - basic.usda - Sphere referring a MaterialX usd_preview_surface_plastic.mtlx  
 
 usd_preview_surface_plastic.mtlx defines a material called `USD_Plastic` using the `UsdPreviewSurface` MaterialX node.
@@ -24,7 +23,7 @@ Flattening can be performed by using `usdcat`
 usdcat --flatten basic.usda -o basic_flatten.usda
 ```
 
-Example 2: BasicTextured with variants
+**Example 2: BasicTextured with variants**
 - basicTextured.usda - Teapot referring two MaterialX files
     1. usd_preview_surface_plastic.mtlx defines a material called `USD_Plastic` using the `UsdPreviewSurface` MaterialX node.
     2. standard_surface_brass_tiled.mtlx defines a material called `Tiled_Brass` using the `standard_surface` MaterialX node. This MaterialX file also uses a texture for `coat_color` and `coat_rougness` 
