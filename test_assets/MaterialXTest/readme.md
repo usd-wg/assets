@@ -31,7 +31,7 @@ Example 2: BasicTextured with variants
 
 - basicTextured_flatten.usda - flattened version of basicTextured.usda 
 
- Both of these materials are accessible as `materialvarients`. To switch between variants in USDView, open the Interpreter and run the following commands:
+ Both of these materials are accessible as `materialvariants`. To switch between variants in USDView, open the Interpreter and run the following commands:
  ``` 
       sbPrim = usdviewApi.stage.GetPrimAtPath("/Teapot")
       vs = sbPrim.GetVariantSet("materialvariants")
