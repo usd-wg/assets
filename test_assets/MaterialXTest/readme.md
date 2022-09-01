@@ -22,6 +22,7 @@ Flattening can be performed by using `usdcat`
 ``` 
 usdcat --flatten basic.usda -o basic_flatten.usda
 ```
+![screenshot](screenshots/basic.png)  
 
 **Example 2: BasicTextured with variants**
 - basicTextured.usda - Teapot referring two MaterialX files
@@ -36,6 +37,9 @@ usdcat --flatten basic.usda -o basic_flatten.usda
       vs.SetVariantSelection("BrassTiled")
 ```       
 - basicTextured_flatten.usda - flattened version of basicTextured.usda 
+
+![screenshot](screenshots/basicTextured_brasstiled.png)  
+![screenshot](screenshots/basicTextured_plastic.png)  
 
  *Known limitations and MaterialX notes*: 
  - variants are lost when Usd is flattened 
