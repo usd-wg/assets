@@ -12,7 +12,7 @@ def Scope "MaterialX" (
 {}
 
 over "Teapot"(
-    references = @teapot.usda@
+    references = @../_common/teapot.usda@
     variants = {
         string materialvariants = "BrassTiled"
     }

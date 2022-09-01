@@ -1,8 +1,7 @@
 #usda 1.0
 (
     defaultPrim = "sphere"
-    doc = """Generated from Composed Stage of root layer f:\\source\\usd-wg-assets\\test_assets\\MaterialXTest\\basic.usda
-"""
+    doc = """Generated from Composed Stage of root layer basic.usda"""
 )
 
 def Scope "MaterialX"

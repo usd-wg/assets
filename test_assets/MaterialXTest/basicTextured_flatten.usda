@@ -1,7 +1,6 @@
 #usda 1.0
 (
-    doc = """Generated from Composed Stage of root layer f:\\source\\usd-wg-assets\\test_assets\\MaterialXTest\\basicTextured.usda
-"""
+    doc = """Generated from Composed Stage of root layer basicTextured.usda"""
     upAxis = "Y"
 )
 

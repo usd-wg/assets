@@ -1,7 +1,10 @@
 #usda 1.0
 (
     defaultPrim = "teapot_Mesh"
-    upAxis = "Y"
+    customLayerData = {
+        string source = '''Converted to usd from teapot.obj in ASWF MaterialX'''
+    }    
+upAxis = "Y"
 )
 
 def Xform "teapot_Mesh" (
