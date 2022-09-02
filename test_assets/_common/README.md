@@ -17,3 +17,9 @@ _usdrecord 22.08_
 ## Error Image
 
 ![error](error.png)
+
+## Teapot
+The teapot model is TM & (c) 2017 Lucasfilm Entertainment Company Ltd. and Lucasfilm Ltd.
+All rights reserved, and covered by the Apache 2.0 license.
+
+![screenshot](screenshots/teapot.png)

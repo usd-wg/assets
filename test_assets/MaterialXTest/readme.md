@@ -6,10 +6,11 @@ To enable materialx, build USD with `--materialx` option
 
 ```python build_scripts\build_usd.py  --materialx ```
 
-### Sample USD files
-For details on how to use MaterialX in USD see ASWF Open Source 2021 [talk](https://materialx.org/assets/ASWF_OSD2021_MaterialX_slides_final.pdf).
+## Sample USD and MaterialX files
 
-The MaterialX files and teapot model referenced in these samples are from ASWF MaterialX [repository](https://github.com/AcademySoftwareFoundation/MaterialX/tree/main/resources/Materials/Examples). 
+The MaterialX files are TM & (c) 2017 Lucasfilm Entertainment Company Ltd. and Lucasfilm Ltd.
+
+All rights reserved, and covered by the Apache 2.0 license.
 
 **Example 1: Basic**
 - basic.usda - Sphere referring a MaterialX usd_preview_surface_plastic.mtlx  
@@ -45,3 +46,6 @@ usdcat --flatten basic.usda -o basic_flatten.usda
  - variants are lost when Usd is flattened 
  - Since the `fileprefix="./textures/"` is ignored by usdMtlx, our mtlx duplicates the fileprefix in the value input `value="./textures/`
 
+### References
+- MaterialX in USD:  ASWF Open Source 2021 [slides](https://materialx.org/assets/ASWF_OSD2021_MaterialX_slides_final.pdf).
+- MaterialX examples: [MaterialX ASWF repository](https://github.com/AcademySoftwareFoundation/MaterialX/tree/main/resources/Materials/Examples).
