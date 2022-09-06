@@ -1,0 +1,65 @@
+#usda 1.0
+(
+    defaultPrim = "sphere"
+    doc = """Generated from Composed Stage of root layer basic.usda"""
+)
+
+def Scope "MaterialX"
+{
+    def "Materials"
+    {
+        def Material "USD_Plastic"
+        {
+            float inputs:clearcoat
+            float inputs:clearcoatRoughness
+            color3f inputs:diffuseColor = (0.10470402, 0.24188282, 0.818)
+            float inputs:displacement
+            color3f inputs:emissiveColor
+            float inputs:ior = 1.5
+            float inputs:metallic
+            float3 inputs:normal
+            float inputs:occlusion
+            float inputs:opacity
+            float inputs:opacityThreshold
+            float inputs:roughness = 0.32467532
+            color3f inputs:specularColor
+            int inputs:useSpecularWorkflow
+            token outputs:mtlx:surface.connect = </MaterialX/Materials/USD_Plastic/ND_UsdPreviewSurface_surfaceshader.outputs:surface>
+
+            def Shader "ND_UsdPreviewSurface_surfaceshader"
+            {
+                uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
+                float inputs:clearcoat.connect = </MaterialX/Materials/USD_Plastic.inputs:clearcoat>
+                float inputs:clearcoatRoughness.connect = </MaterialX/Materials/USD_Plastic.inputs:clearcoatRoughness>
+                color3f inputs:diffuseColor.connect = </MaterialX/Materials/USD_Plastic.inputs:diffuseColor>
+                float inputs:displacement.connect = </MaterialX/Materials/USD_Plastic.inputs:displacement>
+                color3f inputs:emissiveColor.connect = </MaterialX/Materials/USD_Plastic.inputs:emissiveColor>
+                float inputs:ior.connect = </MaterialX/Materials/USD_Plastic.inputs:ior>
+                float inputs:metallic.connect = </MaterialX/Materials/USD_Plastic.inputs:metallic>
+                float3 inputs:normal.connect = </MaterialX/Materials/USD_Plastic.inputs:normal>
+                float inputs:occlusion.connect = </MaterialX/Materials/USD_Plastic.inputs:occlusion>
+                float inputs:opacity.connect = </MaterialX/Materials/USD_Plastic.inputs:opacity>
+                float inputs:opacityThreshold.connect = </MaterialX/Materials/USD_Plastic.inputs:opacityThreshold>
+                float inputs:roughness.connect = </MaterialX/Materials/USD_Plastic.inputs:roughness>
+                color3f inputs:specularColor.connect = </MaterialX/Materials/USD_Plastic.inputs:specularColor>
+                int inputs:useSpecularWorkflow.connect = </MaterialX/Materials/USD_Plastic.inputs:useSpecularWorkflow>
+                token outputs:surface
+            }
+        }
+    }
+
+    def "Shaders"
+    {
+        def Shader "ND_UsdPreviewSurface_surfaceshader"
+        {
+            uniform token info:id = "ND_UsdPreviewSurface_surfaceshader"
+            token outputs:surface
+        }
+    }
+}
+
+def Sphere "sphere"
+{
+    rel material:binding = </MaterialX/Materials/USD_Plastic>
+}
+

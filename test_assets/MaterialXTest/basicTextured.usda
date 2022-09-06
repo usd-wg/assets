@@ -1,0 +1,40 @@
+#usda 1.0
+(
+    upAxis = "Y"
+)
+
+def Scope "MaterialX" (
+    references = [
+        @./standard_surface_brass_tiled.mtlx@</MaterialX>,
+        @./usd_preview_surface_plastic.mtlx@</MaterialX>,
+    ]
+)
+{}
+
+over "Teapot"(
+    references = @../_common/teapot.usda@
+    variants = {
+        string materialvariants = "BrassTiled"
+    }
+    prepend variantSets = "materialvariants"
+)
+{
+    variantSet "materialvariants" = {
+        "Plastic" {
+            over "teapot_MeshShape"
+            {
+              rel material:binding = </MaterialX/Materials/USD_Plastic>
+
+            }
+        }
+        "BrassTiled" {
+            over "teapot_MeshShape"
+            {
+                rel material:binding = </MaterialX/Materials/Tiled_Brass>
+            }
+        }
+    }
+}
+
+
+
