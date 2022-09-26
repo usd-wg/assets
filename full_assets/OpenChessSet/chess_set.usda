@@ -1,0 +1,299 @@
+#usda 1.0
+(
+    defaultPrim = "Geom"
+    doc = "The Open Chess Set. Authored by Moeen Sayed and Mujtaba Sayed, and contributed to the MaterialX project by SideFX. glTF/MaterialX conversion by Chris Rydalch and Jonathan Stone, USD refinements by Pablo Delgado. Licensed under CC BY 4.0 by the Academy Software Foundation."
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Scope "Geom"
+{
+    def Xform "Chessboard" (
+        add references = @./geom/Chessboard.usd@
+    )
+    {
+        over Mesh "Geom"
+        {
+            rel material:binding = </Materials/MaterialX/Materials/M_Chessboard>
+        }
+    }
+
+    def Xform "King_B" (
+        add references = @./geom/King.usd@
+    )
+    {
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (-0.03142297640442848, 0.011370822787284851, 0.22009073942899704, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        over Mesh "Geom"
+        {
+            rel material:binding = </Materials/MaterialX/Materials/M_King_B>
+        }
+    }
+
+    def Xform "King_W" (
+        add references = @./geom/King.usd@
+    )
+    {
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (-0.03176186978816986, 0.011370822787284851, -0.22027580067515373, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        over Mesh "Geom"
+        {
+            rel material:binding = </Materials/MaterialX/Materials/M_King_W>
+        }
+    }
+
+    def Xform "Queen_B" (
+        add references = @./geom/Queen.usd@
+    )
+    {
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.030731208622455597, -0.0013603270053863525, 0.21983971074223518, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        over Mesh "Geom"
+        {
+            rel material:binding = </Materials/MaterialX/Materials/M_Queen_B>
+        }
+    }
+
+    def Xform "Queen_W" (
+        add references = @./geom/Queen.usd@
+    )
+    {
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.03090556710958481, -0.002121470868587494, -0.22027580067515373, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        over Mesh "Geom"
+        {
+            rel material:binding = </Materials/MaterialX/Materials/M_Queen_W>
+        }
+    }
+
+    def Xform "Bishop_B1" (
+        add references = @./geom/Bishop.usd@
+    )
+    {
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.08881419152021408, -0.002121470868587494, 0.21955514326691628, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        over Mesh "Geom"
+        {
+            rel material:binding = </Materials/MaterialX/Materials/M_Bishop_B>
+        }
+    }
+
+    def Xform "Bishop_B2" (
+        add references = @./geom/Bishop.usd@
+    )
+    {
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (-0.09403244778513908, -0.002121470868587494, 0.21909864619374275, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        over Mesh "Geom"
+        {
+            rel material:binding = </Materials/MaterialX/Materials/M_Bishop_B>
+        }
+    }
+
+    def Xform "Bishop_W1" (
+        add references = @./geom/Bishop.usd@
+    )
+    {
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.08881419152021408, -0.002121470868587494, -0.2162434421479702, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        over Mesh "Geom"
+        {
+            rel material:binding = </Materials/MaterialX/Materials/M_Bishop_W>
+        }
+    }
+
+    def Xform "Bishop_W2" (
+        add references = @./geom/Bishop.usd@
+    )
+    {
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (-0.09403244778513908, -0.002121470868587494, -0.22091883048415184, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        over Mesh "Geom"
+        {
+            rel material:binding = </Materials/MaterialX/Materials/M_Bishop_W>
+        }
+    }
+
+    def Xform "Knight_B1" (
+        add references = @./geom/Knight.usd@
+    )
+    {
+        matrix4d xformOp:transform = ( (0, 0, -1, 0), (0, 1, 0, 0), (1, 0, 0, 0), (-0.15675804391503334, -0.002121470868587494, 0.22001085057854652, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        over Mesh "Geom"
+        {
+            rel material:binding = </Materials/MaterialX/Materials/M_Knight_B>
+        }
+    }
+
+    def Xform "Knight_B2" (
+        add references = @./geom/Knight.usd@
+    )
+    {
+        matrix4d xformOp:transform = ( (0, 0, -1, 0), (0, 1, 0, 0), (1, 0, 0, 0), (0.1582154892385006, -0.002121470868587494, 0.22001085057854652, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        over Mesh "Geom"
+        {
+            rel material:binding = </Materials/MaterialX/Materials/M_Knight_B>
+        }
+    }
+
+    def Xform "Knight_W1" (
+        add references = @./geom/Knight.usd@
+    )
+    {
+        matrix4d xformOp:transform = ( (0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (-0.15675804391503334, -0.002121470868587494, -0.22086912021040916, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        over Mesh "Geom"
+        {
+            rel material:binding = </Materials/MaterialX/Materials/M_Knight_W>
+        }
+    }
+
+    def Xform "Knight_W2" (
+        add references = @./geom/Knight.usd@
+    )
+    {
+        matrix4d xformOp:transform = ( (0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (0.1582154892385006, -0.002121470868587494, -0.22008488699793816, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        over Mesh "Geom"
+        {
+            rel material:binding = </Materials/MaterialX/Materials/M_Knight_W>
+        }
+    }
+
+    def Xform "Rook_B1" (
+        add references = @./geom/Rook.usd@
+    )
+    {
+        matrix4d xformOp:transform = ( (0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (0.21962326392531395, 0.015547847375273705, 0.21959586814045906, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        over Mesh "Geom"
+        {
+            rel material:binding = </Materials/MaterialX/Materials/M_Rook_B>
+        }
+    }
+
+    def Xform "Rook_B2" (
+        add references = @./geom/Rook.usd@
+    )
+    {
+        matrix4d xformOp:transform = ( (0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (-0.21881157532334328, 0.017180902883410454, 0.21959251537919044, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        over Mesh "Geom"
+        {
+            rel material:binding = </Materials/MaterialX/Materials/M_Rook_B>
+        }
+    }
+
+    def Xform "Rook_W1" (
+        add references = @./geom/Rook.usd@
+    )
+    {
+        matrix4d xformOp:transform = ( (0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (0.21962326392531395, 0.015547847375273705, -0.21979309245944023, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        over Mesh "Geom"
+        {
+            rel material:binding = </Materials/MaterialX/Materials/M_Rook_W>
+        }
+    }
+
+    def Xform "Rook_W2" (
+        add references = @./geom/Rook.usd@
+    )
+    {
+        matrix4d xformOp:transform = ( (0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (-0.21881157532334328, 0.017180902883410454, -0.2199491523206234, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        over Mesh "Geom"
+        {
+            rel material:binding = </Materials/MaterialX/Materials/M_Rook_W>
+        }
+    }
+
+    def PointInstancer "Pawns_B"
+    {
+        quath[] orientations = [(1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0)]
+        point3f[] positions = [(-0.03125, 0, 0.09375), (-0.21875, 0, 0.15625), (-0.15625, 0, 0.15625), (-0.09375, 0, 0.15625), (0.03125, 0, 0.15625), (0.09375, 0, 0.15625), (0.15625, 0, 0.15625), (0.21875, 0, 0.15625)]
+        int[] protoIndices = [0, 0, 0, 0, 0, 0, 0, 0]
+        rel prototypes = </Geom/Pawns_B/Pawn_B>
+
+        def Xform "Pawn_B"
+        {
+            def Xform "Pawn_Top_B" (
+                add references = @./geom/Pawn_Top.usd@
+            )
+            {
+                over Mesh "Geom"
+                {
+                    rel material:binding = </Materials/MaterialX/Materials/M_Pawn_Top_B>
+                }
+            }
+
+            def Xform "Pawn_Body_B" (
+                add references = @./geom/Pawn_Body.usd@
+            )
+            {
+                over Mesh "Geom"
+                {
+                    rel material:binding = </Materials/MaterialX/Materials/M_Pawn_Body_B>
+                }
+            }
+        }
+    }
+
+    def PointInstancer "Pawns_W"
+    {
+        quath[] orientations = [(1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0)]
+        point3f[] positions = [(-0.21875, 0, -0.15625), (-0.15625, 0, -0.15625), (-0.09375, 0, -0.15625), (-0.03125, 0, -0.15625), (0.15625, 0, -0.15625), (0.21875, 0, -0.15625), (0.09375, 0, -0.09375), (0.03125, 0, -0.03125)]
+        int[] protoIndices = [0, 0, 0, 0, 0, 0, 0, 0]
+        rel prototypes = </Geom/Pawns_W/Pawn_W>
+
+        def Xform "Pawn_W"
+        {
+            def Xform "Pawn_Top_W" (
+                add references = @./geom/Pawn_Top.usd@
+            )
+            {
+                over Mesh "Geom"
+                {
+                    rel material:binding = </Materials/MaterialX/Materials/M_Pawn_Top_W>
+                }
+            }
+
+            def Xform "Pawn_Body_W" (
+                add references = @./geom/Pawn_Body.usd@
+            )
+            {
+                over Mesh "Geom"
+                {
+                    rel material:binding = </Materials/MaterialX/Materials/M_Pawn_Body_W>
+                }
+            }
+        }
+    }
+}
+
+def Scope "Materials"
+{
+    over "MaterialX" (
+        prepend references = @chess_set.mtlx@</MaterialX>
+    )
+    {
+    }
+}
