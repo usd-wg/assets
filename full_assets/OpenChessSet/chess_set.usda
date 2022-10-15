@@ -6,7 +6,7 @@
     upAxis = "Y"
 )
 
-def Scope "Geom"
+def Xform "Geom"
 {
     def Xform "Chessboard" (
         add references = @./geom/Chessboard.usd@
