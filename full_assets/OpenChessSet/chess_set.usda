@@ -6,7 +6,9 @@
     upAxis = "Y"
 )
 
-def Xform "ChessSet"
+def Xform "ChessSet" (
+    kind = "assembly"
+)
 {
     def Xform "Chessboard" (
         add references = @./geom/Chessboard.usd@
@@ -20,7 +22,9 @@ def Xform "ChessSet"
         }
     }
 
-    def Xform "Black"
+    def Xform "Black" (
+        kind = "group"
+    )
     {
         double3 xformOp:translate = (0, 0, 0.188125)
         uniform token[] xformOpOrder = ["xformOp:translate"]
@@ -181,7 +185,9 @@ def Xform "ChessSet"
         }
     }
 
-    def Xform "White"
+    def Xform "White" (
+        kind = "group"
+    )
     {
         double3 xformOp:translate = (0, 0, -0.188125)
         uniform token[] xformOpOrder = ["xformOp:translate"]
