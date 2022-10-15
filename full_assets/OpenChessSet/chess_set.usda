@@ -93,7 +93,7 @@ def Xform "ChessSet" (
             add references = @./geom/Knight.usd@
         )
         {
-            double3 xformOp:translate = (0.1582154892385006, -0.002121470868587494, 0.03188585057)
+            double3 xformOp:translate = (-0.15675804391503334, -0.002121470868587494, 0.03188585057)
             uniform token[] xformOpOrder = ["xformOp:translate"]
 
             over Mesh "Geom" (
@@ -108,7 +108,7 @@ def Xform "ChessSet" (
             add references = @./geom/Knight.usd@
         )
         {
-            double3 xformOp:translate = (-0.15675804391503334, -0.002121470868587494, 0.03188585057)
+            double3 xformOp:translate = (0.1582154892385006, -0.002121470868587494, 0.03188585057)
             uniform token[] xformOpOrder = ["xformOp:translate"]
 
             over Mesh "Geom" (
@@ -256,7 +256,7 @@ def Xform "ChessSet" (
             add references = @./geom/Knight.usd@
         )
         {
-            double3 xformOp:translate = (-0.15675804391503334, -0.002121470868587494, -0.03274412021)
+            double3 xformOp:translate = (0.1582154892385006, -0.002121470868587494, -0.03195988699)
             uniform token[] xformOpOrder = ["xformOp:translate"]
 
             over Mesh "Geom" (
@@ -271,7 +271,7 @@ def Xform "ChessSet" (
             add references = @./geom/Knight.usd@
         )
         {
-            double3 xformOp:translate = (0.1582154892385006, -0.002121470868587494, -0.03195988699)
+            double3 xformOp:translate = (-0.15675804391503334, -0.002121470868587494, -0.03274412021)
             uniform token[] xformOpOrder = ["xformOp:translate"]
 
             over Mesh "Geom" (
