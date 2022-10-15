@@ -1,12 +1,12 @@
 #usda 1.0
 (
-    defaultPrim = "Geom"
+    defaultPrim = "ChessSet"
     doc = "The Open Chess Set. Authored by Moeen Sayed and Mujtaba Sayed, and contributed to the MaterialX project by SideFX. glTF/MaterialX conversion by Chris Rydalch and Jonathan Stone, USD refinements by Pablo Delgado. Licensed under CC BY 4.0 by the Academy Software Foundation."
     metersPerUnit = 1
     upAxis = "Y"
 )
 
-def Xform "Geom"
+def Xform "ChessSet"
 {
     def Xform "Chessboard" (
         add references = @./geom/Chessboard.usd@
@@ -231,7 +231,7 @@ def Xform "Geom"
         quath[] orientations = [(1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0)]
         point3f[] positions = [(-0.03125, 0, 0.09375), (-0.21875, 0, 0.15625), (-0.15625, 0, 0.15625), (-0.09375, 0, 0.15625), (0.03125, 0, 0.15625), (0.09375, 0, 0.15625), (0.15625, 0, 0.15625), (0.21875, 0, 0.15625)]
         int[] protoIndices = [0, 0, 0, 0, 0, 0, 0, 0]
-        rel prototypes = </Geom/Pawns_B/Pawn_B>
+        rel prototypes = </ChessSet/Pawns_B/Pawn_B>
 
         def Xform "Pawn_B"
         {
@@ -262,7 +262,7 @@ def Xform "Geom"
         quath[] orientations = [(1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0)]
         point3f[] positions = [(-0.21875, 0, -0.15625), (-0.15625, 0, -0.15625), (-0.09375, 0, -0.15625), (-0.03125, 0, -0.15625), (0.15625, 0, -0.15625), (0.21875, 0, -0.15625), (0.09375, 0, -0.09375), (0.03125, 0, -0.03125)]
         int[] protoIndices = [0, 0, 0, 0, 0, 0, 0, 0]
-        rel prototypes = </Geom/Pawns_W/Pawn_W>
+        rel prototypes = </ChessSet/Pawns_W/Pawn_W>
 
         def Xform "Pawn_W"
         {
