@@ -12,7 +12,9 @@ def Xform "ChessSet"
         add references = @./geom/Chessboard.usd@
     )
     {
-        over Mesh "Geom"
+        over Mesh "Geom" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
         {
             rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Chessboard>
         }
@@ -30,7 +32,9 @@ def Xform "ChessSet"
             double3 xformOp:translate = (-0.03142297640442848, 0.011370822787284851, 0.03196573942)
             uniform token[] xformOpOrder = ["xformOp:translate"]
 
-            over Mesh "Geom"
+            over Mesh "Geom" (
+                apiSchemas = ["MaterialBindingAPI"]
+            )
             {
                 rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_King_B>
             }
@@ -43,7 +47,9 @@ def Xform "ChessSet"
             double3 xformOp:translate = (0.030731208622455597, -0.0013603270053863525, 0.03171471074)
             uniform token[] xformOpOrder = ["xformOp:translate"]
 
-            over Mesh "Geom"
+            over Mesh "Geom" (
+                apiSchemas = ["MaterialBindingAPI"]
+            )
             {
                 rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Queen_B>
             }
@@ -56,7 +62,9 @@ def Xform "ChessSet"
             double3 xformOp:translate = (-0.09403244778513908, -0.002121470868587494, 0.03097364619)
             uniform token[] xformOpOrder = ["xformOp:translate"]
 
-            over Mesh "Geom"
+            over Mesh "Geom" (
+                apiSchemas = ["MaterialBindingAPI"]
+            )
             {
                 rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Bishop_B>
             }
@@ -69,7 +77,9 @@ def Xform "ChessSet"
             double3 xformOp:translate = (0.08881419152021408, -0.002121470868587494, 0.03143014326)
             uniform token[] xformOpOrder = ["xformOp:translate"]
 
-            over Mesh "Geom"
+            over Mesh "Geom" (
+                apiSchemas = ["MaterialBindingAPI"]
+            )
             {
                 rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Bishop_B>
             }
@@ -82,7 +92,9 @@ def Xform "ChessSet"
             double3 xformOp:translate = (0.1582154892385006, -0.002121470868587494, 0.03188585057)
             uniform token[] xformOpOrder = ["xformOp:translate"]
 
-            over Mesh "Geom"
+            over Mesh "Geom" (
+                apiSchemas = ["MaterialBindingAPI"]
+            )
             {
                 rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Knight_B>
             }
@@ -95,7 +107,9 @@ def Xform "ChessSet"
             double3 xformOp:translate = (-0.15675804391503334, -0.002121470868587494, 0.03188585057)
             uniform token[] xformOpOrder = ["xformOp:translate"]
 
-            over Mesh "Geom"
+            over Mesh "Geom" (
+                apiSchemas = ["MaterialBindingAPI"]
+            )
             {
                 rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Knight_B>
             }
@@ -108,7 +122,9 @@ def Xform "ChessSet"
             double3 xformOp:translate = (-0.21881157532334328, 0.017180902883410454, 0.03146751537)
             uniform token[] xformOpOrder = ["xformOp:translate"]
 
-            over Mesh "Geom"
+            over Mesh "Geom" (
+                apiSchemas = ["MaterialBindingAPI"]
+            )
             {
                 rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Rook_B>
             }
@@ -121,7 +137,9 @@ def Xform "ChessSet"
             double3 xformOp:translate = (0.21962326392531395, 0.015547847375273705, 0.03147086814)
             uniform token[] xformOpOrder = ["xformOp:translate"]
 
-            over Mesh "Geom"
+            over Mesh "Geom" (
+                apiSchemas = ["MaterialBindingAPI"]
+            )
             {
                 rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Rook_B>
             }
@@ -140,7 +158,9 @@ def Xform "ChessSet"
                     add references = @./geom/Pawn_Top.usd@
                 )
                 {
-                    over Mesh "Geom"
+                    over Mesh "Geom" (
+                        apiSchemas = ["MaterialBindingAPI"]
+                    )
                     {
                         rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Pawn_Top_B>
                     }
@@ -150,7 +170,9 @@ def Xform "ChessSet"
                     add references = @./geom/Pawn_Body.usd@
                 )
                 {
-                    over Mesh "Geom"
+                    over Mesh "Geom" (
+                        apiSchemas = ["MaterialBindingAPI"]
+                    )
                     {
                         rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Pawn_Body_B>
                     }
@@ -171,7 +193,9 @@ def Xform "ChessSet"
             double3 xformOp:translate = (-0.03176186978816986, 0.011370822787284851, -0.03215080067)
             uniform token[] xformOpOrder = ["xformOp:translate"]
 
-            over Mesh "Geom"
+            over Mesh "Geom" (
+                apiSchemas = ["MaterialBindingAPI"]
+            )
             {
                 rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_King_W>
             }
@@ -184,7 +208,9 @@ def Xform "ChessSet"
             double3 xformOp:translate = (0.03090556710958481, -0.002121470868587494, -0.03215080067)
             uniform token[] xformOpOrder = ["xformOp:translate"]
 
-            over Mesh "Geom"
+            over Mesh "Geom" (
+                apiSchemas = ["MaterialBindingAPI"]
+            )
             {
                 rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Queen_W>
             }
@@ -197,7 +223,9 @@ def Xform "ChessSet"
             double3 xformOp:translate = (0.08881419152021408, -0.002121470868587494, -0.02811844214)
             uniform token[] xformOpOrder = ["xformOp:translate"]
 
-            over Mesh "Geom"
+            over Mesh "Geom" (
+                apiSchemas = ["MaterialBindingAPI"]
+            )
             {
                 rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Bishop_W>
             }
@@ -210,7 +238,9 @@ def Xform "ChessSet"
             double3 xformOp:translate = (-0.09403244778513908, -0.002121470868587494, -0.03279383048)
             uniform token[] xformOpOrder = ["xformOp:translate"]
 
-            over Mesh "Geom"
+            over Mesh "Geom" (
+                apiSchemas = ["MaterialBindingAPI"]
+            )
             {
                 rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Bishop_W>
             }
@@ -223,7 +253,9 @@ def Xform "ChessSet"
             double3 xformOp:translate = (-0.15675804391503334, -0.002121470868587494, -0.03274412021)
             uniform token[] xformOpOrder = ["xformOp:translate"]
 
-            over Mesh "Geom"
+            over Mesh "Geom" (
+                apiSchemas = ["MaterialBindingAPI"]
+            )
             {
                 rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Knight_W>
             }
@@ -236,7 +268,9 @@ def Xform "ChessSet"
             double3 xformOp:translate = (0.1582154892385006, -0.002121470868587494, -0.03195988699)
             uniform token[] xformOpOrder = ["xformOp:translate"]
 
-            over Mesh "Geom"
+            over Mesh "Geom" (
+                apiSchemas = ["MaterialBindingAPI"]
+            )
             {
                 rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Knight_W>
             }
@@ -249,7 +283,9 @@ def Xform "ChessSet"
             double3 xformOp:translate = (0.21962326392531395, 0.015547847375273705, -0.03166809245)
             uniform token[] xformOpOrder = ["xformOp:translate"]
 
-            over Mesh "Geom"
+            over Mesh "Geom" (
+                apiSchemas = ["MaterialBindingAPI"]
+            )
             {
                 rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Rook_W>
             }
@@ -262,7 +298,9 @@ def Xform "ChessSet"
             double3 xformOp:translate = (-0.21881157532334328, 0.017180902883410454, -0.03182415232)
             uniform token[] xformOpOrder = ["xformOp:translate"]
 
-            over Mesh "Geom"
+            over Mesh "Geom" (
+                apiSchemas = ["MaterialBindingAPI"]
+            )
             {
                 rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Rook_W>
             }
@@ -281,7 +319,9 @@ def Xform "ChessSet"
                     add references = @./geom/Pawn_Top.usd@
                 )
                 {
-                    over Mesh "Geom"
+                    over Mesh "Geom" (
+                        apiSchemas = ["MaterialBindingAPI"]
+                    )
                     {
                         rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Pawn_Top_W>
                     }
@@ -291,7 +331,9 @@ def Xform "ChessSet"
                     add references = @./geom/Pawn_Body.usd@
                 )
                 {
-                    over Mesh "Geom"
+                    over Mesh "Geom" (
+                        apiSchemas = ["MaterialBindingAPI"]
+                    )
                     {
                         rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Pawn_Body_W>
                     }
