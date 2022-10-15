@@ -14,7 +14,7 @@ def Xform "ChessSet"
     {
         over Mesh "Geom"
         {
-            rel material:binding = </Materials/MaterialX/Materials/M_Chessboard>
+            rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Chessboard>
         }
     }
 
@@ -27,7 +27,7 @@ def Xform "ChessSet"
 
         over Mesh "Geom"
         {
-            rel material:binding = </Materials/MaterialX/Materials/M_King_B>
+            rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_King_B>
         }
     }
 
@@ -40,7 +40,7 @@ def Xform "ChessSet"
 
         over Mesh "Geom"
         {
-            rel material:binding = </Materials/MaterialX/Materials/M_King_W>
+            rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_King_W>
         }
     }
 
@@ -53,7 +53,7 @@ def Xform "ChessSet"
 
         over Mesh "Geom"
         {
-            rel material:binding = </Materials/MaterialX/Materials/M_Queen_B>
+            rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Queen_B>
         }
     }
 
@@ -66,7 +66,7 @@ def Xform "ChessSet"
 
         over Mesh "Geom"
         {
-            rel material:binding = </Materials/MaterialX/Materials/M_Queen_W>
+            rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Queen_W>
         }
     }
 
@@ -79,7 +79,7 @@ def Xform "ChessSet"
 
         over Mesh "Geom"
         {
-            rel material:binding = </Materials/MaterialX/Materials/M_Bishop_B>
+            rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Bishop_B>
         }
     }
 
@@ -92,7 +92,7 @@ def Xform "ChessSet"
 
         over Mesh "Geom"
         {
-            rel material:binding = </Materials/MaterialX/Materials/M_Bishop_B>
+            rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Bishop_B>
         }
     }
 
@@ -105,7 +105,7 @@ def Xform "ChessSet"
 
         over Mesh "Geom"
         {
-            rel material:binding = </Materials/MaterialX/Materials/M_Bishop_W>
+            rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Bishop_W>
         }
     }
 
@@ -118,7 +118,7 @@ def Xform "ChessSet"
 
         over Mesh "Geom"
         {
-            rel material:binding = </Materials/MaterialX/Materials/M_Bishop_W>
+            rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Bishop_W>
         }
     }
 
@@ -131,7 +131,7 @@ def Xform "ChessSet"
 
         over Mesh "Geom"
         {
-            rel material:binding = </Materials/MaterialX/Materials/M_Knight_B>
+            rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Knight_B>
         }
     }
 
@@ -144,7 +144,7 @@ def Xform "ChessSet"
 
         over Mesh "Geom"
         {
-            rel material:binding = </Materials/MaterialX/Materials/M_Knight_B>
+            rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Knight_B>
         }
     }
 
@@ -157,7 +157,7 @@ def Xform "ChessSet"
 
         over Mesh "Geom"
         {
-            rel material:binding = </Materials/MaterialX/Materials/M_Knight_W>
+            rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Knight_W>
         }
     }
 
@@ -170,7 +170,7 @@ def Xform "ChessSet"
 
         over Mesh "Geom"
         {
-            rel material:binding = </Materials/MaterialX/Materials/M_Knight_W>
+            rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Knight_W>
         }
     }
 
@@ -183,7 +183,7 @@ def Xform "ChessSet"
 
         over Mesh "Geom"
         {
-            rel material:binding = </Materials/MaterialX/Materials/M_Rook_B>
+            rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Rook_B>
         }
     }
 
@@ -196,7 +196,7 @@ def Xform "ChessSet"
 
         over Mesh "Geom"
         {
-            rel material:binding = </Materials/MaterialX/Materials/M_Rook_B>
+            rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Rook_B>
         }
     }
 
@@ -209,7 +209,7 @@ def Xform "ChessSet"
 
         over Mesh "Geom"
         {
-            rel material:binding = </Materials/MaterialX/Materials/M_Rook_W>
+            rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Rook_W>
         }
     }
 
@@ -222,7 +222,7 @@ def Xform "ChessSet"
 
         over Mesh "Geom"
         {
-            rel material:binding = </Materials/MaterialX/Materials/M_Rook_W>
+            rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Rook_W>
         }
     }
 
@@ -241,7 +241,7 @@ def Xform "ChessSet"
             {
                 over Mesh "Geom"
                 {
-                    rel material:binding = </Materials/MaterialX/Materials/M_Pawn_Top_B>
+                    rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Pawn_Top_B>
                 }
             }
 
@@ -251,7 +251,7 @@ def Xform "ChessSet"
             {
                 over Mesh "Geom"
                 {
-                    rel material:binding = </Materials/MaterialX/Materials/M_Pawn_Body_B>
+                    rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Pawn_Body_B>
                 }
             }
         }
@@ -272,7 +272,7 @@ def Xform "ChessSet"
             {
                 over Mesh "Geom"
                 {
-                    rel material:binding = </Materials/MaterialX/Materials/M_Pawn_Top_W>
+                    rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Pawn_Top_W>
                 }
             }
 
@@ -282,18 +282,18 @@ def Xform "ChessSet"
             {
                 over Mesh "Geom"
                 {
-                    rel material:binding = </Materials/MaterialX/Materials/M_Pawn_Body_W>
+                    rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Pawn_Body_W>
                 }
             }
         }
     }
-}
 
-def Scope "Materials"
-{
-    over "MaterialX" (
-        prepend references = @chess_set.mtlx@</MaterialX>
-    )
+    def Scope "Materials"
     {
+        over "MaterialX" (
+            prepend references = @chess_set.mtlx@</MaterialX>
+        )
+        {
+        }
     }
 }
