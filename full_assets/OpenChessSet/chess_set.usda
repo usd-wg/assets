@@ -6,8 +6,16 @@
     upAxis = "Y"
 )
 
+class "__class__"
+{
+    class "ChessSet"
+    {
+    }
+}
+
 def Xform "ChessSet" (
     kind = "assembly"
+    prepend inherits = </__class__/ChessSet>
 )
 {
     def Xform "Chessboard" (
