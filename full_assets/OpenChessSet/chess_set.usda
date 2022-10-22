@@ -93,8 +93,8 @@ def Xform "ChessSet" (
             add references = @./geom/Knight.usd@
         )
         {
-            double3 xformOp:translate = (-0.15675804391503334, -0.002121470868587494, 0.03188585057)
-            uniform token[] xformOpOrder = ["xformOp:translate"]
+            matrix4d xformOp:transform = ( (0, 0, -1, 0), (0, 1, 0, 0), (1, 0, 0, 0), (0.1582154892385006, -0.002121470868587494, 0.03188585057, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
 
             over Mesh "Geom" (
                 apiSchemas = ["MaterialBindingAPI"]
@@ -108,8 +108,8 @@ def Xform "ChessSet" (
             add references = @./geom/Knight.usd@
         )
         {
-            double3 xformOp:translate = (0.1582154892385006, -0.002121470868587494, 0.03188585057)
-            uniform token[] xformOpOrder = ["xformOp:translate"]
+            matrix4d xformOp:transform = ( (0, 0, -1, 0), (0, 1, 0, 0), (1, 0, 0, 0), (-0.15675804391503334, -0.002121470868587494, 0.03188585057, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
 
             over Mesh "Geom" (
                 apiSchemas = ["MaterialBindingAPI"]
@@ -123,8 +123,8 @@ def Xform "ChessSet" (
             add references = @./geom/Rook.usd@
         )
         {
-            double3 xformOp:translate = (-0.21881157532334328, 0.017180902883410454, 0.03146751537)
-            uniform token[] xformOpOrder = ["xformOp:translate"]
+            matrix4d xformOp:transform = ( (0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (-0.21881157532334328, 0.017180902883410454, 0.03146751537, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
 
             over Mesh "Geom" (
                 apiSchemas = ["MaterialBindingAPI"]
@@ -138,8 +138,8 @@ def Xform "ChessSet" (
             add references = @./geom/Rook.usd@
         )
         {
-            double3 xformOp:translate = (0.21962326392531395, 0.015547847375273705, 0.03147086814)
-            uniform token[] xformOpOrder = ["xformOp:translate"]
+            matrix4d xformOp:transform = ( (0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (0.21962326392531395, 0.015547847375273705, 0.03147086814, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
 
             over Mesh "Geom" (
                 apiSchemas = ["MaterialBindingAPI"]
@@ -256,8 +256,8 @@ def Xform "ChessSet" (
             add references = @./geom/Knight.usd@
         )
         {
-            double3 xformOp:translate = (0.1582154892385006, -0.002121470868587494, -0.03195988699)
-            uniform token[] xformOpOrder = ["xformOp:translate"]
+            matrix4d xformOp:transform = ( (0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (-0.15675804391503334, -0.002121470868587494, -0.03274412021, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
 
             over Mesh "Geom" (
                 apiSchemas = ["MaterialBindingAPI"]
@@ -271,8 +271,8 @@ def Xform "ChessSet" (
             add references = @./geom/Knight.usd@
         )
         {
-            double3 xformOp:translate = (-0.15675804391503334, -0.002121470868587494, -0.03274412021)
-            uniform token[] xformOpOrder = ["xformOp:translate"]
+            matrix4d xformOp:transform = ( (0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (0.1582154892385006, -0.002121470868587494, -0.03195988699, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
 
             over Mesh "Geom" (
                 apiSchemas = ["MaterialBindingAPI"]
@@ -286,8 +286,9 @@ def Xform "ChessSet" (
             add references = @./geom/Rook.usd@
         )
         {
-            double3 xformOp:translate = (0.21962326392531395, 0.015547847375273705, -0.03166809245)
-            uniform token[] xformOpOrder = ["xformOp:translate"]
+            matrix4d xformOp:transform = ( (0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (0.21962326392531395, 0.015547847375273705, -0.03166809245, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
 
             over Mesh "Geom" (
                 apiSchemas = ["MaterialBindingAPI"]
@@ -301,8 +302,8 @@ def Xform "ChessSet" (
             add references = @./geom/Rook.usd@
         )
         {
-            double3 xformOp:translate = (-0.21881157532334328, 0.017180902883410454, -0.03182415232)
-            uniform token[] xformOpOrder = ["xformOp:translate"]
+            matrix4d xformOp:transform = ( (0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (-0.21881157532334328, 0.017180902883410454, -0.03182415232, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
 
             over Mesh "Geom" (
                 apiSchemas = ["MaterialBindingAPI"]
