@@ -360,7 +360,7 @@ def Xform "ChessSet" (
     def Scope "Materials"
     {
         over "MaterialX" (
-            prepend references = @chess_set.mtlx@</MaterialX>
+            prepend references = @./chess_set.mtlx@</MaterialX>
         )
         {
         }
