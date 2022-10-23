@@ -22,12 +22,6 @@ def Xform "ChessSet" (
         add references = @./geom/Chessboard/Chessboard.usd@
     )
     {
-        over Mesh "Geom" (
-            apiSchemas = ["MaterialBindingAPI"]
-        )
-        {
-            rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Chessboard>
-        }
     }
 
     def Xform "Black" (
@@ -39,122 +33,90 @@ def Xform "ChessSet" (
 
         def Xform "King" (
             add references = @./geom/King/King.usd@
+            variants = {
+                string shadingVariant = "Black"
+            }
         )
         {
             double3 xformOp:translate = (-0.03142297640442848, 0.011370822787284851, 0.03196573942)
             uniform token[] xformOpOrder = ["xformOp:translate"]
-
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_King_B>
-            }
         }
 
         def Xform "Queen" (
             add references = @./geom/Queen/Queen.usd@
+            variants = {
+                string shadingVariant = "Black"
+            }
         )
         {
             double3 xformOp:translate = (0.030731208622455597, -0.0013603270053863525, 0.03171471074)
             uniform token[] xformOpOrder = ["xformOp:translate"]
-
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Queen_B>
-            }
         }
 
         def Xform "BishopL" (
             add references = @./geom/Bishop/Bishop.usd@
+            variants = {
+                string shadingVariant = "Black"
+            }
         )
         {
             double3 xformOp:translate = (-0.09403244778513908, -0.002121470868587494, 0.03097364619)
             uniform token[] xformOpOrder = ["xformOp:translate"]
-
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Bishop_B>
-            }
         }
 
         def Xform "BishopR" (
             add references = @./geom/Bishop/Bishop.usd@
+            variants = {
+                string shadingVariant = "Black"
+            }
         )
         {
             double3 xformOp:translate = (0.08881419152021408, -0.002121470868587494, 0.03143014326)
             uniform token[] xformOpOrder = ["xformOp:translate"]
-
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Bishop_B>
-            }
         }
 
         def Xform "KnightL" (
             add references = @./geom/Knight/Knight.usd@
+            variants = {
+                string shadingVariant = "Black"
+            }
         )
         {
             matrix4d xformOp:transform = ( (0, 0, -1, 0), (0, 1, 0, 0), (1, 0, 0, 0), (0.1582154892385006, -0.002121470868587494, 0.03188585057, 1) )
             uniform token[] xformOpOrder = ["xformOp:transform"]
-
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Knight_B>
-            }
         }
 
         def Xform "KnightR" (
             add references = @./geom/Knight/Knight.usd@
+            variants = {
+                string shadingVariant = "Black"
+            }
         )
         {
             matrix4d xformOp:transform = ( (0, 0, -1, 0), (0, 1, 0, 0), (1, 0, 0, 0), (-0.15675804391503334, -0.002121470868587494, 0.03188585057, 1) )
             uniform token[] xformOpOrder = ["xformOp:transform"]
-
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Knight_B>
-            }
         }
 
         def Xform "RookL" (
             add references = @./geom/Rook/Rook.usd@
+            variants = {
+                string shadingVariant = "Black"
+            }
         )
         {
             matrix4d xformOp:transform = ( (0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (-0.21881157532334328, 0.017180902883410454, 0.03146751537, 1) )
             uniform token[] xformOpOrder = ["xformOp:transform"]
-
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Rook_B>
-            }
         }
 
         def Xform "RookR" (
             add references = @./geom/Rook/Rook.usd@
+            variants = {
+                string shadingVariant = "Black"
+            }
         )
         {
             matrix4d xformOp:transform = ( (0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (0.21962326392531395, 0.015547847375273705, 0.03147086814, 1) )
             uniform token[] xformOpOrder = ["xformOp:transform"]
-
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Rook_B>
-            }
         }
 
         def PointInstancer "Pawns"
@@ -165,22 +127,12 @@ def Xform "ChessSet" (
             rel prototypes = </ChessSet/Black/Pawns/Pawn>
 
             def Xform "Pawn" (
-	        add references = @./geom/Pawn/Pawn.usd@
-	    )
+                add references = @./geom/Pawn/Pawn.usd@
+                variants = {
+                    string shadingVariant = "Black"
+                }
+            )
             {
-                over Mesh "Geom_Top" (
-                    apiSchemas = ["MaterialBindingAPI"]
-                )
-                {
-                    rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Pawn_Top_B>
-                }
-
-                over Mesh "Geom_Body" (
-                    apiSchemas = ["MaterialBindingAPI"]
-                )
-                {
-                    rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Pawn_Body_B>
-                }
             }
         }
     }
@@ -194,123 +146,90 @@ def Xform "ChessSet" (
 
         def Xform "King" (
             add references = @./geom/King/King.usd@
+            variants = {
+                string shadingVariant = "White"
+            }
         )
         {
             double3 xformOp:translate = (-0.03176186978816986, 0.011370822787284851, -0.03215080067)
             uniform token[] xformOpOrder = ["xformOp:translate"]
-
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_King_W>
-            }
         }
 
         def Xform "Queen" (
             add references = @./geom/Queen/Queen.usd@
+            variants = {
+                string shadingVariant = "White"
+            }
         )
         {
             double3 xformOp:translate = (0.03090556710958481, -0.002121470868587494, -0.03215080067)
             uniform token[] xformOpOrder = ["xformOp:translate"]
-
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Queen_W>
-            }
         }
 
         def Xform "BishopL" (
             add references = @./geom/Bishop/Bishop.usd@
+            variants = {
+                string shadingVariant = "White"
+            }
         )
         {
             double3 xformOp:translate = (0.08881419152021408, -0.002121470868587494, -0.02811844214)
             uniform token[] xformOpOrder = ["xformOp:translate"]
-
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Bishop_W>
-            }
         }
 
         def Xform "BishopR" (
             add references = @./geom/Bishop/Bishop.usd@
+            variants = {
+                string shadingVariant = "White"
+            }
         )
         {
             double3 xformOp:translate = (-0.09403244778513908, -0.002121470868587494, -0.03279383048)
             uniform token[] xformOpOrder = ["xformOp:translate"]
-
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Bishop_W>
-            }
         }
 
         def Xform "KnightL" (
             add references = @./geom/Knight/Knight.usd@
+            variants = {
+                string shadingVariant = "White"
+            }
         )
         {
             matrix4d xformOp:transform = ( (0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (-0.15675804391503334, -0.002121470868587494, -0.03274412021, 1) )
             uniform token[] xformOpOrder = ["xformOp:transform"]
-
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Knight_W>
-            }
         }
 
         def Xform "KnightR" (
             add references = @./geom/Knight/Knight.usd@
+            variants = {
+                string shadingVariant = "White"
+            }
         )
         {
             matrix4d xformOp:transform = ( (0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (0.1582154892385006, -0.002121470868587494, -0.03195988699, 1) )
             uniform token[] xformOpOrder = ["xformOp:transform"]
-
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Knight_W>
-            }
         }
 
         def Xform "RookL" (
             add references = @./geom/Rook/Rook.usd@
+            variants = {
+                string shadingVariant = "White"
+            }
         )
         {
             matrix4d xformOp:transform = ( (0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (0.21962326392531395, 0.015547847375273705, -0.03166809245, 1) )
             uniform token[] xformOpOrder = ["xformOp:transform"]
-
-
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Rook_W>
-            }
         }
 
         def Xform "RookR" (
             add references = @./geom/Rook/Rook.usd@
+            variants = {
+                string shadingVariant = "White"
+            }
         )
         {
             matrix4d xformOp:transform = ( (0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (-0.21881157532334328, 0.017180902883410454, -0.03182415232, 1) )
             uniform token[] xformOpOrder = ["xformOp:transform"]
-
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Rook_W>
-            }
         }
 
         def PointInstancer "Pawns"
@@ -321,32 +240,13 @@ def Xform "ChessSet" (
             rel prototypes = </ChessSet/White/Pawns/Pawn>
 
             def Xform "Pawn" (
-	        add references = @./geom/Pawn/Pawn.usd@
-	    )
+                add references = @./geom/Pawn/Pawn.usd@
+                variants = {
+                    string shadingVariant = "White"
+                }
+            )
             {
-                over Mesh "Geom_Top" (
-                    apiSchemas = ["MaterialBindingAPI"]
-                )
-                {
-                    rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Pawn_Top_W>
-                }
-
-                over Mesh "Geom_Body" (
-                    apiSchemas = ["MaterialBindingAPI"]
-                )
-                {
-                    rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Pawn_Body_W>
-                }
             }
-        }
-    }
-
-    def Scope "Materials"
-    {
-        over "MaterialX" (
-            prepend references = @./chess_set.mtlx@</MaterialX>
-        )
-        {
         }
     }
 }
