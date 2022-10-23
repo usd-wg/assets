@@ -19,7 +19,7 @@ def Xform "ChessSet" (
 )
 {
     def Xform "Chessboard" (
-        add references = @./geom/Chessboard.usd@
+        add references = @./geom/Chessboard/Chessboard.usd@
     )
     {
         over Mesh "Geom" (
@@ -38,7 +38,7 @@ def Xform "ChessSet" (
         uniform token[] xformOpOrder = ["xformOp:translate"]
 
         def Xform "King" (
-            add references = @./geom/King.usd@
+            add references = @./geom/King/King.usd@
         )
         {
             double3 xformOp:translate = (-0.03142297640442848, 0.011370822787284851, 0.03196573942)
@@ -53,7 +53,7 @@ def Xform "ChessSet" (
         }
 
         def Xform "Queen" (
-            add references = @./geom/Queen.usd@
+            add references = @./geom/Queen/Queen.usd@
         )
         {
             double3 xformOp:translate = (0.030731208622455597, -0.0013603270053863525, 0.03171471074)
@@ -68,7 +68,7 @@ def Xform "ChessSet" (
         }
 
         def Xform "BishopL" (
-            add references = @./geom/Bishop.usd@
+            add references = @./geom/Bishop/Bishop.usd@
         )
         {
             double3 xformOp:translate = (-0.09403244778513908, -0.002121470868587494, 0.03097364619)
@@ -83,7 +83,7 @@ def Xform "ChessSet" (
         }
 
         def Xform "BishopR" (
-            add references = @./geom/Bishop.usd@
+            add references = @./geom/Bishop/Bishop.usd@
         )
         {
             double3 xformOp:translate = (0.08881419152021408, -0.002121470868587494, 0.03143014326)
@@ -98,7 +98,7 @@ def Xform "ChessSet" (
         }
 
         def Xform "KnightL" (
-            add references = @./geom/Knight.usd@
+            add references = @./geom/Knight/Knight.usd@
         )
         {
             matrix4d xformOp:transform = ( (0, 0, -1, 0), (0, 1, 0, 0), (1, 0, 0, 0), (0.1582154892385006, -0.002121470868587494, 0.03188585057, 1) )
@@ -113,7 +113,7 @@ def Xform "ChessSet" (
         }
 
         def Xform "KnightR" (
-            add references = @./geom/Knight.usd@
+            add references = @./geom/Knight/Knight.usd@
         )
         {
             matrix4d xformOp:transform = ( (0, 0, -1, 0), (0, 1, 0, 0), (1, 0, 0, 0), (-0.15675804391503334, -0.002121470868587494, 0.03188585057, 1) )
@@ -128,7 +128,7 @@ def Xform "ChessSet" (
         }
 
         def Xform "RookL" (
-            add references = @./geom/Rook.usd@
+            add references = @./geom/Rook/Rook.usd@
         )
         {
             matrix4d xformOp:transform = ( (0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (-0.21881157532334328, 0.017180902883410454, 0.03146751537, 1) )
@@ -143,7 +143,7 @@ def Xform "ChessSet" (
         }
 
         def Xform "RookR" (
-            add references = @./geom/Rook.usd@
+            add references = @./geom/Rook/Rook.usd@
         )
         {
             matrix4d xformOp:transform = ( (0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (0.21962326392531395, 0.015547847375273705, 0.03147086814, 1) )
@@ -167,7 +167,7 @@ def Xform "ChessSet" (
             def Xform "Pawn"
             {
                 def Xform "Pawn_Top" (
-                    add references = @./geom/Pawn_Top.usd@
+                    add references = @./geom/Pawn_Top/Pawn_Top.usd@
                 )
                 {
                     over Mesh "Geom" (
@@ -179,7 +179,7 @@ def Xform "ChessSet" (
                 }
 
                 def Xform "Pawn_Body" (
-                    add references = @./geom/Pawn_Body.usd@
+                    add references = @./geom/Pawn_Body/Pawn_Body.usd@
                 )
                 {
                     over Mesh "Geom" (
@@ -201,7 +201,7 @@ def Xform "ChessSet" (
         uniform token[] xformOpOrder = ["xformOp:translate"]
 
         def Xform "King" (
-            add references = @./geom/King.usd@
+            add references = @./geom/King/King.usd@
         )
         {
             double3 xformOp:translate = (-0.03176186978816986, 0.011370822787284851, -0.03215080067)
@@ -216,7 +216,7 @@ def Xform "ChessSet" (
         }
 
         def Xform "Queen" (
-            add references = @./geom/Queen.usd@
+            add references = @./geom/Queen/Queen.usd@
         )
         {
             double3 xformOp:translate = (0.03090556710958481, -0.002121470868587494, -0.03215080067)
@@ -231,7 +231,7 @@ def Xform "ChessSet" (
         }
 
         def Xform "BishopL" (
-            add references = @./geom/Bishop.usd@
+            add references = @./geom/Bishop/Bishop.usd@
         )
         {
             double3 xformOp:translate = (0.08881419152021408, -0.002121470868587494, -0.02811844214)
@@ -246,7 +246,7 @@ def Xform "ChessSet" (
         }
 
         def Xform "BishopR" (
-            add references = @./geom/Bishop.usd@
+            add references = @./geom/Bishop/Bishop.usd@
         )
         {
             double3 xformOp:translate = (-0.09403244778513908, -0.002121470868587494, -0.03279383048)
@@ -261,7 +261,7 @@ def Xform "ChessSet" (
         }
 
         def Xform "KnightL" (
-            add references = @./geom/Knight.usd@
+            add references = @./geom/Knight/Knight.usd@
         )
         {
             matrix4d xformOp:transform = ( (0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (-0.15675804391503334, -0.002121470868587494, -0.03274412021, 1) )
@@ -276,7 +276,7 @@ def Xform "ChessSet" (
         }
 
         def Xform "KnightR" (
-            add references = @./geom/Knight.usd@
+            add references = @./geom/Knight/Knight.usd@
         )
         {
             matrix4d xformOp:transform = ( (0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (0.1582154892385006, -0.002121470868587494, -0.03195988699, 1) )
@@ -291,7 +291,7 @@ def Xform "ChessSet" (
         }
 
         def Xform "RookL" (
-            add references = @./geom/Rook.usd@
+            add references = @./geom/Rook/Rook.usd@
         )
         {
             matrix4d xformOp:transform = ( (0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (0.21962326392531395, 0.015547847375273705, -0.03166809245, 1) )
@@ -307,7 +307,7 @@ def Xform "ChessSet" (
         }
 
         def Xform "RookR" (
-            add references = @./geom/Rook.usd@
+            add references = @./geom/Rook/Rook.usd@
         )
         {
             matrix4d xformOp:transform = ( (0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (-0.21881157532334328, 0.017180902883410454, -0.03182415232, 1) )
@@ -331,7 +331,7 @@ def Xform "ChessSet" (
             def Xform "Pawn"
             {
                 def Xform "Pawn_Top" (
-                    add references = @./geom/Pawn_Top.usd@
+                    add references = @./geom/Pawn_Top/Pawn_Top.usd@
                 )
                 {
                     over Mesh "Geom" (
@@ -343,7 +343,7 @@ def Xform "ChessSet" (
                 }
 
                 def Xform "Pawn_Body" (
-                    add references = @./geom/Pawn_Body.usd@
+                    add references = @./geom/Pawn_Body/Pawn_Body.usd@
                 )
                 {
                     over Mesh "Geom" (
