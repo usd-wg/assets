@@ -19,7 +19,7 @@ def Xform "ChessSet" (
 )
 {
     def Xform "Chessboard" (
-        add references = @./geom/Chessboard/Chessboard.usd@
+        add references = @./assets/Chessboard/Chessboard.usd@
     )
     {
     }
@@ -32,7 +32,7 @@ def Xform "ChessSet" (
         uniform token[] xformOpOrder = ["xformOp:translate"]
 
         def Xform "King" (
-            add references = @./geom/King/King.usd@
+            add references = @./assets/King/King.usd@
             variants = {
                 string shadingVariant = "Black"
             }
@@ -43,7 +43,7 @@ def Xform "ChessSet" (
         }
 
         def Xform "Queen" (
-            add references = @./geom/Queen/Queen.usd@
+            add references = @./assets/Queen/Queen.usd@
             variants = {
                 string shadingVariant = "Black"
             }
@@ -54,7 +54,7 @@ def Xform "ChessSet" (
         }
 
         def Xform "BishopL" (
-            add references = @./geom/Bishop/Bishop.usd@
+            add references = @./assets/Bishop/Bishop.usd@
             variants = {
                 string shadingVariant = "Black"
             }
@@ -65,7 +65,7 @@ def Xform "ChessSet" (
         }
 
         def Xform "BishopR" (
-            add references = @./geom/Bishop/Bishop.usd@
+            add references = @./assets/Bishop/Bishop.usd@
             variants = {
                 string shadingVariant = "Black"
             }
@@ -76,7 +76,7 @@ def Xform "ChessSet" (
         }
 
         def Xform "KnightL" (
-            add references = @./geom/Knight/Knight.usd@
+            add references = @./assets/Knight/Knight.usd@
             variants = {
                 string shadingVariant = "Black"
             }
@@ -87,7 +87,7 @@ def Xform "ChessSet" (
         }
 
         def Xform "KnightR" (
-            add references = @./geom/Knight/Knight.usd@
+            add references = @./assets/Knight/Knight.usd@
             variants = {
                 string shadingVariant = "Black"
             }
@@ -98,7 +98,7 @@ def Xform "ChessSet" (
         }
 
         def Xform "RookL" (
-            add references = @./geom/Rook/Rook.usd@
+            add references = @./assets/Rook/Rook.usd@
             variants = {
                 string shadingVariant = "Black"
             }
@@ -109,7 +109,7 @@ def Xform "ChessSet" (
         }
 
         def Xform "RookR" (
-            add references = @./geom/Rook/Rook.usd@
+            add references = @./assets/Rook/Rook.usd@
             variants = {
                 string shadingVariant = "Black"
             }
@@ -127,7 +127,7 @@ def Xform "ChessSet" (
             rel prototypes = </ChessSet/Black/Pawns/Pawn>
 
             def Xform "Pawn" (
-                add references = @./geom/Pawn/Pawn.usd@
+                add references = @./assets/Pawn/Pawn.usd@
                 variants = {
                     string shadingVariant = "Black"
                 }
@@ -145,7 +145,7 @@ def Xform "ChessSet" (
         uniform token[] xformOpOrder = ["xformOp:translate"]
 
         def Xform "King" (
-            add references = @./geom/King/King.usd@
+            add references = @./assets/King/King.usd@
             variants = {
                 string shadingVariant = "White"
             }
@@ -156,7 +156,7 @@ def Xform "ChessSet" (
         }
 
         def Xform "Queen" (
-            add references = @./geom/Queen/Queen.usd@
+            add references = @./assets/Queen/Queen.usd@
             variants = {
                 string shadingVariant = "White"
             }
@@ -167,7 +167,7 @@ def Xform "ChessSet" (
         }
 
         def Xform "BishopL" (
-            add references = @./geom/Bishop/Bishop.usd@
+            add references = @./assets/Bishop/Bishop.usd@
             variants = {
                 string shadingVariant = "White"
             }
@@ -178,7 +178,7 @@ def Xform "ChessSet" (
         }
 
         def Xform "BishopR" (
-            add references = @./geom/Bishop/Bishop.usd@
+            add references = @./assets/Bishop/Bishop.usd@
             variants = {
                 string shadingVariant = "White"
             }
@@ -189,7 +189,7 @@ def Xform "ChessSet" (
         }
 
         def Xform "KnightL" (
-            add references = @./geom/Knight/Knight.usd@
+            add references = @./assets/Knight/Knight.usd@
             variants = {
                 string shadingVariant = "White"
             }
@@ -200,7 +200,7 @@ def Xform "ChessSet" (
         }
 
         def Xform "KnightR" (
-            add references = @./geom/Knight/Knight.usd@
+            add references = @./assets/Knight/Knight.usd@
             variants = {
                 string shadingVariant = "White"
             }
@@ -211,7 +211,7 @@ def Xform "ChessSet" (
         }
 
         def Xform "RookL" (
-            add references = @./geom/Rook/Rook.usd@
+            add references = @./assets/Rook/Rook.usd@
             variants = {
                 string shadingVariant = "White"
             }
@@ -222,7 +222,7 @@ def Xform "ChessSet" (
         }
 
         def Xform "RookR" (
-            add references = @./geom/Rook/Rook.usd@
+            add references = @./assets/Rook/Rook.usd@
             variants = {
                 string shadingVariant = "White"
             }
@@ -240,7 +240,7 @@ def Xform "ChessSet" (
             rel prototypes = </ChessSet/White/Pawns/Pawn>
 
             def Xform "Pawn" (
-                add references = @./geom/Pawn/Pawn.usd@
+                add references = @./assets/Pawn/Pawn.usd@
                 variants = {
                     string shadingVariant = "White"
                 }
