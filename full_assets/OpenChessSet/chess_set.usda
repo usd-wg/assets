@@ -164,30 +164,22 @@ def Xform "ChessSet" (
             int[] protoIndices = [0, 0, 0, 0, 0, 0, 0, 0]
             rel prototypes = </ChessSet/Black/Pawns/Pawn>
 
-            def Xform "Pawn"
+            def Xform "Pawn" (
+	        add references = @./geom/Pawn/Pawn.usd@
+	    )
             {
-                def Xform "Pawn_Top" (
-                    add references = @./geom/Pawn_Top/Pawn_Top.usd@
+                over Mesh "Geom_Top" (
+                    apiSchemas = ["MaterialBindingAPI"]
                 )
                 {
-                    over Mesh "Geom" (
-                        apiSchemas = ["MaterialBindingAPI"]
-                    )
-                    {
-                        rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Pawn_Top_B>
-                    }
+                    rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Pawn_Top_B>
                 }
 
-                def Xform "Pawn_Body" (
-                    add references = @./geom/Pawn_Body/Pawn_Body.usd@
+                over Mesh "Geom_Body" (
+                    apiSchemas = ["MaterialBindingAPI"]
                 )
                 {
-                    over Mesh "Geom" (
-                        apiSchemas = ["MaterialBindingAPI"]
-                    )
-                    {
-                        rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Pawn_Body_B>
-                    }
+                    rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Pawn_Body_B>
                 }
             }
         }
@@ -328,30 +320,22 @@ def Xform "ChessSet" (
             int[] protoIndices = [0, 0, 0, 0, 0, 0, 0, 0]
             rel prototypes = </ChessSet/White/Pawns/Pawn>
 
-            def Xform "Pawn"
+            def Xform "Pawn" (
+	        add references = @./geom/Pawn/Pawn.usd@
+	    )
             {
-                def Xform "Pawn_Top" (
-                    add references = @./geom/Pawn_Top/Pawn_Top.usd@
+                over Mesh "Geom_Top" (
+                    apiSchemas = ["MaterialBindingAPI"]
                 )
                 {
-                    over Mesh "Geom" (
-                        apiSchemas = ["MaterialBindingAPI"]
-                    )
-                    {
-                        rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Pawn_Top_W>
-                    }
+                    rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Pawn_Top_W>
                 }
 
-                def Xform "Pawn_Body" (
-                    add references = @./geom/Pawn_Body/Pawn_Body.usd@
+                over Mesh "Geom_Body" (
+                    apiSchemas = ["MaterialBindingAPI"]
                 )
                 {
-                    over Mesh "Geom" (
-                        apiSchemas = ["MaterialBindingAPI"]
-                    )
-                    {
-                        rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Pawn_Body_W>
-                    }
+                    rel material:binding = </ChessSet/Materials/MaterialX/Materials/M_Pawn_Body_W>
                 }
             }
         }
