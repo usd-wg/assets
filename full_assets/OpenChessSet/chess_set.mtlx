@@ -18,6 +18,7 @@
     </image>
     <normalmap name="mtlxnormalmap4" type="vector3">
       <input name="in" type="vector3" nodename="normal2" />
+      <input name="scale" type="float" value="-1.0" />
     </normalmap>
     <output name="base_color_output" type="color3" nodename="diffuse2" />
     <output name="metalness_output" type="float" nodename="metallic2" />
@@ -50,6 +51,7 @@
     </image>
     <normalmap name="mtlxnormalmap5" type="vector3">
       <input name="in" type="vector3" nodename="normal3" />
+      <input name="scale" type="float" value="-1.0" />
     </normalmap>
     <output name="base_color_output" type="color3" nodename="diffuse3" />
     <output name="metalness_output" type="float" nodename="metallic3" />
@@ -82,6 +84,7 @@
     </image>
     <normalmap name="mtlxnormalmap8" type="vector3">
       <input name="in" type="vector3" nodename="normal6" />
+      <input name="scale" type="float" value="-1.0" />
     </normalmap>
     <output name="base_color_output" type="color3" nodename="diffuse6" />
     <output name="metalness_output" type="float" nodename="metallic6" />
@@ -114,6 +117,7 @@
     </image>
     <normalmap name="mtlxnormalmap9" type="vector3">
       <input name="in" type="vector3" nodename="normal7" />
+      <input name="scale" type="float" value="-1.0" />
     </normalmap>
     <output name="base_color_output" type="color3" nodename="diffuse7" />
     <output name="metalness_output" type="float" nodename="metallic7" />
@@ -146,6 +150,7 @@
     </image>
     <normalmap name="mtlxnormalmap12" type="vector3">
       <input name="in" type="vector3" nodename="mtlximage15" />
+      <input name="scale" type="float" value="-1.0" />
     </normalmap>
     <output name="base_color_output" type="color3" nodename="mtlximage13" />
     <output name="metalness_output" type="float" nodename="mtlximage16" />
@@ -181,6 +186,7 @@
     </image>
     <normalmap name="mtlxnormalmap1" type="vector3">
       <input name="in" type="vector3" nodename="mtlximage6" />
+      <input name="scale" type="float" value="-1.0" />
     </normalmap>
     <output name="base_color_output" type="color3" nodename="mtlximage1" />
     <output name="metalness_output" type="float" nodename="mtlximage2" />
@@ -221,6 +227,7 @@
     </image>
     <normalmap name="mtlxnormalmap11" type="vector3">
       <input name="in" type="vector3" nodename="mtlximage9" />
+      <input name="scale" type="float" value="-1.0" />
     </normalmap>
     <output name="base_color_output" type="color3" nodename="mtlximage7" />
     <output name="metalness_output" type="float" nodename="mtlximage10" />
@@ -255,6 +262,7 @@
     </image>
     <normalmap name="normalmap" type="vector3">
       <input name="in" type="vector3" nodename="normalmap_img" />
+      <input name="scale" type="float" value="-1.0" />
     </normalmap>
     <output name="base_color_output" type="color3" nodename="diffuse4" />
     <output name="roughness_output" type="float" nodename="roughness4" />
@@ -282,6 +290,7 @@
     </image>
     <normalmap name="normalmap" type="vector3">
       <input name="in" type="vector3" nodename="normalmap_img" />
+      <input name="scale" type="float" value="-1.0" />
     </normalmap>
     <output name="base_color_output" type="color3" nodename="diffuse5" />
     <output name="roughness_output" type="float" nodename="roughness5" />
@@ -312,6 +321,7 @@
     </image>
     <normalmap name="mtlxnormalmap13" type="vector3">
       <input name="in" type="vector3" nodename="normal9" />
+      <input name="scale" type="float" value="-1.0" />
     </normalmap>
     <output name="base_color_output" type="color3" nodename="diffuse9" />
     <output name="metalness_output" type="float" nodename="metallic9" />
@@ -344,6 +354,7 @@
     </image>
     <normalmap name="mtlxnormalmap10" type="vector3">
       <input name="in" type="vector3" nodename="normal8" />
+      <input name="scale" type="float" value="-1.0" />
     </normalmap>
     <output name="base_color_output" type="color3" nodename="diffuse8" />
     <output name="metalness_output" type="float" nodename="metallic8" />
@@ -370,6 +381,7 @@
     </image>
     <normalmap name="mtlxnormalmap14" type="vector3">
       <input name="in" type="vector3" nodename="mtlximage18" />
+      <input name="scale" type="float" value="-1.0" />
     </normalmap>
     <output name="roughness_output" type="float" nodename="mtlximage19" />
     <output name="normal_output" type="vector3" nodename="mtlxnormalmap14" />
@@ -395,6 +407,7 @@
     </image>
     <normalmap name="mtlxnormalmap15" type="vector3">
       <input name="in" type="vector3" nodename="mtlximage20" />
+      <input name="scale" type="float" value="-1.0" />
     </normalmap>
     <output name="roughness_output" type="float" nodename="mtlximage21" />
     <output name="normal_output" type="vector3" nodename="mtlxnormalmap15" />
@@ -429,6 +442,7 @@
     </image>
     <normalmap name="mtlxnormalmap2" type="vector3">
       <input name="in" type="vector3" nodename="normal" />
+      <input name="scale" type="float" value="-1.0" />
     </normalmap>
     <output name="base_color_output" type="color3" nodename="diffuse" />
     <output name="metalness_output" type="float" nodename="metallic" />
@@ -469,6 +483,7 @@
     </image>
     <normalmap name="mtlxnormalmap3" type="vector3">
       <input name="in" type="vector3" nodename="normal1" />
+      <input name="scale" type="float" value="-1.0" />
     </normalmap>
     <output name="base_color_output" type="color3" nodename="diffuse1" />
     <output name="metalness_output" type="float" nodename="metallic1" />
