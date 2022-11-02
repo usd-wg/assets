@@ -25,7 +25,7 @@
         }
     }
     defaultPrim = "Block_Test_World"
-    metersPerUnit = 1
+    metersPerUnit = 0.01
     upAxis = "Y"
 )
 

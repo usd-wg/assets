@@ -127,7 +127,7 @@ One last thing worth noting is that some specialized formats use the Z (blue) ch
 
     Z = sqrt(1 - X*X - Y*Y)
 
-Some applications, such as [CryEngine](https://docs.cryengine.com/display/SDKDOC4/Tangent+Space+Normal+Mapping#TangentSpaceNormalMapping-NormalMapCompression) discard the Z channel and make the texture have just two channels.
+Some applications, such as [CryEngine](https://docs.cryengine.com/display/SDKDOC4/Tangent+Space+Normal+Mapping#TangentSpaceNormalMapping-NormalMapCompression) discard the Z channel and make the texture have just two channels. The [BC5 compression format](https://www.reedbeta.com/blog/understanding-bcn-texture-compression-formats/#bc2-bc3-and-bc5) is often used for these two-channel normal maps.
 
 Others, to avoid the unusual two-channel format, reuse the unneeded channel(s) for other attributes. For example, in the Minecraft [LabPBR format](https://wiki.shaderlabs.org/wiki/LabPBR_Material_Standard), the Z channel is instead used to hold an ambient occlusion percentage. So, if you see a constant Z value (e.g., all 256) or other values that don't seem to give normals of length 1.0, this may be the reason.
 
