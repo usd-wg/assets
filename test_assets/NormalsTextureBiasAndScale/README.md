@@ -135,6 +135,10 @@ Others, to avoid the unusual two-channel format, reuse the unneeded channel(s) f
 
 There are two related (and more elaborate) glTF sample models that may be of interest, the [Normal-Tangent Test](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/NormalTangentTest) and the [Normal-Tangent Mirror Test](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/NormalTangentMirrorTest). _(Thanks to Eric Chadwick for the pointers.)_
 
+The [glTF 2.0 specification](https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#additional-textures) clearly maps RGB to the -1 to +1 range for all three channels, with the additional constraint that Z values must be positive value. The [specification also describes the mapping used](https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#_material_normaltexture), "+X is right and +Y is up. +Z points toward the viewer."
+
+These match USD's default settings.
+
 ---
 ## License
 
