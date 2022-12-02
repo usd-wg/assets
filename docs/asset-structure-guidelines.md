@@ -416,6 +416,8 @@ TODO:
 
 ## Naming
 
+* Prims are typically named following the ProperCase convention and may be suffixed with a number. Examples: `World` or `RedMaterial_1`
+* Attributes and relationships are typically named following the camelCase convention. Example: `curveWidth` 
 * Discussions/recommendations around different conventions (by studios and artists)
 
 ## Blind Data
