@@ -1,36 +1,35 @@
 # Normals Texture Bias And Scale
-
-This test file, NormalsTextureBiasAndScale.usda, is for testing how well a USD display application interprets the bias and scale inputs for normal map textures. Each cube uses a different normal map texture, combined with different bias and scale values applied to that texture, to give what should be an identical result.
+This test file, NormalsTextureBiasAndScale.usda, is for testing how well a USD display application interprets the bias and scale inputs for normal map textures. Each cube uses a different normal map texture, combined with different bias and scale values applied to that texture, to give what should be an identical result. Cubes are 10 cm in size so that the USDZ file is more usable in XR applications.
 
 The usdview program from the [USD Toolset](https://graphics.pixar.com/usd/release/toolset.html) includes a basic hydra GL rasterizing renderer. It's about as basic a render you can make, but it's also the standard, in that it's the renderer Pixar provides.
 
-It is possible to build [usdview from scratch](https://graphics.pixar.com/usd/release/toolset.html), but in that way lies madness (at least for me). Happily, [NVIDIA's Omniverse Launcher](https://www.nvidia.com/en-us/omniverse/) provides a pre-built USDView that I can simply install and run. I tested with version 0.22.8.
+It is possible to build [usdview from scratch](https://graphics.pixar.com/usd/release/toolset.html), but [NVIDIA's Omniverse Launcher](https://www.nvidia.com/en-us/omniverse/) provides a pre-built version of the USDView application. Images shown were generated with USDView 0.23.2.
 
-Load procedure: File -> Open and select NormalsTextureBiasAndScales.usda. Press F11 to toggle on the hierarchy view (if not already visible). Open the "root" by double-clicking on it. Select the "Camera" and right-click, then pick (at the bottom) "Set As Active Camera". Widen the application a bit and you'll see:
+Load procedure: File -> Open and select NormalsTextureBiasAndScales.usda. Press F11 to toggle on the hierarchy view (if not already visible). Open the "root" by double-clicking on it. Select the "Camera" and right-click, then pick (at the bottom) "Set As Active Camera". You should see:
 
-![USDView 0.22.8](screenshots/crn_usdview.png "USDView 0.22.8")
+![USDView 0.23.2](screenshots/crn_usdview.png "USDView 0.23.2")
 
-The scene has four light sources in it, with just one, the "Angled_Light" coming roughly from the camera's direction, enabled. You can toggle these lights on and on in USDView by clicking on the V (visible) or I (invisible) values to the right of each. For example, here are the settings and where I clicked to make the "Light_from_above" visible and affect the scene:
+Open the "NormalsTextureBiasAndScale" Xform under "root". The scene has four light sources in it, with just one enabled, the "AngledLight" that comes roughly from the camera's direction. You can toggle these lights on and off in USDView by clicking on the V (visible) or I (invisible) values to the right of each. For example, here are the settings and where I clicked to make the "LightFromAbove" visible and affect the scene:
 
-![USDView 0.22.8, light toggle](screenshots/crn_light_toggle.png "USDView 0.22.8, light toggle")
+![USDView 0.23.2, light toggle](screenshots/crn_light_toggle.png "USDView 0.23.2, light toggle")
 
 Toggling the various lights can show whether the three cubes respond to the light in the same way.
 
 If the viewer being checked does not read in and use the camera, simply adjust the view. In order to get a corresponding view, use the "R" orientation on the tops of the cubes to make sure you're looking at the fronts of the three cubes.
 
-If the viewer doesn't import the lights, you are on your own. Whatever light you use, the three cubes should appear nearly the same. Pay particular attention to whether the left edge and the top of the R is light or dark.
+If the viewer doesn't import the lights, you are on your own. Whatever light you use, the three cubes should appear nearly the same. Pay particular attention to whether the left edge and top of the R is light or dark.
 
 Lit from above:
 
-![USDView 0.22.8, lit from above](screenshots/crn_usdview_light_from_above.png "USDView 0.22.8, lit from above")
+![USDView 0.23.2, lit from above](screenshots/crn_usdview_light_from_above.png "USDView 0.23.2, lit from above")
 
 Lit from left:
 
-![USDView 0.22.8, lit from left](screenshots/crn_usdview_light_from_left.png "USDView 0.22.8, lit from left")
+![USDView 0.23.2, lit from left](screenshots/crn_usdview_light_from_left.png "USDView 0.23.2, lit from left")
 
 Lit from right:
 
-![USDView 0.22.8, lit from right](screenshots/crn_usdview_light_from_right.png "USDView 0.22.8, lit from right")
+![USDView 0.23.2, lit from right](screenshots/crn_usdview_light_from_right.png "USDView 0.23.2, lit from right")
 
 ## Technical Details
 There are two sorts of normal map textures seen in practice: [object space and tangent space](http://wiki.polycount.com/wiki/Normal_Map_Technical_Details). Object space normal map textures give a set of normals that can point in any direction. These directly replace the object's normals at various mapped locations, relative to the object's frame of reference. Object space normal maps are rarely used in modern applications, because they are inflexible (baked in) and higher tessellation rates hide [tangent space discontinuities](https://docs.cryengine.com/display/SDKDOC4/Tangent+Space+Normal+Mapping#TangentSpaceNormalMapping-DrawbacksofTangentSpaceLighting).
@@ -96,8 +95,8 @@ the bias and scale for the "r_normals_reversed_x" cube, displayed in the middle,
 
 Note how the X (red) component is negated in both bias and scale, and the Z (blue) component is converted to the range 0 to 1. These are not what usdzip expects, for example. If you use usdzip's "-c", check compliance, option you'll get the warning:
 
-    UsdUVTexture prim </Looks/r_normals_reversed_x_0_bias_z/normal_texture> reads an 8 bit Normal Map, but has non-standard
-    inputs:scale and inputs:bias values of (-2, 2, 1, 2) and (1, -1, 0, -1) (may violate 'NormalMapTextureChecker')
+    UsdUVTexture prim </Looks/RNormalsReversedX0BiasZ/NormalTexture> reads an 8 bit Normal Map, but has non-standard
+	inputs: scale and inputs:bias values of (-2, 2, 1, 2) and (1, -1, 0, -1) (may violate 'NormalMapTextureChecker')
 
 This reversed X and remapped Z example is not a normal map combination you'll likely ever see anywhere else. It is here purely for testing these two possibilities, each of which I've seen used in some normal maps.
 
@@ -114,8 +113,8 @@ Here the green (Y) component is negated in both bias and scale. This type of adj
 
 This flip will also be flagged by usdtools with "-c":
 
-    UsdUVTexture prim </Looks/r_normals_reversed_y/normal_texture> reads an 8 bit Normal Map, but has non-standard
-    inputs:scale and inputs:bias values of (2, -2, 2, 2) and (-1, 1, -1, -1) (may violate 'NormalMapTextureChecker')
+    UsdUVTexture prim </Looks/RNormalsReversedY/NormalTexture> reads an 8 bit Normal Map, but has non-standard
+    inputs: scale and inputs:bias values of (2, -2, 2, 2) and (-1, 1, -1, -1) (may violate 'NormalMapTextureChecker')
 
 Compare r_normal_map_reversed_x_0_bias_z.png with r_normal_map.png and you'll see the "reddish" and "dark greenish teal" parts of the map are swapped. For r_normal_map_reversed_y.png the "greenish" parts are swapped with the "dark bluish purple" parts.
 
@@ -132,7 +131,6 @@ Some applications, such as [CryEngine](https://docs.cryengine.com/display/SDKDOC
 Others, to avoid the unusual two-channel format, reuse the unneeded channel(s) for other attributes. For example, in the Minecraft [LabPBR format](https://wiki.shaderlabs.org/wiki/LabPBR_Material_Standard), the Z channel is instead used to hold an ambient occlusion percentage. So, if you see a constant Z value (e.g., all 256) or other values that don't seem to give normals of length 1.0, this may be the reason.
 
 ## Related glTF Test Models
-
 There are two related (and more elaborate) glTF sample models that may be of interest, the [Normal-Tangent Test](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/NormalTangentTest) and the [Normal-Tangent Mirror Test](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/NormalTangentMirrorTest). _(Thanks to Eric Chadwick for the pointers.)_
 
 The [glTF 2.0 specification](https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#additional-textures) clearly maps RGB to the -1 to +1 range for all three channels, with the additional constraint that Z values must be positive value. The [specification also describes the mapping used](https://registry.khronos.org/glTF/specs/2.0/glTF-2.0.html#_material_normaltexture), "+X is right and +Y is up. +Z points toward the viewer."
@@ -141,9 +139,8 @@ These match USD's default settings.
 
 ---
 ## License
-
 **[CC-NC-BY-SA](LICENSE)**
 
 ---
 # Contact
-Email [me](http://erichaines.com) at [erich@acm.org](mailto:erich@acm.org).
+Email the author, [Eric Haines](http://erichaines.com), at [erich@acm.org](mailto:erich@acm.org).
