@@ -1,5 +1,5 @@
 # Normals Texture Bias And Scale
-This test file, NormalsTextureBiasAndScale.usda, is for testing how well a USD display application interprets the bias and scale inputs for normal map textures. Each cube uses a different normal map texture, combined with different bias and scale values applied to that texture, to give what should be an identical result. Cubes are 10 cm in size so that the USDZ file is more usable in XR applications.
+This test file, NormalsTextureBiasAndScale.usda, is for testing how well a USD display application interprets the bias and scale inputs for normal map textures. Each cube uses a different normal map texture, combined with different bias and scale values applied to that texture, to give what should be an identical result. Cubes are 10 cm in size so that the USDZ file is more usable in XR applications. The USDZ file can be [downloaded directly](https://erich.realtimerendering.com/mcusd/NormalsTextureBiasAndScale.usdz) for viewing on phones, etc.
 
 The usdview program from the [USD Toolset](https://graphics.pixar.com/usd/release/toolset.html) includes a basic hydra GL rasterizing renderer. It's about as basic a render you can make, but it's also the standard, in that it's the renderer Pixar provides.
 

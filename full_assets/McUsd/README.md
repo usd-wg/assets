@@ -1,5 +1,5 @@
 # McUsd Model
-This model is meant as a simple test scene with a variety of [UsdPreviewSurface 2.4 materials](https://graphics.pixar.com/usd/release/spec_usdpreviewsurface.html) and other USD elements, such as a camera and two light sources.
+This model is meant as a simple test scene with a variety of [UsdPreviewSurface 2.4 materials](https://graphics.pixar.com/usd/release/spec_usdpreviewsurface.html) and other USD elements, such as a camera and two light sources. There are two versions: [1 meter blocks](https://erich.realtimerendering.com/mcusd/McUsd.usdz) and [100 cm blocks](https://erich.realtimerendering.com/mcusd/McUsd_10cm.usdz) for viewing on phones, etc.
 
 ![McUsd: JG-RTX textures, rendered in Omniverse](screenshots/ov_accurate.png "McUsd: JG-RTX textures, rendered with Omniverse's Accurate (Iray) renderer, 2022.3.1")
 
