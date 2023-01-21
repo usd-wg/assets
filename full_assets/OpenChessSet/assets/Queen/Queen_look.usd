@@ -19,20 +19,26 @@ over "Queen" (
     }
     variantSet "shadingVariant" = {
         "Black" {
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
+            over "Geom"
             {
-                rel material:binding = </Queen/Materials/M_Queen_B>
+                over "Render" (
+                    apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </Queen/Materials/M_Queen_B>
+                }
             }
 
         }
         "White" {
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
+            over "Geom"
             {
-                rel material:binding = </Queen/Materials/M_Queen_W>
+                over "Render" (
+                    apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </Queen/Materials/M_Queen_W>
+                }
             }
 
         }

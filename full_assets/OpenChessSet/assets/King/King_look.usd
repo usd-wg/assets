@@ -19,20 +19,26 @@ over "King" (
     }
     variantSet "shadingVariant" = {
         "Black" {
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
+            over "Geom"
             {
-                rel material:binding = </King/Materials/M_King_B>
+                over "Render" (
+                    apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </King/Materials/M_King_B>
+                }
             }
 
         }
         "White" {
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
+            over "Geom"
             {
-                rel material:binding = </King/Materials/M_King_W>
+                over "Render" (
+                    apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </King/Materials/M_King_W>
+                }
             }
 
         }

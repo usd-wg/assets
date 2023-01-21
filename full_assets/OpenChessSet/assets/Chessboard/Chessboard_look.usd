@@ -12,11 +12,15 @@ over "Chessboard"
     )
     {
     }
-    over Mesh "Geom" (
-        apiSchemas = ["MaterialBindingAPI"]
-    )
+
+    over "Geom"
     {
-        rel material:binding = </Chessboard/Materials/M_Chessboard>
+        over "Render" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Chessboard/Materials/M_Chessboard>
+        }
     }
 }
 

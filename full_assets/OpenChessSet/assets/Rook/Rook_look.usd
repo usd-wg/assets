@@ -19,20 +19,26 @@ over "Rook" (
     }
     variantSet "shadingVariant" = {
         "Black" {
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
+            over "Geom"
             {
-                rel material:binding = </Rook/Materials/M_Rook_B>
+                over "Render" (
+                    apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </Rook/Materials/M_Rook_B>
+                }
             }
 
         }
         "White" {
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
+            over "Geom"
             {
-                rel material:binding = </Rook/Materials/M_Rook_W>
+                over "Render" (
+                    apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </Rook/Materials/M_Rook_W>
+                }
             }
 
         }

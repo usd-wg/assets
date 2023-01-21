@@ -19,20 +19,26 @@ over "Bishop" (
     }
     variantSet "shadingVariant" = {
         "Black" {
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
+            over "Geom"
             {
-                rel material:binding = </Bishop/Materials/M_Bishop_B>
+                over "Render" (
+                    apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </Bishop/Materials/M_Bishop_B>
+                }
             }
 
         }
         "White" {
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
+            over "Geom"
             {
-                rel material:binding = </Bishop/Materials/M_Bishop_W>
+                over "Render" (
+                    apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </Bishop/Materials/M_Bishop_W>
+                }
             }
 
         }

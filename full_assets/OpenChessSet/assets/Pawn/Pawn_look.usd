@@ -19,34 +19,46 @@ over "Pawn" (
     }
     variantSet "shadingVariant" = {
         "Black" {
-            over Mesh "Geom_Top" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
+            over "Geom_Top"
             {
-                rel material:binding = </Pawn/Materials/M_Pawn_Top_B>
+                over "Render" (
+                    apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </Pawn/Materials/M_Pawn_Top_B>
+                }
             }
 
-            over Mesh "Geom_Body" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
+            over "Geom_Body"
             {
-                rel material:binding = </Pawn/Materials/M_Pawn_Body_B>
+                over "Render" (
+                    apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </Pawn/Materials/M_Pawn_Body_B>
+                }
             }
 
         }
         "White" {
-            over Mesh "Geom_Top" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
+            over "Geom_Top"
             {
-                rel material:binding = </Pawn/Materials/M_Pawn_Top_W>
+                over "Render" (
+                    apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </Pawn/Materials/M_Pawn_Top_W>
+                }
             }
 
-            over Mesh "Geom_Body" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
+            over "Geom_Body"
             {
-                rel material:binding = </Pawn/Materials/M_Pawn_Body_W>
+                over "Render" (
+                    apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </Pawn/Materials/M_Pawn_Body_W>
+                }
             }
 
         }
