@@ -6,13 +6,17 @@
 )
 
 over "King" (
-    prepend references = @./King_mat.mtlx@</MaterialX>
     variants = {
         string shadingVariant = "Black"
     }
     add variantSets = "shadingVariant"
 )
 {
+    def Scope "Materials" (
+        prepend references = @./King_mat.mtlx@</MaterialX/Materials>
+    )
+    {
+    }
     variantSet "shadingVariant" = {
         "Black" {
             over Mesh "Geom" (

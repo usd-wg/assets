@@ -5,10 +5,13 @@
     upAxis = "Y"
 )
 
-over "Chessboard" (
-    prepend references = @./Chessboard_mat.mtlx@</MaterialX>
-)
+over "Chessboard"
 {
+    def Scope "Materials" (
+        prepend references = @./Chessboard_mat.mtlx@</MaterialX/Materials>
+    )
+    {
+    }
     over Mesh "Geom" (
         apiSchemas = ["MaterialBindingAPI"]
     )
