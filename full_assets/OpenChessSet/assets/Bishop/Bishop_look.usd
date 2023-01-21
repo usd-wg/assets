@@ -1,0 +1,37 @@
+#usda 1.0
+(
+    defaultPrim = "Bishop"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+over "Bishop" (
+    prepend references = @./Bishop_mat.mtlx@</MaterialX>
+    variants = {
+        string shadingVariant = "Black"
+    }
+    add variantSets = "shadingVariant"
+)
+{
+    variantSet "shadingVariant" = {
+        "Black" {
+            over Mesh "Geom" (
+                apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </Bishop/Materials/M_Bishop_B>
+            }
+
+        }
+        "White" {
+            over Mesh "Geom" (
+                apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </Bishop/Materials/M_Bishop_W>
+            }
+
+        }
+    }
+}
+

@@ -2,37 +2,10 @@
 (
     defaultPrim = "Rook"
     metersPerUnit = 1
+    subLayers = [
+        @./Rook_look.usd@,
+        @./Rook_geom.usd@
+    ]
     upAxis = "Y"
 )
-
-def Xform "Rook" (
-    add references = @./Rook_geom.usd@</Rook>
-    prepend references = @./Rook_mat.mtlx@</MaterialX>
-    variants = {
-        string shadingVariant = "Black"
-    }
-    add variantSets = "shadingVariant"
-)
-{
-    variantSet "shadingVariant" = {
-        "Black" {
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                rel material:binding = </Rook/Materials/M_Rook_B>
-            }
-
-        }
-        "White" {
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                rel material:binding = </Rook/Materials/M_Rook_W>
-            }
-
-        }
-    }
-}
 

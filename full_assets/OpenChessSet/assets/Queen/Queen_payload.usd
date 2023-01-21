@@ -2,37 +2,10 @@
 (
     defaultPrim = "Queen"
     metersPerUnit = 1
+    subLayers = [
+        @./Queen_look.usd@,
+        @./Queen_geom.usd@
+    ]
     upAxis = "Y"
 )
-
-def Xform "Queen" (
-    add references = @./Queen_geom.usd@</Queen>
-    prepend references = @./Queen_mat.mtlx@</MaterialX>
-    variants = {
-        string shadingVariant = "Black"
-    }
-    add variantSets = "shadingVariant"
-)
-{
-    variantSet "shadingVariant" = {
-        "Black" {
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                rel material:binding = </Queen/Materials/M_Queen_B>
-            }
-
-        }
-        "White" {
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                rel material:binding = </Queen/Materials/M_Queen_W>
-            }
-
-        }
-    }
-}
 

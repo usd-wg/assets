@@ -1,0 +1,37 @@
+#usda 1.0
+(
+    defaultPrim = "Queen"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+over "Queen" (
+    prepend references = @./Queen_mat.mtlx@</MaterialX>
+    variants = {
+        string shadingVariant = "Black"
+    }
+    add variantSets = "shadingVariant"
+)
+{
+    variantSet "shadingVariant" = {
+        "Black" {
+            over Mesh "Geom" (
+                apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </Queen/Materials/M_Queen_B>
+            }
+
+        }
+        "White" {
+            over Mesh "Geom" (
+                apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </Queen/Materials/M_Queen_W>
+            }
+
+        }
+    }
+}
+

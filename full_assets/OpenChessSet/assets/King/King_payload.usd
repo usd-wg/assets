@@ -2,37 +2,10 @@
 (
     defaultPrim = "King"
     metersPerUnit = 1
+    subLayers = [
+        @./King_look.usd@,
+        @./King_geom.usd@
+    ]
     upAxis = "Y"
 )
-
-def Xform "King" (
-    add references = @./King_geom.usd@</King>
-    prepend references = @./King_mat.mtlx@</MaterialX>
-    variants = {
-        string shadingVariant = "Black"
-    }
-    add variantSets = "shadingVariant"
-)
-{
-    variantSet "shadingVariant" = {
-        "Black" {
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                rel material:binding = </King/Materials/M_King_B>
-            }
-
-        }
-        "White" {
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                rel material:binding = </King/Materials/M_King_W>
-            }
-
-        }
-    }
-}
 

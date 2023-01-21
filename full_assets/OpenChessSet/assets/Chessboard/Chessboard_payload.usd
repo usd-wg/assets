@@ -2,19 +2,10 @@
 (
     defaultPrim = "Chessboard"
     metersPerUnit = 1
+    subLayers = [
+        @./Chessboard_look.usd@,
+        @./Chessboard_geom.usd@
+    ]
     upAxis = "Y"
 )
-
-def Xform "Chessboard" (
-    add references = @./Chessboard_geom.usd@</Chessboard>
-    prepend references = @./Chessboard_mat.mtlx@</MaterialX>
-)
-{
-    over Mesh "Geom" (
-        apiSchemas = ["MaterialBindingAPI"]
-    )
-    {
-        rel material:binding = </Chessboard/Materials/M_Chessboard>
-    }
-}
 

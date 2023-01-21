@@ -2,37 +2,10 @@
 (
     defaultPrim = "Knight"
     metersPerUnit = 1
+    subLayers = [
+        @./Knight_look.usd@,
+        @./Knight_geom.usd@
+    ]
     upAxis = "Y"
 )
-
-def Xform "Knight" (
-    add references = @./Knight_geom.usd@</Knight>
-    prepend references = @./Knight_mat.mtlx@</MaterialX>
-    variants = {
-        string shadingVariant = "Black"
-    }
-    add variantSets = "shadingVariant"
-)
-{
-    variantSet "shadingVariant" = {
-        "Black" {
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                rel material:binding = </Knight/Materials/M_Knight_B>
-            }
-
-        }
-        "White" {
-            over Mesh "Geom" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                rel material:binding = </Knight/Materials/M_Knight_W>
-            }
-
-        }
-    }
-}
 

@@ -2,51 +2,10 @@
 (
     defaultPrim = "Pawn"
     metersPerUnit = 1
+    subLayers = [
+        @./Pawn_look.usd@,
+        @./Pawn_geom.usd@
+    ]
     upAxis = "Y"
 )
-
-def Xform "Pawn" (
-    add references = @./Pawn_geom.usd@</Pawn>
-    prepend references = @./Pawn_mat.mtlx@</MaterialX>
-    variants = {
-        string shadingVariant = "Black"
-    }
-    add variantSets = "shadingVariant"
-)
-{
-    variantSet "shadingVariant" = {
-        "Black" {
-            over Mesh "Geom_Top" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                rel material:binding = </Pawn/Materials/M_Pawn_Top_B>
-            }
-
-            over Mesh "Geom_Body" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                rel material:binding = </Pawn/Materials/M_Pawn_Body_B>
-            }
-
-        }
-        "White" {
-            over Mesh "Geom_Top" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                rel material:binding = </Pawn/Materials/M_Pawn_Top_W>
-            }
-
-            over Mesh "Geom_Body" (
-                apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                rel material:binding = </Pawn/Materials/M_Pawn_Body_W>
-            }
-
-        }
-    }
-}
 
