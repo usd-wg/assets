@@ -15,7 +15,6 @@
     </image>
     <normalmap name="normalmap" type="vector3">
       <input name="in" type="vector3" nodename="normalmap_img" />
-      <input name="scale" type="float" value="-1.0" />
     </normalmap>
     <output name="base_color_output" type="color3" nodename="diffuse4" />
     <output name="roughness_output" type="float" nodename="roughness4" />
@@ -43,7 +42,6 @@
     </image>
     <normalmap name="normalmap" type="vector3">
       <input name="in" type="vector3" nodename="normalmap_img" />
-      <input name="scale" type="float" value="-1.0" />
     </normalmap>
     <output name="base_color_output" type="color3" nodename="diffuse5" />
     <output name="roughness_output" type="float" nodename="roughness5" />

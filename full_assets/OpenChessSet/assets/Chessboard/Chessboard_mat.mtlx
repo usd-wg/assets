@@ -18,7 +18,6 @@
     </image>
     <normalmap name="mtlxnormalmap12" type="vector3">
       <input name="in" type="vector3" nodename="mtlximage15" />
-      <input name="scale" type="float" value="-1.0" />
     </normalmap>
     <output name="base_color_output" type="color3" nodename="mtlximage13" />
     <output name="metalness_output" type="float" nodename="mtlximage16" />

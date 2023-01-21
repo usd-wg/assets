@@ -21,7 +21,6 @@
     </image>
     <normalmap name="mtlxnormalmap2" type="vector3">
       <input name="in" type="vector3" nodename="normal" />
-      <input name="scale" type="float" value="-1.0" />
     </normalmap>
     <output name="base_color_output" type="color3" nodename="diffuse" />
     <output name="metalness_output" type="float" nodename="metallic" />
@@ -62,7 +61,6 @@
     </image>
     <normalmap name="mtlxnormalmap3" type="vector3">
       <input name="in" type="vector3" nodename="normal1" />
-      <input name="scale" type="float" value="-1.0" />
     </normalmap>
     <output name="base_color_output" type="color3" nodename="diffuse1" />
     <output name="metalness_output" type="float" nodename="metallic1" />
