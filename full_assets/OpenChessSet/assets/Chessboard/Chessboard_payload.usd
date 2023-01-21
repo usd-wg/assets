@@ -6,10 +6,6 @@
 )
 
 def Xform "Chessboard" (
-    assetInfo = {
-        asset identifier = @./assets/Chessboard/Chessboard.usd@
-        string name = "Chessboard"
-    }
     add references = @./Chessboard_geom.usd@</Chessboard>
     prepend references = @./Chessboard_mat.mtlx@</MaterialX>
 )

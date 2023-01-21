@@ -6,10 +6,6 @@
 )
 
 def "Bishop" (
-    assetInfo = {
-        asset identifier = @./assets/Bishop/Bishop.usd@
-        string name = "Bishop"
-    }
     add references = @./Bishop_geom.usd@</Bishop>
     prepend references = @./Bishop_mat.mtlx@</MaterialX>
     variants = {

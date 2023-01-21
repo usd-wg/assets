@@ -6,10 +6,6 @@
 )
 
 def Xform "Rook" (
-    assetInfo = {
-        asset identifier = @./assets/Rook/Rook.usd@
-        string name = "Rook"
-    }
     add references = @./Rook_geom.usd@</Rook>
     prepend references = @./Rook_mat.mtlx@</MaterialX>
     variants = {

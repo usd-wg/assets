@@ -6,10 +6,6 @@
 )
 
 def Xform "Knight" (
-    assetInfo = {
-        asset identifier = @./assets/Knight/Knight.usd@
-        string name = "Knight"
-    }
     add references = @./Knight_geom.usd@</Knight>
     prepend references = @./Knight_mat.mtlx@</MaterialX>
     variants = {

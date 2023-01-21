@@ -6,10 +6,6 @@
 )
 
 def Xform "Pawn" (
-    assetInfo = {
-        asset identifier = @./assets/Pawn/Pawn.usd@
-        string name = "Pawn"
-    }
     add references = @./Pawn_geom.usd@</Pawn>
     prepend references = @./Pawn_mat.mtlx@</MaterialX>
     variants = {
