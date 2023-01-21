@@ -13,6 +13,7 @@ class "__class__"
 }
 
 def Xform "Bishop" (
+    prepend apiSchemas = ["GeomModelAPI"]
     assetInfo = {
         asset identifier = @./assets/Bishop/Bishop.usd@
         string name = "Bishop"
@@ -26,6 +27,7 @@ def Xform "Bishop" (
     add variantSets = "shadingVariant"
 )
 {
+    float3[] extentsHint = [(-0.024297114, 0.018705152, -0.024297114), (0.024297114, 0.14273909, 0.024297114)]
     variantSet "shadingVariant" = {
         "Black" {
 

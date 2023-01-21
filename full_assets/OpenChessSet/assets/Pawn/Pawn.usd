@@ -13,6 +13,7 @@ class "__class__"
 }
 
 def Xform "Pawn" (
+    prepend apiSchemas = ["GeomModelAPI"]
     assetInfo = {
         asset identifier = @./assets/Pawn/Pawn.usd@
         string name = "Pawn"
@@ -26,6 +27,7 @@ def Xform "Pawn" (
     add variantSets = "shadingVariant"
 )
 {
+    float3[] extentsHint = [(-0.021040332, 0.014926995, -0.021040335), (0.021040335, 0.08137139, 0.021040335)]
     variantSet "shadingVariant" = {
         "Black" {
 

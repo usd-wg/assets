@@ -13,6 +13,7 @@ class "__class__"
 }
 
 def Xform "Chessboard" (
+    prepend apiSchemas = ["GeomModelAPI"]
     assetInfo = {
         asset identifier = @./assets/Chessboard/Chessboard.usd@
         string name = "Chessboard"
@@ -22,5 +23,6 @@ def Xform "Chessboard" (
     payload = @./Chessboard_payload.usd@</Chessboard>
 )
 {
+    float3[] extentsHint = [(-0.35270807, 0, -0.35270807), (0.35270807, 0.01851505, 0.35270807)]
 }
 

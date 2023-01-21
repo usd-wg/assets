@@ -13,6 +13,7 @@ class "__class__"
 }
 
 def Xform "King" (
+    prepend apiSchemas = ["GeomModelAPI"]
     assetInfo = {
         asset identifier = @./assets/King/King.usd@
         string name = "King"
@@ -26,6 +27,7 @@ def Xform "King" (
     add variantSets = "shadingVariant"
 )
 {
+    float3[] extentsHint = [(-0.028035587, 0.006083087, -0.028035587), (0.028035587, 0.15762499, 0.028035587)]
     variantSet "shadingVariant" = {
         "Black" {
 

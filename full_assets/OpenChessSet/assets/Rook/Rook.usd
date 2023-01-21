@@ -13,6 +13,7 @@ class "__class__"
 }
 
 def Xform "Rook" (
+    prepend apiSchemas = ["GeomModelAPI"]
     assetInfo = {
         asset identifier = @./assets/Rook/Rook.usd@
         string name = "Rook"
@@ -26,6 +27,7 @@ def Xform "Rook" (
     add variantSets = "shadingVariant"
 )
 {
+    float3[] extentsHint = [(-0.026843112, 0.0008221504, -0.026843112), (0.026843112, 0.09790896, 0.026843112)]
     variantSet "shadingVariant" = {
         "Black" {
 
