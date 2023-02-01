@@ -1,0 +1,11 @@
+#usda 1.0
+(
+    defaultPrim = "King"
+    metersPerUnit = 1
+    subLayers = [
+        @./King_look.usd@,
+        @./King_geom.usd@
+    ]
+    upAxis = "Y"
+)
+

@@ -1,0 +1,47 @@
+#usda 1.0
+(
+    defaultPrim = "Knight"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+over "Knight" (
+    variants = {
+        string shadingVariant = "Black"
+    }
+    add variantSets = "shadingVariant"
+)
+{
+    def Scope "Materials" (
+        prepend references = @./Knight_mat.mtlx@</MaterialX/Materials>
+    )
+    {
+    }
+    variantSet "shadingVariant" = {
+        "Black" {
+            over "Geom"
+            {
+                over "Render" (
+                    apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </Knight/Materials/M_Knight_B>
+                }
+            }
+
+        }
+        "White" {
+            over "Geom"
+            {
+                over "Render" (
+                    apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </Knight/Materials/M_Knight_W>
+                }
+            }
+
+        }
+    }
+}
+

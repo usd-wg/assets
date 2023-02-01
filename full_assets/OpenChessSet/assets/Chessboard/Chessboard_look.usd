@@ -1,0 +1,26 @@
+#usda 1.0
+(
+    defaultPrim = "Chessboard"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+over "Chessboard"
+{
+    def Scope "Materials" (
+        prepend references = @./Chessboard_mat.mtlx@</MaterialX/Materials>
+    )
+    {
+    }
+
+    over "Geom"
+    {
+        over "Render" (
+            apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Chessboard/Materials/M_Chessboard>
+        }
+    }
+}
+

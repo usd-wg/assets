@@ -1,0 +1,40 @@
+#usda 1.0
+(
+    defaultPrim = "Knight"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+class "__class__"
+{
+    class "Knight"
+    {
+    }
+}
+
+def Xform "Knight" (
+    prepend apiSchemas = ["GeomModelAPI"]
+    assetInfo = {
+        asset identifier = @./assets/Knight/Knight.usd@
+        string name = "Knight"
+    }
+    prepend inherits = </__class__/Knight>
+    kind = "component"
+    payload = @./Knight_payload.usd@</Knight>
+    variants = {
+        string shadingVariant = "Black"
+    }
+    add variantSets = "shadingVariant"
+)
+{
+    float3[] extentsHint = [(-0.02809789, 0.01870833, -0.02499268), (0.03205933, 0.11882684, 0.02499268)]
+    variantSet "shadingVariant" = {
+        "Black" {
+
+        }
+        "White" {
+
+        }
+    }
+}
+

@@ -1,0 +1,85 @@
+<?xml version="1.0"?>
+<materialx version="1.38" colorspace="lin_rec709" >
+  <!-- Chess Set geometry and material contributed by Side Effects, artwork by Moeen Sayed and Mujtaba Sayed. -->
+
+  <!-- Queen Black -->
+  <nodegraph name="NG_QueenBlack">
+    <image name="diffuse" type="color3">
+      <input name="file" type="filename" value="tex/queen_black_base_color.jpg" colorspace="srgb_texture" />
+    </image>
+    <image name="metallic" type="float">
+      <input name="file" type="filename" value="tex/queen_shared_metallic.jpg" />
+    </image>
+    <image name="roughness" type="float">
+      <input name="file" type="filename" value="tex/queen_black_roughness.jpg" />
+    </image>
+    <image name="sss" type="float">
+      <input name="file" type="filename" value="tex/queen_shared_scattering.jpg" />
+    </image>
+    <image name="normal" type="vector3">
+      <input name="file" type="filename" value="tex/queen_black_normal.jpg" />
+    </image>
+    <normalmap name="mtlxnormalmap2" type="vector3">
+      <input name="in" type="vector3" nodename="normal" />
+    </normalmap>
+    <output name="base_color_output" type="color3" nodename="diffuse" />
+    <output name="metalness_output" type="float" nodename="metallic" />
+    <output name="roughness_output" type="float" nodename="roughness" />
+    <output name="subsurface_output" type="float" nodename="sss" />
+    <output name="normal_output" type="vector3" nodename="mtlxnormalmap2" />
+  </nodegraph>
+  <standard_surface name="Queen_B" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_QueenBlack" output="base_color_output" />
+    <input name="metalness" type="float" nodegraph="NG_QueenBlack" output="metalness_output" />
+    <input name="specular_roughness" type="float" nodegraph="NG_QueenBlack" output="roughness_output" />
+    <input name="subsurface" type="float" nodegraph="NG_QueenBlack" output="subsurface_output" />
+    <input name="subsurface_color" type="color3" nodegraph="NG_QueenBlack" output="base_color_output" />
+    <input name="subsurface_radius" type="color3" nodegraph="NG_QueenBlack" output="base_color_output" />
+    <input name="subsurface_scale" type="float" value="0.003" />
+    <input name="normal" type="vector3" nodegraph="NG_QueenBlack" output="normal_output" />
+  </standard_surface>
+  <surfacematerial name="M_Queen_B" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Queen_B" />
+  </surfacematerial>
+
+  <!-- Queen White -->
+  <nodegraph name="NG_QueenWhite">
+    <image name="diffuse1" type="color3">
+      <input name="file" type="filename" value="tex/queen_white_base_color.jpg" colorspace="srgb_texture" />
+    </image>
+    <image name="metallic1" type="float">
+      <input name="file" type="filename" value="tex/queen_shared_metallic.jpg" />
+    </image>
+    <image name="roughness1" type="float">
+      <input name="file" type="filename" value="tex/queen_white_roughness.jpg" />
+    </image>
+    <image name="sss1" type="float">
+      <input name="file" type="filename" value="tex/queen_shared_scattering.jpg" />
+    </image>
+    <image name="normal1" type="vector3">
+      <input name="file" type="filename" value="tex/queen_white_normal.jpg" />
+    </image>
+    <normalmap name="mtlxnormalmap3" type="vector3">
+      <input name="in" type="vector3" nodename="normal1" />
+    </normalmap>
+    <output name="base_color_output" type="color3" nodename="diffuse1" />
+    <output name="metalness_output" type="float" nodename="metallic1" />
+    <output name="roughness_output" type="float" nodename="roughness1" />
+    <output name="subsurface_output" type="float" nodename="sss1" />
+    <output name="normal_output" type="vector3" nodename="mtlxnormalmap3" />
+  </nodegraph>
+  <standard_surface name="Queen_W" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_QueenWhite" output="base_color_output" />
+    <input name="metalness" type="float" nodegraph="NG_QueenWhite" output="metalness_output" />
+    <input name="specular_roughness" type="float" nodegraph="NG_QueenWhite" output="roughness_output" />
+    <input name="subsurface" type="float" nodegraph="NG_QueenWhite" output="subsurface_output" />
+    <input name="subsurface_color" type="color3" nodegraph="NG_QueenWhite" output="base_color_output" />
+    <input name="subsurface_radius" type="color3" nodegraph="NG_QueenWhite" output="base_color_output" />
+    <input name="subsurface_scale" type="float" value="0.001" />
+    <input name="normal" type="vector3" nodegraph="NG_QueenWhite" output="normal_output" />
+  </standard_surface>
+  <surfacematerial name="M_Queen_W" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Queen_W" />
+  </surfacematerial>
+
+</materialx>

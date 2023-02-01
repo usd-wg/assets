@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<materialx version="1.38" colorspace="lin_rec709" >
+  <!-- Chess Set geometry and material contributed by Side Effects, artwork by Moeen Sayed and Mujtaba Sayed. -->
+
+  <!-- Rook Black -->
+  <nodegraph name="NG_RookBlack">
+    <image name="diffuse6" type="color3">
+      <input name="file" type="filename" value="tex/rook_black_base_color.jpg" colorspace="srgb_texture" />
+    </image>
+    <image name="metallic6" type="float">
+      <input name="file" type="filename" value="tex/rook_shared_metallic.jpg" />
+    </image>
+    <image name="roughness6" type="float">
+      <input name="file" type="filename" value="tex/rook_shared_roughness.jpg" />
+    </image>
+    <image name="normal6" type="vector3">
+      <input name="file" type="filename" value="tex/rook_shared_normal.jpg" />
+    </image>
+    <normalmap name="mtlxnormalmap8" type="vector3">
+      <input name="in" type="vector3" nodename="normal6" />
+    </normalmap>
+    <output name="base_color_output" type="color3" nodename="diffuse6" />
+    <output name="metalness_output" type="float" nodename="metallic6" />
+    <output name="roughness_output" type="float" nodename="roughness6" />
+    <output name="normal_output" type="vector3" nodename="mtlxnormalmap8" />
+  </nodegraph>
+  <standard_surface name="Rook_B" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_RookBlack" output="base_color_output" />
+    <input name="metalness" type="float" nodegraph="NG_RookBlack" output="metalness_output" />
+    <input name="specular_roughness" type="float" nodegraph="NG_RookBlack" output="roughness_output" />
+    <input name="normal" type="vector3" nodegraph="NG_RookBlack" output="normal_output" />
+  </standard_surface>
+  <surfacematerial name="M_Rook_B" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Rook_B" />
+  </surfacematerial>
+
+  <!-- Rook White -->
+  <nodegraph name="NG_RookWhite">
+    <image name="diffuse7" type="color3">
+      <input name="file" type="filename" value="tex/rook_white_base_color.jpg" colorspace="srgb_texture" />
+    </image>
+    <image name="metallic7" type="float">
+      <input name="file" type="filename" value="tex/rook_shared_metallic.jpg" />
+    </image>
+    <image name="roughness7" type="float">
+      <input name="file" type="filename" value="tex/rook_shared_roughness.jpg" />
+    </image>
+    <image name="normal7" type="vector3">
+      <input name="file" type="filename" value="tex/rook_shared_normal.jpg" />
+    </image>
+    <normalmap name="mtlxnormalmap9" type="vector3">
+      <input name="in" type="vector3" nodename="normal7" />
+    </normalmap>
+    <output name="base_color_output" type="color3" nodename="diffuse7" />
+    <output name="metalness_output" type="float" nodename="metallic7" />
+    <output name="roughness_output" type="float" nodename="roughness7" />
+    <output name="normal_output" type="vector3" nodename="mtlxnormalmap9" />
+  </nodegraph>
+  <standard_surface name="Rook_W" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_RookWhite" output="base_color_output" />
+    <input name="metalness" type="float" nodegraph="NG_RookWhite" output="metalness_output" />
+    <input name="specular_roughness" type="float" nodegraph="NG_RookWhite" output="roughness_output" />
+    <input name="normal" type="vector3" nodegraph="NG_RookWhite" output="normal_output" />
+  </standard_surface>
+  <surfacematerial name="M_Rook_W" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Rook_W" />
+  </surfacematerial>
+
+</materialx>

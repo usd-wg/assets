@@ -1,0 +1,11 @@
+#usda 1.0
+(
+    defaultPrim = "Rook"
+    metersPerUnit = 1
+    subLayers = [
+        @./Rook_look.usd@,
+        @./Rook_geom.usd@
+    ]
+    upAxis = "Y"
+)
+

@@ -1,0 +1,47 @@
+#usda 1.0
+(
+    defaultPrim = "King"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+over "King" (
+    variants = {
+        string shadingVariant = "Black"
+    }
+    add variantSets = "shadingVariant"
+)
+{
+    def Scope "Materials" (
+        prepend references = @./King_mat.mtlx@</MaterialX/Materials>
+    )
+    {
+    }
+    variantSet "shadingVariant" = {
+        "Black" {
+            over "Geom"
+            {
+                over "Render" (
+                    apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </King/Materials/M_King_B>
+                }
+            }
+
+        }
+        "White" {
+            over "Geom"
+            {
+                over "Render" (
+                    apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </King/Materials/M_King_W>
+                }
+            }
+
+        }
+    }
+}
+

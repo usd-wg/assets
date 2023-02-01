@@ -1,0 +1,11 @@
+#usda 1.0
+(
+    defaultPrim = "Bishop"
+    metersPerUnit = 1
+    subLayers = [
+        @./Bishop_look.usd@,
+        @./Bishop_geom.usd@
+    ]
+    upAxis = "Y"
+)
+

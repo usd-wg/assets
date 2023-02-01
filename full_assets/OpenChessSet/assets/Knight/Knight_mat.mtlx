@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<materialx version="1.38" colorspace="lin_rec709" >
+  <!-- Chess Set geometry and material contributed by Side Effects, artwork by Moeen Sayed and Mujtaba Sayed. -->
+
+  <!-- Knight Black -->
+  <nodegraph name="NG_KnightBlack">
+    <image name="diffuse4" type="color3">
+      <input name="file" type="filename" value="tex/knight_black_base_color.jpg" colorspace="srgb_texture" />
+    </image>
+    <image name="roughness4" type="float">
+      <input name="file" type="filename" value="tex/knight_black_roughness.jpg" />
+    </image>
+    <image name="normalmap_img" type="vector3">
+      <input name="file" type="filename" value="tex/knight_shared_normal.jpg" />
+    </image>
+    <normalmap name="normalmap" type="vector3">
+      <input name="in" type="vector3" nodename="normalmap_img" />
+    </normalmap>
+    <output name="base_color_output" type="color3" nodename="diffuse4" />
+    <output name="roughness_output" type="float" nodename="roughness4" />
+    <output name="normal_output" type="vector3" nodename="normalmap" />
+  </nodegraph>
+  <standard_surface name="Knight_B" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_KnightBlack" output="base_color_output" />
+    <input name="specular_roughness" type="float" nodegraph="NG_KnightBlack" output="roughness_output" />
+    <input name="normal" type="vector3" nodegraph="NG_KnightBlack" output="normal_output" />
+  </standard_surface>
+  <surfacematerial name="M_Knight_B" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Knight_B" />
+  </surfacematerial>
+
+  <!-- Knight White -->
+  <nodegraph name="NG_KnightWhite">
+    <image name="diffuse5" type="color3">
+      <input name="file" type="filename" value="tex/knight_white_base_color.jpg" colorspace="srgb_texture" />
+    </image>
+    <image name="roughness5" type="float">
+      <input name="file" type="filename" value="tex/knight_white_roughness.jpg" />
+    </image>
+    <image name="normalmap_img" type="vector3">
+      <input name="file" type="filename" value="tex/knight_shared_normal.jpg" />
+    </image>
+    <normalmap name="normalmap" type="vector3">
+      <input name="in" type="vector3" nodename="normalmap_img" />
+    </normalmap>
+    <output name="base_color_output" type="color3" nodename="diffuse5" />
+    <output name="roughness_output" type="float" nodename="roughness5" />
+    <output name="normal_output" type="vector3" nodename="normalmap" />
+  </nodegraph>
+  <standard_surface name="Knight_W" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_KnightWhite" output="base_color_output" />
+    <input name="specular_roughness" type="float" nodegraph="NG_KnightWhite" output="roughness_output" />
+    <input name="normal" type="vector3" nodegraph="NG_KnightWhite" output="normal_output" />
+  </standard_surface>
+  <surfacematerial name="M_Knight_W" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Knight_W" />
+  </surfacematerial>
+
+</materialx>

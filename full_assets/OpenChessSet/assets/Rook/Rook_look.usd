@@ -1,0 +1,47 @@
+#usda 1.0
+(
+    defaultPrim = "Rook"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+over "Rook" (
+    variants = {
+        string shadingVariant = "Black"
+    }
+    add variantSets = "shadingVariant"
+)
+{
+    def Scope "Materials" (
+        prepend references = @./Rook_mat.mtlx@</MaterialX/Materials>
+    )
+    {
+    }
+    variantSet "shadingVariant" = {
+        "Black" {
+            over "Geom"
+            {
+                over "Render" (
+                    apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </Rook/Materials/M_Rook_B>
+                }
+            }
+
+        }
+        "White" {
+            over "Geom"
+            {
+                over "Render" (
+                    apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </Rook/Materials/M_Rook_W>
+                }
+            }
+
+        }
+    }
+}
+

@@ -1,0 +1,11 @@
+#usda 1.0
+(
+    defaultPrim = "Chessboard"
+    metersPerUnit = 1
+    subLayers = [
+        @./Chessboard_look.usd@,
+        @./Chessboard_geom.usd@
+    ]
+    upAxis = "Y"
+)
+

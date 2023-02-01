@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<materialx version="1.38" colorspace="lin_rec709" >
+  <!-- Chess Set geometry and material contributed by Side Effects, artwork by Moeen Sayed and Mujtaba Sayed. -->
+
+  <!-- Pawn Body Black -->
+  <nodegraph name="NG_PawnBodyBlack">
+    <image name="diffuse9" type="color3">
+      <input name="file" type="filename" value="tex/pawn_black_base_color.jpg" colorspace="srgb_texture" />
+    </image>
+    <image name="metallic9" type="float">
+      <input name="file" type="filename" value="tex/pawn_shared_metallic.jpg" />
+    </image>
+    <image name="roughness9" type="float">
+      <input name="file" type="filename" value="tex/pawn_shared_roughness.jpg" />
+    </image>
+    <image name="normal9" type="vector3">
+      <input name="file" type="filename" value="tex/pawn_shared_normal.jpg" />
+    </image>
+    <normalmap name="mtlxnormalmap13" type="vector3">
+      <input name="in" type="vector3" nodename="normal9" />
+    </normalmap>
+    <output name="base_color_output" type="color3" nodename="diffuse9" />
+    <output name="metalness_output" type="float" nodename="metallic9" />
+    <output name="roughness_output" type="float" nodename="roughness9" />
+    <output name="normal_output" type="vector3" nodename="mtlxnormalmap13" />
+  </nodegraph>
+  <standard_surface name="Pawn_Body_B" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_PawnBodyBlack" output="base_color_output" />
+    <input name="metalness" type="float" nodegraph="NG_PawnBodyBlack" output="metalness_output" />
+    <input name="specular_roughness" type="float" nodegraph="NG_PawnBodyBlack" output="roughness_output" />
+    <input name="normal" type="vector3" nodegraph="NG_PawnBodyBlack" output="normal_output" />
+  </standard_surface>
+  <surfacematerial name="M_Pawn_Body_B" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Pawn_Body_B" />
+  </surfacematerial>
+
+  <!-- Pawn Body White -->
+  <nodegraph name="NG_PawnBodyWhite">
+    <image name="diffuse8" type="color3">
+      <input name="file" type="filename" value="tex/pawn_white_base_color.jpg" colorspace="srgb_texture" />
+    </image>
+    <image name="metallic8" type="float">
+      <input name="file" type="filename" value="tex/pawn_shared_metallic.jpg" />
+    </image>
+    <image name="roughness8" type="float">
+      <input name="file" type="filename" value="tex/pawn_shared_roughness.jpg" />
+    </image>
+    <image name="normal8" type="vector3">
+      <input name="file" type="filename" value="tex/pawn_shared_normal.jpg" />
+    </image>
+    <normalmap name="mtlxnormalmap10" type="vector3">
+      <input name="in" type="vector3" nodename="normal8" />
+    </normalmap>
+    <output name="base_color_output" type="color3" nodename="diffuse8" />
+    <output name="metalness_output" type="float" nodename="metallic8" />
+    <output name="roughness_output" type="float" nodename="roughness8" />
+    <output name="normal_output" type="vector3" nodename="mtlxnormalmap10" />
+  </nodegraph>
+  <standard_surface name="Pawn_Body_W" type="surfaceshader">
+    <input name="base_color" type="color3" nodegraph="NG_PawnBodyWhite" output="base_color_output" />
+    <input name="metalness" type="float" nodegraph="NG_PawnBodyWhite" output="metalness_output" />
+    <input name="specular_roughness" type="float" nodegraph="NG_PawnBodyWhite" output="roughness_output" />
+    <input name="normal" type="vector3" nodegraph="NG_PawnBodyWhite" output="normal_output" />
+  </standard_surface>
+  <surfacematerial name="M_Pawn_Body_W" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Pawn_Body_W" />
+  </surfacematerial>
+
+  <!-- Pawn Top Black -->
+  <nodegraph name="NG_PawnTopBlack">
+    <image name="mtlximage19" type="float">
+      <input name="file" type="filename" value="tex/pawn_shared_roughness.jpg" />
+    </image>
+    <image name="mtlximage18" type="vector3">
+      <input name="file" type="filename" value="tex/pawn_shared_normal.jpg" />
+    </image>
+    <normalmap name="mtlxnormalmap14" type="vector3">
+      <input name="in" type="vector3" nodename="mtlximage18" />
+    </normalmap>
+    <output name="roughness_output" type="float" nodename="mtlximage19" />
+    <output name="normal_output" type="vector3" nodename="mtlxnormalmap14" />
+  </nodegraph>
+  <standard_surface name="Pawn_Top_B" type="surfaceshader">
+    <input name="specular_roughness" type="float" nodegraph="NG_PawnTopBlack" output="roughness_output" />
+    <input name="normal" type="vector3" nodegraph="NG_PawnTopBlack" output="normal_output" />
+    <input name="base_color" type="color3" value="1, 1, 1" />
+    <input name="transmission" type="float" value="1" />
+    <input name="transmission_color" type="color3" value="0.2995, 0.5, 0.450276" />
+  </standard_surface>
+  <surfacematerial name="M_Pawn_Top_B" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Pawn_Top_B" />
+  </surfacematerial>
+
+  <!-- Pawn Top White -->
+  <nodegraph name="NG_PawnTopWhite">
+    <image name="mtlximage21" type="float">
+      <input name="file" type="filename" value="tex/pawn_shared_roughness.jpg" />
+    </image>
+    <image name="mtlximage20" type="vector3">
+      <input name="file" type="filename" value="tex/pawn_shared_normal.jpg" />
+    </image>
+    <normalmap name="mtlxnormalmap15" type="vector3">
+      <input name="in" type="vector3" nodename="mtlximage20" />
+    </normalmap>
+    <output name="roughness_output" type="float" nodename="mtlximage21" />
+    <output name="normal_output" type="vector3" nodename="mtlxnormalmap15" />
+  </nodegraph>
+  <standard_surface name="Pawn_Top_W" type="surfaceshader">
+    <input name="specular_roughness" type="float" nodegraph="NG_PawnTopWhite" output="roughness_output" />
+    <input name="normal" type="vector3" nodegraph="NG_PawnTopWhite" output="normal_output" />
+    <input name="base_color" type="color3" value="1, 1, 1" />
+    <input name="transmission" type="float" value="1" />
+    <input name="transmission_color" type="color3" value="1, 1, 0.828" />
+  </standard_surface>
+  <surfacematerial name="M_Pawn_Top_W" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="Pawn_Top_W" />
+  </surfacematerial>
+
+</materialx>

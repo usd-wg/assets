@@ -1,0 +1,40 @@
+#usda 1.0
+(
+    defaultPrim = "Queen"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+class "__class__"
+{
+    class "Queen"
+    {
+    }
+}
+
+def Xform "Queen" (
+    prepend apiSchemas = ["GeomModelAPI"]
+    assetInfo = {
+        asset identifier = @./assets/Queen/Queen.usd@
+        string name = "Queen"
+    }
+    prepend inherits = </__class__/Queen>
+    kind = "component"
+    payload = @./Queen_payload.usd@</Queen>
+    variants = {
+        string shadingVariant = "Black"
+    }
+    add variantSets = "shadingVariant"
+)
+{
+    float3[] extentsHint = [(-0.02666199, 0.018983757, -0.02666199), (0.02666199, 0.15511733, 0.02666199)]
+    variantSet "shadingVariant" = {
+        "Black" {
+
+        }
+        "White" {
+
+        }
+    }
+}
+

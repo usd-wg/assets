@@ -1,0 +1,11 @@
+#usda 1.0
+(
+    defaultPrim = "Knight"
+    metersPerUnit = 1
+    subLayers = [
+        @./Knight_look.usd@,
+        @./Knight_geom.usd@
+    ]
+    upAxis = "Y"
+)
+

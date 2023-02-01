@@ -1,0 +1,40 @@
+#usda 1.0
+(
+    defaultPrim = "Bishop"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+class "__class__"
+{
+    class "Bishop"
+    {
+    }
+}
+
+def Xform "Bishop" (
+    prepend apiSchemas = ["GeomModelAPI"]
+    assetInfo = {
+        asset identifier = @./assets/Bishop/Bishop.usd@
+        string name = "Bishop"
+    }
+    prepend inherits = </__class__/Bishop>
+    kind = "component"
+    payload = @./Bishop_payload.usd@</Bishop>
+    variants = {
+        string shadingVariant = "Black"
+    }
+    add variantSets = "shadingVariant"
+)
+{
+    float3[] extentsHint = [(-0.024297114, 0.018705152, -0.024297114), (0.024297114, 0.14273909, 0.024297114)]
+    variantSet "shadingVariant" = {
+        "Black" {
+
+        }
+        "White" {
+
+        }
+    }
+}
+

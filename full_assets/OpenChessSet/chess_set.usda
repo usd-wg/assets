@@ -1,0 +1,252 @@
+#usda 1.0
+(
+    defaultPrim = "ChessSet"
+    doc = "The Open Chess Set. Authored by Moeen Sayed and Mujtaba Sayed, and contributed to the MaterialX project by SideFX. glTF/MaterialX conversion by Chris Rydalch and Jonathan Stone, USD refinements by Pablo Delgado. Licensed under CC BY 4.0 by the Academy Software Foundation."
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+class "__class__"
+{
+    class "ChessSet"
+    {
+    }
+}
+
+def Xform "ChessSet" (
+    kind = "assembly"
+    prepend inherits = </__class__/ChessSet>
+)
+{
+    def Xform "Chessboard" (
+        add references = @./assets/Chessboard/Chessboard.usd@
+    )
+    {
+    }
+
+    def Xform "Black" (
+        kind = "group"
+    )
+    {
+        double3 xformOp:translate = (0, 0, 0.188125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Xform "King" (
+            add references = @./assets/King/King.usd@
+            variants = {
+                string shadingVariant = "Black"
+            }
+        )
+        {
+            double3 xformOp:translate = (-0.03142297640442848, 0.011370822787284851, 0.03196573942)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Xform "Queen" (
+            add references = @./assets/Queen/Queen.usd@
+            variants = {
+                string shadingVariant = "Black"
+            }
+        )
+        {
+            double3 xformOp:translate = (0.030731208622455597, -0.0013603270053863525, 0.03171471074)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Xform "BishopL" (
+            add references = @./assets/Bishop/Bishop.usd@
+            variants = {
+                string shadingVariant = "Black"
+            }
+        )
+        {
+            double3 xformOp:translate = (-0.09403244778513908, -0.002121470868587494, 0.03097364619)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Xform "BishopR" (
+            add references = @./assets/Bishop/Bishop.usd@
+            variants = {
+                string shadingVariant = "Black"
+            }
+        )
+        {
+            double3 xformOp:translate = (0.08881419152021408, -0.002121470868587494, 0.03143014326)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Xform "KnightL" (
+            add references = @./assets/Knight/Knight.usd@
+            variants = {
+                string shadingVariant = "Black"
+            }
+        )
+        {
+            matrix4d xformOp:transform = ( (0, 0, -1, 0), (0, 1, 0, 0), (1, 0, 0, 0), (0.1582154892385006, -0.002121470868587494, 0.03188585057, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Xform "KnightR" (
+            add references = @./assets/Knight/Knight.usd@
+            variants = {
+                string shadingVariant = "Black"
+            }
+        )
+        {
+            matrix4d xformOp:transform = ( (0, 0, -1, 0), (0, 1, 0, 0), (1, 0, 0, 0), (-0.15675804391503334, -0.002121470868587494, 0.03188585057, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Xform "RookL" (
+            add references = @./assets/Rook/Rook.usd@
+            variants = {
+                string shadingVariant = "Black"
+            }
+        )
+        {
+            matrix4d xformOp:transform = ( (0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (-0.21881157532334328, 0.017180902883410454, 0.03146751537, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Xform "RookR" (
+            add references = @./assets/Rook/Rook.usd@
+            variants = {
+                string shadingVariant = "Black"
+            }
+        )
+        {
+            matrix4d xformOp:transform = ( (0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (0.21962326392531395, 0.015547847375273705, 0.03147086814, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def PointInstancer "Pawns"
+        {
+            quath[] orientations = [(1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0)]
+            point3f[] positions = [(-0.03125, 0, -0.094375), (-0.21875, 0, -0.031875), (-0.15625, 0, -0.031875), (-0.09375, 0, -0.031875), (0.03125, 0, -0.031875), (0.09375, 0, -0.031875), (0.15625, 0, -0.031875), (0.21875, 0, -0.031875)]
+            int[] protoIndices = [0, 0, 0, 0, 0, 0, 0, 0]
+            rel prototypes = </ChessSet/Black/Pawns/Pawn>
+
+            def Xform "Pawn" (
+                add references = @./assets/Pawn/Pawn.usd@
+                variants = {
+                    string shadingVariant = "Black"
+                }
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "White" (
+        kind = "group"
+    )
+    {
+        double3 xformOp:translate = (0, 0, -0.188125)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        def Xform "King" (
+            add references = @./assets/King/King.usd@
+            variants = {
+                string shadingVariant = "White"
+            }
+        )
+        {
+            double3 xformOp:translate = (-0.03176186978816986, 0.011370822787284851, -0.03215080067)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Xform "Queen" (
+            add references = @./assets/Queen/Queen.usd@
+            variants = {
+                string shadingVariant = "White"
+            }
+        )
+        {
+            double3 xformOp:translate = (0.03090556710958481, -0.002121470868587494, -0.03215080067)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Xform "BishopL" (
+            add references = @./assets/Bishop/Bishop.usd@
+            variants = {
+                string shadingVariant = "White"
+            }
+        )
+        {
+            double3 xformOp:translate = (0.08881419152021408, -0.002121470868587494, -0.02811844214)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Xform "BishopR" (
+            add references = @./assets/Bishop/Bishop.usd@
+            variants = {
+                string shadingVariant = "White"
+            }
+        )
+        {
+            double3 xformOp:translate = (-0.09403244778513908, -0.002121470868587494, -0.03279383048)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        def Xform "KnightL" (
+            add references = @./assets/Knight/Knight.usd@
+            variants = {
+                string shadingVariant = "White"
+            }
+        )
+        {
+            matrix4d xformOp:transform = ( (0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (-0.15675804391503334, -0.002121470868587494, -0.03274412021, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Xform "KnightR" (
+            add references = @./assets/Knight/Knight.usd@
+            variants = {
+                string shadingVariant = "White"
+            }
+        )
+        {
+            matrix4d xformOp:transform = ( (0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (0.1582154892385006, -0.002121470868587494, -0.03195988699, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Xform "RookL" (
+            add references = @./assets/Rook/Rook.usd@
+            variants = {
+                string shadingVariant = "White"
+            }
+        )
+        {
+            matrix4d xformOp:transform = ( (0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (0.21962326392531395, 0.015547847375273705, -0.03166809245, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def Xform "RookR" (
+            add references = @./assets/Rook/Rook.usd@
+            variants = {
+                string shadingVariant = "White"
+            }
+        )
+        {
+            matrix4d xformOp:transform = ( (0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (-0.21881157532334328, 0.017180902883410454, -0.03182415232, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+        }
+
+        def PointInstancer "Pawns"
+        {
+            quath[] orientations = [(1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0), (1, 0, 0, 0)]
+            point3f[] positions = [(-0.21875, 0, 0.031875), (-0.15625, 0, 0.031875), (-0.09375, 0, 0.031875), (-0.03125, 0, 0.031875), (0.15625, 0, 0.031875), (0.21875, 0, 0.031875), (0.09375, 0, 0.094375), (0.03125, 0, 0.156875)]
+            int[] protoIndices = [0, 0, 0, 0, 0, 0, 0, 0]
+            rel prototypes = </ChessSet/White/Pawns/Pawn>
+
+            def Xform "Pawn" (
+                add references = @./assets/Pawn/Pawn.usd@
+                variants = {
+                    string shadingVariant = "White"
+                }
+            )
+            {
+            }
+        }
+    }
+}
