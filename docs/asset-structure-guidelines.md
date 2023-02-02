@@ -403,7 +403,7 @@ TODO:
 * Two cases: archival and kitbashing
 * USD and Digital Backlots - Eliot Smyrl
     * [ASWF - WGUSD Presentation](https://drive.google.com/file/d/1-dl8ce3dRrMX1dX9YnklOQvBDo3bTurf/view?usp=sharing)
-    * [Siggraph 2021 Talk](https://substance3d.adobe.com/magazine/digital-backlots/)
+    * [Siggraph 2021 Talk](https://dl.acm.org/doi/10.1145/3450623.3464654)
 * [Digital Backlots and Libraries are Hard](https://substance3d.adobe.com/magazine/digital-backlots/) - Davide Pesare
 
 ## Reviews and Variants
