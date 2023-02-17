@@ -1,7 +1,7 @@
 # Test Asset Docs
 
 
-## Convert from gltf 2.0 -> usdz
+## Convert from glTF 2.0 -> usdz
 
 ### Goal
 
@@ -17,21 +17,23 @@ Generate a library of good test assets in usdz like there are in gltf. Given the
 7. Using [ScreenToGif](https://www.screentogif.com) record the animation in USDView
 8. Save new screenshot and update this doc.
 
+**Note: For all failed projects, `usdchecker` will be run to debug further**
+
 
 ### Animated Assets
 
-| Name                                  | usdz Screenshot                                           |  glTF Screenshot                                  | gltf2.0 Link                                                                              |   Status               | 
+| Name                                  | usdz Screenshot                                           |  glTF Screenshot                                  | glTF 2.0 Link                                                                               |   Status               | 
 |-----------------------                |-----------                                                | ---------                                         |-------------------------------                                                            |---------         |
-| [Animated Cube](../AnimatedCube/)                             | ![](../AnimatedCube/screenshot/USDView_AnimatedCube.gif)  | ![](../AnimatedCube/screenshot/screenshot.gif) | [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/AnimatedCube)   |  Passed                |
-| [Animated Morph Cube](../AnimatedMorphCube/)                  |n/a|![](../AnimatedMorphCube/screenshot/screenshot.gif)| [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/AnimatedMorphCube)|  Failed to view in usdview      | 
-| [Animated Morph Sphere](../AnimatedMorphSphere/)              |n/a|![](../AnimatedMorphSphere/screenshot/screenshot.gif)| [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/AnimatedMorphSphere)|  Failed to view in usdview     | 
-| [Animated Triangle](../AnimatedTriangle/)                     |![](../AnimatedTriangle/screenshot/USDView_AnimatedTriangle.gif) |![](../AnimatedTriangle/screenshot/screenshot.gif)| [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/AnimatedTriangle)|  Passed      | 
-| [BoxAnimated](../BoxAnimated/)                                |![](../BoxAnimated/screenshot/USDView_BoxAnimated.gif)|![](../BoxAnimated/screenshot/screenshot.gif)| [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/BoxAnimated)|  Passed      | 
-| [BrainStem](../BrainStem/)                                    |![](../BrainStem/screenshot/USDView_BrainStem.gif)|![](../BrainStem/screenshot/screenshot.gif)| [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/BrainStem)|  Passed     | 
-| [Cesium Man](../CesiumMan/)                                   |![](../CesiumMan/screenshot/USDView_CesiumMan.gif)|![](../CesiumMan/screenshot/screenshot.gif)| [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/CesiumMan)|  Passed      | 
-| [Interpolation Test](../InterpolationTest/)                   |![](../InterpolationTest/screenshot/USDView_InterpolationTest.gif)|![](../InterpolationTest/screenshot/screenshot.gif)| [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/InterpolationTest)|  Passed     | 
-| [Iridescent Dish with Olives](../IridescentDishWithOlives/)   |![](../IridescentDishWithOlives/screenshot/USDView_IridescentDishWithOlives.gif)|![](../IridescentDishWithOlives/screenshot/glassCover_animation.gif)| [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/IridescentDishWithOlives)|  Animation works but materials not seen, maybe not using usdview properly      | 
-| [Morph Stress Test](../MorphStressTest/)                      |n/a|![](../MorphStressTest/screenshot/screenshot.gif)| [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/MorphStressTest)|  Failed to view in usdview      |
-| [Rigged Figure](../RiggedFigure/)                             |![](../RiggedFigure/screenshot/USDView_RiggedFigure.gif)|![](../RiggedFigure/screenshot/screenshot.gif)| [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/RiggedFigure)|  Passed      |  
-| [Rigged Simple](../RiggedSimple/)                             |![](../RiggedSimple/screenshot/USDView_RiggedSimple.gif)|![](../RiggedSimple/screenshot/screenshot.gif)| [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/RiggedSimple)|  Passed      |  
-| Simple Skin                                                   |n/a|![](../SimpleSkin/screenshot/screenshot.gif)| [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/SimpleSkin)|  Failed to Convert      |  
+| [Animated Cube](../AnimatedCube/)                             | ![](../AnimatedCube/screenshot/USDView_AnimatedCube.gif)  | ![](../AnimatedCube/screenshot/screenshot.gif) | [glTF 2.0 Link ](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/AnimatedCube)   |  Animation runs in usdview                |
+| [Animated Morph Cube](../AnimatedMorphCube/)                  |n/a|![](../AnimatedMorphCube/screenshot/screenshot.gif)| [glTF 2.0 Link ](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/AnimatedMorphCube)|  Failed to view in usdview      | 
+| [Animated Morph Sphere](../AnimatedMorphSphere/)              |n/a|![](../AnimatedMorphSphere/screenshot/screenshot.gif)| [glTF 2.0 Link ](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/AnimatedMorphSphere)|  Failed to view in usdview     | 
+| [Animated Triangle](../AnimatedTriangle/)                     |![](../AnimatedTriangle/screenshot/USDView_AnimatedTriangle.gif) |![](../AnimatedTriangle/screenshot/screenshot.gif)| [glTF 2.0 Link ](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/AnimatedTriangle)|  Animation runs in usdview      | 
+| [BoxAnimated](../BoxAnimated/)                                |![](../BoxAnimated/screenshot/USDView_BoxAnimated.gif)|![](../BoxAnimated/screenshot/screenshot.gif)| [glTF 2.0 Link ](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/BoxAnimated)|  Animation runs in usdview      | 
+| [BrainStem](../BrainStem/)                                    |![](../BrainStem/screenshot/USDView_BrainStem.gif)|![](../BrainStem/screenshot/screenshot.gif)| [glTF 2.0 Link ](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/BrainStem)|  Animation runs in usdview     | 
+| [Cesium Man](../CesiumMan/)                                   |![](../CesiumMan/screenshot/USDView_CesiumMan.gif)|![](../CesiumMan/screenshot/screenshot.gif)| [glTF 2.0 Link ](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/CesiumMan)|  Animation runs in usdview      | 
+| [Interpolation Test](../InterpolationTest/)                   |![](../InterpolationTest/screenshot/USDView_InterpolationTest.gif)|![](../InterpolationTest/screenshot/screenshot.gif)| [glTF 2.0 Link ](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/InterpolationTest)|  Animation runs in usdview     | 
+| [Iridescent Dish with Olives](../IridescentDishWithOlives/)   |![](../IridescentDishWithOlives/screenshot/USDView_IridescentDishWithOlives.gif)|![](../IridescentDishWithOlives/screenshot/glassCover_animation.gif)| [glTF 2.0 Link ](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/IridescentDishWithOlives)|  Animation runs in usdview but materials not seen, maybe not using usdview properly      | 
+| [Morph Stress Test](../MorphStressTest/)                      |n/a|![](../MorphStressTest/screenshot/screenshot.gif)| [glTF 2.0 Link ](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/MorphStressTest)|  Failed to view in usdview      |
+| [Rigged Figure](../RiggedFigure/)                             |![](../RiggedFigure/screenshot/USDView_RiggedFigure.gif)|![](../RiggedFigure/screenshot/screenshot.gif)| [glTF 2.0 Link ](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/RiggedFigure)|  Animation runs in usdview      |  
+| [Rigged Simple](../RiggedSimple/)                             |![](../RiggedSimple/screenshot/USDView_RiggedSimple.gif)|![](../RiggedSimple/screenshot/screenshot.gif)| [glTF 2.0 Link ](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/RiggedSimple)|  Animation runs in usdview      |  
+| Simple Skin                                                   |n/a|![](../SimpleSkin/screenshot/screenshot.gif)| [glTF 2.0 Link ](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/SimpleSkin)|  Failed to Convert      |  
