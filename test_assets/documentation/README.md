@@ -5,10 +5,10 @@
 
 ### Goal
 
-Generate a library of good test assets in usdz like there are in gltf. Given the repo [here](https://github.com/KhronosGroup/glTF-Sample-Models) generate equivalent usdz files for each asset, with a focus on animations
+Given the repo [here](https://github.com/KhronosGroup/glTF-Sample-Models) generate equivalent usdz files for each asset, with a focus on animations
 
 ### Process
-1. Pulled down the [gltf-Sample-Models](https://github.com/KhronosGroup/glTF-Sample-Models) repository
+1. Pulled down the [glTF-Sample-Models](https://github.com/KhronosGroup/glTF-Sample-Models) repository
 2. Downloaded [Reality Converter](https://developer.apple.com/news/?id=01132020a)
 3. For Each asset, drag and drop the asset folder into Reality Converter
 4. If the asset loads properly, export it back out of Reality Converter to generate .usdz
