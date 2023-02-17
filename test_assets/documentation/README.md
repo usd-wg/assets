@@ -10,21 +10,21 @@ Generate a library of good test assets in usdz like there are in gltf. Given the
 
 ### Animated Assets
 
-| Name         | gltf2.0 Link    |   Status    |
-|--------------|-----------|------------|
-| Animated Cube | [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/AnimatedCube) |  Not Started      |
-| Animated Morph Cube      | [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/AnimatedMorphCube)|  Not Started      | 
-| Animated Morph Sphere      | [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/AnimatedMorphSphere)|  Not Started      | 
-| Animated Triangle     | [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/AnimatedTriangle)|  Not Started      | 
-| BoxAnimated      | [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/BoxAnimated)|  Not Started      | 
-| Brainstem     | [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/BrainStem)|  Not Started      | 
-| Cesium Man      | [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/CesiumMan)|  Not Started      | 
-| Interpolation Test      | [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/InterpolationTest)|  Not Started      | 
-| Iridescent Dish with Olives     | [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/IridescentDishWithOlives)|  Not Started      | 
-| Morph Stress Test     | [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/MorphStressTest)|  Not Started      |
-| Rigged Figure    | [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/RiggedFigure)|  Not Started      |  
-| Rigged Sample    | [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/RiggedSimple)|  Not Started      |  
-| Simple Skin    | [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/SimpleSkin)|  Not Started      |  
-| Rigged Figure    | [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/RiggedFigure)|  Not Started      |  
+| Name                                  | usdz Screenshot                                           |  glTF Screenshot                                  | gltf2.0 Link                                                                              |   Status               | 
+|-----------------------                |-----------                                                | ---------                                         |-------------------------------                                                            |---------         |
+| [Animated Cube](../AnimatedCube/)     | ![](../AnimatedCube/screenshot/USDView_AnimatedCube.gif)  | ![](../AnimatedCube/screenshot/screenshot.gif) | [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/AnimatedCube)   |  Passed                |
+| Animated Morph Cube           |n/a|n/a| [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/AnimatedMorphCube)|  Not Started      | 
+| Animated Morph Sphere         |n/a|n/a| [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/AnimatedMorphSphere)|  Not Started      | 
+| Animated Triangle             |n/a|n/a| [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/AnimatedTriangle)|  Not Started      | 
+| BoxAnimated                   |n/a|n/a| [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/BoxAnimated)|  Not Started      | 
+| Brainstem                     |n/a|n/a| [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/BrainStem)|  Not Started      | 
+| Cesium Man                    |n/a|n/a| [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/CesiumMan)|  Not Started      | 
+| Interpolation Test            |n/a|n/a| [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/InterpolationTest)|  Not Started      | 
+| Iridescent Dish with Olives   |n/a|n/a| [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/IridescentDishWithOlives)|  Not Started      | 
+| Morph Stress Test             |n/a|n/a| [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/MorphStressTest)|  Not Started      |
+| Rigged Figure                 |n/a|n/a| [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/RiggedFigure)|  Not Started      |  
+| Rigged Sample                 |n/a|n/a| [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/RiggedSimple)|  Not Started      |  
+| Simple Skin                   |n/a|n/a| [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/SimpleSkin)|  Not Started      |  
+| Rigged Figure                 |n/a|n/a| [Link](https://github.com/KhronosGroup/glTF-Sample-Models/tree/master/2.0/RiggedFigure)|  Not Started      |  
 
 
