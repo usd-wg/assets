@@ -1,0 +1,28 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+)
+
+def Xform "World"
+{
+    def "Sphere" (
+        prepend variantSets = "size"
+        prepend references = @./ball_defaults.usda@
+        variants = {
+            string size = "small"
+        }
+    )
+    {
+        variantSet "size" = {
+            "small" {
+                double radius = 2.0
+            }
+            "medium" {
+                double radius = 5.0
+            }
+            "large" {
+                double radius = 10.0
+            }
+        }
+    }
+}

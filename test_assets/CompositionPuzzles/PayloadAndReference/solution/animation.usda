@@ -1,0 +1,13 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+)
+
+def Xform "World"
+{
+    over "Character" (
+        prepend payload = @./animCache.usda@
+    )
+    {
+    }
+}
