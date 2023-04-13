@@ -9,9 +9,9 @@ the Local default value would always be the strongest opinion.
 In the VariantSetAndLocal2 puzzle, separating the VariantSet into a stronger
 sublayer than the Local default opinion _still_ yielded a composed result where
 the Local default value would always be the strongest opinion. Even with
-the VariantSet in a strong sublayer, Local opinions are still strongest within a layer stack.
+the VariantSet in a strong sublayer, Local opinions are still strongest within a LayerStack.
 
-So, how can we structure this scene so that the opinion in the VariantSet takes precedence over the "default value" Local opinion for the property? The answer is to USE MORE LIVRPS.
+So, how can we structure this scene so that the opinion in the VariantSet takes precedence over the "default value" Local opinion for the property? The answer is to **USE MORE LIVRPS**.
 
 ![new asset structure](images/Slide76.PNG)
 
@@ -19,12 +19,12 @@ One possible solution is to structure the data so that the "default value" Local
 
 ![new layer stack](images/Slide77.PNG)
 
-Note that the initial LayerStack now consists only of puzzle_3.usda - the referenced layer is not part of the initial LayerStack, because it is not a _sublayer_ of puzzle_3.usda.
+Note that the initial LayerStack now consists only of `puzzle_3.usda` - the referenced layer is not part of the initial LayerStack, because it is not a _sublayer_ of `puzzle_3.usda`.
 
 ![livrps step 1](images/Slide78.PNG)
 
 Are there any Local opinions on the initial layer stack? Remember,
-puzzle_3.usda is now the entire initial layer stack for this asset. 
+`puzzle_3.usda` is now the entire initial layer stack for this asset.
 So the answer is no, there are no Local opinions on this layer stack.
 
 ![livrps step 2](images/Slide79.PNG)
@@ -37,17 +37,17 @@ Are there any opinions form VariantSets on this layer stack? Yes!
 
 ![livrps step 4](images/Slide81.PNG)
 
-The opinion from the VariantSet in puzzle_3.usda is composed as the
+The opinion from the VariantSet in `puzzle_3.usda` is composed as the
 strongest opinion for the property and prim spec stacks.
 
 ![livrps step 5](images/Slide82.PNG)
 
 Are there any opinions from References? Yes! The
-/World/Sphere prim has a reference to the ball_defaults.usda file.
+`/World/Sphere` prim has a reference to the `ball_defaults.usda` file.
 
 ![livrps step 6](images/Slide83.PNG)
 
-The Local opinion from the Reference to ball_defaults.usda is composed
+The Local opinion from the Reference to `ball_defaults.usda` is composed
 as the next strongest opinion on the prim and property spec stacks.
 
 ![livrps step 6](images/Slide84.PNG)

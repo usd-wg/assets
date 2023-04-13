@@ -15,8 +15,8 @@ There are now three layers in our LayerStack. We start by checking for any Local
 
 ![livrps step 2](images/Slide68.PNG)
 
-There is a Local opinion in this LayerStack, in ball_defaults.usda. So that
-is composed as the strongest opinion on the prim speck stack and property spec stack.
+There is a Local opinion in this LayerStack, in `ball_defaults.usda`. So that
+is composed as the strongest opinion on the prim spec stack and property spec stack.
 
 Remember, LIVRPS operates on the entire LayerStack - a layer and its sublayers. So the Local opinion is still composed as the strongest opinion on the property.
 
@@ -26,7 +26,7 @@ Are there any opinions from Inherits? No.
 
 ![livrps step 4](images/Slide70.PNG)
 
-Are there any opinions form VariantSets? Yes! In the ball_variants.usda layer.
+Are there any opinions form VariantSets? Yes! In the `ball_variants.usda` layer.
 
 ![livrps step 5](images/Slide71.PNG)
 
@@ -40,4 +40,4 @@ No, no, and no.
 
 ![livrps step 7](images/Slide73.PNG)
 
-Our prim and property are composed. Unfortunately, this did not yield the result that the Omniverse user was hoping for. Remember that LIVRPS is applied to an entire layer stack. Even though the VariantSet and Local default value were split into separate layers, and the _sublayer_ containing the VariantSet was stronger than the _sublayer_ containing the Local default value, the Local default value still takes precedence during composition, because with LIVRPS, Local opinions are stronger than opinions authored through a VariantSet within a layer stack.
+Our prim and property are composed. Unfortunately, this did not yield the result that the Omniverse user was hoping for. Remember that LIVRPS is applied to an entire LayerStack. Even though the VariantSet and Local default value were split into separate layers, and the _sublayer_ containing the VariantSet was stronger than the _sublayer_ containing the Local default value, the Local default value still takes precedence during composition, because with LIVRPS, Local opinions are stronger than opinions authored through a VariantSet within a LayerStack.
