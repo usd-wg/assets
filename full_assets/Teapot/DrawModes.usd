@@ -71,13 +71,13 @@ def Xform "World" (
         uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate1"]
     }
 
-    def "UtahTeapot_CeramicBlack_0" (
+    def "UtahTeapot_PlasticBlack_0" (
         prepend apiSchemas = ["GeomModelAPI"]
         kind = "component"
         prepend references = @./Teapot.usd@</Teapot>
         variants = {
             string modelVariant = "Utah"
-            string shadingVariant = "CeramicBlack"
+            string shadingVariant = "PlasticBlack"
         }
     )
     {
@@ -86,9 +86,9 @@ def Xform "World" (
         uniform token[] xformOpOrder = ["xformOp:transform"]
     }
 
-    def "UtahTeapot_CeramicBlack_1" (
+    def "UtahTeapot_PlasticBlack_1" (
         prepend apiSchemas = ["GeomModelAPI"]
-        append references = </World/UtahTeapot_CeramicBlack_0>
+        append references = </World/UtahTeapot_PlasticBlack_0>
     )
     {
         token model:cardGeometry = "cross"
@@ -97,9 +97,9 @@ def Xform "World" (
         uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
     }
 
-    def "UtahTeapot_CeramicBlack_2" (
+    def "UtahTeapot_PlasticBlack_2" (
         prepend apiSchemas = ["GeomModelAPI"]
-        append references = </World/UtahTeapot_CeramicBlack_0>
+        append references = </World/UtahTeapot_PlasticBlack_0>
     )
     {
         token model:cardGeometry = "box"
@@ -108,9 +108,9 @@ def Xform "World" (
         uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
     }
 
-    def "UtahTeapot_CeramicBlack_3" (
+    def "UtahTeapot_PlasticBlack_3" (
         prepend apiSchemas = ["GeomModelAPI"]
-        append references = </World/UtahTeapot_CeramicBlack_0>
+        append references = </World/UtahTeapot_PlasticBlack_0>
     )
     {
         uniform token model:drawMode = "bounds"
@@ -118,9 +118,9 @@ def Xform "World" (
         uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
     }
 
-    def "UtahTeapot_CeramicBlack_4" (
+    def "UtahTeapot_PlasticBlack_4" (
         prepend apiSchemas = ["GeomModelAPI"]
-        append references = </World/UtahTeapot_CeramicBlack_0>
+        append references = </World/UtahTeapot_PlasticBlack_0>
     )
     {
         uniform token model:drawMode = "origin"
@@ -128,13 +128,13 @@ def Xform "World" (
         uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
     }
 
-    def "UtahTeapot_CeramicBlue_0" (
+    def "UtahTeapot_PlasticBlue_0" (
         prepend apiSchemas = ["GeomModelAPI"]
         kind = "component"
         prepend references = @./Teapot.usd@</Teapot>
         variants = {
             string modelVariant = "Utah"
-            string shadingVariant = "CeramicBlue"
+            string shadingVariant = "PlasticBlue"
         }
     )
     {
@@ -143,9 +143,9 @@ def Xform "World" (
         uniform token[] xformOpOrder = ["xformOp:transform"]
     }
 
-    def "UtahTeapot_CeramicBlue_1" (
+    def "UtahTeapot_PlasticBlue_1" (
         prepend apiSchemas = ["GeomModelAPI"]
-        append references = </World/UtahTeapot_CeramicBlue_0>
+        append references = </World/UtahTeapot_PlasticBlue_0>
     )
     {
         token model:cardGeometry = "cross"
@@ -154,9 +154,9 @@ def Xform "World" (
         uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
     }
 
-    def "UtahTeapot_CeramicBlue_2" (
+    def "UtahTeapot_PlasticBlue_2" (
         prepend apiSchemas = ["GeomModelAPI"]
-        append references = </World/UtahTeapot_CeramicBlue_0>
+        append references = </World/UtahTeapot_PlasticBlue_0>
     )
     {
         token model:cardGeometry = "box"
@@ -165,9 +165,9 @@ def Xform "World" (
         uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
     }
 
-    def "UtahTeapot_CeramicBlue_3" (
+    def "UtahTeapot_PlasticBlue_3" (
         prepend apiSchemas = ["GeomModelAPI"]
-        append references = </World/UtahTeapot_CeramicBlue_0>
+        append references = </World/UtahTeapot_PlasticBlue_0>
     )
     {
         uniform token model:drawMode = "bounds"
@@ -175,9 +175,9 @@ def Xform "World" (
         uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
     }
 
-    def "UtahTeapot_CeramicBlue_4" (
+    def "UtahTeapot_PlasticBlue_4" (
         prepend apiSchemas = ["GeomModelAPI"]
-        append references = </World/UtahTeapot_CeramicBlue_0>
+        append references = </World/UtahTeapot_PlasticBlue_0>
     )
     {
         uniform token model:drawMode = "origin"
@@ -185,13 +185,13 @@ def Xform "World" (
         uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
     }
 
-    def "UtahTeapot_CeramicLimeGreen_0" (
+    def "UtahTeapot_PlasticLimeGreen_0" (
         prepend apiSchemas = ["GeomModelAPI"]
         kind = "component"
         prepend references = @./Teapot.usd@</Teapot>
         variants = {
             string modelVariant = "Utah"
-            string shadingVariant = "CeramicLimeGreen"
+            string shadingVariant = "PlasticLimeGreen"
         }
     )
     {
@@ -200,9 +200,9 @@ def Xform "World" (
         uniform token[] xformOpOrder = ["xformOp:transform"]
     }
 
-    def "UtahTeapot_CeramicLimeGreen_1" (
+    def "UtahTeapot_PlasticLimeGreen_1" (
         prepend apiSchemas = ["GeomModelAPI"]
-        append references = </World/UtahTeapot_CeramicLimeGreen_0>
+        append references = </World/UtahTeapot_PlasticLimeGreen_0>
     )
     {
         token model:cardGeometry = "cross"
@@ -211,9 +211,9 @@ def Xform "World" (
         uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
     }
 
-    def "UtahTeapot_CeramicLimeGreen_2" (
+    def "UtahTeapot_PlasticLimeGreen_2" (
         prepend apiSchemas = ["GeomModelAPI"]
-        append references = </World/UtahTeapot_CeramicLimeGreen_0>
+        append references = </World/UtahTeapot_PlasticLimeGreen_0>
     )
     {
         token model:cardGeometry = "box"
@@ -222,9 +222,9 @@ def Xform "World" (
         uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
     }
 
-    def "UtahTeapot_CeramicLimeGreen_3" (
+    def "UtahTeapot_PlasticLimeGreen_3" (
         prepend apiSchemas = ["GeomModelAPI"]
-        append references = </World/UtahTeapot_CeramicLimeGreen_0>
+        append references = </World/UtahTeapot_PlasticLimeGreen_0>
     )
     {
         uniform token model:drawMode = "bounds"
@@ -232,9 +232,9 @@ def Xform "World" (
         uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
     }
 
-    def "UtahTeapot_CeramicLimeGreen_4" (
+    def "UtahTeapot_PlasticLimeGreen_4" (
         prepend apiSchemas = ["GeomModelAPI"]
-        append references = </World/UtahTeapot_CeramicLimeGreen_0>
+        append references = </World/UtahTeapot_PlasticLimeGreen_0>
     )
     {
         uniform token model:drawMode = "origin"
@@ -242,13 +242,13 @@ def Xform "World" (
         uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
     }
 
-    def "UtahTeapot_CeramicOrange_0" (
+    def "UtahTeapot_PlasticOrange_0" (
         prepend apiSchemas = ["GeomModelAPI"]
         kind = "component"
         prepend references = @./Teapot.usd@</Teapot>
         variants = {
             string modelVariant = "Utah"
-            string shadingVariant = "CeramicOrange"
+            string shadingVariant = "PlasticOrange"
         }
     )
     {
@@ -257,9 +257,9 @@ def Xform "World" (
         uniform token[] xformOpOrder = ["xformOp:transform"]
     }
 
-    def "UtahTeapot_CeramicOrange_1" (
+    def "UtahTeapot_PlasticOrange_1" (
         prepend apiSchemas = ["GeomModelAPI"]
-        append references = </World/UtahTeapot_CeramicOrange_0>
+        append references = </World/UtahTeapot_PlasticOrange_0>
     )
     {
         token model:cardGeometry = "cross"
@@ -268,9 +268,9 @@ def Xform "World" (
         uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
     }
 
-    def "UtahTeapot_CeramicOrange_2" (
+    def "UtahTeapot_PlasticOrange_2" (
         prepend apiSchemas = ["GeomModelAPI"]
-        append references = </World/UtahTeapot_CeramicOrange_0>
+        append references = </World/UtahTeapot_PlasticOrange_0>
     )
     {
         token model:cardGeometry = "box"
@@ -279,9 +279,9 @@ def Xform "World" (
         uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
     }
 
-    def "UtahTeapot_CeramicOrange_3" (
+    def "UtahTeapot_PlasticOrange_3" (
         prepend apiSchemas = ["GeomModelAPI"]
-        append references = </World/UtahTeapot_CeramicOrange_0>
+        append references = </World/UtahTeapot_PlasticOrange_0>
     )
     {
         uniform token model:drawMode = "bounds"
@@ -289,9 +289,9 @@ def Xform "World" (
         uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
     }
 
-    def "UtahTeapot_CeramicOrange_4" (
+    def "UtahTeapot_PlasticOrange_4" (
         prepend apiSchemas = ["GeomModelAPI"]
-        append references = </World/UtahTeapot_CeramicOrange_0>
+        append references = </World/UtahTeapot_PlasticOrange_0>
     )
     {
         uniform token model:drawMode = "origin"
@@ -299,13 +299,13 @@ def Xform "World" (
         uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
     }
 
-    def "UtahTeapot_CeramicRed_0" (
+    def "UtahTeapot_PlasticRed_0" (
         prepend apiSchemas = ["GeomModelAPI"]
         kind = "component"
         prepend references = @./Teapot.usd@</Teapot>
         variants = {
             string modelVariant = "Utah"
-            string shadingVariant = "CeramicRed"
+            string shadingVariant = "PlasticRed"
         }
     )
     {
@@ -314,9 +314,9 @@ def Xform "World" (
         uniform token[] xformOpOrder = ["xformOp:transform"]
     }
 
-    def "UtahTeapot_CeramicRed_1" (
+    def "UtahTeapot_PlasticRed_1" (
         prepend apiSchemas = ["GeomModelAPI"]
-        append references = </World/UtahTeapot_CeramicRed_0>
+        append references = </World/UtahTeapot_PlasticRed_0>
     )
     {
         token model:cardGeometry = "cross"
@@ -325,9 +325,9 @@ def Xform "World" (
         uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
     }
 
-    def "UtahTeapot_CeramicRed_2" (
+    def "UtahTeapot_PlasticRed_2" (
         prepend apiSchemas = ["GeomModelAPI"]
-        append references = </World/UtahTeapot_CeramicRed_0>
+        append references = </World/UtahTeapot_PlasticRed_0>
     )
     {
         token model:cardGeometry = "box"
@@ -336,9 +336,9 @@ def Xform "World" (
         uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
     }
 
-    def "UtahTeapot_CeramicRed_3" (
+    def "UtahTeapot_PlasticRed_3" (
         prepend apiSchemas = ["GeomModelAPI"]
-        append references = </World/UtahTeapot_CeramicRed_0>
+        append references = </World/UtahTeapot_PlasticRed_0>
     )
     {
         uniform token model:drawMode = "bounds"
@@ -346,9 +346,9 @@ def Xform "World" (
         uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
     }
 
-    def "UtahTeapot_CeramicRed_4" (
+    def "UtahTeapot_PlasticRed_4" (
         prepend apiSchemas = ["GeomModelAPI"]
-        append references = </World/UtahTeapot_CeramicRed_0>
+        append references = </World/UtahTeapot_PlasticRed_0>
     )
     {
         uniform token model:drawMode = "origin"
@@ -356,13 +356,13 @@ def Xform "World" (
         uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
     }
 
-    def "UtahTeapot_CeramicWhite_0" (
+    def "UtahTeapot_PlasticWhite_0" (
         prepend apiSchemas = ["GeomModelAPI"]
         kind = "component"
         prepend references = @./Teapot.usd@</Teapot>
         variants = {
             string modelVariant = "Utah"
-            string shadingVariant = "CeramicWhite"
+            string shadingVariant = "PlasticWhite"
         }
     )
     {
@@ -371,9 +371,9 @@ def Xform "World" (
         uniform token[] xformOpOrder = ["xformOp:transform"]
     }
 
-    def "UtahTeapot_CeramicWhite_1" (
+    def "UtahTeapot_PlasticWhite_1" (
         prepend apiSchemas = ["GeomModelAPI"]
-        append references = </World/UtahTeapot_CeramicWhite_0>
+        append references = </World/UtahTeapot_PlasticWhite_0>
     )
     {
         token model:cardGeometry = "cross"
@@ -382,9 +382,9 @@ def Xform "World" (
         uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
     }
 
-    def "UtahTeapot_CeramicWhite_2" (
+    def "UtahTeapot_PlasticWhite_2" (
         prepend apiSchemas = ["GeomModelAPI"]
-        append references = </World/UtahTeapot_CeramicWhite_0>
+        append references = </World/UtahTeapot_PlasticWhite_0>
     )
     {
         token model:cardGeometry = "box"
@@ -393,9 +393,9 @@ def Xform "World" (
         uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
     }
 
-    def "UtahTeapot_CeramicWhite_3" (
+    def "UtahTeapot_PlasticWhite_3" (
         prepend apiSchemas = ["GeomModelAPI"]
-        append references = </World/UtahTeapot_CeramicWhite_0>
+        append references = </World/UtahTeapot_PlasticWhite_0>
     )
     {
         uniform token model:drawMode = "bounds"
@@ -403,9 +403,9 @@ def Xform "World" (
         uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
     }
 
-    def "UtahTeapot_CeramicWhite_4" (
+    def "UtahTeapot_PlasticWhite_4" (
         prepend apiSchemas = ["GeomModelAPI"]
-        append references = </World/UtahTeapot_CeramicWhite_0>
+        append references = </World/UtahTeapot_PlasticWhite_0>
     )
     {
         uniform token model:drawMode = "origin"
