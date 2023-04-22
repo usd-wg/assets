@@ -1,0 +1,12 @@
+#usda 1.0
+(
+    defaultPrim = "Teapot"
+    framesPerSecond = 24
+    metersPerUnit = 1
+    subLayers = [
+        @./Teapot_Materials.usd@
+    ]
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+

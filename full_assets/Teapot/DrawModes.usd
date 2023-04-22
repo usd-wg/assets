@@ -1,0 +1,441 @@
+#usda 1.0
+(
+    endTimeCode = 1
+    framesPerSecond = 24
+    metersPerUnit = 1
+    startTimeCode = 1
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+def Xform "World" (
+    kind = "group"
+)
+{
+    matrix4d xformOp:transform:transform1 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (2, 0, 2.25, 1) )
+    uniform token[] xformOpOrder = ["xformOp:transform:transform1"]
+
+    def "FancyTeapot_0" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        kind = "component"
+        prepend references = @./Teapot.usd@</Teapot>
+        variants = {
+            string modelVariant = "Fancy"
+        }
+    )
+    {
+        uniform token model:drawMode = "default"
+        matrix4d xformOp:transform = ( (0.9063077870366499, 0, -0.42261826174069944, 0), (0, 1, 0, 0), (0.42261826174069944, 0, 0.9063077870366499, 0), (-1.5, 0, -1.6, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+
+    def "FancyTeapot_1" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        append references = </World/FancyTeapot_0>
+    )
+    {
+        token model:cardGeometry = "cross"
+        uniform token model:drawMode = "cards"
+        matrix4d xformOp:transform:duplicate1 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.9063077870366498, 0, 0.4226182617406995, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate1"]
+    }
+
+    def "FancyTeapot_2" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        append references = </World/FancyTeapot_0>
+    )
+    {
+        token model:cardGeometry = "box"
+        uniform token model:drawMode = "cards"
+        matrix4d xformOp:transform:duplicate1 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (1.8126155740732997, 0, 0.8452365234813988, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate1"]
+    }
+
+    def "FancyTeapot_3" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        append references = </World/FancyTeapot_0>
+    )
+    {
+        uniform token model:drawMode = "bounds"
+        matrix4d xformOp:transform:duplicate1 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (2.7189233611099497, 0, 1.2678547852220983, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate1"]
+    }
+
+    def "FancyTeapot_4" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        append references = </World/FancyTeapot_0>
+    )
+    {
+        uniform token model:drawMode = "origin"
+        matrix4d xformOp:transform:duplicate1 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (3.6252311481465997, 0, 1.6904730469627978, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate1"]
+    }
+
+    def "UtahTeapot_CeramicBlack_0" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        kind = "component"
+        prepend references = @./Teapot.usd@</Teapot>
+        variants = {
+            string modelVariant = "Utah"
+            string shadingVariant = "CeramicBlack"
+        }
+    )
+    {
+        uniform token model:drawMode = "default"
+        matrix4d xformOp:transform = ( (0.9063077870366499, 0, -0.42261826174069944, 0), (0, 1, 0, 0), (0.42261826174069944, 0, 0.9063077870366499, 0), (-1.5, 0, -0.8, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+
+    def "UtahTeapot_CeramicBlack_1" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        append references = </World/UtahTeapot_CeramicBlack_0>
+    )
+    {
+        token model:cardGeometry = "cross"
+        uniform token model:drawMode = "cards"
+        matrix4d xformOp:transform:duplicate7 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.9063077870366498, 0, 0.4226182617406995, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
+    }
+
+    def "UtahTeapot_CeramicBlack_2" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        append references = </World/UtahTeapot_CeramicBlack_0>
+    )
+    {
+        token model:cardGeometry = "box"
+        uniform token model:drawMode = "cards"
+        matrix4d xformOp:transform:duplicate7 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (1.8126155740732997, 0, 0.845236523481399, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
+    }
+
+    def "UtahTeapot_CeramicBlack_3" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        append references = </World/UtahTeapot_CeramicBlack_0>
+    )
+    {
+        uniform token model:drawMode = "bounds"
+        matrix4d xformOp:transform:duplicate7 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (2.7189233611099497, 0, 1.2678547852220983, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
+    }
+
+    def "UtahTeapot_CeramicBlack_4" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        append references = </World/UtahTeapot_CeramicBlack_0>
+    )
+    {
+        uniform token model:drawMode = "origin"
+        matrix4d xformOp:transform:duplicate7 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (3.6252311481465993, 0, 1.690473046962798, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
+    }
+
+    def "UtahTeapot_CeramicBlue_0" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        kind = "component"
+        prepend references = @./Teapot.usd@</Teapot>
+        variants = {
+            string modelVariant = "Utah"
+            string shadingVariant = "CeramicBlue"
+        }
+    )
+    {
+        uniform token model:drawMode = "default"
+        matrix4d xformOp:transform = ( (0.9063077870366499, 0, -0.42261826174069944, 0), (0, 1, 0, 0), (0.42261826174069944, 0, 0.9063077870366499, 0), (-1.5, 0, 0, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+
+    def "UtahTeapot_CeramicBlue_1" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        append references = </World/UtahTeapot_CeramicBlue_0>
+    )
+    {
+        token model:cardGeometry = "cross"
+        uniform token model:drawMode = "cards"
+        matrix4d xformOp:transform:duplicate7 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.9063077870366498, 0, 0.4226182617406994, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
+    }
+
+    def "UtahTeapot_CeramicBlue_2" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        append references = </World/UtahTeapot_CeramicBlue_0>
+    )
+    {
+        token model:cardGeometry = "box"
+        uniform token model:drawMode = "cards"
+        matrix4d xformOp:transform:duplicate7 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (1.8126155740732999, 0, 0.8452365234813989, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
+    }
+
+    def "UtahTeapot_CeramicBlue_3" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        append references = </World/UtahTeapot_CeramicBlue_0>
+    )
+    {
+        uniform token model:drawMode = "bounds"
+        matrix4d xformOp:transform:duplicate7 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (2.7189233611099497, 0, 1.2678547852220983, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
+    }
+
+    def "UtahTeapot_CeramicBlue_4" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        append references = </World/UtahTeapot_CeramicBlue_0>
+    )
+    {
+        uniform token model:drawMode = "origin"
+        matrix4d xformOp:transform:duplicate7 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (3.6252311481465993, 0, 1.6904730469627978, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
+    }
+
+    def "UtahTeapot_CeramicLimeGreen_0" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        kind = "component"
+        prepend references = @./Teapot.usd@</Teapot>
+        variants = {
+            string modelVariant = "Utah"
+            string shadingVariant = "CeramicLimeGreen"
+        }
+    )
+    {
+        uniform token model:drawMode = "default"
+        matrix4d xformOp:transform = ( (0.9063077870366499, 0, -0.42261826174069944, 0), (0, 1, 0, 0), (0.42261826174069944, 0, 0.9063077870366499, 0), (-1.5, 0, 0.8, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+
+    def "UtahTeapot_CeramicLimeGreen_1" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        append references = </World/UtahTeapot_CeramicLimeGreen_0>
+    )
+    {
+        token model:cardGeometry = "cross"
+        uniform token model:drawMode = "cards"
+        matrix4d xformOp:transform:duplicate7 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.9063077870366499, 0, 0.4226182617406994, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
+    }
+
+    def "UtahTeapot_CeramicLimeGreen_2" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        append references = </World/UtahTeapot_CeramicLimeGreen_0>
+    )
+    {
+        token model:cardGeometry = "box"
+        uniform token model:drawMode = "cards"
+        matrix4d xformOp:transform:duplicate7 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (1.8126155740732999, 0, 0.8452365234813989, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
+    }
+
+    def "UtahTeapot_CeramicLimeGreen_3" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        append references = </World/UtahTeapot_CeramicLimeGreen_0>
+    )
+    {
+        uniform token model:drawMode = "bounds"
+        matrix4d xformOp:transform:duplicate7 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (2.7189233611099497, 0, 1.2678547852220983, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
+    }
+
+    def "UtahTeapot_CeramicLimeGreen_4" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        append references = </World/UtahTeapot_CeramicLimeGreen_0>
+    )
+    {
+        uniform token model:drawMode = "origin"
+        matrix4d xformOp:transform:duplicate7 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (3.6252311481465993, 0, 1.6904730469627975, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
+    }
+
+    def "UtahTeapot_CeramicOrange_0" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        kind = "component"
+        prepend references = @./Teapot.usd@</Teapot>
+        variants = {
+            string modelVariant = "Utah"
+            string shadingVariant = "CeramicOrange"
+        }
+    )
+    {
+        uniform token model:drawMode = "default"
+        matrix4d xformOp:transform = ( (0.9063077870366499, 0, -0.42261826174069944, 0), (0, 1, 0, 0), (0.42261826174069944, 0, 0.9063077870366499, 0), (-1.5, 0, 1.6000000000000003, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+
+    def "UtahTeapot_CeramicOrange_1" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        append references = </World/UtahTeapot_CeramicOrange_0>
+    )
+    {
+        token model:cardGeometry = "cross"
+        uniform token model:drawMode = "cards"
+        matrix4d xformOp:transform:duplicate7 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.90630778703665, 0, 0.4226182617406995, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
+    }
+
+    def "UtahTeapot_CeramicOrange_2" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        append references = </World/UtahTeapot_CeramicOrange_0>
+    )
+    {
+        token model:cardGeometry = "box"
+        uniform token model:drawMode = "cards"
+        matrix4d xformOp:transform:duplicate7 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (1.8126155740733, 0, 0.8452365234813988, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
+    }
+
+    def "UtahTeapot_CeramicOrange_3" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        append references = </World/UtahTeapot_CeramicOrange_0>
+    )
+    {
+        uniform token model:drawMode = "bounds"
+        matrix4d xformOp:transform:duplicate7 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (2.71892336110995, 0, 1.267854785222098, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
+    }
+
+    def "UtahTeapot_CeramicOrange_4" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        append references = </World/UtahTeapot_CeramicOrange_0>
+    )
+    {
+        uniform token model:drawMode = "origin"
+        matrix4d xformOp:transform:duplicate7 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (3.6252311481465997, 0, 1.6904730469627978, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
+    }
+
+    def "UtahTeapot_CeramicRed_0" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        kind = "component"
+        prepend references = @./Teapot.usd@</Teapot>
+        variants = {
+            string modelVariant = "Utah"
+            string shadingVariant = "CeramicRed"
+        }
+    )
+    {
+        uniform token model:drawMode = "default"
+        matrix4d xformOp:transform = ( (0.9063077870366499, 0, -0.42261826174069944, 0), (0, 1, 0, 0), (0.42261826174069944, 0, 0.9063077870366499, 0), (-1.5, 0, 2.4000000000000004, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+
+    def "UtahTeapot_CeramicRed_1" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        append references = </World/UtahTeapot_CeramicRed_0>
+    )
+    {
+        token model:cardGeometry = "cross"
+        uniform token model:drawMode = "cards"
+        matrix4d xformOp:transform:duplicate7 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.90630778703665, 0, 0.4226182617406995, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
+    }
+
+    def "UtahTeapot_CeramicRed_2" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        append references = </World/UtahTeapot_CeramicRed_0>
+    )
+    {
+        token model:cardGeometry = "box"
+        uniform token model:drawMode = "cards"
+        matrix4d xformOp:transform:duplicate7 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (1.8126155740733, 0, 0.8452365234813988, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
+    }
+
+    def "UtahTeapot_CeramicRed_3" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        append references = </World/UtahTeapot_CeramicRed_0>
+    )
+    {
+        uniform token model:drawMode = "bounds"
+        matrix4d xformOp:transform:duplicate7 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (2.71892336110995, 0, 1.267854785222098, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
+    }
+
+    def "UtahTeapot_CeramicRed_4" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        append references = </World/UtahTeapot_CeramicRed_0>
+    )
+    {
+        uniform token model:drawMode = "origin"
+        matrix4d xformOp:transform:duplicate7 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (3.6252311481465997, 0, 1.6904730469627978, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
+    }
+
+    def "UtahTeapot_CeramicWhite_0" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        kind = "component"
+        prepend references = @./Teapot.usd@</Teapot>
+        variants = {
+            string modelVariant = "Utah"
+            string shadingVariant = "CeramicWhite"
+        }
+    )
+    {
+        uniform token model:drawMode = "default"
+        matrix4d xformOp:transform = ( (0.9063077870366499, 0, -0.42261826174069944, 0), (0, 1, 0, 0), (0.42261826174069944, 0, 0.9063077870366499, 0), (-1.5, 0, 3.2, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+
+    def "UtahTeapot_CeramicWhite_1" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        append references = </World/UtahTeapot_CeramicWhite_0>
+    )
+    {
+        token model:cardGeometry = "cross"
+        uniform token model:drawMode = "cards"
+        matrix4d xformOp:transform:duplicate7 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0.9063077870366498, 0, 0.4226182617406993, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
+    }
+
+    def "UtahTeapot_CeramicWhite_2" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        append references = </World/UtahTeapot_CeramicWhite_0>
+    )
+    {
+        token model:cardGeometry = "box"
+        uniform token model:drawMode = "cards"
+        matrix4d xformOp:transform:duplicate7 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (1.8126155740732999, 0, 0.8452365234813985, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
+    }
+
+    def "UtahTeapot_CeramicWhite_3" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        append references = </World/UtahTeapot_CeramicWhite_0>
+    )
+    {
+        uniform token model:drawMode = "bounds"
+        matrix4d xformOp:transform:duplicate7 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (2.7189233611099497, 0, 1.2678547852220978, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
+    }
+
+    def "UtahTeapot_CeramicWhite_4" (
+        prepend apiSchemas = ["GeomModelAPI"]
+        append references = </World/UtahTeapot_CeramicWhite_0>
+    )
+    {
+        uniform token model:drawMode = "origin"
+        matrix4d xformOp:transform:duplicate7 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (3.6252311481465993, 0, 1.6904730469627975, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:duplicate7"]
+    }
+
+    def Camera "Camera" (
+        prepend apiSchemas = ["KarmaCameraSettingsAPI", "HoudiniCameraPlateAPI", "HoudiniViewportGuideAPI"]
+    )
+    {
+        float2 clippingRange = (0.1, 1000000)
+        float exposure = 0
+        float focalLength = 0.3
+        float focusDistance = 5
+        float fStop = 0
+        float horizontalAperture = 0.20955
+        float horizontalApertureOffset = 0
+        asset houdini:backgroundimage = @@
+        asset houdini:foregroundimage = @@
+        float houdini:guidescale = 1
+        bool houdini:inviewermenu = 1
+        custom string karma:camera:lensshader = ""
+        token projection = "perspective"
+        double shutter:close = 0.25
+        double shutter:open = -0.25
+        float verticalAperture = 0.089807145
+        float verticalApertureOffset = 0
+        matrix4d xformOp:transform = ( (-0, 0, 1, 0), (0.4273578633871924, 0.9040825496607784, 0, 0), (-0.9040825496607784, 0.4273578633871924, 0, 0), (-8.9, 4.6, 0.8, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+}
+

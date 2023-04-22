@@ -1,0 +1,57 @@
+#usda 1.0
+(
+    endTimeCode = 1
+    framesPerSecond = 24
+    metersPerUnit = 1
+    startTimeCode = 1
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+def "Teapot" (
+    assetInfo = {
+        dictionary credits = {
+            string FancyTeapot = "PolyHaven | Public Domain - CC0 | https://polyhaven.com/a/tea_set_01"
+            string UtahTeapot = "Public Domain - CC0"
+        }
+        asset identifier = @Teapot.usd@
+        string name = "Teapot"
+        string version = "1.0"
+    }
+    prepend payload = @./Teapot_Payload.usd@
+    variants = {
+        string modelVariant = "Utah"
+    }
+    prepend variantSets = "modelVariant"
+)
+{
+    variantSet "modelVariant" = {
+        "Fancy" (
+            prepend apiSchemas = ["GeomModelAPI"]
+            kind = "component"
+        ) {
+            float3[] extentsHint = [(-0.1526284, -7.450581e-9, -0.262063), (0.1526284, 0.22956148, 0.2289426)]
+            asset model:cardTextureXNeg = @./cards/Fancy/XNeg.png@
+            asset model:cardTextureXPos = @./cards/Fancy/XPos.png@
+            asset model:cardTextureYNeg = @./cards/Fancy/YNeg.png@
+            asset model:cardTextureYPos = @./cards/Fancy/YPos.png@
+            asset model:cardTextureZNeg = @./cards/Fancy/ZNeg.png@
+            asset model:cardTextureZPos = @./cards/Fancy/ZPos.png@
+
+        }
+        "Utah" (
+            prepend apiSchemas = ["GeomModelAPI"]
+            kind = "component"
+        ) {
+            float3[] extentsHint = [(-0.1526284, -7.450581e-9, -0.262063), (0.1526284, 0.22956148, 0.2289426)]
+            asset model:cardTextureXNeg = @./cards/Utah/XNeg.png@
+            asset model:cardTextureXPos = @./cards/Utah/XPos.png@
+            asset model:cardTextureYNeg = @./cards/Utah/YNeg.png@
+            asset model:cardTextureYPos = @./cards/Utah/YPos.png@
+            asset model:cardTextureZNeg = @./cards/Utah/ZNeg.png@
+            asset model:cardTextureZPos = @./cards/Utah/ZPos.png@
+
+        }
+    }
+}
+

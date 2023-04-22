@@ -1,0 +1,302 @@
+#usda 1.0
+(
+    defaultPrim = "Teapot"
+    framesPerSecond = 24
+    metersPerUnit = 1
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+def Xform "Teapot" (
+    kind = "component"
+    prepend references = @./Teapot_Geometry.usd:SDF_FORMAT_ARGS:format=usda@
+    variants = {
+        string modelVariant = "Utah"
+    }
+    prepend variantSets = "modelVariant"
+)
+{
+    variantSet "modelVariant" = {
+        "Fancy" (
+            variants = {
+                string shadingVariant = "PorcelainFlowers"
+            }
+            prepend variantSets = "shadingVariant"
+        ) {
+            def Scope "Materials"
+            {
+                def Material "PorcelainFlowers"
+                {
+                    token outputs:surface.connect = </Teapot/Materials/PorcelainFlowers/UsdPreview.outputs:surface>
+
+                    def NodeGraph "UsdPreview"
+                    {
+                        token outputs:surface.connect = </Teapot/Materials/PorcelainFlowers/UsdPreview/usdpreviewsurface.outputs:surface>
+
+                        def Shader "usdpreviewsurface"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor.connect = </Teapot/Materials/PorcelainFlowers/UsdPreview/img_diffuseColor.outputs:rgb>
+                            float inputs:ior = 1.327
+                            float inputs:metallic.connect = </Teapot/Materials/PorcelainFlowers/UsdPreview/img_ARM.outputs:b>
+                            float inputs:occlusion.connect = </Teapot/Materials/PorcelainFlowers/UsdPreview/img_ARM.outputs:r>
+                            float inputs:roughness = 0.125
+                            float inputs:roughness.connect = </Teapot/Materials/PorcelainFlowers/UsdPreview/img_ARM.outputs:g>
+                            token outputs:surface
+                        }
+
+                        def Shader "img_diffuseColor"
+                        {
+                            uniform token info:id = "UsdUVTexture"
+                            asset inputs:file = @./textures/tea_set_01_diff_2k.jpg@
+                            float2 inputs:st.connect = </Teapot/Materials/PorcelainFlowers/UsdPreview/primvar_st.outputs:result>
+                            vector3f outputs:rgb
+                        }
+
+                        def Shader "primvar_st"
+                        {
+                            uniform token info:id = "UsdPrimvarReader_float2"
+                            string inputs:varname = "st"
+                            float2 outputs:result
+                        }
+
+                        def Shader "img_ARM"
+                        {
+                            uniform token info:id = "UsdUVTexture"
+                            asset inputs:file = @./textures/tea_set_01_arm_2k.jpg@
+                            token inputs:sourceColorSpace = "raw"
+                            float2 inputs:st.connect = </Teapot/Materials/PorcelainFlowers/UsdPreview/primvar_st.outputs:result>
+                            float outputs:b
+                            float outputs:g
+                            float outputs:r
+                        }
+                    }
+                }
+
+                def Material "Plastic"
+                {
+                    token outputs:surface.connect = </Teapot/Materials/Plastic/UsdPreview.outputs:surface>
+
+                    def NodeGraph "UsdPreview"
+                    {
+                        token outputs:surface.connect = </Teapot/Materials/Plastic/UsdPreview/usdpreviewsurface.outputs:surface>
+
+                        def Shader "usdpreviewsurface"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor.connect = </Teapot/Materials/Plastic/UsdPreview/primvar_displayColor.outputs:result>
+                            float inputs:ior = 1.327
+                            float inputs:roughness = 0.125
+                            token outputs:surface
+                        }
+
+                        def Shader "primvar_displayColor"
+                        {
+                            uniform token info:id = "UsdPrimvarReader_float3"
+                            string inputs:varname = "displayColor"
+                            vector3f outputs:result
+                        }
+                    }
+                }
+            }
+            variantSet "shadingVariant" = {
+                "PorcelainFlowers" {
+                    over "Geometry" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </Teapot/Materials/PorcelainFlowers>
+                        color3f[] primvars:displayColor = [(0.718, 0.62298465, 0.43295398)] (
+                            interpolation = "constant"
+                        )
+                    }
+
+                }
+            }
+
+        }
+        "Utah" (
+            variants = {
+                string shadingVariant = "PlasticLimeGreen"
+            }
+            prepend variantSets = "shadingVariant"
+        ) {
+            def Scope "Materials"
+            {
+                def Material "PorcelainFlowers"
+                {
+                    token outputs:surface.connect = </Teapot/Materials/PorcelainFlowers/UsdPreview.outputs:surface>
+
+                    def NodeGraph "UsdPreview"
+                    {
+                        token outputs:surface.connect = </Teapot/Materials/PorcelainFlowers/UsdPreview/usdpreviewsurface.outputs:surface>
+
+                        def Shader "usdpreviewsurface"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor.connect = </Teapot/Materials/PorcelainFlowers/UsdPreview/img_diffuseColor.outputs:rgb>
+                            float inputs:ior = 1.327
+                            float inputs:metallic.connect = </Teapot/Materials/PorcelainFlowers/UsdPreview/img_ARM.outputs:b>
+                            float inputs:occlusion.connect = </Teapot/Materials/PorcelainFlowers/UsdPreview/img_ARM.outputs:r>
+                            float inputs:roughness = 0.125
+                            float inputs:roughness.connect = </Teapot/Materials/PorcelainFlowers/UsdPreview/img_ARM.outputs:g>
+                            token outputs:surface
+                        }
+
+                        def Shader "img_diffuseColor"
+                        {
+                            uniform token info:id = "UsdUVTexture"
+                            asset inputs:file = @./textures/tea_set_01_diff_2k.jpg@
+                            float2 inputs:st.connect = </Teapot/Materials/PorcelainFlowers/UsdPreview/primvar_st.outputs:result>
+                            vector3f outputs:rgb
+                        }
+
+                        def Shader "primvar_st"
+                        {
+                            uniform token info:id = "UsdPrimvarReader_float2"
+                            string inputs:varname = "st"
+                            float2 outputs:result
+                        }
+
+                        def Shader "img_ARM"
+                        {
+                            uniform token info:id = "UsdUVTexture"
+                            asset inputs:file = @./textures/tea_set_01_arm_2k.jpg@
+                            token inputs:sourceColorSpace = "raw"
+                            float2 inputs:st.connect = </Teapot/Materials/PorcelainFlowers/UsdPreview/primvar_st.outputs:result>
+                            float outputs:b
+                            float outputs:g
+                            float outputs:r
+                        }
+                    }
+                }
+
+                def Material "Plastic"
+                {
+                    token outputs:surface.connect = </Teapot/Materials/Plastic/UsdPreview.outputs:surface>
+
+                    def NodeGraph "UsdPreview"
+                    {
+                        token outputs:surface.connect = </Teapot/Materials/Plastic/UsdPreview/usdpreviewsurface.outputs:surface>
+
+                        def Shader "usdpreviewsurface"
+                        {
+                            uniform token info:id = "UsdPreviewSurface"
+                            color3f inputs:diffuseColor.connect = </Teapot/Materials/Plastic/UsdPreview/primvar_displayColor.outputs:result>
+                            float inputs:ior = 1.327
+                            float inputs:roughness = 0.125
+                            token outputs:surface
+                        }
+
+                        def Shader "primvar_displayColor"
+                        {
+                            uniform token info:id = "UsdPrimvarReader_float3"
+                            string inputs:varname = "displayColor"
+                            vector3f outputs:result
+                        }
+                    }
+                }
+            }
+            variantSet "shadingVariant" = {
+                "PlasticBlack" (
+                    prepend apiSchemas = ["GeomModelAPI"]
+                ) {
+                    float3 model:drawModeColor = (0.025, 0.025, 0.025)
+
+                    over "Geometry" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </Teapot/Materials/Plastic>
+                        color3f[] primvars:displayColor = [(0.025, 0.025, 0.025)] (
+                            interpolation = "constant"
+                        )
+                    }
+
+                }
+                "PlasticBlue" (
+                    prepend apiSchemas = ["GeomModelAPI"]
+                ) {
+                    float3 model:drawModeColor = (0.013679987, 0.19873393, 0.912)
+
+                    over "Geometry" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </Teapot/Materials/Plastic>
+                        color3f[] primvars:displayColor = [(0.013679987, 0.19873393, 0.912)] (
+                            interpolation = "constant"
+                        )
+                    }
+
+                }
+                "PlasticLimeGreen" (
+                    prepend apiSchemas = ["GeomModelAPI"]
+                ) {
+                    float3 model:drawModeColor = (0.325, 0.825, 0)
+
+                    over "Geometry" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </Teapot/Materials/Plastic>
+                        color3f[] primvars:displayColor = [(0.325, 0.825, 0)] (
+                            interpolation = "constant"
+                        )
+                    }
+
+                }
+                "PlasticOrange" (
+                    prepend apiSchemas = ["GeomModelAPI"]
+                ) {
+                    float3 model:drawModeColor = (0.936, 0.26607358, 0.02246399)
+
+                    over "Geometry" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </Teapot/Materials/Plastic>
+                        color3f[] primvars:displayColor = [(0.936, 0.26607358, 0.02246399)] (
+                            interpolation = "constant"
+                        )
+                    }
+
+                }
+                "PlasticRed" (
+                    prepend apiSchemas = ["GeomModelAPI"]
+                ) {
+                    float3 model:drawModeColor = (0.936, 0, 0)
+
+                    over "Geometry" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </Teapot/Materials/Plastic>
+                        color3f[] primvars:displayColor = [(0.936, 0, 0)] (
+                            interpolation = "constant"
+                        )
+                    }
+
+                }
+                "PlasticWhite" (
+                    prepend apiSchemas = ["GeomModelAPI"]
+                ) {
+                    float3 model:drawModeColor = (0.767, 0.767, 0.767)
+
+                    over "Geometry" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        rel material:binding = </Teapot/Materials/Plastic>
+                        color3f[] primvars:displayColor = [(0.767, 0.767, 0.767)] (
+                            interpolation = "constant"
+                        )
+                    }
+
+                }
+            }
+
+        }
+    }
+}
+
