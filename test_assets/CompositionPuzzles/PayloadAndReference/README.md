@@ -2,16 +2,16 @@
 
 ![problem](images/Slide108.PNG)
 
-This puzzle is inspired by a real-life USD asset structure problem at encountered during USD adoption at a large animation studio. 
+This puzzle was inspired by a real-life USD asset structure problem encountered during USD adoption at a large animation studio.
 
 In the studio's production pipeline, before animation begins on a shot, the shot populated with non-deforming models, placed on the stage for blocking.
 
-`shot.usda` has sublayers of `animation.usda` and `layout.usda`, and `layout.usda`
+`shot.usda` has sublayers of `animation.usda` and `layout.usda`. `layout.usda`
 has a reference to `model.usda`, the non-deforming model geometry.
 
 ![problem 2](images/Slide109.PNG)
 
-Animation performs their work at a later date and delivers their animation caches by adding a payload to their sublayer. But when this happened, they didn't see the deforming geometry from animation on the stage.
+Animation performed their work at a later date and delivered their animation caches by adding a payload to their sublayer. When this happened, they didn't see the deforming geometry from animation on the stage.
 
 ![problem 3](images/Slide110.PNG)
 
