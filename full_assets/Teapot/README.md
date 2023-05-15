@@ -1,6 +1,7 @@
 # Teapot Model
 
 ![Teapot Models with different Draw Modes](screenshots/DrawModes.png)
+File: `DrawModes.usd`
 
 A model of the classic Utah Teapot, with other Teapot variations.
 
@@ -17,6 +18,7 @@ For technical details on draw mode, see the [UsdGeomModelAPI documentation](http
 ### modelVariants
 
 ![UtahTeapot](screenshots/UtahTeapot.png) ![FancyTeapot](screenshots/FancyTeapot.png)
+File: `Teapot.usd`
 
 The _modelVariant_ variant contains two options: Utah and Fancy. Each references its corresponding geometry layer stored in the `geo` folder.
 
