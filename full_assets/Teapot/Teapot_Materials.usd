@@ -73,18 +73,18 @@ def Xform "Teapot" (
                     }
                 }
 
-                def Material "Plastic"
+                def Material "Ceramic"
                 {
-                    token outputs:surface.connect = </Teapot/Materials/Plastic/UsdPreview.outputs:surface>
+                    token outputs:surface.connect = </Teapot/Materials/Ceramic/UsdPreview.outputs:surface>
 
                     def NodeGraph "UsdPreview"
                     {
-                        token outputs:surface.connect = </Teapot/Materials/Plastic/UsdPreview/usdpreviewsurface.outputs:surface>
+                        token outputs:surface.connect = </Teapot/Materials/Ceramic/UsdPreview/usdpreviewsurface.outputs:surface>
 
                         def Shader "usdpreviewsurface"
                         {
                             uniform token info:id = "UsdPreviewSurface"
-                            color3f inputs:diffuseColor.connect = </Teapot/Materials/Plastic/UsdPreview/primvar_displayColor.outputs:result>
+                            color3f inputs:diffuseColor.connect = </Teapot/Materials/Ceramic/UsdPreview/primvar_displayColor.outputs:result>
                             float inputs:ior = 1.327
                             float inputs:roughness = 0.125
                             token outputs:surface
@@ -117,7 +117,7 @@ def Xform "Teapot" (
         }
         "Utah" (
             variants = {
-                string shadingVariant = "PlasticLimeGreen"
+                string shadingVariant = "CeramicLimeGreen"
             }
             prepend variantSets = "shadingVariant"
         ) {
@@ -171,18 +171,18 @@ def Xform "Teapot" (
                     }
                 }
 
-                def Material "Plastic"
+                def Material "Ceramic"
                 {
-                    token outputs:surface.connect = </Teapot/Materials/Plastic/UsdPreview.outputs:surface>
+                    token outputs:surface.connect = </Teapot/Materials/Ceramic/UsdPreview.outputs:surface>
 
                     def NodeGraph "UsdPreview"
                     {
-                        token outputs:surface.connect = </Teapot/Materials/Plastic/UsdPreview/usdpreviewsurface.outputs:surface>
+                        token outputs:surface.connect = </Teapot/Materials/Ceramic/UsdPreview/usdpreviewsurface.outputs:surface>
 
                         def Shader "usdpreviewsurface"
                         {
                             uniform token info:id = "UsdPreviewSurface"
-                            color3f inputs:diffuseColor.connect = </Teapot/Materials/Plastic/UsdPreview/primvar_displayColor.outputs:result>
+                            color3f inputs:diffuseColor.connect = </Teapot/Materials/Ceramic/UsdPreview/primvar_displayColor.outputs:result>
                             float inputs:ior = 1.327
                             float inputs:roughness = 0.125
                             token outputs:surface
@@ -198,7 +198,7 @@ def Xform "Teapot" (
                 }
             }
             variantSet "shadingVariant" = {
-                "PlasticBlack" (
+                "CeramicBlack" (
                     prepend apiSchemas = ["GeomModelAPI"]
                 ) {
                     float3 model:drawModeColor = (0.025, 0.025, 0.025)
@@ -207,14 +207,14 @@ def Xform "Teapot" (
                         prepend apiSchemas = ["MaterialBindingAPI"]
                     )
                     {
-                        rel material:binding = </Teapot/Materials/Plastic>
+                        rel material:binding = </Teapot/Materials/Ceramic>
                         color3f[] primvars:displayColor = [(0.025, 0.025, 0.025)] (
                             interpolation = "constant"
                         )
                     }
 
                 }
-                "PlasticBlue" (
+                "CeramicBlue" (
                     prepend apiSchemas = ["GeomModelAPI"]
                 ) {
                     float3 model:drawModeColor = (0.013679987, 0.19873393, 0.912)
@@ -223,14 +223,14 @@ def Xform "Teapot" (
                         prepend apiSchemas = ["MaterialBindingAPI"]
                     )
                     {
-                        rel material:binding = </Teapot/Materials/Plastic>
+                        rel material:binding = </Teapot/Materials/Ceramic>
                         color3f[] primvars:displayColor = [(0.013679987, 0.19873393, 0.912)] (
                             interpolation = "constant"
                         )
                     }
 
                 }
-                "PlasticLimeGreen" (
+                "CeramicLimeGreen" (
                     prepend apiSchemas = ["GeomModelAPI"]
                 ) {
                     float3 model:drawModeColor = (0.325, 0.825, 0)
@@ -239,14 +239,14 @@ def Xform "Teapot" (
                         prepend apiSchemas = ["MaterialBindingAPI"]
                     )
                     {
-                        rel material:binding = </Teapot/Materials/Plastic>
+                        rel material:binding = </Teapot/Materials/Ceramic>
                         color3f[] primvars:displayColor = [(0.325, 0.825, 0)] (
                             interpolation = "constant"
                         )
                     }
 
                 }
-                "PlasticOrange" (
+                "CeramicOrange" (
                     prepend apiSchemas = ["GeomModelAPI"]
                 ) {
                     float3 model:drawModeColor = (0.936, 0.26607358, 0.02246399)
@@ -255,14 +255,14 @@ def Xform "Teapot" (
                         prepend apiSchemas = ["MaterialBindingAPI"]
                     )
                     {
-                        rel material:binding = </Teapot/Materials/Plastic>
+                        rel material:binding = </Teapot/Materials/Ceramic>
                         color3f[] primvars:displayColor = [(0.936, 0.26607358, 0.02246399)] (
                             interpolation = "constant"
                         )
                     }
 
                 }
-                "PlasticRed" (
+                "CeramicRed" (
                     prepend apiSchemas = ["GeomModelAPI"]
                 ) {
                     float3 model:drawModeColor = (0.936, 0, 0)
@@ -271,14 +271,14 @@ def Xform "Teapot" (
                         prepend apiSchemas = ["MaterialBindingAPI"]
                     )
                     {
-                        rel material:binding = </Teapot/Materials/Plastic>
+                        rel material:binding = </Teapot/Materials/Ceramic>
                         color3f[] primvars:displayColor = [(0.936, 0, 0)] (
                             interpolation = "constant"
                         )
                     }
 
                 }
-                "PlasticWhite" (
+                "CeramicWhite" (
                     prepend apiSchemas = ["GeomModelAPI"]
                 ) {
                     float3 model:drawModeColor = (0.767, 0.767, 0.767)
@@ -287,7 +287,7 @@ def Xform "Teapot" (
                         prepend apiSchemas = ["MaterialBindingAPI"]
                     )
                     {
-                        rel material:binding = </Teapot/Materials/Plastic>
+                        rel material:binding = </Teapot/Materials/Ceramic>
                         color3f[] primvars:displayColor = [(0.767, 0.767, 0.767)] (
                             interpolation = "constant"
                         )
