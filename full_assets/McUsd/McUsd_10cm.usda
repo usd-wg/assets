@@ -121,9 +121,6 @@ def DomeLight "DomeLight" (
     asset inputs:shaping:ies:file
     asset inputs:texture:file = @./McUsd_materials/tex/_domelight.png@
     token inputs:texture:format = "latlong"
-    float3 xformOp:rotateZXY = (270, 0, 0)
-    float3 xformOp:translate = (0, 0, 0)
-    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZXY"]
 }
 
 def Xform "McUsd_10cm"
