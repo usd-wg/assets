@@ -97,13 +97,13 @@ def DistantLight "Sun" (
     kind = "model"
 )
 {
-    float angle = 1
-    float intensity = 1560
-    float shaping:cone:angle = 180
-    float shaping:cone:softness
-    float shaping:focus
-    color3f shaping:focusTint
-    asset shaping:ies:file
+    float inputs:angle = 1
+    float inputs:intensity = 1560
+    float inputs:shaping:cone:angle = 180
+    float inputs:shaping:cone:softness
+    float inputs:shaping:focus
+    color3f inputs:shaping:focusTint
+    asset inputs:shaping:ies:file
     float3 xformOp:rotateZXY = (235, 325, 0)
     float3 xformOp:translate = (0, 0, 0)
     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZXY"]
@@ -113,14 +113,14 @@ def DomeLight "DomeLight" (
     prepend apiSchemas = ["ShapingAPI"]
 )
 {
-    float intensity = 312
-    float shaping:cone:angle = 180
-    float shaping:cone:softness
-    float shaping:focus
-    color3f shaping:focusTint
-    asset shaping:ies:file
-    asset texture:file = @./McUsd_materials/tex/_domelight.png@
-    token texture:format = "latlong"
+    float inputs:intensity = 312
+    float inputs:shaping:cone:angle = 180
+    float inputs:shaping:cone:softness
+    float inputs:shaping:focus
+    color3f inputs:shaping:focusTint
+    asset inputs:shaping:ies:file
+    asset inputs:texture:file = @./McUsd_materials/tex/_domelight.png@
+    token inputs:texture:format = "latlong"
     float3 xformOp:rotateZXY = (270, 0, 0)
     float3 xformOp:translate = (0, 0, 0)
     uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZXY"]
