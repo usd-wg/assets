@@ -61,7 +61,7 @@
         }
     }
     defaultPrim = "McUsd"
-    metersPerUnit = 0.01
+    metersPerUnit = 1
     upAxis = "Y"
 )
 
