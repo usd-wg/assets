@@ -98,7 +98,7 @@ def DistantLight "Sun" (
 )
 {
     float inputs:angle = 1
-    float inputs:intensity = 1560
+    float inputs:intensity = 1.56
     float inputs:shaping:cone:angle = 180
     float inputs:shaping:cone:softness
     float inputs:shaping:focus
@@ -113,7 +113,7 @@ def DomeLight "DomeLight" (
     prepend apiSchemas = ["ShapingAPI"]
 )
 {
-    float inputs:intensity = 312
+    float inputs:intensity = 3.12
     float inputs:shaping:cone:angle = 180
     float inputs:shaping:cone:softness
     float inputs:shaping:focus
