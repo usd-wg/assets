@@ -7,6 +7,8 @@
         @_parent_stage.usda@
     ]
     upAxis = "Y"
+    metersPerUnit = 0.01
+    defaultPrim = "World"
 )
 
 over "World"

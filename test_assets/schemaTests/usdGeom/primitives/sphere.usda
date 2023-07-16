@@ -5,6 +5,7 @@
     }
     defaultPrim = "Sphere"
     upAxis = "Y"
+    metersPerUnit = 0.01
 )
 
 def Sphere "Sphere"

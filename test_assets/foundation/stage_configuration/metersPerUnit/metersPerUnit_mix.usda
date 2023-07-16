@@ -10,21 +10,24 @@
         @../../../_common/axis.usda@
     ]
     upAxis = "Y"
+    defaultPrim = "World"
 )
 
-def Cube "cube_100"
+def "World"
 {
-}
+    def Cube "cube_100"
+    {
+    }
 
-over "cube_1"
-{
-    double3 xformOp:translate = (3, 0, 0)
-    uniform token[] xformOpOrder = ["xformOp:translate"]
-}
+    over "cube_1"
+    {
+        double3 xformOp:translate = (3, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+    }
 
-over "cube_10"
-{
-    double3 xformOp:translate = (6, 0, 0)
-    uniform token[] xformOpOrder = ["xformOp:translate"]
+    over "cube_10"
+    {
+        double3 xformOp:translate = (6, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+    }
 }
-

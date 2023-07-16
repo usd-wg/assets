@@ -12,5 +12,7 @@
     ]
     timeCodesPerSecond = 24
     upAxis = "Y"
+    metersPerUnit = 0.01
+    defaultPrim = "World"
 )
 

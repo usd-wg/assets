@@ -5,6 +5,7 @@
     }
     defaultPrim = "mesh"
     upAxis = "Y"
+    metersPerUnit = 0.01
 )
 
 def Mesh "mesh"

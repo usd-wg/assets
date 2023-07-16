@@ -3,6 +3,7 @@
     defaultPrim = "sphere"
     doc = "Generated from Composed Stage of root layer basic.usda"
     upAxis = "Y"
+    metersPerUnit = 0.01
 )
 
 def Scope "MaterialX"

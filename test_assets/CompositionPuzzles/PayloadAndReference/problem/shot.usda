@@ -6,5 +6,6 @@
         @./layout.usda@
     ]
     upAxis = "Y"
+    metersPerUnit = 0.01
 )
 

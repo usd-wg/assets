@@ -9,5 +9,7 @@
         @../../../_common/axis.usda@
     ]
     upAxis = "Y"
+    metersPerUnit = 0.01
+    defaultPrim = "World"
 )
 

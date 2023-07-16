@@ -5,6 +5,7 @@
     }
     defaultPrim = "World"
     upAxis = "Y"
+    metersPerUnit = 0.01
 )
 
 class "_myClass"

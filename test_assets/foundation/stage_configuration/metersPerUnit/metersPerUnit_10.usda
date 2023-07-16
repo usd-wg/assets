@@ -8,9 +8,12 @@
         @../../../_common/axis.usda@
     ]
     upAxis = "Y"
+    defaultPrim = "World"
 )
 
-def Cube "cube_10"
+def "World"
 {
+    def Cube "cube_10"
+    {
+    }
 }
-

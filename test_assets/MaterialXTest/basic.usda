@@ -2,6 +2,7 @@
 (
     defaultPrim = "sphere"
     upAxis = "Y"
+    metersPerUnit = 0.01
 )
 
 def Scope "MaterialX" (

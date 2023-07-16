@@ -6,10 +6,12 @@
     endTimeCode = 100
     framesPerSecond = 1
     startTimeCode = 0
+    metersPerUnit = 0.01
     subLayers = [
         @../../../_common/animated_cube_translation.usda@,
         @../../../_common/axis.usda@
     ]
     upAxis = "Y"
+    defaultPrim = "World"
 )
 

@@ -4,6 +4,8 @@
         string copyright = "Copyright 2022 Apple Inc. All rights reserved."
     }
     upAxis = "Y"
+    metersPerUnit = 0.01
+    defaultPrim = "World"
 )
 
 def "World" (

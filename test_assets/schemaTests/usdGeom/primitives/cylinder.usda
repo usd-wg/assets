@@ -5,6 +5,7 @@
     }
     defaultPrim = "Cylinder"
     upAxis = "Y"
+    metersPerUnit = 0.01
 )
 
 def Cylinder "Cylinder"

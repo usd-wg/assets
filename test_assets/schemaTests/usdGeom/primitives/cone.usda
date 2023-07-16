@@ -5,6 +5,7 @@
     }
     defaultPrim = "Cone"
     upAxis = "Y"
+    metersPerUnit = 0.01
 )
 
 def Cone "Cone"

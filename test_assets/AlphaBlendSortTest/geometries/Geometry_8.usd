@@ -5,6 +5,7 @@
     }
     metersPerUnit = 1
     upAxis = "Y"
+    defaultPrim = "Geometry"
 )
 
 def "Geometry"

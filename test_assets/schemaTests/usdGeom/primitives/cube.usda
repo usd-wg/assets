@@ -5,6 +5,7 @@
     }
     defaultPrim = "Cube"
     upAxis = "Y"
+    metersPerUnit = 0.01
 )
 
 def Cube "Cube"

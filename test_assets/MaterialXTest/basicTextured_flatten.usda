@@ -2,6 +2,7 @@
 (
     doc = "Generated from Composed Stage of root layer basicTextured.usda"
     upAxis = "Y"
+    metersPerUnit = 0.01
 )
 
 def Scope "MaterialX"

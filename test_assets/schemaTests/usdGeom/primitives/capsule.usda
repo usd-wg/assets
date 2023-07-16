@@ -5,6 +5,7 @@
     }
     defaultPrim = "Capsule"
     upAxis = "Y"
+    metersPerUnit = 0.01
 )
 
 def Capsule "Capsule"
