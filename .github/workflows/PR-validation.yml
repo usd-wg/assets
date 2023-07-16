@@ -1,0 +1,49 @@
+name: PR Validation
+
+on:
+  pull_request:
+    paths:
+      - '**/*.usd*'
+
+jobs:
+  run-usdchecker:
+    name: Run usdchecker
+    runs-on: ubuntu-22.04
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    - name: Get changed files
+      id: changed-files
+      uses: tj-actions/changed-files@v37
+      with:
+        files: |
+          **/*.usd*
+
+    - name: Download USD binaries
+      run: curl -o USD.zip -L https://developer.nvidia.com/downloads/usdusdbinaries2211usdpy37linu-8664usdviewrelease02211-tc55v22110c7b9a95zip
+
+    - name: Unpack USD binaries
+      run: unzip USD.zip -d USD
+
+    - name: Set up env vars
+      run: |
+        echo "$PWD/USD/bin" >> $GITHUB_PATH
+        echo "PYTHONPATH=$PWD/USD/lib/python" >> $GITHUB_ENV
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+          python-version: '3.7'
+
+    - name: Test usdchecker
+      run: usdchecker --help
+
+    - name: Run usdchecker on changed USD files
+      run: |
+        for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            usdchecker $file
+        done
