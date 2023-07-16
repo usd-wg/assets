@@ -15,7 +15,7 @@ class "__class__"
 def Xform "Queen" (
     prepend apiSchemas = ["GeomModelAPI"]
     assetInfo = {
-        asset identifier = @./assets/Queen/Queen.usd@
+        asset identifier = @./Queen.usd@
         string name = "Queen"
     }
     prepend inherits = </__class__/Queen>
