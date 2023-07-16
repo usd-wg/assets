@@ -1,81 +1,88 @@
 #usda 1.0
 (
-	customLayerData = {
-		string creator = "Three.js USDZExporter"
-	}
-	defaultPrim = "StageRoot"
-	metersPerUnit = 1
-	upAxis = "Y"
-	startTimeCode = 0
-	endTimeCode = 100
-	timeCodesPerSecond = 60
-	framesPerSecond = 60
+    customLayerData = {
+        string creator = "Three.js USDZExporter"
+    }
+    defaultPrim = "StageRoot"
+    endTimeCode = 100
+    framesPerSecond = 60
+    metersPerUnit = 1
+    startTimeCode = 0
+    timeCodesPerSecond = 60
+    upAxis = "Y"
 )
 
 def Xform "StageRoot"
 {
-	def Xform "GameObject_19"
-	{
-		matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
-		uniform token[] xformOpOrder = ["xformOp:transform"]
-		
-		def Xform "Shadows_20"
-		{
-			matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
-			uniform token[] xformOpOrder = ["xformOp:transform"]
-			
-			def Xform "Shadow1_23" (prepend references = @./geometries/Geometry_7.usd@</Geometry>)
-			{
-				rel material:binding = </Materials/Material_5>
-				matrix4d xformOp:transform = ( (0.7227923689262957, -6.524213866211724e-7, -0.5760579247048901, 0), (0.2046202329458557, 0.000001901808820767934, 0.2567414611888293, 0), (0.000003151849124212561, -1.0191191961221802, 0.000005052769658335941, 0), (-0.595999956, 0, -0.0440000035, 1) )
-				uniform token[] xformOpOrder = ["xformOp:transform"]
-				
-			}
-			def Xform "Shadow2_24" (prepend references = @./geometries/Geometry_7.usd@</Geometry>)
-			{
-				rel material:binding = </Materials/Material_5>
-				matrix4d xformOp:transform = ( (0.9162692, 0, 0, 0), (0, -1.5225203843506833e-8, 0.2861209362252038, 0), (0, -1.0102997337605517, -5.376055171802598e-8, 0), (0.618000031, 0, -0.00100000016, 1) )
-				uniform token[] xformOpOrder = ["xformOp:transform"]
-				
-			}
-			def Xform "Shadow3_22" (prepend references = @./geometries/Geometry_8.usd@</Geometry>)
-			{
-				rel material:binding = </Materials/Material_6>
-				matrix4d xformOp:transform = ( (1.86491, 0, 0, 0), (0, -4.863094950971973e-8, 0.9139012486309495, 0), (0, -1.0103000537605686, -5.3760568746019645e-8, 0), (-0.023999989, -0.00505150063, -0.0009999997, 1) )
-				uniform token[] xformOpOrder = ["xformOp:transform"]
-				
-			}
-		}
-	}
+    def Xform "GameObject_19"
+    {
+        matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+
+        def Xform "Shadows_20"
+        {
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform"]
+
+            def Xform "Shadow1_23" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+                prepend references = @./geometries/Geometry_7.usd@</Geometry>
+            )
+            {
+                rel material:binding = </Materials/Material_5>
+                matrix4d xformOp:transform = ( (0.7227923689262957, -6.524213866211724e-7, -0.5760579247048901, 0), (0.2046202329458557, 0.000001901808820767934, 0.2567414611888293, 0), (0.000003151849124212561, -1.0191191961221802, 0.000005052769658335941, 0), (-0.595999956, 0, -0.0440000035, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+
+            def Xform "Shadow2_24" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+                prepend references = @./geometries/Geometry_7.usd@</Geometry>
+            )
+            {
+                rel material:binding = </Materials/Material_5>
+                matrix4d xformOp:transform = ( (0.9162692, 0, 0, 0), (0, -1.5225203843506833e-8, 0.2861209362252038, 0), (0, -1.0102997337605517, -5.376055171802598e-8, 0), (0.618000031, 0, -0.00100000016, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+
+            def Xform "Shadow3_22" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+                prepend references = @./geometries/Geometry_8.usd@</Geometry>
+            )
+            {
+                rel material:binding = </Materials/Material_6>
+                matrix4d xformOp:transform = ( (1.86491, 0, 0, 0), (0, -4.863094950971973e-8, 0.9139012486309495, 0), (0, -1.0103000537605686, -5.3760568746019645e-8, 0), (-0.023999989, -0.00505150063, -0.0009999997, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+        }
+    }
 }
+
 def "Materials"
 {
-
     def Material "Material_5"
     {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:surface.connect = </Materials/Material_5/PreviewSurface.outputs:surface>
+
         def Shader "PreviewSurface"
         {
             uniform token info:id = "UsdPreviewSurface"
             color3f inputs:diffuseColor.connect = </Materials/Material_5/Texture_6_diffuse.outputs:rgb>
+            float inputs:metallic = 0
+            float inputs:opacity = 0.50980395
             float inputs:opacity.connect = </Materials/Material_5/Texture_6_diffuse.outputs:a>
             float inputs:roughness = 1
-            float inputs:metallic = 0
-            float inputs:opacity = 0.509803951
             int inputs:useSpecularWorkflow = 0
             token outputs:surface
         }
 
-        token outputs:surface.connect = </Materials/Material_5/PreviewSurface.outputs:surface>
-        token inputs:frame:stPrimvarName = "st"
-
         def Shader "uvReader_st"
         {
             uniform token info:id = "UsdPrimvarReader_float2"
+            float2 inputs:fallback = (0, 0)
             token inputs:varname.connect = </Materials/Material_5.inputs:frame:stPrimvarName>
-            float2 inputs:fallback = (0.0, 0.0)
             float2 outputs:result
         }
-
 
         def Shader "Transform2d_diffuse" (
             sdrMetadata = {
@@ -94,44 +101,42 @@ def "Materials"
         {
             uniform token info:id = "UsdUVTexture"
             asset inputs:file = @textures/Texture_6_000000_0.509803951.png@
+            float4 inputs:scale = (0, 0, 0, 0.50980395)
             float2 inputs:st.connect = </Materials/Material_5/Transform2d_diffuse.outputs:result>
-			float4 inputs:scale = (0, 0, 0, 0.509803951)
             token inputs:wrapS = "repeat"
             token inputs:wrapT = "repeat"
-            float outputs:r
-            float outputs:g
-            float outputs:b
-            float3 outputs:rgb
             float outputs:a
+            float outputs:b
+            float outputs:g
+            float outputs:r
+            float3 outputs:rgb
         }
-
     }
 
     def Material "Material_6"
     {
+        token inputs:frame:stPrimvarName = "st"
+        token outputs:surface.connect = </Materials/Material_6/PreviewSurface.outputs:surface>
+
         def Shader "PreviewSurface"
         {
             uniform token info:id = "UsdPreviewSurface"
             color3f inputs:diffuseColor.connect = </Materials/Material_6/Texture_6_diffuse.outputs:rgb>
+            float inputs:metallic = 0
+            float inputs:opacity = 0.29803923
             float inputs:opacity.connect = </Materials/Material_6/Texture_6_diffuse.outputs:a>
             float inputs:roughness = 1
-            float inputs:metallic = 0
-            float inputs:opacity = 0.298039228
             int inputs:useSpecularWorkflow = 0
             token outputs:surface
         }
 
-        token outputs:surface.connect = </Materials/Material_6/PreviewSurface.outputs:surface>
-        token inputs:frame:stPrimvarName = "st"
-
         def Shader "uvReader_st"
         {
             uniform token info:id = "UsdPrimvarReader_float2"
+            float2 inputs:fallback = (0, 0)
             token inputs:varname.connect = </Materials/Material_6.inputs:frame:stPrimvarName>
-            float2 inputs:fallback = (0.0, 0.0)
             float2 outputs:result
         }
-
 
         def Shader "Transform2d_diffuse" (
             sdrMetadata = {
@@ -150,18 +155,16 @@ def "Materials"
         {
             uniform token info:id = "UsdUVTexture"
             asset inputs:file = @textures/Texture_6_000000_0.298039228.png@
+            float4 inputs:scale = (0, 0, 0, 0.29803923)
             float2 inputs:st.connect = </Materials/Material_6/Transform2d_diffuse.outputs:result>
-			float4 inputs:scale = (0, 0, 0, 0.298039228)
             token inputs:wrapS = "repeat"
             token inputs:wrapT = "repeat"
-            float outputs:r
-            float outputs:g
-            float outputs:b
-            float3 outputs:rgb
             float outputs:a
+            float outputs:b
+            float outputs:g
+            float outputs:r
+            float3 outputs:rgb
         }
-
     }
-
 }
 

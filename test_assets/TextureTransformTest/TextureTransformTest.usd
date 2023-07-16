@@ -605,7 +605,9 @@ def Xform "TextureTransformTest"
         }
     }
 
-    def Mesh "Offset_U"
+    def Mesh "Offset_U" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
     {
         uniform bool doubleSided
         float3[] extent = [(-0.5, -0.5, 0), (0.5, 0.5, 0)]
@@ -637,7 +639,9 @@ def Xform "TextureTransformTest"
         uniform token[] xformOpOrder = ["xformOp:transform"]
     }
 
-    def Mesh "Offset_V"
+    def Mesh "Offset_V" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
     {
         uniform bool doubleSided
         float3[] extent = [(-0.5, -0.5, 0), (0.5, 0.5, 0)]
@@ -669,7 +673,9 @@ def Xform "TextureTransformTest"
         uniform token[] xformOpOrder = ["xformOp:transform"]
     }
 
-    def Mesh "Offset_UV"
+    def Mesh "Offset_UV" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
     {
         uniform bool doubleSided
         float3[] extent = [(-0.5, -0.5, 0), (0.5, 0.5, 0)]
@@ -701,7 +707,9 @@ def Xform "TextureTransformTest"
         uniform token[] xformOpOrder = ["xformOp:transform"]
     }
 
-    def Mesh "Rotation"
+    def Mesh "Rotation" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
     {
         uniform bool doubleSided
         float3[] extent = [(-0.5, -0.5, 0), (0.5, 0.5, 0)]
@@ -732,7 +740,9 @@ def Xform "TextureTransformTest"
         matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (1.100000023841858, -0.550000011920929, 0, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
-        def Mesh "Rotation___Correct"
+        def Mesh "Rotation___Correct" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
         {
             uniform bool doubleSided
             float3[] extent = [(-0.5, -0.5, 0), (0.5, 0.5, 0)]
@@ -764,7 +774,9 @@ def Xform "TextureTransformTest"
             uniform token[] xformOpOrder = ["xformOp:transform"]
         }
 
-        def Mesh "Rotation___Not_Supported"
+        def Mesh "Rotation___Not_Supported" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
         {
             uniform bool doubleSided
             float3[] extent = [(-0.5, -0.5, 0), (0.5, 0.5, 0)]
@@ -796,7 +808,9 @@ def Xform "TextureTransformTest"
             uniform token[] xformOpOrder = ["xformOp:transform"]
         }
 
-        def Mesh "Rotation___Error"
+        def Mesh "Rotation___Error" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
         {
             uniform bool doubleSided
             float3[] extent = [(-0.5, -0.5, 0), (0.5, 0.5, 0)]
@@ -829,7 +843,9 @@ def Xform "TextureTransformTest"
         }
     }
 
-    def Mesh "Scale"
+    def Mesh "Scale" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
     {
         uniform bool doubleSided
         float3[] extent = [(-0.5, -0.5, 0), (0.5, 0.5, 0)]
@@ -860,7 +876,9 @@ def Xform "TextureTransformTest"
         matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, -0.550000011920929, 0, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
-        def Mesh "Scale___Correct"
+        def Mesh "Scale___Correct" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
         {
             uniform bool doubleSided
             float3[] extent = [(-0.5, -0.5, 0), (0.5, 0.5, 0)]
@@ -892,7 +910,9 @@ def Xform "TextureTransformTest"
             uniform token[] xformOpOrder = ["xformOp:transform"]
         }
 
-        def Mesh "Scale___Not_Supported"
+        def Mesh "Scale___Not_Supported" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
         {
             uniform bool doubleSided
             float3[] extent = [(-0.5, -0.5, 0), (0.5, 0.5, 0)]
@@ -925,7 +945,9 @@ def Xform "TextureTransformTest"
         }
     }
 
-    def Mesh "All"
+    def Mesh "All" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
     {
         uniform bool doubleSided
         float3[] extent = [(-0.5, -0.5, 0), (0.5, 0.5, 0)]
@@ -956,7 +978,9 @@ def Xform "TextureTransformTest"
         matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (-1.100000023841858, -0.550000011920929, 0, 1) )
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
-        def Mesh "All___Correct"
+        def Mesh "All___Correct" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
         {
             uniform bool doubleSided
             float3[] extent = [(-0.5, -0.5, 0), (0.5, 0.5, 0)]

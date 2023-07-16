@@ -1,21 +1,23 @@
 #usda 1.0
 (
-    defaultPrim = "Sphere"
     customLayerData = {
-        string copyright = '''Copyright 2022 Apple Inc. All rights reserved.'''
+        string copyright = "Copyright 2022 Apple Inc. All rights reserved."
     }
+    defaultPrim = "Sphere"
+    upAxis = "Y"
 )
 
 def Cube "Cube"
 {
-    double size = 2.0
-    float3[] extent = [(-1.0, -1.0, -1.0), (1.0, 1.0, 1.0)]
+    float3[] extent = [(-1, -1, -1), (1, 1, 1)]
+    double size = 2
 }
 
 def Sphere "Sphere"
 {
-    double radius = 1.0
-    float3[] extent = [(-1.0, -1.0, -1.0), (1.0, 1.0, 1.0)]
+    float3[] extent = [(-1, -1, -1), (1, 1, 1)]
+    double radius = 1
     double3 xformOp:translate = (2, 0, 0)
     uniform token[] xformOpOrder = ["xformOp:translate"]
 }
+

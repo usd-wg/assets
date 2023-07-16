@@ -1,27 +1,32 @@
 #usda 1.0
 (
     defaultPrim = "World"
+    upAxis = "Y"
 )
 
 over "World"
 {
     over "Sphere" (
-        prepend variantSets = "size"
         variants = {
             string size = "small"
         }
+        prepend variantSets = "size"
     )
     {
         variantSet "size" = {
-            "small" {
-                double radius = 2.0
+            "large" {
+                double radius = 10
+
             }
             "medium" {
-                double radius = 5.0
+                double radius = 5
+
             }
-            "large" {
-                double radius = 10.0
+            "small" {
+                double radius = 2
+
             }
         }
     }
 }
+

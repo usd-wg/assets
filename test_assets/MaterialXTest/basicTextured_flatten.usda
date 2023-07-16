@@ -1,6 +1,6 @@
 #usda 1.0
 (
-    doc = """Generated from Composed Stage of root layer basicTextured.usda"""
+    doc = "Generated from Composed Stage of root layer basicTextured.usda"
     upAxis = "Y"
 )
 
@@ -218,7 +218,9 @@ def Xform "Teapot" (
     kind = "component"
 )
 {
-    def Mesh "teapot_MeshShape"
+    def Mesh "teapot_MeshShape" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
     {
         uniform bool doubleSided = 1
         float3[] extent = [(-1.176974, -0.591498, -0.808233), (0.990245, 0.874611, 0.791548)]

@@ -415,7 +415,9 @@ def Xform "AlphaBlendModeTest"
         }
     }
 
-    def Mesh "GreenArrows"
+    def Mesh "GreenArrows" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
     {
         uniform bool doubleSided
         float3[] extent = [(-3.0900002, -0.48159602, 0), (0, 0.4833804, 0)]
@@ -447,7 +449,9 @@ def Xform "AlphaBlendModeTest"
         uniform token[] xformOpOrder = ["xformOp:transform"]
     }
 
-    def Mesh "DecalBlend"
+    def Mesh "DecalBlend" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
     {
         uniform bool doubleSided
         float3[] extent = [(0.992, -0.114, -0.01), (1.2080001, 0.114, -0.01)]
@@ -479,7 +483,9 @@ def Xform "AlphaBlendModeTest"
         uniform token[] xformOpOrder = ["xformOp:transform"]
     }
 
-    def Mesh "DecalOpaque"
+    def Mesh "DecalOpaque" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
     {
         uniform bool doubleSided
         float3[] extent = [(-3.29, -0.156, -0.00999999), (3.29, 0.156, 5.364418e-7)]
@@ -511,7 +517,9 @@ def Xform "AlphaBlendModeTest"
         uniform token[] xformOpOrder = ["xformOp:transform"]
     }
 
-    def Mesh "TestCutoff75"
+    def Mesh "TestCutoff75" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
     {
         uniform bool doubleSided
         float3[] extent = [(-0.55, 0.10000014, 0), (0.55, 1.9699998, 0)]
@@ -543,7 +551,9 @@ def Xform "AlphaBlendModeTest"
         uniform token[] xformOpOrder = ["xformOp:transform"]
     }
 
-    def Mesh "TestCutoffDefault"
+    def Mesh "TestCutoffDefault" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
     {
         uniform bool doubleSided
         float3[] extent = [(-0.55, 0.10000014, 0), (0.55, 1.9699998, 0)]
@@ -575,7 +585,9 @@ def Xform "AlphaBlendModeTest"
         uniform token[] xformOpOrder = ["xformOp:transform"]
     }
 
-    def Mesh "TestCutoff25"
+    def Mesh "TestCutoff25" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
     {
         uniform bool doubleSided
         float3[] extent = [(-0.55, 0.10000014, 0), (0.55, 1.9699998, 0)]
@@ -607,7 +619,9 @@ def Xform "AlphaBlendModeTest"
         uniform token[] xformOpOrder = ["xformOp:transform"]
     }
 
-    def Mesh "TestBlend"
+    def Mesh "TestBlend" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
     {
         uniform bool doubleSided
         float3[] extent = [(-0.55, 0.10000014, 0), (0.55, 1.9699998, 0)]
@@ -639,7 +653,9 @@ def Xform "AlphaBlendModeTest"
         uniform token[] xformOpOrder = ["xformOp:transform"]
     }
 
-    def Mesh "TestOpaque"
+    def Mesh "TestOpaque" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
     {
         uniform bool doubleSided
         float3[] extent = [(-0.55, 0.10000014, 0), (0.55, 1.9699998, 0)]
@@ -671,7 +687,9 @@ def Xform "AlphaBlendModeTest"
         uniform token[] xformOpOrder = ["xformOp:transform"]
     }
 
-    def Mesh "Bed"
+    def Mesh "Bed" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
     {
         uniform bool doubleSided
         float3[] extent = [(-4.3, -0.099999905, -0.54999995), (4.3, 2.2995334, 0.75)]

@@ -1,9 +1,10 @@
 #usda 1.0
 (
-    defaultPrim = "World"
     customLayerData = {
-        string copyright = '''Copyright 2022 Apple Inc. All rights reserved.'''
+        string copyright = "Copyright 2022 Apple Inc. All rights reserved."
     }
+    defaultPrim = "World"
+    upAxis = "Y"
 )
 
 class "_myClass"
@@ -11,7 +12,8 @@ class "_myClass"
     color3f[] primvars:displayColor = [(0, 0.8, 0)]
 }
 
-def Scope "World" {
+def Scope "World"
+{
     def Cube "cubeWithoutSetColor" (
         inherits = </_myClass>
     )
@@ -23,8 +25,8 @@ def Scope "World" {
     )
     {
         color3f[] primvars:displayColor = [(0.8, 0, 0)]
-
         double3 xformOp:translate = (3, 0, 0)
         uniform token[] xformOpOrder = ["xformOp:translate"]
     }
 }
+

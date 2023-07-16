@@ -1,11 +1,13 @@
 #usda 1.0
 (
-    defaultPrim = "mesh"
     customLayerData = {
-        string copyright = '''Copyright 2022 Apple Inc. All rights reserved.'''
+        string copyright = "Copyright 2022 Apple Inc. All rights reserved."
     }
+    defaultPrim = "mesh"
+    upAxis = "Y"
 )
 
 def Mesh "mesh"
 {
 }
+

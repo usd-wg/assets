@@ -1,13 +1,15 @@
 #usda 1.0
 (
     defaultPrim = "World"
+    upAxis = "Y"
 )
 
 def "World" (
     prepend references = [
         @./animation.usda@,
-        @./layout.usda@,
+        @./layout.usda@
     ]
 )
 {
 }
+

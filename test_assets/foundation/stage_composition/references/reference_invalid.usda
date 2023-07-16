@@ -1,8 +1,9 @@
 #usda 1.0
 (
     customLayerData = {
-        string copyright = '''Copyright 2022 Apple Inc. All rights reserved.'''
+        string copyright = "Copyright 2022 Apple Inc. All rights reserved."
     }
+    upAxis = "Y"
 )
 
 def "World"
@@ -15,6 +16,6 @@ def "World"
 
     def Cube "cube"
     {
-
     }
 }
+

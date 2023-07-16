@@ -1,45 +1,42 @@
 #usda 1.0
 (
-    defaultPrim = "World"
     customLayerData = {
-        string copyright = '''Copyright 2022 Apple Inc. All rights reserved.'''
+        string copyright = "Copyright 2022 Apple Inc. All rights reserved."
     }
+    defaultPrim = "World"
+    upAxis = "Y"
 )
 
 def Scope "World"
 {
     def Cube "CubeIsGuide"
     {
-        token purpose = "guide"
         color3f[] primvars:displayColor = [(0.8, 0, 0)]
-
+        token purpose = "guide"
         double3 xformOp:translate = (0, 0, 0)
         uniform token[] xformOpOrder = ["xformOp:translate"]
     }
 
     def Cube "CubeIsRender"
     {
-        token purpose = "render"
         color3f[] primvars:displayColor = [(0, 0.8, 0)]
-
+        token purpose = "render"
         double3 xformOp:translate = (3, 0, 0)
         uniform token[] xformOpOrder = ["xformOp:translate"]
     }
 
     def Cube "CubeIsProxy"
     {
-        token purpose = "proxy"
         color3f[] primvars:displayColor = [(0, 0, 0.8)]
-
+        token purpose = "proxy"
         double3 xformOp:translate = (6, 0, 0)
         uniform token[] xformOpOrder = ["xformOp:translate"]
     }
 
     def Cube "CubeIsOther"
     {
-        token purpose = "other"
         color3f[] primvars:displayColor = [(0.8, 0.8, 0)]
-
+        token purpose = "other"
         double3 xformOp:translate = (9, 0, 0)
         uniform token[] xformOpOrder = ["xformOp:translate"]
     }
