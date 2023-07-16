@@ -2,6 +2,7 @@
 (
     upAxis = "Y"
     metersPerUnit = 0.01
+    defaultPrim = "Teapot"
 )
 
 def Scope "MaterialX" (

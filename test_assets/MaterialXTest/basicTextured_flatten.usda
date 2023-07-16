@@ -3,6 +3,7 @@
     doc = "Generated from Composed Stage of root layer basicTextured.usda"
     upAxis = "Y"
     metersPerUnit = 0.01
+    defaultPrim = "Teapot"
 )
 
 def Scope "MaterialX"
@@ -150,7 +151,7 @@ def Scope "MaterialX"
                 def Shader "image_color"
                 {
                     uniform token info:id = "ND_tiledimage_color3"
-                    asset inputs:file = @f:/source/usd-wg-assets/test_assets/MaterialXTest/textures/brass_color.jpg@ (
+                    asset inputs:file = @textures/brass_color.jpg@ (
                         colorSpace = "srgb_texture"
                     )
                     float2 inputs:realworldimagesize = (0.5, 0.5)
@@ -162,7 +163,7 @@ def Scope "MaterialX"
                 def Shader "image_roughness"
                 {
                     uniform token info:id = "ND_tiledimage_float"
-                    asset inputs:file = @f:/source/usd-wg-assets/test_assets/MaterialXTest/textures/brass_roughness.jpg@
+                    asset inputs:file = @textures/brass_roughness.jpg@
                     float2 inputs:uvtiling = (1, 1)
                     float outputs:out
                 }
@@ -195,7 +196,7 @@ def Scope "MaterialX"
             def Shader "image_color"
             {
                 uniform token info:id = "ND_tiledimage_color3"
-                asset inputs:file = @f:/source/usd-wg-assets/test_assets/MaterialXTest/textures/brass_color.jpg@ (
+                asset inputs:file = @textures/brass_color.jpg@ (
                     colorSpace = "srgb_texture"
                 )
                 float2 inputs:realworldimagesize = (0.5, 0.5)
@@ -207,7 +208,7 @@ def Scope "MaterialX"
             def Shader "image_roughness"
             {
                 uniform token info:id = "ND_tiledimage_float"
-                asset inputs:file = @f:/source/usd-wg-assets/test_assets/MaterialXTest/textures/brass_roughness.jpg@
+                asset inputs:file = @textures/brass_roughness.jpg@
                 float2 inputs:uvtiling = (1, 1)
                 float outputs:out
             }
