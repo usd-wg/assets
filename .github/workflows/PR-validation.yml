@@ -24,27 +24,19 @@ jobs:
           **/*.usd*
         files_ignore_from_source_file: .github/usdchecker-skiplist.txt
 
-    - name: Download USD binaries
-      run: curl -o USD.zip -L https://developer.nvidia.com/downloads/usdusdbinaries2211usdpy37linu-8664usdviewrelease02211-tc55v22110c7b9a95zip
-
-    - name: Unpack USD binaries
-      run: unzip USD.zip -d USD
-
-    - name: Set up env vars
-      run: |
-        echo "$PWD/USD/bin" >> $GITHUB_PATH
-        echo "PYTHONPATH=$PWD/USD/lib/python" >> $GITHUB_ENV
-
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
           python-version: '3.7'
 
+    - name: Install usd-core PyPI package
+      run: pip install usd-core --user
+
     - name: Test usdchecker
-      run: usdchecker --help
+      run: python .github/usdchecker.py --help
 
     - name: Run usdchecker on changed USD files
       run: |
         for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
-            usdchecker $file
+            python .github/usdchecker.py $file
         done
