@@ -22,6 +22,7 @@ jobs:
       with:
         files: |
           **/*.usd*
+        files_ignore_from_source_file: .github/workflows/.skip-usdchecker-files.txt
 
     - name: Download USD binaries
       run: curl -o USD.zip -L https://developer.nvidia.com/downloads/usdusdbinaries2211usdpy37linu-8664usdviewrelease02211-tc55v22110c7b9a95zip
