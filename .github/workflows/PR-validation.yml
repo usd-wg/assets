@@ -1,0 +1,42 @@
+name: PR Validation
+
+on:
+  pull_request:
+    paths:
+      - '**/*.usd*'
+
+jobs:
+  run-usdchecker:
+    name: Run usdchecker
+    runs-on: ubuntu-22.04
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    - name: Get changed files
+      id: changed-files
+      uses: tj-actions/changed-files@v37
+      with:
+        files: |
+          **/*.usd*
+        files_ignore_from_source_file: .github/usdchecker-skiplist.txt
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+          python-version: '3.7'
+
+    - name: Install usd-core PyPI package
+      run: pip install usd-core --user
+
+    - name: Test usdchecker
+      run: python .github/usdchecker.py --help
+
+    - name: Run usdchecker on changed USD files
+      run: |
+        for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
+            python .github/usdchecker.py $file
+        done
