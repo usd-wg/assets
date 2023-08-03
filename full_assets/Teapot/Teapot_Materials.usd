@@ -9,7 +9,7 @@
 
 def Xform "Teapot" (
     kind = "component"
-    prepend references = @./Teapot_Geometry.usd:SDF_FORMAT_ARGS:format=usda@
+    prepend references = @./Teapot_Geometry.usd@
     variants = {
         string modelVariant = "Utah"
     }

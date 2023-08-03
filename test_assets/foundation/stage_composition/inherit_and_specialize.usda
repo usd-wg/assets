@@ -1,15 +1,19 @@
 #usda 1.0
 (
-    defaultPrim = "World"
     customLayerData = {
-        string copyright = '''Copyright 2022 Apple Inc. All rights reserved.'''
+        string copyright = "Copyright 2022 Apple Inc. All rights reserved."
     }
+    defaultPrim = "World"
+    upAxis = "Y"
+    metersPerUnit = 0.01
 )
 
-def Scope "World" {
-
-    def Xform "cubeScene" {
-        def Cube "source" {
+def Scope "World"
+{
+    def Xform "cubeScene"
+    {
+        def Cube "source"
+        {
             color3f[] primvars:displayColor = [(0.8, 0, 0)]
         }
 
@@ -18,7 +22,6 @@ def Scope "World" {
         )
         {
             color3f[] primvars:displayColor = [(0.8, 0.8, 0)]
-
             double3 xformOp:translate = (3, 0, 0)
             uniform token[] xformOpOrder = ["xformOp:translate"]
         }
@@ -28,7 +31,6 @@ def Scope "World" {
         )
         {
             color3f[] primvars:displayColor = [(0.8, 0.8, 0)]
-
             double3 xformOp:translate = (6, 0, 0)
             uniform token[] xformOpOrder = ["xformOp:translate"]
         }
@@ -47,3 +49,4 @@ def Scope "World" {
         }
     }
 }
+

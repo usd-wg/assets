@@ -3,6 +3,7 @@
     defaultPrim = "AlphaBlendModeTest"
     endTimeCode = 0
     startTimeCode = 0
+    metersPerUnit = 0.01
     upAxis = "Y"
 )
 
@@ -25,7 +26,7 @@ def Xform "AlphaBlendModeTest"
                 float inputs:clearcoat = 0
                 float inputs:clearcoatRoughness = 0.01
                 float3 inputs:diffuseColor = (0.18, 0.18, 0.18)
-                float3 inputs:diffuseColor.connect = </AlphaBlendModeTest/Materials/Mat_Opaque__165642/PreviewSurface/_BaseColorTexture.outputs:rgb>
+                float3 inputs:diffuseColor.connect = </AlphaBlendModeTest/Materials/Mat_Opaque__165642/_BaseColorTexture.outputs:rgb>
                 float inputs:displacement = 0
                 float3 inputs:emissiveColor = (0, 0, 0)
                 float inputs:ior = 1.5
@@ -41,34 +42,33 @@ def Xform "AlphaBlendModeTest"
                 token outputs:surface
                 token[] unity:shaderKeywords
                 string unity:shaderName
+            }
+            def Shader "uvReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                float2 inputs:fallback = (0, 0)
+                token inputs:varname = "st"
+                float2 outputs:result
+            }
 
-                def Shader "uvReader"
-                {
-                    uniform token info:id = "UsdPrimvarReader_float2"
-                    float2 inputs:fallback = (0, 0)
-                    token inputs:varname = "st"
-                    float2 outputs:result
-                }
-
-                def Shader "_BaseColorTexture"
-                {
-                    uniform token info:id = "UsdUVTexture"
-                    float4 inputs:bias = (0, 0, 0, 0)
-                    float4 inputs:fallback = (0, 0, 0, 1)
-                    asset inputs:file = @0/AlphaBlendModeTest_image3_801ab6939d4d9c35de01996b52bc1650.png@
-                    token inputs:isSRGB = "auto"
-                    float4 inputs:scale = (1, 1, 1, 1)
-                    float2 inputs:st = (0, 0)
-                    float2 inputs:st.connect = </AlphaBlendModeTest/Materials/Mat_Opaque__165642/PreviewSurface/uvReader.outputs:result>
-                    token inputs:wrapS = "repeat"
-                    token inputs:wrapT = "repeat"
-                    float outputs:a
-                    float outputs:b
-                    float outputs:g
-                    float outputs:r
-                    float3 outputs:rgb
-                    float4 outputs:rgba
-                }
+            def Shader "_BaseColorTexture"
+            {
+                uniform token info:id = "UsdUVTexture"
+                float4 inputs:bias = (0, 0, 0, 0)
+                float4 inputs:fallback = (0, 0, 0, 1)
+                asset inputs:file = @0/AlphaBlendModeTest_image3_801ab6939d4d9c35de01996b52bc1650.png@
+                token inputs:isSRGB = "auto"
+                float4 inputs:scale = (1, 1, 1, 1)
+                float2 inputs:st = (0, 0)
+                float2 inputs:st.connect = </AlphaBlendModeTest/Materials/Mat_Opaque__165642/uvReader.outputs:result>
+                token inputs:wrapS = "repeat"
+                token inputs:wrapT = "repeat"
+                float outputs:a
+                float outputs:b
+                float outputs:g
+                float outputs:r
+                float3 outputs:rgb
+                float4 outputs:rgba
             }
         }
 
@@ -84,7 +84,7 @@ def Xform "AlphaBlendModeTest"
                 float inputs:clearcoat = 0
                 float inputs:clearcoatRoughness = 0.01
                 float3 inputs:diffuseColor = (0.18, 0.18, 0.18)
-                float3 inputs:diffuseColor.connect = </AlphaBlendModeTest/Materials/Mat_Blend__165610/PreviewSurface/_BaseColorTexture.outputs:rgb>
+                float3 inputs:diffuseColor.connect = </AlphaBlendModeTest/Materials/Mat_Blend__165610/_BaseColorTexture.outputs:rgb>
                 float inputs:displacement = 0
                 float3 inputs:emissiveColor = (0, 0, 0)
                 float inputs:ior = 1.5
@@ -92,7 +92,7 @@ def Xform "AlphaBlendModeTest"
                 float3 inputs:normal = (0, 0, 1)
                 float inputs:occlusion = 1
                 float inputs:opacity = 1
-                float inputs:opacity.connect = </AlphaBlendModeTest/Materials/Mat_Blend__165610/PreviewSurface/_BaseColorTexture.outputs:a>
+                float inputs:opacity.connect = </AlphaBlendModeTest/Materials/Mat_Blend__165610/_BaseColorTexture.outputs:a>
                 float inputs:opacityThreshold = 0
                 float inputs:roughness = 0.8
                 float3 inputs:specularColor = (0, 0, 0)
@@ -101,34 +101,34 @@ def Xform "AlphaBlendModeTest"
                 token outputs:surface
                 token[] unity:shaderKeywords
                 string unity:shaderName
+            }
 
-                def Shader "uvReader"
-                {
-                    uniform token info:id = "UsdPrimvarReader_float2"
-                    float2 inputs:fallback = (0, 0)
-                    token inputs:varname = "st"
-                    float2 outputs:result
-                }
+            def Shader "uvReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                float2 inputs:fallback = (0, 0)
+                token inputs:varname = "st"
+                float2 outputs:result
+            }
 
-                def Shader "_BaseColorTexture"
-                {
-                    uniform token info:id = "UsdUVTexture"
-                    float4 inputs:bias = (0, 0, 0, 0)
-                    float4 inputs:fallback = (0, 0, 0, 1)
-                    asset inputs:file = @0/AlphaBlendModeTest_image3_801ab6939d4d9c35de01996b52bc1650.png@
-                    token inputs:isSRGB = "auto"
-                    float4 inputs:scale = (1, 1, 1, 1)
-                    float2 inputs:st = (0, 0)
-                    float2 inputs:st.connect = </AlphaBlendModeTest/Materials/Mat_Blend__165610/PreviewSurface/uvReader.outputs:result>
-                    token inputs:wrapS = "repeat"
-                    token inputs:wrapT = "repeat"
-                    float outputs:a
-                    float outputs:b
-                    float outputs:g
-                    float outputs:r
-                    float3 outputs:rgb
-                    float4 outputs:rgba
-                }
+            def Shader "_BaseColorTexture"
+            {
+                uniform token info:id = "UsdUVTexture"
+                float4 inputs:bias = (0, 0, 0, 0)
+                float4 inputs:fallback = (0, 0, 0, 1)
+                asset inputs:file = @0/AlphaBlendModeTest_image3_801ab6939d4d9c35de01996b52bc1650.png@
+                token inputs:isSRGB = "auto"
+                float4 inputs:scale = (1, 1, 1, 1)
+                float2 inputs:st = (0, 0)
+                float2 inputs:st.connect = </AlphaBlendModeTest/Materials/Mat_Blend__165610/uvReader.outputs:result>
+                token inputs:wrapS = "repeat"
+                token inputs:wrapT = "repeat"
+                float outputs:a
+                float outputs:b
+                float outputs:g
+                float outputs:r
+                float3 outputs:rgb
+                float4 outputs:rgba
             }
         }
 
@@ -144,7 +144,7 @@ def Xform "AlphaBlendModeTest"
                 float inputs:clearcoat = 0
                 float inputs:clearcoatRoughness = 0.01
                 float3 inputs:diffuseColor = (0.18, 0.18, 0.18)
-                float3 inputs:diffuseColor.connect = </AlphaBlendModeTest/Materials/Mat_Cutoff_75__165626/PreviewSurface/_BaseColorTexture.outputs:rgb>
+                float3 inputs:diffuseColor.connect = </AlphaBlendModeTest/Materials/Mat_Cutoff_75__165626/_BaseColorTexture.outputs:rgb>
                 float inputs:displacement = 0
                 float3 inputs:emissiveColor = (0, 0, 0)
                 float inputs:ior = 1.5
@@ -152,7 +152,7 @@ def Xform "AlphaBlendModeTest"
                 float3 inputs:normal = (0, 0, 1)
                 float inputs:occlusion = 1
                 float inputs:opacity = 1
-                float inputs:opacity.connect = </AlphaBlendModeTest/Materials/Mat_Cutoff_75__165626/PreviewSurface/_BaseColorTexture.outputs:a>
+                float inputs:opacity.connect = </AlphaBlendModeTest/Materials/Mat_Cutoff_75__165626/_BaseColorTexture.outputs:a>
                 float inputs:opacityThreshold = 0.75
                 float inputs:roughness = 0.8
                 float3 inputs:specularColor = (0, 0, 0)
@@ -161,34 +161,34 @@ def Xform "AlphaBlendModeTest"
                 token outputs:surface
                 token[] unity:shaderKeywords
                 string unity:shaderName
+            }
 
-                def Shader "uvReader"
-                {
-                    uniform token info:id = "UsdPrimvarReader_float2"
-                    float2 inputs:fallback = (0, 0)
-                    token inputs:varname = "st"
-                    float2 outputs:result
-                }
+            def Shader "uvReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                float2 inputs:fallback = (0, 0)
+                token inputs:varname = "st"
+                float2 outputs:result
+            }
 
-                def Shader "_BaseColorTexture"
-                {
-                    uniform token info:id = "UsdUVTexture"
-                    float4 inputs:bias = (0, 0, 0, 0)
-                    float4 inputs:fallback = (0, 0, 0, 1)
-                    asset inputs:file = @0/AlphaBlendModeTest_image3_801ab6939d4d9c35de01996b52bc1650.png@
-                    token inputs:isSRGB = "auto"
-                    float4 inputs:scale = (1, 1, 1, 1)
-                    float2 inputs:st = (0, 0)
-                    float2 inputs:st.connect = </AlphaBlendModeTest/Materials/Mat_Cutoff_75__165626/PreviewSurface/uvReader.outputs:result>
-                    token inputs:wrapS = "repeat"
-                    token inputs:wrapT = "repeat"
-                    float outputs:a
-                    float outputs:b
-                    float outputs:g
-                    float outputs:r
-                    float3 outputs:rgb
-                    float4 outputs:rgba
-                }
+            def Shader "_BaseColorTexture"
+            {
+                uniform token info:id = "UsdUVTexture"
+                float4 inputs:bias = (0, 0, 0, 0)
+                float4 inputs:fallback = (0, 0, 0, 1)
+                asset inputs:file = @0/AlphaBlendModeTest_image3_801ab6939d4d9c35de01996b52bc1650.png@
+                token inputs:isSRGB = "auto"
+                float4 inputs:scale = (1, 1, 1, 1)
+                float2 inputs:st = (0, 0)
+                float2 inputs:st.connect = </AlphaBlendModeTest/Materials/Mat_Cutoff_75__165626/uvReader.outputs:result>
+                token inputs:wrapS = "repeat"
+                token inputs:wrapT = "repeat"
+                float outputs:a
+                float outputs:b
+                float outputs:g
+                float outputs:r
+                float3 outputs:rgb
+                float4 outputs:rgba
             }
         }
 
@@ -204,7 +204,7 @@ def Xform "AlphaBlendModeTest"
                 float inputs:clearcoat = 0
                 float inputs:clearcoatRoughness = 0.01
                 float3 inputs:diffuseColor = (0.18, 0.18, 0.18)
-                float3 inputs:diffuseColor.connect = </AlphaBlendModeTest/Materials/Mat_Cutoff_Default__165634/PreviewSurface/_BaseColorTexture.outputs:rgb>
+                float3 inputs:diffuseColor.connect = </AlphaBlendModeTest/Materials/Mat_Cutoff_Default__165634/_BaseColorTexture.outputs:rgb>
                 float inputs:displacement = 0
                 float3 inputs:emissiveColor = (0, 0, 0)
                 float inputs:ior = 1.5
@@ -212,7 +212,7 @@ def Xform "AlphaBlendModeTest"
                 float3 inputs:normal = (0, 0, 1)
                 float inputs:occlusion = 1
                 float inputs:opacity = 1
-                float inputs:opacity.connect = </AlphaBlendModeTest/Materials/Mat_Cutoff_Default__165634/PreviewSurface/_BaseColorTexture.outputs:a>
+                float inputs:opacity.connect = </AlphaBlendModeTest/Materials/Mat_Cutoff_Default__165634/_BaseColorTexture.outputs:a>
                 float inputs:opacityThreshold = 0.5
                 float inputs:roughness = 0.8
                 float3 inputs:specularColor = (0, 0, 0)
@@ -221,34 +221,34 @@ def Xform "AlphaBlendModeTest"
                 token outputs:surface
                 token[] unity:shaderKeywords
                 string unity:shaderName
+            }
 
-                def Shader "uvReader"
-                {
-                    uniform token info:id = "UsdPrimvarReader_float2"
-                    float2 inputs:fallback = (0, 0)
-                    token inputs:varname = "st"
-                    float2 outputs:result
-                }
+            def Shader "uvReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                float2 inputs:fallback = (0, 0)
+                token inputs:varname = "st"
+                float2 outputs:result
+            }
 
-                def Shader "_BaseColorTexture"
-                {
-                    uniform token info:id = "UsdUVTexture"
-                    float4 inputs:bias = (0, 0, 0, 0)
-                    float4 inputs:fallback = (0, 0, 0, 1)
-                    asset inputs:file = @0/AlphaBlendModeTest_image3_801ab6939d4d9c35de01996b52bc1650.png@
-                    token inputs:isSRGB = "auto"
-                    float4 inputs:scale = (1, 1, 1, 1)
-                    float2 inputs:st = (0, 0)
-                    float2 inputs:st.connect = </AlphaBlendModeTest/Materials/Mat_Cutoff_Default__165634/PreviewSurface/uvReader.outputs:result>
-                    token inputs:wrapS = "repeat"
-                    token inputs:wrapT = "repeat"
-                    float outputs:a
-                    float outputs:b
-                    float outputs:g
-                    float outputs:r
-                    float3 outputs:rgb
-                    float4 outputs:rgba
-                }
+            def Shader "_BaseColorTexture"
+            {
+                uniform token info:id = "UsdUVTexture"
+                float4 inputs:bias = (0, 0, 0, 0)
+                float4 inputs:fallback = (0, 0, 0, 1)
+                asset inputs:file = @0/AlphaBlendModeTest_image3_801ab6939d4d9c35de01996b52bc1650.png@
+                token inputs:isSRGB = "auto"
+                float4 inputs:scale = (1, 1, 1, 1)
+                float2 inputs:st = (0, 0)
+                float2 inputs:st.connect = </AlphaBlendModeTest/Materials/Mat_Cutoff_Default__165634/uvReader.outputs:result>
+                token inputs:wrapS = "repeat"
+                token inputs:wrapT = "repeat"
+                float outputs:a
+                float outputs:b
+                float outputs:g
+                float outputs:r
+                float3 outputs:rgb
+                float4 outputs:rgba
             }
         }
 
@@ -264,7 +264,7 @@ def Xform "AlphaBlendModeTest"
                 float inputs:clearcoat = 0
                 float inputs:clearcoatRoughness = 0.01
                 float3 inputs:diffuseColor = (0.18, 0.18, 0.18)
-                float3 inputs:diffuseColor.connect = </AlphaBlendModeTest/Materials/Mat_Cutoff_25__165618/PreviewSurface/_BaseColorTexture.outputs:rgb>
+                float3 inputs:diffuseColor.connect = </AlphaBlendModeTest/Materials/Mat_Cutoff_25__165618/_BaseColorTexture.outputs:rgb>
                 float inputs:displacement = 0
                 float3 inputs:emissiveColor = (0, 0, 0)
                 float inputs:ior = 1.5
@@ -272,7 +272,7 @@ def Xform "AlphaBlendModeTest"
                 float3 inputs:normal = (0, 0, 1)
                 float inputs:occlusion = 1
                 float inputs:opacity = 1
-                float inputs:opacity.connect = </AlphaBlendModeTest/Materials/Mat_Cutoff_25__165618/PreviewSurface/_BaseColorTexture.outputs:a>
+                float inputs:opacity.connect = </AlphaBlendModeTest/Materials/Mat_Cutoff_25__165618/_BaseColorTexture.outputs:a>
                 float inputs:opacityThreshold = 0.25
                 float inputs:roughness = 0.8
                 float3 inputs:specularColor = (0, 0, 0)
@@ -281,34 +281,34 @@ def Xform "AlphaBlendModeTest"
                 token outputs:surface
                 token[] unity:shaderKeywords
                 string unity:shaderName
+            }
 
-                def Shader "uvReader"
-                {
-                    uniform token info:id = "UsdPrimvarReader_float2"
-                    float2 inputs:fallback = (0, 0)
-                    token inputs:varname = "st"
-                    float2 outputs:result
-                }
+            def Shader "uvReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                float2 inputs:fallback = (0, 0)
+                token inputs:varname = "st"
+                float2 outputs:result
+            }
 
-                def Shader "_BaseColorTexture"
-                {
-                    uniform token info:id = "UsdUVTexture"
-                    float4 inputs:bias = (0, 0, 0, 0)
-                    float4 inputs:fallback = (0, 0, 0, 1)
-                    asset inputs:file = @0/AlphaBlendModeTest_image3_801ab6939d4d9c35de01996b52bc1650.png@
-                    token inputs:isSRGB = "auto"
-                    float4 inputs:scale = (1, 1, 1, 1)
-                    float2 inputs:st = (0, 0)
-                    float2 inputs:st.connect = </AlphaBlendModeTest/Materials/Mat_Cutoff_25__165618/PreviewSurface/uvReader.outputs:result>
-                    token inputs:wrapS = "repeat"
-                    token inputs:wrapT = "repeat"
-                    float outputs:a
-                    float outputs:b
-                    float outputs:g
-                    float outputs:r
-                    float3 outputs:rgb
-                    float4 outputs:rgba
-                }
+            def Shader "_BaseColorTexture"
+            {
+                uniform token info:id = "UsdUVTexture"
+                float4 inputs:bias = (0, 0, 0, 0)
+                float4 inputs:fallback = (0, 0, 0, 1)
+                asset inputs:file = @0/AlphaBlendModeTest_image3_801ab6939d4d9c35de01996b52bc1650.png@
+                token inputs:isSRGB = "auto"
+                float4 inputs:scale = (1, 1, 1, 1)
+                float2 inputs:st = (0, 0)
+                float2 inputs:st.connect = </AlphaBlendModeTest/Materials/Mat_Cutoff_25__165618/uvReader.outputs:result>
+                token inputs:wrapS = "repeat"
+                token inputs:wrapT = "repeat"
+                float outputs:a
+                float outputs:b
+                float outputs:g
+                float outputs:r
+                float3 outputs:rgb
+                float4 outputs:rgba
             }
         }
 
@@ -324,98 +324,101 @@ def Xform "AlphaBlendModeTest"
                 float inputs:clearcoat = 0
                 float inputs:clearcoatRoughness = 0.01
                 float3 inputs:diffuseColor = (0.18, 0.18, 0.18)
-                float3 inputs:diffuseColor.connect = </AlphaBlendModeTest/Materials/Mat_Bed__165602/PreviewSurface/_BaseColorTexture.outputs:rgb>
+                float3 inputs:diffuseColor.connect = </AlphaBlendModeTest/Materials/Mat_Bed__165602/_BaseColorTexture.outputs:rgb>
                 float inputs:displacement = 0
                 float3 inputs:emissiveColor = (0, 0, 0)
                 float inputs:ior = 1.5
                 float inputs:metallic = 0
-                float inputs:metallic.connect = </AlphaBlendModeTest/Materials/Mat_Bed__165602/PreviewSurface/_MetallicRoughnessTexture.outputs:b>
+                float inputs:metallic.connect = </AlphaBlendModeTest/Materials/Mat_Bed__165602/_MetallicRoughnessTexture.outputs:b>
                 float3 inputs:normal = (0, 0, 1)
-                float3 inputs:normal.connect = </AlphaBlendModeTest/Materials/Mat_Bed__165602/PreviewSurface/_NormalTexture.outputs:rgb>
+                float3 inputs:normal.connect = </AlphaBlendModeTest/Materials/Mat_Bed__165602/_NormalTexture.outputs:rgb>
                 float inputs:occlusion = 1
                 float inputs:opacity = 1
                 float inputs:opacityThreshold = 0
                 float inputs:roughness = 0.5
-                float inputs:roughness.connect = </AlphaBlendModeTest/Materials/Mat_Bed__165602/PreviewSurface/_MetallicRoughnessTexture.outputs:g>
+                float inputs:roughness.connect = </AlphaBlendModeTest/Materials/Mat_Bed__165602/_MetallicRoughnessTexture.outputs:g>
                 float3 inputs:specularColor = (0, 0, 0)
                 int inputs:useSpecularWorkflow = 1
                 token outputs:displacement
                 token outputs:surface
                 token[] unity:shaderKeywords
                 string unity:shaderName
+            }
 
-                def Shader "uvReader"
-                {
-                    uniform token info:id = "UsdPrimvarReader_float2"
-                    float2 inputs:fallback = (0, 0)
-                    token inputs:varname = "st"
-                    float2 outputs:result
-                }
+            def Shader "uvReader"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                float2 inputs:fallback = (0, 0)
+                token inputs:varname = "st"
+                float2 outputs:result
+            }
 
-                def Shader "_BaseColorTexture"
-                {
-                    uniform token info:id = "UsdUVTexture"
-                    float4 inputs:bias = (0, 0, 0, 0)
-                    float4 inputs:fallback = (0, 0, 0, 1)
-                    asset inputs:file = @0/AlphaBlendModeTest_image2_d151f95487c02f2a13820ace88f0370d.png@
-                    token inputs:isSRGB = "auto"
-                    float4 inputs:scale = (1, 1, 1, 1)
-                    float2 inputs:st = (0, 0)
-                    float2 inputs:st.connect = </AlphaBlendModeTest/Materials/Mat_Bed__165602/PreviewSurface/uvReader.outputs:result>
-                    token inputs:wrapS = "repeat"
-                    token inputs:wrapT = "repeat"
-                    float outputs:a
-                    float outputs:b
-                    float outputs:g
-                    float outputs:r
-                    float3 outputs:rgb
-                    float4 outputs:rgba
-                }
+            def Shader "_BaseColorTexture"
+            {
+                uniform token info:id = "UsdUVTexture"
+                float4 inputs:bias = (0, 0, 0, 0)
+                float4 inputs:fallback = (0, 0, 0, 1)
+                asset inputs:file = @0/AlphaBlendModeTest_image2_d151f95487c02f2a13820ace88f0370d.png@
+                token inputs:isSRGB = "auto"
+                float4 inputs:scale = (1, 1, 1, 1)
+                float2 inputs:st = (0, 0)
+                float2 inputs:st.connect = </AlphaBlendModeTest/Materials/Mat_Bed__165602/uvReader.outputs:result>
+                token inputs:wrapS = "repeat"
+                token inputs:wrapT = "repeat"
+                float outputs:a
+                float outputs:b
+                float outputs:g
+                float outputs:r
+                float3 outputs:rgb
+                float4 outputs:rgba
+            }
 
-                def Shader "_NormalTexture"
-                {
-                    uniform token info:id = "UsdUVTexture"
-                    float4 inputs:bias = (0, 0, 0, 0)
-                    float4 inputs:fallback = (0, 0, 0, 1)
-                    asset inputs:file = @0/AlphaBlendModeTest_image0_e93a912e744ba8675c680a67d486a70c.png@
-                    token inputs:isSRGB = "auto"
-                    float4 inputs:scale = (1, 1, 1, 1)
-                    float2 inputs:st = (0, 0)
-                    float2 inputs:st.connect = </AlphaBlendModeTest/Materials/Mat_Bed__165602/PreviewSurface/uvReader.outputs:result>
-                    token inputs:wrapS = "repeat"
-                    token inputs:wrapT = "repeat"
-                    float outputs:a
-                    float outputs:b
-                    float outputs:g
-                    float outputs:r
-                    float3 outputs:rgb
-                    float4 outputs:rgba
-                }
+            def Shader "_NormalTexture"
+            {
+                uniform token info:id = "UsdUVTexture"
+                float4 inputs:bias = (-1, -1, -1, 0)
+                float4 inputs:fallback = (0, 0, 0, 1)
+                asset inputs:file = @0/AlphaBlendModeTest_image0_e93a912e744ba8675c680a67d486a70c.png@
+                token inputs:isSRGB = "auto"
+                float4 inputs:scale = (2, 2, 2, 1)
+                float2 inputs:st = (0, 0)
+                float2 inputs:st.connect = </AlphaBlendModeTest/Materials/Mat_Bed__165602/uvReader.outputs:result>
+                token inputs:wrapS = "repeat"
+                token inputs:wrapT = "repeat"
+                token inputs:sourceColorSpace = "raw"
+                float outputs:a
+                float outputs:b
+                float outputs:g
+                float outputs:r
+                float3 outputs:rgb
+                float4 outputs:rgba
+            }
 
-                def Shader "_MetallicRoughnessTexture"
-                {
-                    uniform token info:id = "UsdUVTexture"
-                    float4 inputs:bias = (0, 0, 0, 0)
-                    float4 inputs:fallback = (0, 0, 0, 1)
-                    asset inputs:file = @0/AlphaBlendModeTest_image1_b7b61473c6009b01dfe9c6950d4d5ed6.png@
-                    token inputs:isSRGB = "auto"
-                    float4 inputs:scale = (1, 1, 1, 1)
-                    float2 inputs:st = (0, 0)
-                    float2 inputs:st.connect = </AlphaBlendModeTest/Materials/Mat_Bed__165602/PreviewSurface/uvReader.outputs:result>
-                    token inputs:wrapS = "repeat"
-                    token inputs:wrapT = "repeat"
-                    float outputs:a
-                    float outputs:b
-                    float outputs:g
-                    float outputs:r
-                    float3 outputs:rgb
-                    float4 outputs:rgba
-                }
+            def Shader "_MetallicRoughnessTexture"
+            {
+                uniform token info:id = "UsdUVTexture"
+                float4 inputs:bias = (0, 0, 0, 0)
+                float4 inputs:fallback = (0, 0, 0, 1)
+                asset inputs:file = @0/AlphaBlendModeTest_image1_b7b61473c6009b01dfe9c6950d4d5ed6.png@
+                token inputs:isSRGB = "auto"
+                float4 inputs:scale = (1, 1, 1, 1)
+                float2 inputs:st = (0, 0)
+                float2 inputs:st.connect = </AlphaBlendModeTest/Materials/Mat_Bed__165602/uvReader.outputs:result>
+                token inputs:wrapS = "repeat"
+                token inputs:wrapT = "repeat"
+                float outputs:a
+                float outputs:b
+                float outputs:g
+                float outputs:r
+                float3 outputs:rgb
+                float4 outputs:rgba
             }
         }
     }
 
-    def Mesh "GreenArrows"
+    def Mesh "GreenArrows" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
     {
         uniform bool doubleSided
         float3[] extent = [(-3.0900002, -0.48159602, 0), (0, 0.4833804, 0)]
@@ -447,7 +450,9 @@ def Xform "AlphaBlendModeTest"
         uniform token[] xformOpOrder = ["xformOp:transform"]
     }
 
-    def Mesh "DecalBlend"
+    def Mesh "DecalBlend" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
     {
         uniform bool doubleSided
         float3[] extent = [(0.992, -0.114, -0.01), (1.2080001, 0.114, -0.01)]
@@ -479,7 +484,9 @@ def Xform "AlphaBlendModeTest"
         uniform token[] xformOpOrder = ["xformOp:transform"]
     }
 
-    def Mesh "DecalOpaque"
+    def Mesh "DecalOpaque" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
     {
         uniform bool doubleSided
         float3[] extent = [(-3.29, -0.156, -0.00999999), (3.29, 0.156, 5.364418e-7)]
@@ -511,7 +518,9 @@ def Xform "AlphaBlendModeTest"
         uniform token[] xformOpOrder = ["xformOp:transform"]
     }
 
-    def Mesh "TestCutoff75"
+    def Mesh "TestCutoff75" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
     {
         uniform bool doubleSided
         float3[] extent = [(-0.55, 0.10000014, 0), (0.55, 1.9699998, 0)]
@@ -543,7 +552,9 @@ def Xform "AlphaBlendModeTest"
         uniform token[] xformOpOrder = ["xformOp:transform"]
     }
 
-    def Mesh "TestCutoffDefault"
+    def Mesh "TestCutoffDefault" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
     {
         uniform bool doubleSided
         float3[] extent = [(-0.55, 0.10000014, 0), (0.55, 1.9699998, 0)]
@@ -575,7 +586,9 @@ def Xform "AlphaBlendModeTest"
         uniform token[] xformOpOrder = ["xformOp:transform"]
     }
 
-    def Mesh "TestCutoff25"
+    def Mesh "TestCutoff25" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
     {
         uniform bool doubleSided
         float3[] extent = [(-0.55, 0.10000014, 0), (0.55, 1.9699998, 0)]
@@ -607,7 +620,9 @@ def Xform "AlphaBlendModeTest"
         uniform token[] xformOpOrder = ["xformOp:transform"]
     }
 
-    def Mesh "TestBlend"
+    def Mesh "TestBlend" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
     {
         uniform bool doubleSided
         float3[] extent = [(-0.55, 0.10000014, 0), (0.55, 1.9699998, 0)]
@@ -639,7 +654,9 @@ def Xform "AlphaBlendModeTest"
         uniform token[] xformOpOrder = ["xformOp:transform"]
     }
 
-    def Mesh "TestOpaque"
+    def Mesh "TestOpaque" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
     {
         uniform bool doubleSided
         float3[] extent = [(-0.55, 0.10000014, 0), (0.55, 1.9699998, 0)]
@@ -671,7 +688,9 @@ def Xform "AlphaBlendModeTest"
         uniform token[] xformOpOrder = ["xformOp:transform"]
     }
 
-    def Mesh "Bed"
+    def Mesh "Bed" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+    )
     {
         uniform bool doubleSided
         float3[] extent = [(-4.3, -0.099999905, -0.54999995), (4.3, 2.2995334, 0.75)]

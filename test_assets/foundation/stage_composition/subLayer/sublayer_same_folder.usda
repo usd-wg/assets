@@ -1,9 +1,13 @@
 #usda 1.0
 (
+    defaultPrim = "World"
+    customLayerData = {
+        string copyright = "Copyright 2022 Apple Inc. All rights reserved."
+    }
     subLayers = [
         @_stage.usda@
     ]
-    customLayerData = {
-        string copyright = '''Copyright 2022 Apple Inc. All rights reserved.'''
-    }
+    upAxis = "Y"
+    metersPerUnit = 0.01
 )
+

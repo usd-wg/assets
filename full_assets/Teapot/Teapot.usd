@@ -6,6 +6,7 @@
     startTimeCode = 1
     timeCodesPerSecond = 24
     upAxis = "Y"
+    defaultPrim = "Teapot"
 )
 
 def "Teapot" (

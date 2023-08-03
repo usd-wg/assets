@@ -3,6 +3,9 @@
     defaultPrim = "World"
     subLayers = [
         @./ball_variants.usda@,
-        @./ball_defaults.usda@,
+        @./ball_defaults.usda@
     ]
+    upAxis = "Y"
+    metersPerUnit = 0.01
 )
+

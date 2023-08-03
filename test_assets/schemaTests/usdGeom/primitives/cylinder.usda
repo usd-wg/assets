@@ -1,15 +1,18 @@
 #usda 1.0
 (
-    defaultPrim = "Cylinder"
     customLayerData = {
-        string copyright = '''Copyright 2022 Apple Inc. All rights reserved.'''
+        string copyright = "Copyright 2022 Apple Inc. All rights reserved."
     }
+    defaultPrim = "Cylinder"
+    upAxis = "Y"
+    metersPerUnit = 0.01
 )
 
 def Cylinder "Cylinder"
 {
-    double height = 2.0
-    double radius = 1.0
     uniform token axis = "Z"
-    float3[] extent = [(-1.0, -1.0, -1.0), (1.0, 1.0, 1.0)]
+    float3[] extent = [(-1, -1, -1), (1, 1, 1)]
+    double height = 2
+    double radius = 1
 }
+

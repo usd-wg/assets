@@ -1,11 +1,16 @@
 #usda 1.0
 (
     defaultPrim = "invalidDefaultPrim"
+    metersPerUnit = 0.01
+    upAxis = "Y"
     customLayerData = {
         string copyright = '''Copyright 2022 Apple Inc. All rights reserved.'''
     }
 )
 
-def Cube "Cube"
+def "World"
 {
+    def Cube "Cube"
+    {
+    }
 }

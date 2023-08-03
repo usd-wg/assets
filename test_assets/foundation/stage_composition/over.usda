@@ -1,26 +1,33 @@
 #usda 1.0
 (
+    customLayerData = {
+        string copyright = "Copyright 2022 Apple Inc. All rights reserved."
+    }
     subLayers = [
         @_parent_stage.usda@
     ]
-    customLayerData = {
-        string copyright = '''Copyright 2022 Apple Inc. All rights reserved.'''
-    }
+    upAxis = "Y"
+    metersPerUnit = 0.01
+    defaultPrim = "World"
 )
 
 over "World"
 {
-    over "Cube" {
+    over "Cube"
+    {
         color3f[] primvars:displayColor = [(0, 0, 0.8)]
     }
 
-    def Cube "definedCube" {
+    def Cube "definedCube"
+    {
         double3 xformOp:translate = (3, 0, 0)
         uniform token[] xformOpOrder = ["xformOp:translate"]
     }
 
-    over Cube "undefinedCube" {
+    over Cube "undefinedCube"
+    {
         double3 xformOp:translate = (6, 0, 0)
         uniform token[] xformOpOrder = ["xformOp:translate"]
     }
 }
+

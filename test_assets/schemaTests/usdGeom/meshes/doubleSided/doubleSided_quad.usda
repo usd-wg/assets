@@ -1,28 +1,37 @@
 #usda 1.0
 (
-    defaultPrim = "World"
     customLayerData = {
-        string copyright = '''Copyright 2022 Apple Inc. All rights reserved.'''
+        string copyright = "Copyright 2022 Apple Inc. All rights reserved."
     }
+    defaultPrim = "World"
+    upAxis = "Y"
+    metersPerUnit = 0.01
 )
 
 def Xform "World"
 {
-    def Mesh "Plane_0" {
+    def Mesh "Plane_0"
+    {
         uniform bool doubleSided = 1
-        float2[] primvars:st = [(0, 0), (1, 0), (1, 1), (0, 1)] (interpolation = "vertex")
-        color3f[] primvars:displayColor = [(0.0, 0.0, 0.8)]
         int[] faceVertexCounts = [4]
         int[] faceVertexIndices = [0, 1, 2, 3]
-        point3f[] points = [(-2,-2,-2), (0, -2,-2), (0, 2, -2), (-2, 2, -2)]
+        point3f[] points = [(-2, -2, -2), (0, -2, -2), (0, 2, -2), (-2, 2, -2)]
+        color3f[] primvars:displayColor = [(0, 0, 0.8)]
+        float2[] primvars:st = [(0, 0), (1, 0), (1, 1), (0, 1)] (
+            interpolation = "vertex"
+        )
     }
 
-    def Mesh "Plane_1" {
+    def Mesh "Plane_1"
+    {
         uniform bool doubleSided = 1
-        float2[] primvars:st = [(0, 0), (1, 0), (1, 1), (0, 1)] (interpolation = "vertex")
-        color3f[] primvars:displayColor = [(0.8, 0.0, 0.0)]
         int[] faceVertexCounts = [4]
         int[] faceVertexIndices = [0, 1, 2, 3]
-        point3f[] points = [(0,-2,-2), (0, 2, -2), (2, 2, -2), (2, -2,-2)]
+        point3f[] points = [(0, -2, -2), (0, 2, -2), (2, 2, -2), (2, -2, -2)]
+        color3f[] primvars:displayColor = [(0.8, 0, 0)]
+        float2[] primvars:st = [(0, 0), (1, 0), (1, 1), (0, 1)] (
+            interpolation = "vertex"
+        )
     }
 }
+
