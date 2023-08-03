@@ -1,6 +1,8 @@
 #usda 1.0
 (
     defaultPrim = "World"
+    upAxis = "Y"
+    metersPerUnit = 0.01
 )
 
 def Xform "World"
@@ -11,3 +13,4 @@ def Xform "World"
     {
     }
 }
+

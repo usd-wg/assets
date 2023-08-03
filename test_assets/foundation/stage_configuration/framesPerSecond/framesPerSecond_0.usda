@@ -3,6 +3,7 @@
     framesPerSecond = 0
     endTimeCode = 100
     startTimeCode = 0
+    metersPerUnit = 0.01
     subLayers = [
         @../../../_common/animated_cube_translation.usda@,
         @../../../_common/axis.usda@
@@ -11,4 +12,5 @@
     customLayerData = {
         string copyright = '''Copyright 2022 Apple Inc. All rights reserved.'''
     }
+    defaultPrim = "World"
 )

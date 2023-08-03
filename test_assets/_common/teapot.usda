@@ -4,7 +4,8 @@
     customLayerData = {
         string source = '''Converted to usd from teapot.obj in ASWF MaterialX'''
     }    
-upAxis = "Y"
+    upAxis = "Y"
+    metersPerUnit = 0.01
 )
 
 def Xform "teapot_Mesh" (

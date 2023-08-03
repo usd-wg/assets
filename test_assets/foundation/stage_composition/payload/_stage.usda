@@ -1,9 +1,11 @@
 #usda 1.0
 (
-    defaultPrim = "World"
     customLayerData = {
-        string copyright = '''Copyright 2022 Apple Inc. All rights reserved.'''
+        string copyright = "Copyright 2022 Apple Inc. All rights reserved."
     }
+    defaultPrim = "World"
+    upAxis = "Y"
+    metersPerUnit = 0.01
 )
 
 def Scope "World"
@@ -12,3 +14,4 @@ def Scope "World"
     {
     }
 }
+

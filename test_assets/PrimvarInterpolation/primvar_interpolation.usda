@@ -2,6 +2,7 @@
 (
     defaultPrim = "World"
     upAxis = "Y"
+    metersPerUnit = 0.01
 )
 
 def Scope "World"

@@ -1,27 +1,33 @@
 #usda 1.0
 (
+    customLayerData = {
+        string copyright = "Copyright 2022 Apple Inc. All rights reserved."
+    }
     metersPerUnit = 100
     subLayers = [
         @metersPerUnit_1.usda@,
         @metersPerUnit_10.usda@,
         @../../../_common/axis.usda@
     ]
-
-    customLayerData = {
-        string copyright = '''Copyright 2022 Apple Inc. All rights reserved.'''
-    }
+    upAxis = "Y"
+    defaultPrim = "World"
 )
 
-def Cube "cube_100" {
+def "World"
+{
+    def Cube "cube_100"
+    {
+    }
 
-}
+    over "cube_1"
+    {
+        double3 xformOp:translate = (3, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+    }
 
-over "cube_1" {
-    double3 xformOp:translate = (3, 0, 0)
-    uniform token[] xformOpOrder = ["xformOp:translate"]
-}
-
-over "cube_10" {
-    double3 xformOp:translate = (6, 0, 0)
-    uniform token[] xformOpOrder = ["xformOp:translate"]
+    over "cube_10"
+    {
+        double3 xformOp:translate = (6, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+    }
 }

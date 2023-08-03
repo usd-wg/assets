@@ -3,6 +3,9 @@
     defaultPrim = "World"
     subLayers = [
         @./animation.usda@,
-        @./layout.usda@,
+        @./layout.usda@
     ]
+    upAxis = "Y"
+    metersPerUnit = 0.01
 )
+
