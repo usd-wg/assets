@@ -1,0 +1,581 @@
+#usda 1.0
+(
+    customLayerData = {
+        string License = "CC BY 4.0"
+        string Version = "1.0"
+    }
+    defaultPrim = "standard_shader_ball_scene"
+    framesPerSecond = 24
+    metersPerUnit = 0.01
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+def Xform "standard_shader_ball_scene" (
+    kind = "group"
+    variants = {
+        string scene_lights = "on"
+    }
+    prepend variantSets = "scene_lights"
+)
+{
+    def Xform "ground" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
+        kind = "component"
+    )
+    {
+        rel material:binding = </standard_shader_ball_scene/materials/ground>
+        matrix4d xformOp:transform:tweak_box_position = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (3.25, 0, 0.3, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform:tweak_box_position"]
+
+        def Mesh "grid"
+        {
+            float3[] extent = [(-50, 0, -50), (50, 0, 50)]
+            int[] faceVertexCounts = [3, 3]
+            int[] faceVertexIndices = [0, 1, 3, 3, 2, 0]
+            uniform token orientation = "leftHanded"
+            point3f[] points = [(-50, 0, -50), (50, 0, -50), (-50, 0, 50), (50, 0, 50)] (
+                interpolation = "vertex"
+            )
+            texCoord2f[] primvars:st = [(0, 0), (1, 0), (1, -1), (1, -1), (0, -1), (0, 0)] (
+                interpolation = "faceVarying"
+            )
+            int[] primvars:st:indices = None
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Scope "lights"
+    {
+        def Xform "emitterLeft"
+        {
+            float height = 0
+            float intensity = 0
+            float width = 0
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (-41.367698669433594, 17.881999969482422, 17.304800033569336, 1) )
+            matrix4d xformOp:transform:tweak_lights_position = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 2, 3, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:tweak_lights_position"]
+
+            def RectLight "light" (
+                prepend apiSchemas = ["KarmaLightSettingsAPI"]
+            )
+            {
+                float3[] extent = [(-7.4800005, -7.4800005, -0), (7.4800005, 7.4800005, 0)]
+                float inputs:height = 14.960001
+                float inputs:intensity = 9
+                float inputs:width = 14.960001
+                bool karma:light:renderlightgeo = 1
+                rel light:filters = None
+                matrix4d xformOp:transform = ( (-0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (0.0010000000474974513, 0, 0, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+
+            def Mesh "backplane"
+            {
+                float3[] extent = [(0, -10.311456, -10.311456), (0, 10.311456, 10.311456)]
+                int[] faceVertexCounts = [3, 3]
+                int[] faceVertexIndices = [0, 1, 3, 3, 2, 0]
+                float[] height = [0, 0, 0, 0] (
+                    interpolation = "vertex"
+                )
+                float[] intensity = [0, 0, 0, 0] (
+                    interpolation = "vertex"
+                )
+                normal3f[] normals = [(1, 0, 0), (1, 0, 0), (1, 0, 0), (1, 0, 0)] (
+                    interpolation = "vertex"
+                )
+                uniform token orientation = "leftHanded"
+                point3f[] points = [(0, -10.311456, -10.311456), (0, -10.311456, 10.311456), (0, 10.311456, -10.311456), (0, 10.311456, 10.311456)] (
+                    interpolation = "vertex"
+                )
+                color3f[] primvars:displayColor = [(0.502, 0.502, 0.502), (0.502, 0.502, 0.502)] (
+                    interpolation = "uniform"
+                )
+                int[] primvars:displayColor:indices = None
+                uniform token subdivisionScheme = "none"
+                float[] width = [0, 0, 0, 0] (
+                    interpolation = "vertex"
+                )
+            }
+        }
+
+        def Xform "emitterTop"
+        {
+            float height = 0
+            float intensity = 0
+            float width = 0
+            matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (16.426599502563477, 60.9463996887207, 3.2356600761413574, 1) )
+            matrix4d xformOp:transform:tweak_lights_position = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 2, 3, 1) )
+            uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:tweak_lights_position"]
+
+            def RectLight "light3" (
+                prepend apiSchemas = ["KarmaLightSettingsAPI"]
+            )
+            {
+                float3[] extent = [(-12.18, -12.18, -0), (12.18, 12.18, 0)]
+                float inputs:height = 24.36
+                float inputs:intensity = 6
+                float inputs:width = 24.36
+                bool karma:light:renderlightgeo = 1
+                rel light:filters = None
+                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 0, -1, 0), (0, 1, 0, 0), (14.300071716308594, -0.00009999999747378752, -15.162029266357422, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+
+            def RectLight "light2" (
+                prepend apiSchemas = ["KarmaLightSettingsAPI"]
+            )
+            {
+                float3[] extent = [(-12.18, -12.18, -0), (12.18, 12.18, 0)]
+                float inputs:height = 24.36
+                float inputs:intensity = 6
+                float inputs:width = 24.36
+                bool karma:light:renderlightgeo = 1
+                rel light:filters = None
+                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 0, -1, 0), (0, 1, 0, 0), (-15.162029266357422, -0.00009999999747378752, -14.300069808959961, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+
+            def RectLight "light1" (
+                prepend apiSchemas = ["KarmaLightSettingsAPI"]
+            )
+            {
+                float3[] extent = [(-12.18, -12.18, -0), (12.18, 12.18, 0)]
+                float inputs:height = 24.36
+                float inputs:intensity = 6
+                float inputs:width = 24.36
+                bool karma:light:renderlightgeo = 1
+                rel light:filters = None
+                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 0, -1, 0), (0, 1, 0, 0), (15.162029266357422, -0.00009999999747378752, 14.300069808959961, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+
+            def RectLight "light0" (
+                prepend apiSchemas = ["KarmaLightSettingsAPI"]
+            )
+            {
+                float3[] extent = [(-12.18, -12.18, -0), (12.18, 12.18, 0)]
+                float inputs:height = 24.36
+                float inputs:intensity = 6
+                float inputs:width = 24.36
+                bool karma:light:renderlightgeo = 1
+                rel light:filters = None
+                matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 0, -1, 0), (0, 1, 0, 0), (-14.300070762634277, -0.00009999999747378752, 15.162029266357422, 1) )
+                uniform token[] xformOpOrder = ["xformOp:transform"]
+            }
+
+            def Mesh "backplane"
+            {
+                float3[] extent = [(-31.54725, 0, -31.6542), (31.54725, 0, 31.6542)]
+                int[] faceVertexCounts = [3, 3]
+                int[] faceVertexIndices = [0, 1, 3, 3, 2, 0]
+                float[] height = [0, 0, 0, 0] (
+                    interpolation = "vertex"
+                )
+                float[] intensity = [0, 0, 0, 0] (
+                    interpolation = "vertex"
+                )
+                normal3f[] normals = [(0, 1, 0), (0, 1, 0), (0, 1, 0), (0, 1, 0)] (
+                    interpolation = "vertex"
+                )
+                uniform token orientation = "leftHanded"
+                point3f[] points = [(-31.54725, 0, -31.6542), (31.54725, 0, -31.6542), (-31.54725, 0, 31.6542), (31.54725, 0, 31.6542)] (
+                    interpolation = "vertex"
+                )
+                color3f[] primvars:displayColor = [(0.502, 0.502, 0.502), (0.502, 0.502, 0.502)] (
+                    interpolation = "uniform"
+                )
+                int[] primvars:displayColor:indices = None
+                uniform token subdivisionScheme = "none"
+                float[] width = [0, 0, 0, 0] (
+                    interpolation = "vertex"
+                )
+            }
+        }
+    }
+
+    def Xform "box" (
+        kind = "component"
+    )
+    {
+        matrix4d xformOp:transform:tweak_box_position = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (3.25, 0, 0.3, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform:tweak_box_position"]
+
+        def Mesh "back" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            float3[] extent = [(-50, 0, 50), (50, 75.8639, 50)]
+            int[] faceVertexCounts = [3, 3]
+            int[] faceVertexIndices = [0, 1, 3, 3, 2, 0]
+            rel material:binding:full = </standard_shader_ball_scene/materials/back>
+            uniform token orientation = "leftHanded"
+            point3f[] points = [(50, 75.8639, 50), (-50, 75.8639, 50), (50, 0, 50), (-50, 0, 50)] (
+                interpolation = "vertex"
+            )
+            texCoord2f[] primvars:st = [(0, 0), (1, 0), (1, -1), (1, -1), (0, -1), (0, 0)] (
+                interpolation = "faceVarying"
+            )
+            int[] primvars:st:indices = None
+            uniform token subdivisionScheme = "none"
+        }
+
+        def Mesh "right" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            float3[] extent = [(50, 0, -50), (50, 75.8639, 50)]
+            int[] faceVertexCounts = [3, 3]
+            int[] faceVertexIndices = [0, 1, 3, 3, 2, 0]
+            rel material:binding:full = </standard_shader_ball_scene/materials/right>
+            uniform token orientation = "leftHanded"
+            point3f[] points = [(50, 75.8639, -50), (50, 75.8639, 50), (50, 0, -50), (50, 0, 50)] (
+                interpolation = "vertex"
+            )
+            texCoord2f[] primvars:st = [(0, 0), (1, 0), (1, -1), (1, -1), (0, -1), (0, 0)] (
+                interpolation = "faceVarying"
+            )
+            int[] primvars:st:indices = None
+            uniform token subdivisionScheme = "none"
+        }
+
+        def Mesh "top" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            float3[] extent = [(-50, 75.8639, -50), (50, 75.8639, 50)]
+            int[] faceVertexCounts = [3, 3]
+            int[] faceVertexIndices = [0, 2, 3, 3, 1, 0]
+            rel material:binding:full = </standard_shader_ball_scene/materials/top>
+            uniform token orientation = "leftHanded"
+            point3f[] points = [(-50, 75.8639, -50), (50, 75.8639, -50), (-50, 75.8639, 50), (50, 75.8639, 50)] (
+                interpolation = "vertex"
+            )
+            texCoord2f[] primvars:st = [(0, 0), (0, -1), (1, -1), (1, -1), (1, 0), (0, 0)] (
+                interpolation = "faceVarying"
+            )
+            int[] primvars:st:indices = None
+            uniform token subdivisionScheme = "none"
+        }
+
+        def Mesh "front" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            float3[] extent = [(-50, 0, -50), (50, 75.8639, -50)]
+            int[] faceVertexCounts = [3, 3]
+            int[] faceVertexIndices = [0, 1, 3, 3, 2, 0]
+            rel material:binding:full = </standard_shader_ball_scene/materials/front>
+            uniform token orientation = "leftHanded"
+            point3f[] points = [(-50, 75.8639, -50), (50, 75.8639, -50), (-50, 0, -50), (50, 0, -50)] (
+                interpolation = "vertex"
+            )
+            texCoord2f[] primvars:st = [(0, 0), (1, 0), (1, -1), (1, -1), (0, -1), (0, 0)] (
+                interpolation = "faceVarying"
+            )
+            int[] primvars:st:indices = None
+            uniform token subdivisionScheme = "none"
+        }
+
+        def Mesh "left" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            float3[] extent = [(-50, 0, -50), (-50, 75.8639, 50)]
+            int[] faceVertexCounts = [3, 3]
+            int[] faceVertexIndices = [0, 1, 3, 3, 2, 0]
+            rel material:binding:full = </standard_shader_ball_scene/materials/left>
+            uniform token orientation = "leftHanded"
+            point3f[] points = [(-50, 75.8639, 50), (-50, 75.8639, -50), (-50, 0, 50), (-50, 0, -50)] (
+                interpolation = "vertex"
+            )
+            texCoord2f[] primvars:st = [(0, 0), (1, 0), (1, -1), (1, -1), (0, -1), (0, 0)] (
+                interpolation = "faceVarying"
+            )
+            int[] primvars:st:indices = None
+            uniform token subdivisionScheme = "none"
+        }
+    }
+
+    def Scope "materials"
+    {
+        def Material "box_base"
+        {
+            token outputs:mtlx:surface.connect = </standard_shader_ball_scene/materials/box_base/mtlxstandard_surface1.outputs:out>
+            token outputs:surface.connect = </standard_shader_ball_scene/materials/box_base/usdpreviewsurface1.outputs:surface>
+
+            def Shader "mtlxstandard_surface1"
+            {
+                uniform token info:id = "ND_standard_surface_surfaceshader"
+                float inputs:base (
+                    customData = {
+                        dictionary HoudiniPreviewTags = {
+                            double default_value = 1
+                            string ogl_diff_intensity = "1"
+                        }
+                    }
+                )
+                color3f inputs:base_color (
+                    customData = {
+                        dictionary HoudiniPreviewTags = {
+                            double3 default_value = (0.8, 0.8, 0.8)
+                            string ogl_diff = "1"
+                        }
+                    }
+                )
+                color3f inputs:base_color.connect = </standard_shader_ball_scene/materials/box_base/mtlximage1.outputs:out>
+                float inputs:coat (
+                    customData = {
+                        dictionary HoudiniPreviewTags = {
+                            double default_value = 0
+                            string ogl_coat_intensity = "1"
+                        }
+                    }
+                )
+                float inputs:coat_roughness (
+                    customData = {
+                        dictionary HoudiniPreviewTags = {
+                            double default_value = 0.1
+                            string ogl_coat_rough = "1"
+                        }
+                    }
+                )
+                float inputs:emission (
+                    customData = {
+                        dictionary HoudiniPreviewTags = {
+                            double default_value = 0
+                            string ogl_emit_intensity = "1"
+                        }
+                    }
+                )
+                color3f inputs:emission_color (
+                    customData = {
+                        dictionary HoudiniPreviewTags = {
+                            double3 default_value = (1, 1, 1)
+                            string ogl_emit = "1"
+                        }
+                    }
+                )
+                float inputs:metalness (
+                    customData = {
+                        dictionary HoudiniPreviewTags = {
+                            double default_value = 0
+                            string ogl_metallic = "1"
+                        }
+                    }
+                )
+                float inputs:specular = 0 (
+                    customData = {
+                        dictionary HoudiniPreviewTags = {
+                            double default_value = 1
+                            string ogl_spec_intensity = "1"
+                        }
+                    }
+                )
+                color3f inputs:specular_color (
+                    customData = {
+                        dictionary HoudiniPreviewTags = {
+                            double3 default_value = (1, 1, 1)
+                            string ogl_spec = "1"
+                        }
+                    }
+                )
+                float inputs:specular_IOR (
+                    customData = {
+                        dictionary HoudiniPreviewTags = {
+                            double default_value = 1.5
+                            string ogl_ior = "1"
+                        }
+                    }
+                )
+                float inputs:specular_roughness (
+                    customData = {
+                        dictionary HoudiniPreviewTags = {
+                            double default_value = 0.2
+                            string ogl_rough = "1"
+                        }
+                    }
+                )
+                float inputs:transmission (
+                    customData = {
+                        dictionary HoudiniPreviewTags = {
+                            double default_value = 0
+                            string ogl_transparency = "1"
+                        }
+                    }
+                )
+                token outputs:out
+            }
+
+            def Shader "mtlximage1"
+            {
+                uniform token info:id = "ND_image_color3"
+                float2 inputs:texcoord.connect = </standard_shader_ball_scene/materials/box_base/mtlxtexcoord1.outputs:out>
+                color3f outputs:out
+            }
+
+            def Shader "mtlxtexcoord1"
+            {
+                uniform token info:id = "ND_texcoord_vector2"
+                float2 outputs:out
+            }
+
+            def Shader "usdpreviewsurface1"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor.connect = </standard_shader_ball_scene/materials/box_base/usduvtexture1.outputs:rgb>
+                float inputs:roughness = 1
+                token outputs:surface
+            }
+
+            def Shader "usduvtexture1"
+            {
+                uniform token info:id = "UsdUVTexture"
+                float2 inputs:st.connect = </standard_shader_ball_scene/materials/box_base/usdprimvarreader1.outputs:result>
+                vector3f outputs:rgb
+            }
+
+            def Shader "usdprimvarreader1"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                string inputs:varname = "st"
+                float2 outputs:result
+            }
+        }
+
+        def "back" (
+            prepend references = </standard_shader_ball_scene/materials/box_base>
+        )
+        {
+            over "mtlximage1"
+            {
+                asset inputs:file = @../maps/wall_back.ACEScg.exr@
+            }
+
+            over "usduvtexture1"
+            {
+                asset inputs:file = @../maps/wall_back.ACEScg.exr@
+            }
+        }
+
+        def "front" (
+            prepend references = </standard_shader_ball_scene/materials/box_base>
+        )
+        {
+            over "mtlximage1"
+            {
+                asset inputs:file = @../maps/wall_front.ACEScg.exr@
+            }
+
+            over "usduvtexture1"
+            {
+                asset inputs:file = @../maps/wall_front.ACEScg.exr@
+            }
+        }
+
+        def "ground" (
+            prepend references = </standard_shader_ball_scene/materials/box_base>
+        )
+        {
+            over "mtlximage1"
+            {
+                asset inputs:file = @../maps/ground.ACEScg.exr@
+            }
+
+            over "usduvtexture1"
+            {
+                asset inputs:file = @../maps/ground.ACEScg.exr@
+            }
+        }
+
+        def "left" (
+            prepend references = </standard_shader_ball_scene/materials/box_base>
+        )
+        {
+            over "mtlximage1"
+            {
+                asset inputs:file = @../maps/wall_left.ACEScg.exr@
+            }
+
+            over "usduvtexture1"
+            {
+                asset inputs:file = @../maps/wall_left.ACEScg.exr@
+            }
+        }
+
+        def "right" (
+            prepend references = </standard_shader_ball_scene/materials/box_base>
+        )
+        {
+            over "mtlximage1"
+            {
+                asset inputs:file = @../maps/wall_right.ACEScg.exr@
+            }
+
+            over "usduvtexture1"
+            {
+                asset inputs:file = @../maps/wall_right.ACEScg.exr@
+            }
+        }
+
+        def "top" (
+            prepend references = </standard_shader_ball_scene/materials/box_base>
+        )
+        {
+            over "mtlximage1"
+            {
+                asset inputs:file = @../maps/wall_top.ACEScg.exr@
+            }
+
+            over "usduvtexture1"
+            {
+                asset inputs:file = @../maps/wall_top.ACEScg.exr@
+            }
+        }
+    }
+    variantSet "scene_lights" = {
+        "left" {
+            over "lights"
+            {
+                over "emitterTop" (
+                    active = false
+                )
+                {
+                }
+            }
+
+        }
+        "off" {
+            over "lights"
+            {
+                over "emitterLeft" (
+                    active = false
+                )
+                {
+                }
+
+                over "emitterTop" (
+                    active = false
+                )
+                {
+                }
+            }
+
+        }
+        "on" {
+
+        }
+        "top" {
+            over "lights"
+            {
+                over "emitterLeft" (
+                    active = false
+                )
+                {
+                }
+            }
+
+        }
+    }
+}
+

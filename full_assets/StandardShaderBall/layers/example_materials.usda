@@ -1,0 +1,235 @@
+#usda 1.0
+(
+    customLayerData = {
+        string License = "CC BY 4.0"
+        string Version = "1.0"
+    }
+    defaultPrim = "standard_shader_ball_scene"
+    framesPerSecond = 24
+    metersPerUnit = 0.01
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+over "standard_shader_ball_scene" (
+    variants = {
+        string example_material = "none"
+    }
+    prepend variantSets = "example_material"
+)
+{
+    over "materials"
+    {
+        def Scope "examples"
+        {
+            def Scope "mtlx" (
+                prepend references = [
+                    @../example_materials/plastic.mtlx@</MaterialX/Materials>,
+                    @../example_materials/gold.mtlx@</MaterialX/Materials>,
+                    @../example_materials/glass.mtlx@</MaterialX/Materials>,
+                    @../example_materials/bubblegum.mtlx@</MaterialX/Materials>
+                ]
+            )
+            {
+            }
+
+            def Scope "usdpreview"
+            {
+                def Material "plastic"
+                {
+                    token outputs:surface.connect = </standard_shader_ball_scene/materials/examples/usdpreview/plastic/usdpreviewsurface.outputs:surface>
+
+                    def Shader "usdpreviewsurface"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        token outputs:surface
+                    }
+                }
+
+                def Material "copper"
+                {
+                    token outputs:surface.connect = </standard_shader_ball_scene/materials/examples/usdpreview/copper/usdpreviewsurface.outputs:surface>
+
+                    def Shader "usdpreviewsurface"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        token outputs:surface
+                    }
+                }
+
+                def Material "glass"
+                {
+                    token outputs:surface.connect = </standard_shader_ball_scene/materials/examples/usdpreview/glass/usdpreviewsurface.outputs:surface>
+
+                    def Shader "usdpreviewsurface"
+                    {
+                        uniform token info:id = "UsdPreviewSurface"
+                        token outputs:surface
+                    }
+                }
+            }
+        }
+    }
+    variantSet "example_material" = {
+        "mtlx_bubblegum" {
+            over "shader_ball" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </standard_shader_ball_scene/materials/examples/mtlx/bubblegum>
+                color3f[] primvars:displayColor = [(1, 0.19300002, 0.47545)] (
+                    interpolation = "constant"
+                )
+            }
+
+        }
+        "mtlx_glass" {
+            over "shader_ball" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </standard_shader_ball_scene/materials/examples/mtlx/glass>
+                color3f[] primvars:displayColor = [(0.58000004, 1, 0.93)] (
+                    interpolation = "constant"
+                )
+                float[] primvars:displayOpacity = [0.25] (
+                    interpolation = "constant"
+                )
+            }
+
+        }
+        "mtlx_gold" {
+            over "shader_ball" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </standard_shader_ball_scene/materials/examples/mtlx/gold>
+                color3f[] primvars:displayColor = [(1, 0.80565, 0.49299997)] (
+                    interpolation = "constant"
+                )
+            }
+
+        }
+        "mtlx_plastic" {
+            over "shader_ball" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </standard_shader_ball_scene/materials/examples/mtlx/plastic>
+                color3f[] primvars:displayColor = [(0.325, 0.7075, 1)] (
+                    interpolation = "constant"
+                )
+            }
+
+        }
+        "none" {
+
+        }
+        "usdpreview_copper" {
+            over "shader_ball" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </standard_shader_ball_scene/materials/examples/usdpreview/copper>
+                color3f[] primvars:displayColor = [(0.925, 0.4122725, 0.25622502)] (
+                    interpolation = "constant"
+                )
+            }
+
+            over "materials"
+            {
+                over "examples"
+                {
+                    over "usdpreview"
+                    {
+                        over "copper"
+                        {
+                            over "usdpreviewsurface"
+                            {
+                                custom color3f inputs:diffuseColor = (0.925, 0.4122725, 0.25622502)
+                                custom float inputs:metallic = 1
+                                custom float inputs:roughness = 0.0825
+                                custom color3f inputs:specularColor = (0.996, 0.449, 0.823)
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+        "usdpreview_glass" {
+            over "shader_ball" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </standard_shader_ball_scene/materials/examples/usdpreview/glass>
+                color3f[] primvars:displayColor = [(1, 1, 1)] (
+                    interpolation = "constant"
+                )
+                float[] primvars:displayOpacity = [0.25] (
+                    interpolation = "constant"
+                )
+            }
+
+            over "materials"
+            {
+                over "examples"
+                {
+                    over "usdpreview"
+                    {
+                        over "glass"
+                        {
+                            over "usdpreviewsurface"
+                            {
+                                custom float inputs:ior = 1.52
+                                custom float inputs:opacity = 0
+                                custom float inputs:roughness = 0.102
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+        "usdpreview_plastic" {
+            over "shader_ball" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </standard_shader_ball_scene/materials/examples/usdpreview/plastic>
+                color3f[] primvars:displayColor = [(0.825, 0.713625, 0.08250002)] (
+                    interpolation = "constant"
+                )
+            }
+
+            over "materials"
+            {
+                over "examples"
+                {
+                    over "usdpreview"
+                    {
+                        over "plastic"
+                        {
+                            over "usdpreviewsurface"
+                            {
+                                custom color3f inputs:diffuseColor = (0.825, 0.713625, 0.08250002)
+                                custom float inputs:roughness = 0.132
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+        "uvgrid" {
+            over "shader_ball" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </standard_shader_ball_scene/materials/uvgrid>
+            }
+
+        }
+    }
+}
+

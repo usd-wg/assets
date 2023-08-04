@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<materialx version="1.38">
+  <standard_surface name="mtlxstandard_surface1" type="surfaceshader">
+    <input name="subsurface" type="float" value="1" />
+    <input name="specular" type="float" value="0.383" />
+    <input name="specular_color" type="color3" value="1, 1, 1" />
+    <input name="specular_roughness" type="float" value="0.176" />
+    <input name="specular_IOR" type="float" value="1.584" />
+    <input name="subsurface_color" type="color3" value="1, 0.22, 0.493" />
+    <input name="subsurface_radius" type="color3" value="1, 0, 0.068" />
+    <input name="subsurface_scale" type="float" value="0.0325" />
+  </standard_surface>
+  <surfacematerial name="bubblegum" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="mtlxstandard_surface1" />
+  </surfacematerial>
+</materialx>

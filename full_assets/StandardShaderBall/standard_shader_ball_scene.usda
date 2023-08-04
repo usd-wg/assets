@@ -1,0 +1,58 @@
+#usda 1.0
+(
+    customLayerData = {
+        string License = "CC BY 4.0"
+        string Version = "1.0"
+    }
+    defaultPrim = "standard_shader_ball_scene"
+    endTimeCode = 8
+    framesPerSecond = 24
+    metersPerUnit = 0.01
+    startTimeCode = 8
+    subLayers = [
+        @./layers/example_materials.usda@,
+        @./layers/shaderball.usda@,
+        @./layers/camera.usda@,
+        @./layers/environment.usda@
+    ]
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+def Xform "standard_shader_ball_scene" (
+    kind = "group"
+    variants = {
+        string surface_geometry = "subdiv"
+    }
+    prepend variantSets = "surface_geometry"
+)
+{
+    def Xform "shader_ball" (
+        kind = "component"
+    )
+    {
+    }
+    variantSet "surface_geometry" = {
+        "subdiv" {
+            over "shader_ball" (
+                prepend references = @./material_surface_geo/subdiv.usda@
+            )
+            {
+            }
+
+        }
+        "triangulated" {
+            over "shader_ball" (
+                prepend references = @./material_surface_geo/triangulated.usda@
+            )
+            {
+                over "material_surface"
+                {
+                    token subdivisionScheme = "none"
+                }
+            }
+
+        }
+    }
+}
+
