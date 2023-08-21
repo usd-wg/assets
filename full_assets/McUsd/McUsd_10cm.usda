@@ -510,9 +510,9 @@ def Scope "Looks" (
         def Shader "NormalTexture"
         {
             uniform token info:id = "UsdUVTexture"
-            float4 inputs:bias = (-1, -1, -1, 0)
+            float4 inputs:scale = (2.0, -2.0, 2.0, 2.0)
+            float4 inputs:bias = (-1.0, 1.0, -1.0, -1.0)
             asset inputs:file = @./McUsd_materials/tex/grass_block_top_n.png@
-            float4 inputs:scale = (2, 2, 2, 1)
             token inputs:sourceColorSpace = "raw"
             float2 inputs:st.connect = </Looks/grass_block_top/UVReader.outputs:result>
             token inputs:wrapS = "repeat"
@@ -573,9 +573,9 @@ def Scope "Looks" (
         def Shader "NormalTexture"
         {
             uniform token info:id = "UsdUVTexture"
-            float4 inputs:bias = (-1, -1, -1, 0)
+            float4 inputs:scale = (2.0, -2.0, 2.0, 2.0)
+            float4 inputs:bias = (-1.0, 1.0, -1.0, -1.0)
             asset inputs:file = @./McUsd_materials/tex/dirt_n.png@
-            float4 inputs:scale = (2, 2, 2, 1)
             token inputs:sourceColorSpace = "raw"
             float2 inputs:st.connect = </Looks/dirt/UVReader.outputs:result>
             token inputs:wrapS = "repeat"
@@ -685,9 +685,9 @@ def Scope "Looks" (
         def Shader "NormalTexture"
         {
             uniform token info:id = "UsdUVTexture"
-            float4 inputs:bias = (-1, -1, -1, 0)
+            float4 inputs:scale = (2.0, -2.0, 2.0, 2.0)
+            float4 inputs:bias = (-1.0, 1.0, -1.0, -1.0)
             asset inputs:file = @./McUsd_materials/tex/iron_block_n.png@
-            float4 inputs:scale = (2, 2, 2, 1)
             token inputs:sourceColorSpace = "raw"
             float2 inputs:st.connect = </Looks/iron_block/UVReader.outputs:result>
             token inputs:wrapS = "repeat"
@@ -759,9 +759,9 @@ def Scope "Looks" (
         def Shader "NormalTexture"
         {
             uniform token info:id = "UsdUVTexture"
-            float4 inputs:bias = (-1, -1, -1, 0)
+            float4 inputs:scale = (2.0, -2.0, 2.0, 2.0)
+            float4 inputs:bias = (-1.0, 1.0, -1.0, -1.0)
             asset inputs:file = @./McUsd_materials/tex/gold_block_n.png@
-            float4 inputs:scale = (2, 2, 2, 1)
             token inputs:sourceColorSpace = "raw"
             float2 inputs:st.connect = </Looks/gold_block/UVReader.outputs:result>
             token inputs:wrapS = "repeat"
@@ -833,9 +833,9 @@ def Scope "Looks" (
         def Shader "NormalTexture"
         {
             uniform token info:id = "UsdUVTexture"
-            float4 inputs:bias = (-1, -1, -1, 0)
+            float4 inputs:scale = (2.0, -2.0, 2.0, 2.0)
+            float4 inputs:bias = (-1.0, 1.0, -1.0, -1.0)
             asset inputs:file = @./McUsd_materials/tex/diamond_block_n.png@
-            float4 inputs:scale = (2, 2, 2, 1)
             token inputs:sourceColorSpace = "raw"
             float2 inputs:st.connect = </Looks/diamond_block/UVReader.outputs:result>
             token inputs:wrapS = "repeat"
@@ -947,9 +947,9 @@ def Scope "Looks" (
         def Shader "NormalTexture"
         {
             uniform token info:id = "UsdUVTexture"
-            float4 inputs:bias = (-1, -1, -1, 0)
+            float4 inputs:scale = (2.0, -2.0, 2.0, 2.0)
+            float4 inputs:bias = (-1.0, 1.0, -1.0, -1.0)
             asset inputs:file = @./McUsd_materials/tex/piston_top_n.png@
-            float4 inputs:scale = (2, 2, 2, 1)
             token inputs:sourceColorSpace = "raw"
             float2 inputs:st.connect = </Looks/piston_top/UVReader.outputs:result>
             token inputs:wrapS = "repeat"
@@ -1021,9 +1021,9 @@ def Scope "Looks" (
         def Shader "NormalTexture"
         {
             uniform token info:id = "UsdUVTexture"
-            float4 inputs:bias = (-1, -1, -1, 0)
+            float4 inputs:scale = (2.0, -2.0, 2.0, 2.0)
+            float4 inputs:bias = (-1.0, 1.0, -1.0, -1.0)
             asset inputs:file = @./McUsd_materials/tex/piston_side_n.png@
-            float4 inputs:scale = (2, 2, 2, 1)
             token inputs:sourceColorSpace = "raw"
             float2 inputs:st.connect = </Looks/piston_side/UVReader.outputs:result>
             token inputs:wrapS = "repeat"
@@ -1085,9 +1085,9 @@ def Scope "Looks" (
         def Shader "NormalTexture"
         {
             uniform token info:id = "UsdUVTexture"
-            float4 inputs:bias = (-1, -1, -1, 0)
+            float4 inputs:scale = (2.0, -2.0, 2.0, 2.0)
+            float4 inputs:bias = (-1.0, 1.0, -1.0, -1.0)
             asset inputs:file = @./McUsd_materials/tex/rail_corner_n.png@
-            float4 inputs:scale = (2, 2, 2, 1)
             token inputs:sourceColorSpace = "raw"
             float2 inputs:st.connect = </Looks/rail_corner/UVReader.outputs:result>
             token inputs:wrapS = "clamp"
@@ -1161,9 +1161,9 @@ def Scope "Looks" (
         def Shader "NormalTexture"
         {
             uniform token info:id = "UsdUVTexture"
-            float4 inputs:bias = (-1, -1, -1, 0)
+            float4 inputs:scale = (2.0, -2.0, 2.0, 2.0)
+            float4 inputs:bias = (-1.0, 1.0, -1.0, -1.0)
             asset inputs:file = @./McUsd_materials/tex/rail_n.png@
-            float4 inputs:scale = (2, 2, 2, 1)
             token inputs:sourceColorSpace = "raw"
             float2 inputs:st.connect = </Looks/rail/UVReader.outputs:result>
             token inputs:wrapS = "clamp"
@@ -1237,9 +1237,9 @@ def Scope "Looks" (
         def Shader "NormalTexture"
         {
             uniform token info:id = "UsdUVTexture"
-            float4 inputs:bias = (-1, -1, -1, 0)
+            float4 inputs:scale = (2.0, -2.0, 2.0, 2.0)
+            float4 inputs:bias = (-1.0, 1.0, -1.0, -1.0)
             asset inputs:file = @./McUsd_materials/tex/powered_rail_n.png@
-            float4 inputs:scale = (2, 2, 2, 1)
             token inputs:sourceColorSpace = "raw"
             float2 inputs:st.connect = </Looks/powered_rail/UVReader.outputs:result>
             token inputs:wrapS = "clamp"
@@ -1362,9 +1362,9 @@ def Scope "Looks" (
         def Shader "NormalTexture"
         {
             uniform token info:id = "UsdUVTexture"
-            float4 inputs:bias = (-1, -1, -1, 0)
+            float4 inputs:scale = (2.0, -2.0, 2.0, 2.0)
+            float4 inputs:bias = (-1.0, 1.0, -1.0, -1.0)
             asset inputs:file = @./McUsd_materials/tex/chiseled_quartz_block_top_n.png@
-            float4 inputs:scale = (2, 2, 2, 1)
             token inputs:sourceColorSpace = "raw"
             float2 inputs:st.connect = </Looks/chiseled_quartz_block_top/UVReader.outputs:result>
             token inputs:wrapS = "repeat"
@@ -1425,9 +1425,9 @@ def Scope "Looks" (
         def Shader "NormalTexture"
         {
             uniform token info:id = "UsdUVTexture"
-            float4 inputs:bias = (-1, -1, -1, 0)
+            float4 inputs:scale = (2.0, -2.0, 2.0, 2.0)
+            float4 inputs:bias = (-1.0, 1.0, -1.0, -1.0)
             asset inputs:file = @./McUsd_materials/tex/chiseled_quartz_block_n.png@
-            float4 inputs:scale = (2, 2, 2, 1)
             token inputs:sourceColorSpace = "raw"
             float2 inputs:st.connect = </Looks/chiseled_quartz_block/UVReader.outputs:result>
             token inputs:wrapS = "repeat"
@@ -1499,9 +1499,9 @@ def Scope "Looks" (
         def Shader "NormalTexture"
         {
             uniform token info:id = "UsdUVTexture"
-            float4 inputs:bias = (-1, -1, -1, 0)
+            float4 inputs:scale = (2.0, -2.0, 2.0, 2.0)
+            float4 inputs:bias = (-1.0, 1.0, -1.0, -1.0)
             asset inputs:file = @./McUsd_materials/tex/quartz_pillar_n.png@
-            float4 inputs:scale = (2, 2, 2, 1)
             token inputs:sourceColorSpace = "raw"
             float2 inputs:st.connect = </Looks/quartz_pillar/UVReader.outputs:result>
             token inputs:wrapS = "repeat"
@@ -1563,9 +1563,9 @@ def Scope "Looks" (
         def Shader "NormalTexture"
         {
             uniform token info:id = "UsdUVTexture"
-            float4 inputs:bias = (-1, -1, -1, 0)
+            float4 inputs:scale = (2.0, -2.0, 2.0, 2.0)
+            float4 inputs:bias = (-1.0, 1.0, -1.0, -1.0)
             asset inputs:file = @./McUsd_materials/tex/sunflower_back_n.png@
-            float4 inputs:scale = (2, 2, 2, 1)
             token inputs:sourceColorSpace = "raw"
             float2 inputs:st.connect = </Looks/sunflower_back/UVReader.outputs:result>
             token inputs:wrapS = "clamp"
@@ -1628,9 +1628,9 @@ def Scope "Looks" (
         def Shader "NormalTexture"
         {
             uniform token info:id = "UsdUVTexture"
-            float4 inputs:bias = (-1, -1, -1, 0)
+            float4 inputs:scale = (2.0, -2.0, 2.0, 2.0)
+            float4 inputs:bias = (-1.0, 1.0, -1.0, -1.0)
             asset inputs:file = @./McUsd_materials/tex/sunflower_front_n.png@
-            float4 inputs:scale = (2, 2, 2, 1)
             token inputs:sourceColorSpace = "raw"
             float2 inputs:st.connect = </Looks/sunflower_front/UVReader.outputs:result>
             token inputs:wrapS = "clamp"
@@ -1693,9 +1693,9 @@ def Scope "Looks" (
         def Shader "NormalTexture"
         {
             uniform token info:id = "UsdUVTexture"
-            float4 inputs:bias = (-1, -1, -1, 0)
+            float4 inputs:scale = (2.0, -2.0, 2.0, 2.0)
+            float4 inputs:bias = (-1.0, 1.0, -1.0, -1.0)
             asset inputs:file = @./McUsd_materials/tex/sunflower_bottom_n.png@
-            float4 inputs:scale = (2, 2, 2, 1)
             token inputs:sourceColorSpace = "raw"
             float2 inputs:st.connect = </Looks/sunflower_bottom/UVReader.outputs:result>
             token inputs:wrapS = "clamp"
@@ -1758,9 +1758,9 @@ def Scope "Looks" (
         def Shader "NormalTexture"
         {
             uniform token info:id = "UsdUVTexture"
-            float4 inputs:bias = (-1, -1, -1, 0)
+            float4 inputs:scale = (2.0, -2.0, 2.0, 2.0)
+            float4 inputs:bias = (-1.0, 1.0, -1.0, -1.0)
             asset inputs:file = @./McUsd_materials/tex/sunflower_top_n.png@
-            float4 inputs:scale = (2, 2, 2, 1)
             token inputs:sourceColorSpace = "raw"
             float2 inputs:st.connect = </Looks/sunflower_top/UVReader.outputs:result>
             token inputs:wrapS = "clamp"
@@ -1824,9 +1824,9 @@ def Scope "Looks" (
         def Shader "NormalTexture"
         {
             uniform token info:id = "UsdUVTexture"
-            float4 inputs:bias = (-1, -1, -1, 0)
+            float4 inputs:scale = (2.0, -2.0, 2.0, 2.0)
+            float4 inputs:bias = (-1.0, 1.0, -1.0, -1.0)
             asset inputs:file = @./McUsd_materials/tex/purple_stained_glass_n.png@
-            float4 inputs:scale = (2, 2, 2, 1)
             token inputs:sourceColorSpace = "raw"
             float2 inputs:st.connect = </Looks/purple_stained_glass/UVReader.outputs:result>
             token inputs:wrapS = "repeat"
@@ -1899,9 +1899,9 @@ def Scope "Looks" (
         def Shader "NormalTexture"
         {
             uniform token info:id = "UsdUVTexture"
-            float4 inputs:bias = (-1, -1, -1, 0)
+            float4 inputs:scale = (2.0, -2.0, 2.0, 2.0)
+            float4 inputs:bias = (-1.0, 1.0, -1.0, -1.0)
             asset inputs:file = @./McUsd_materials/tex/prismarine_n.png@
-            float4 inputs:scale = (2, 2, 2, 1)
             token inputs:sourceColorSpace = "raw"
             float2 inputs:st.connect = </Looks/prismarine/UVReader.outputs:result>
             token inputs:wrapS = "repeat"
@@ -1952,9 +1952,9 @@ def Scope "Looks" (
         def Shader "NormalTexture"
         {
             uniform token info:id = "UsdUVTexture"
-            float4 inputs:bias = (-1, -1, -1, 0)
+            float4 inputs:scale = (2.0, -2.0, 2.0, 2.0)
+            float4 inputs:bias = (-1.0, 1.0, -1.0, -1.0)
             asset inputs:file = @./McUsd_materials/tex/lava_flow_n.png@
-            float4 inputs:scale = (2, 2, 2, 1)
             token inputs:sourceColorSpace = "raw"
             float2 inputs:st.connect = </Looks/lava_flow/UVReader.outputs:result>
             token inputs:wrapS = "repeat"
