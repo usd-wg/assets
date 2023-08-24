@@ -9,15 +9,19 @@ Load procedure: File -> Open and select NormalsTextureBiasAndScales.usda. Press 
 
 ![USDView 0.23.2](screenshots/crn_usdview.png "USDView 0.23.2")
 
+If the viewer being tested does not read in and use the camera, simply adjust the view. In order to get a corresponding view, compare to the image here and use the "R" orientation on the tops of the cubes to make sure you're looking at the fronts of the three cubes.
+
 Open the "NormalsTextureBiasAndScale" Xform under "root". The scene has four light sources in it, with just one enabled, the "AngledLight" that comes roughly from the camera's direction. You can toggle these lights on and off in USDView by clicking on the V (visible) or I (invisible) values to the right of each. For example, here are the settings and where I clicked to make the "LightFromAbove" visible and affect the scene:
 
 ![USDView 0.23.2, light toggle](screenshots/crn_light_toggle.png "USDView 0.23.2, light toggle")
 
 Toggling the various lights can show whether the three cubes respond to the light in the same way.
 
-If the viewer being checked does not read in and use the camera, simply adjust the view. In order to get a corresponding view, use the "R" orientation on the tops of the cubes to make sure you're looking at the fronts of the three cubes.
+The light intensities may need to be adjusted, depending on your viewer. The lights in this file have their "inputs:intensity" lines commented out, due to [a current lack of consistency](https://github.com/anderslanglands/light_comparison) in the interpretation of these values. By specifying no input intensity value, many readers will set a reasonable default intensity value.
 
-If the viewer doesn't import the lights, you are on your own. Whatever light you use, the three cubes should appear nearly the same. Pay particular attention to whether the left edge and top of the R is light or dark.
+If the viewer doesn't import the lights, you are on your own. Some viewers import only "visible" lights. You can comment out the "token visibility" lines in the USDA version of the file to allow all lights to import, so that you can manually toggle them off.
+
+Whatever light you use, the three cubes should appear nearly the same. Pay particular attention to whether the left edge and top of the R is light or dark.
 
 Lit from above:
 

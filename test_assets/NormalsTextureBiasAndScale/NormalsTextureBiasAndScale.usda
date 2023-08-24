@@ -104,7 +104,8 @@ def Xform "NormalsTextureBiasAndScale"
     )
     {
         float angle = 1
-        float intensity = 500
+        # The meaning of "intensity" varies among applications; no intensity often helps the viewer pick a default it likes.
+        # float inputs:intensity = 500
         float shaping:cone:angle = 180
         float shaping:cone:softness
         float shaping:focus
@@ -122,12 +123,14 @@ def Xform "NormalsTextureBiasAndScale"
     )
     {
         float angle = 1
-        float intensity = 500
+        # The meaning of "intensity" varies among applications; no intensity often helps the viewer pick a default it likes.
+        # float inputs:intensity = 500
         float shaping:cone:angle = 180
         float shaping:cone:softness
         float shaping:focus
         color3f shaping:focusTint
         asset shaping:ies:file
+        # If this light does not import properly - exists but invisible - you might comment out this next line:
         token visibility = "invisible"
         float3 xformOp:rotateZXY = (0, 270, 0)
         float3 xformOp:translate = (0, 0, 0)
@@ -140,12 +143,14 @@ def Xform "NormalsTextureBiasAndScale"
     )
     {
         float angle = 1
-        float intensity = 500
+        # The meaning of "intensity" varies among applications; no intensity often helps the viewer pick a default it likes.
+        # float inputs:intensity = 500
         float shaping:cone:angle = 180
         float shaping:cone:softness
         float shaping:focus
         color3f shaping:focusTint
         asset shaping:ies:file
+        # If this light does not import properly - exists but invisible - you might comment out this next line:
         token visibility = "invisible"
         float3 xformOp:rotateZXY = (0, 180, 0)
         float3 xformOp:translate = (0, 0, 0)
@@ -158,12 +163,14 @@ def Xform "NormalsTextureBiasAndScale"
     )
     {
         float angle = 1
-        float intensity = 500
+        # The meaning of "intensity" varies among applications; no intensity often helps the viewer pick a default it likes.
+        # float inputs:intensity = 500
         float shaping:cone:angle = 180
         float shaping:cone:softness
         float shaping:focus
         color3f shaping:focusTint
         asset shaping:ies:file
+        # If this light does not import properly - exists but invisible - you might comment out this next line:
         token visibility = "invisible"
         float3 xformOp:rotateZXY = (270, 0, 0)
         float3 xformOp:translate = (0, 0, 0)
@@ -185,7 +192,7 @@ def Scope "Looks" (
             uniform token info:id = "UsdPreviewSurface"
             color3f inputs:diffuseColor = (0.486275, 0.486275, 0.486275)
             float inputs:metallic = 0
-            normal3f inputs:normal.connect = </Looks/RNormals/NormalTexture.outputs:rgb>
+            float3 inputs:normal.connect = </Looks/RNormals/NormalTexture.outputs:rgb>
             float inputs:opacity = 1
             float inputs:roughness = 1
             int inputs:useSpecularWorkflow = 0
@@ -225,7 +232,7 @@ def Scope "Looks" (
             uniform token info:id = "UsdPreviewSurface"
             color3f inputs:diffuseColor = (0.486275, 0.486275, 0.486275)
             float inputs:metallic = 0
-            normal3f inputs:normal.connect = </Looks/RNormalsReversedX0BiasZ/NormalTexture.outputs:rgb>
+            float3 inputs:normal.connect = </Looks/RNormalsReversedX0BiasZ/NormalTexture.outputs:rgb>
             float inputs:opacity = 1
             float inputs:roughness = 1
             int inputs:useSpecularWorkflow = 0
@@ -265,7 +272,7 @@ def Scope "Looks" (
             uniform token info:id = "UsdPreviewSurface"
             color3f inputs:diffuseColor = (0.486275, 0.486275, 0.486275)
             float inputs:metallic = 0
-            normal3f inputs:normal.connect = </Looks/RNormalsReversedY/NormalTexture.outputs:rgb>
+            float3 inputs:normal.connect = </Looks/RNormalsReversedY/NormalTexture.outputs:rgb>
             float inputs:opacity = 1
             float inputs:roughness = 1
             int inputs:useSpecularWorkflow = 0
