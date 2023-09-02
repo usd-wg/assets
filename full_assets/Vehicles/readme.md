@@ -7,6 +7,7 @@ A setup of various USD files that make up vehicles and wheels. Includes variants
 Originally made in relation to my article on how USD can be difficult to understand: https://rystorm.com/blog/i-would-like-usd-to-succeed
 
 Then clarified to be as simple to understand as possible in this video: https://www.youtube.com/watch?v=JixC53cQn5U
+
 The intention is that anyone can watch this, and understand how this setup works, and why. Then they can download it, view it, and experiment with it to see how it works. The prime target audience is artists, designers, producers, and managers who are all not technical.
 
 
