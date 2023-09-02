@@ -39,3 +39,4 @@ Assets modified and edited by Robin-Yann Storm https://rystorm.com/ into USD.
 Email contact at storm@rystorm.com
 3D assets originally made by Kenney https://kenney.nl/
 
+This is v1.1 of this asset pack.
