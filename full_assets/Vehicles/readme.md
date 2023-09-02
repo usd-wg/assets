@@ -2,7 +2,16 @@
 
 ![A tractor model inside USDView](Screenshots/TractorUSDView.png)
 
-A setup of various USD files that make vehicles and wheels. Includes variants that can be switched between. File size around 1MB, so it is very quick to test and edit. For example in USDView:
+A setup of various USD files that make up vehicles and wheels. Includes variants that can be switched between. File size around 1MB, so it is very quick to test and edit. Intentionally made as a very small, simple, and easy to understand usecase of a USD setup that anyone can pick apart to see how it works. 
+
+Originally made in relation to my article on how USD can be difficult to understand: https://rystorm.com/blog/i-would-like-usd-to-succeed
+
+Then clarified to be as simple to understand as possible in this video: https://www.youtube.com/watch?v=JixC53cQn5U
+The intention is that anyone can watch this, and understand how this setup works, and why. Then they can download it, view it, and experiment with it to see how it works. The prime target audience is artists, designers, producers, and managers who are all not technical.
+
+
+
+Asset as seen in USDView:
 
 ![A van model inside USDView](Screenshots/VanTractorUSDView.png)
 
