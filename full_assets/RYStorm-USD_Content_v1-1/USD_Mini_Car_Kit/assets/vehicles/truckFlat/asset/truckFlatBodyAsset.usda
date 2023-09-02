@@ -1,0 +1,73 @@
+#usda 1.0
+(
+    endTimeCode = 1
+    framesPerSecond = 24
+    metersPerUnit = 1
+    startTimeCode = 1
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+def Xform "truckFlat"
+{
+    def "geo" (
+        prepend references = @../geo/flatTruckGeo.usd@</TruckFlat>
+    )
+    {
+        over "_2_whiteMax" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </truckFlat/materials/whiteMaterial>
+        }
+
+        over "_1_greyMediumMax" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </truckFlat/materials/greyMediumMaterial>
+        }
+
+        over "_3_windowMax" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </truckFlat/materials/windowMaterial>
+        }
+
+        over "_4_frontLightMax" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </truckFlat/materials/frontLightMaterial>
+        }
+
+        over "_5_backLightMax" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </truckFlat/materials/backLightMaterial>
+        }
+
+        over "_6_greyLightMax" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </truckFlat/materials/greyLightMaterial>
+        }
+    }
+
+    def "materials" (
+        prepend references = [
+            @../../../../materials/lightGrey.usda@</materials>,
+            @../../../../materials/backLight.usda@</materials>,
+            @../../../../materials/frontLight.usda@</materials>,
+            @../../../../materials/window.usda@</materials>,
+            @../../../../materials/mediumGrey.usda@</materials>,
+            @../../../../materials/white.usda@</materials>
+        ]
+    )
+    {
+    }
+}
+

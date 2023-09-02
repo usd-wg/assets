@@ -1,0 +1,51 @@
+#usda 1.0
+(
+    endTimeCode = 1
+    framesPerSecond = 24
+    metersPerUnit = 1
+    startTimeCode = 1
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+def Xform "_4wd"
+{
+    def "_4wd" (
+        prepend references = @./4wdBodyAsset.usda@</_4wd>
+    )
+    {
+    }
+
+    def "wheel1" (
+        prepend references = @../../../wheels/wheelVariants.usda@</wheelVariant>
+    )
+    {
+        matrix4d xformOp:transform:edit6 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (63, 0, 119, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform:edit6"]
+    }
+
+    def "wheel2" (
+        prepend references = @../../../wheels/wheelVariants.usda@</wheelVariant>
+    )
+    {
+        matrix4d xformOp:transform:edit6 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (63, 0, -106, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform:edit6"]
+    }
+
+    def "wheel3" (
+        prepend references = @../../../wheels/wheelVariants.usda@</wheelVariant>
+    )
+    {
+        matrix4d xformOp:transform:edit6 = ( (-1, 0, 1.2246468525851679e-16, 0), (0, 1, 0, 0), (-1.2246468525851679e-16, 0, -1, 0), (-63, 0, 119, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform:edit6"]
+    }
+
+    def "wheel4" (
+        prepend references = @../../../wheels/wheelVariants.usda@</wheelVariant>
+    )
+    {
+        matrix4d xformOp:transform:edit6 = ( (-1, 0, 1.2246468525851679e-16, 0), (0, 1, 0, 0), (-1.2246468525851679e-16, 0, -1, 0), (-63, 0, -106, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform:edit6"]
+    }
+}
+

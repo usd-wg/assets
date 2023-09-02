@@ -1,0 +1,83 @@
+#usda 1.0
+(
+    endTimeCode = 1
+    framesPerSecond = 24
+    metersPerUnit = 1
+    startTimeCode = 1
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+def Xform "tractor"
+{
+    def "geo" (
+        prepend references = @../geo/tractorGeo.usd@</tractorGroup>
+    )
+    {
+        over "tractor"
+        {
+            over "_2_redMax" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </tractor/materials/redMaterial>
+            }
+
+            over "_1_backLightMax" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </tractor/materials/backLightMaterial>
+            }
+
+            over "_3_greyMediumMax" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </tractor/materials/greyMediumMaterial>
+            }
+
+            over "_4_windowMax" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </tractor/materials/windowMaterial>
+            }
+
+            over "_5_frontLightMax" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </tractor/materials/frontLightMaterial>
+            }
+
+            over "_6_greyLightMax" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </tractor/materials/greyLightMaterial>
+            }
+
+            over "tractorShovel" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </tractor/materials/greyMediumMaterial>
+            }
+        }
+    }
+
+    def "materials" (
+        prepend references = [
+            @../../../../materials/lightGrey.usda@</materials>,
+            @../../../../materials/frontLight.usda@</materials>,
+            @../../../../materials/window.usda@</materials>,
+            @../../../../materials/mediumGrey.usda@</materials>,
+            @../../../../materials/backLight.usda@</materials>,
+            @../../../../materials/red.usda@</materials>
+        ]
+    )
+    {
+    }
+}
+

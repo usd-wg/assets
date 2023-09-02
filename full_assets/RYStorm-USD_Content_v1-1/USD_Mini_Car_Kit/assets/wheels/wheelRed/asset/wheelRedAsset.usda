@@ -1,0 +1,63 @@
+#usda 1.0
+(
+    endTimeCode = 1
+    framesPerSecond = 24
+    metersPerUnit = 1
+    startTimeCode = 1
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+def Xform "wheelRed"
+{
+    def Xform "geo"
+    {
+        def "wheelRed" (
+            prepend references = @../geo/wheelRedGeo.usd@</wheelRed_8angles>
+        )
+        {
+            over "_1_greyMediumMax" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </wheelRed/materials/mediumGrey/greyMediumMaterial>
+            }
+
+            over "_3_greyLightMax" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </wheelRed/materials/lightGrey/greyLightMaterial>
+            }
+
+            over "_2_redMax" (
+                prepend apiSchemas = ["MaterialBindingAPI"]
+            )
+            {
+                rel material:binding = </wheelRed/materials/red/redMaterial>
+            }
+        }
+    }
+
+    def Xform "materials"
+    {
+        def "mediumGrey" (
+            prepend references = @../../../../materials/mediumGrey.usda@</materials>
+        )
+        {
+        }
+
+        def "lightGrey" (
+            prepend references = @../../../../materials/lightGrey.usda@</materials>
+        )
+        {
+        }
+
+        def "red" (
+            prepend references = @../../../../materials/red.usda@</materials>
+        )
+        {
+        }
+    }
+}
+
