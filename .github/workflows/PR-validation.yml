@@ -36,9 +36,13 @@ jobs:
       run: python .github/usdchecker.py --help
 
     - name: Run usdchecker on changed USD files
-      shell: bash --noprofile --norc -o pipefail {0}
       run: |
+        set +e
+        exit_code=0
         for file in ${{ steps.changed-files.outputs.all_changed_files }}; do
             echo "Checking $file"
-            python .github/usdchecker.py $file
+            if ! python .github/usdchecker.py $file; then
+                exit_code=1;
+            fi
         done
+        exit $exit_code
