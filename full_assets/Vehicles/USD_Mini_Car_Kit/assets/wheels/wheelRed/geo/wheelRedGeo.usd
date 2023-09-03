@@ -95,7 +95,7 @@ def "Materials"
     def Shader "Map__2"
     {
         uniform token info:id = "UsdUVTexture"
-        asset inputs:file = @..\..\..\textures\global-colors\greymedium.jpg@
+        asset inputs:file = @../../../textures/global-colors/greymedium.jpg@
         float2 inputs:st.connect = </Materials/Map__2/TextureTransform_map1.outputs:result>
         token inputs:wrapS = "repeat"
         token inputs:wrapT = "repeat"
@@ -142,7 +142,7 @@ def "Materials"
     def Shader "Map__6"
     {
         uniform token info:id = "UsdUVTexture"
-        asset inputs:file = @..\..\..\textures\global-colors\red.jpg@
+        asset inputs:file = @../../../textures/global-colors/red.jpg@
         float2 inputs:st.connect = </Materials/Map__6/TextureTransform_map1.outputs:result>
         token inputs:wrapS = "repeat"
         token inputs:wrapT = "repeat"
@@ -189,7 +189,7 @@ def "Materials"
     def Shader "Map__3"
     {
         uniform token info:id = "UsdUVTexture"
-        asset inputs:file = @..\..\..\textures\global-colors\greylight.jpg@
+        asset inputs:file = @../../../textures/global-colors/greylight.jpg@
         float2 inputs:st.connect = </Materials/Map__3/TextureTransform_map1.outputs:result>
         token inputs:wrapS = "repeat"
         token inputs:wrapT = "repeat"
