@@ -137,7 +137,7 @@ def "Materials"
     def Shader "Map__2"
     {
         uniform token info:id = "UsdUVTexture"
-        asset inputs:file = @..\..\..\..\textures\global-colors\greymedium.jpg@
+        asset inputs:file = @../../../../textures/global-colors/greymedium.jpg@
         float2 inputs:st.connect = </Materials/Map__2/TextureTransform_map1.outputs:result>
         token inputs:wrapS = "repeat"
         token inputs:wrapT = "repeat"
@@ -184,7 +184,7 @@ def "Materials"
     def Shader "Map__11"
     {
         uniform token info:id = "UsdUVTexture"
-        asset inputs:file = @..\..\..\..\textures\global-colors\green.jpg@
+        asset inputs:file = @../../../../textures/global-colors/green.jpg@
         float2 inputs:st.connect = </Materials/Map__11/TextureTransform_map1.outputs:result>
         token inputs:wrapS = "repeat"
         token inputs:wrapT = "repeat"
@@ -231,7 +231,7 @@ def "Materials"
     def Shader "Map__7"
     {
         uniform token info:id = "UsdUVTexture"
-        asset inputs:file = @..\..\..\..\textures\global-textures\window.jpg@
+        asset inputs:file = @../../../../textures/global-textures/window.jpg@
         float2 inputs:st.connect = </Materials/Map__7/TextureTransform_map1.outputs:result>
         token inputs:wrapS = "repeat"
         token inputs:wrapT = "repeat"
@@ -278,7 +278,7 @@ def "Materials"
     def Shader "Map__3"
     {
         uniform token info:id = "UsdUVTexture"
-        asset inputs:file = @..\..\..\..\textures\global-colors\greylight.jpg@
+        asset inputs:file = @../../../../textures/global-colors/greylight.jpg@
         float2 inputs:st.connect = </Materials/Map__3/TextureTransform_map1.outputs:result>
         token inputs:wrapS = "repeat"
         token inputs:wrapT = "repeat"
@@ -325,7 +325,7 @@ def "Materials"
     def Shader "Map__4"
     {
         uniform token info:id = "UsdUVTexture"
-        asset inputs:file = @..\..\..\..\textures\global-textures\frontlight.jpg@
+        asset inputs:file = @../../../../textures/global-textures/frontlight.jpg@
         float2 inputs:st.connect = </Materials/Map__4/TextureTransform_map1.outputs:result>
         token inputs:wrapS = "repeat"
         token inputs:wrapT = "repeat"
@@ -372,7 +372,7 @@ def "Materials"
     def Shader "Map__5"
     {
         uniform token info:id = "UsdUVTexture"
-        asset inputs:file = @..\..\..\..\textures\global-textures\backlight.jpg@
+        asset inputs:file = @../../../../textures/global-textures/backlight.jpg@
         float2 inputs:st.connect = </Materials/Map__5/TextureTransform_map1.outputs:result>
         token inputs:wrapS = "repeat"
         token inputs:wrapT = "repeat"
