@@ -1,5 +1,6 @@
 #usda 1.0
 (
+    defaultPrim = "wheelVariant"
     endTimeCode = 1
     framesPerSecond = 24
     metersPerUnit = 1
@@ -42,7 +43,7 @@ def Xform "wheelVariant" (
         }
         "wheelRed" {
             def "wheelRedAsset" (
-                prepend references = @./wheelRed/asset/wheelRedAsset.usda@</wheelRed>
+                prepend references = @./wheelRed/asset/wheelRedAsset.usda@
             )
             {
             }
@@ -50,7 +51,7 @@ def Xform "wheelVariant" (
         }
         "wheelVintage" {
             def "wheelVintageAsset" (
-                prepend references = @./wheelVintage/asset/wheelVintageAsset.usda@</wheelVintage>
+                prepend references = @./wheelVintage/asset/wheelVintageAsset.usda@
             )
             {
             }

@@ -1,5 +1,6 @@
 #usda 1.0
 (
+    defaultPrim = "wheelRed"
     endTimeCode = 1
     framesPerSecond = 24
     metersPerUnit = 1
