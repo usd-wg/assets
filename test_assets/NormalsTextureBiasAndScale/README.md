@@ -3,17 +3,17 @@ This test file, NormalsTextureBiasAndScale.usda, is for testing how well a USD d
 
 The usdview program from the [USD Toolset](https://graphics.pixar.com/usd/release/toolset.html) includes a basic hydra GL rasterizing renderer. It's about as basic a render you can make, but it's also the standard, in that it's the renderer Pixar provides.
 
-It is possible to build [usdview from scratch](https://graphics.pixar.com/usd/release/toolset.html), but [NVIDIA's Omniverse Launcher](https://www.nvidia.com/en-us/omniverse/) provides a pre-built version of the USDView application. Images shown were generated with USDView 0.23.2.
+It is possible to build [usdview from scratch](https://graphics.pixar.com/usd/release/toolset.html), but [NVIDIA's Omniverse Launcher](https://www.nvidia.com/en-us/omniverse/) provides a pre-built version of the USDView application. Images shown were generated with USDView 0.23.8.
 
 Load procedure: File -> Open and select NormalsTextureBiasAndScales.usda. Press F11 to toggle on the hierarchy view (if not already visible). Open the "root" by double-clicking on it. Select the "Camera" and right-click, then pick (at the bottom) "Set As Active Camera". You should see:
 
-![USDView 0.23.2](screenshots/crn_usdview.png "USDView 0.23.2")
+![USDView 0.23.8](screenshots/crn_usdview.png "USDView 0.23.8")
 
 If the viewer being tested does not read in and use the camera, simply adjust the view. In order to get a corresponding view, compare to the image here and use the "R" orientation on the tops of the cubes to make sure you're looking at the fronts of the three cubes.
 
 Open the "NormalsTextureBiasAndScale" Xform under "root". The scene has four light sources in it, with just one enabled, the "AngledLight" that comes roughly from the camera's direction. You can toggle these lights on and off in USDView by clicking on the V (visible) or I (invisible) values to the right of each. For example, here are the settings and where I clicked to make the "LightFromAbove" visible and affect the scene:
 
-![USDView 0.23.2, light toggle](screenshots/crn_light_toggle.png "USDView 0.23.2, light toggle")
+![USDView 0.23.8, light toggle](screenshots/crn_light_toggle.png "USDView 0.23.8, light toggle")
 
 Toggling the various lights can show whether the three cubes respond to the light in the same way.
 
@@ -25,15 +25,15 @@ Whatever light you use, the three cubes should appear nearly the same. Pay parti
 
 Lit from above:
 
-![USDView 0.23.2, lit from above](screenshots/crn_usdview_light_from_above.png "USDView 0.23.2, lit from above")
+![USDView 0.23.8, lit from above](screenshots/crn_usdview_light_from_above.png "USDView 0.23.8, lit from above")
 
 Lit from left:
 
-![USDView 0.23.2, lit from left](screenshots/crn_usdview_light_from_left.png "USDView 0.23.2, lit from left")
+![USDView 0.23.8, lit from left](screenshots/crn_usdview_light_from_left.png "USDView 0.23.8, lit from left")
 
 Lit from right:
 
-![USDView 0.23.2, lit from right](screenshots/crn_usdview_light_from_right.png "USDView 0.23.2, lit from right")
+![USDView 0.23.8, lit from right](screenshots/crn_usdview_light_from_right.png "USDView 0.23.8, lit from right")
 
 ## Technical Details
 There are two sorts of normal map textures seen in practice: [object space and tangent space](http://wiki.polycount.com/wiki/Normal_Map_Technical_Details). Object space normal map textures give a set of normals that can point in any direction. These directly replace the object's normals at various mapped locations, relative to the object's frame of reference. Object space normal maps are rarely used in modern applications, because they are inflexible (baked in) and higher tessellation rates hide [tangent space discontinuities](https://docs.cryengine.com/display/SDKDOC4/Tangent+Space+Normal+Mapping#TangentSpaceNormalMapping-DrawbacksofTangentSpaceLighting).
