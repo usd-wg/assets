@@ -33,6 +33,7 @@ def Xform "tractorGroup"
         uniform token[] xformOpOrder = ["xformOp:transform"]
 
         def Mesh "tractorShovel" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
             customData = {
                 dictionary "3dsmax" = {
                     int matId = 2
@@ -59,6 +60,7 @@ def Xform "tractorGroup"
         }
 
         def GeomSubset "_1_backLightMax" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
             customData = {
                 dictionary "3dsmax" = {
                     int matId = 1
@@ -73,6 +75,7 @@ def Xform "tractorGroup"
         }
 
         def GeomSubset "_2_redMax" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
             customData = {
                 dictionary "3dsmax" = {
                     int matId = 2
@@ -87,6 +90,7 @@ def Xform "tractorGroup"
         }
 
         def GeomSubset "_3_greyMediumMax" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
             customData = {
                 dictionary "3dsmax" = {
                     int matId = 3
@@ -101,6 +105,7 @@ def Xform "tractorGroup"
         }
 
         def GeomSubset "_4_windowMax" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
             customData = {
                 dictionary "3dsmax" = {
                     int matId = 4
@@ -115,6 +120,7 @@ def Xform "tractorGroup"
         }
 
         def GeomSubset "_5_frontLightMax" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
             customData = {
                 dictionary "3dsmax" = {
                     int matId = 5
@@ -129,6 +135,7 @@ def Xform "tractorGroup"
         }
 
         def GeomSubset "_6_greyLightMax" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
             customData = {
                 dictionary "3dsmax" = {
                     int matId = 6
@@ -143,3 +150,4 @@ def Xform "tractorGroup"
         }
     }
 }
+

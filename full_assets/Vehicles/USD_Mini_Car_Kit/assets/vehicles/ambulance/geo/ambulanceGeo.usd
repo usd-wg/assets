@@ -28,6 +28,7 @@ def Mesh "ambulance"
     uniform token[] xformOpOrder = ["xformOp:transform"]
 
     def GeomSubset "_1_greyMediumMax" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
         customData = {
             dictionary "3dsmax" = {
                 int matId = 1
@@ -42,6 +43,7 @@ def Mesh "ambulance"
     }
 
     def GeomSubset "_2_whiteMax" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
         customData = {
             dictionary "3dsmax" = {
                 int matId = 2
@@ -56,6 +58,7 @@ def Mesh "ambulance"
     }
 
     def GeomSubset "_3_redMax" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
         customData = {
             dictionary "3dsmax" = {
                 int matId = 3
@@ -70,6 +73,7 @@ def Mesh "ambulance"
     }
 
     def GeomSubset "_4_frontLightMax" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
         customData = {
             dictionary "3dsmax" = {
                 int matId = 4
@@ -84,6 +88,7 @@ def Mesh "ambulance"
     }
 
     def GeomSubset "_5_windowMax" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
         customData = {
             dictionary "3dsmax" = {
                 int matId = 5
@@ -98,6 +103,7 @@ def Mesh "ambulance"
     }
 
     def GeomSubset "_6_blueMax" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
         customData = {
             dictionary "3dsmax" = {
                 int matId = 6
@@ -112,6 +118,7 @@ def Mesh "ambulance"
     }
 
     def GeomSubset "_8_greyLightMax" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
         customData = {
             dictionary "3dsmax" = {
                 int matId = 8

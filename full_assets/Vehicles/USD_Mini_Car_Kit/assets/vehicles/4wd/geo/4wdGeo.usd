@@ -28,6 +28,7 @@ def Mesh "_wd"
     uniform token[] xformOpOrder = ["xformOp:transform"]
 
     def GeomSubset "_1_greyMediumMax" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
         customData = {
             dictionary "3dsmax" = {
                 int matId = 1
@@ -42,6 +43,7 @@ def Mesh "_wd"
     }
 
     def GeomSubset "_2_greenMax" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
         customData = {
             dictionary "3dsmax" = {
                 int matId = 2
@@ -56,6 +58,7 @@ def Mesh "_wd"
     }
 
     def GeomSubset "_3_windowMax" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
         customData = {
             dictionary "3dsmax" = {
                 int matId = 3
@@ -70,6 +73,7 @@ def Mesh "_wd"
     }
 
     def GeomSubset "_5_greyLightMax" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
         customData = {
             dictionary "3dsmax" = {
                 int matId = 5
@@ -84,6 +88,7 @@ def Mesh "_wd"
     }
 
     def GeomSubset "_6_frontLightMax" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
         customData = {
             dictionary "3dsmax" = {
                 int matId = 6
@@ -98,6 +103,7 @@ def Mesh "_wd"
     }
 
     def GeomSubset "_7_backLightMax" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
         customData = {
             dictionary "3dsmax" = {
                 int matId = 7
@@ -111,3 +117,4 @@ def Mesh "_wd"
         rel material:binding = </Materials/backLightMax>
     }
 }
+

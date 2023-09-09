@@ -28,6 +28,7 @@ def Mesh "wheelLargeRim_8angles"
     uniform token[] xformOpOrder = ["xformOp:transform"]
 
     def GeomSubset "_1_greyMediumMax" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
         customData = {
             dictionary "3dsmax" = {
                 int matId = 1
@@ -42,6 +43,7 @@ def Mesh "wheelLargeRim_8angles"
     }
 
     def GeomSubset "_2_greyLightMax" (
+        prepend apiSchemas = ["MaterialBindingAPI"]
         customData = {
             dictionary "3dsmax" = {
                 int matId = 2
@@ -55,3 +57,4 @@ def Mesh "wheelLargeRim_8angles"
         rel material:binding = </Materials/greyLightMax>
     }
 }
+
