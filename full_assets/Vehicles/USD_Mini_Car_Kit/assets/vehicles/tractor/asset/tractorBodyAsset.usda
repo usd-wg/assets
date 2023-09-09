@@ -58,13 +58,13 @@ def Xform "tractor"
             {
                 rel material:binding = </tractor/materials/greyLightMaterial>
             }
+        }
 
-            over "tractorShovel" (
-                prepend apiSchemas = ["MaterialBindingAPI"]
-            )
-            {
-                rel material:binding = </tractor/materials/greyMediumMaterial>
-            }
+        over "tractorShovel" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </tractor/materials/greyMediumMaterial>
         }
     }
 
