@@ -3,7 +3,7 @@
     customLayerData = {
         string creator = "USD for Autodesk 3ds Max: v0.2.0.41 Beta"
     }
-    defaultPrim = "truckFlat"
+    defaultPrim = "TruckFlat"
     metersPerUnit = 0.0254
     upAxis = "Y"
 )
