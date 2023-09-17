@@ -10,289 +10,302 @@
     upAxis = "Y"
 )
 
-def Camera "Camera" (
-    hide_in_stage_window = false
-    no_delete = false
-)
-{
-    float4[] clippingPlanes = []
-    float2 clippingRange = (1, 10000000)
-    float focalLength = 100
-    float focusDistance = 0
-    float fStop = 0
-    float horizontalAperture = 20.955
-    float horizontalApertureOffset = 0
-    custom vector3d omni:kit:centerOfInterest = (0, 0, -239.7)
-    token projection = "perspective"
-    uniform token purpose = "default"
-    double shutter:close = 0
-    double shutter:open = 0
-    uniform token stereoRole = "mono"
-    float verticalAperture = 15.2908
-    float verticalApertureOffset = 0
-    token visibility = "inherited"
-    float3 xformOp:rotateZXY = (-35, -135, 0)
-    float3 xformOp:scale = (1, 1, 1)
-    double3 xformOp:translate = (-135, 145, -135)
-    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZXY", "xformOp:scale"]
-}
-
 def Xform "NormalsTextureBiasAndScale"
 {
-    double3 xformOp:rotateXYZ = (0, 0, 0)
-    double3 xformOp:scale = (10, 10, 10)
-    double3 xformOp:translate = (0, 0, 0)
-    uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+	def Camera "Camera" (
+		hide_in_stage_window = false
+		no_delete = false
+	)
+	{
+		float4[] clippingPlanes = []
+		float2 clippingRange = (1, 10000000)
+		float focalLength = 100
+		float focusDistance = 0
+		float fStop = 0
+		float horizontalAperture = 20.955
+		float horizontalApertureOffset = 0
+		custom vector3d omni:kit:centerOfInterest = (0, 0, -239.7)
+		token projection = "perspective"
+		uniform token purpose = "default"
+		double shutter:close = 0
+		double shutter:open = 0
+		uniform token stereoRole = "mono"
+		float verticalAperture = 15.2908
+		float verticalApertureOffset = 0
+		token visibility = "inherited"
+		float3 xformOp:rotateZXY = (-35, -135, 0)
+		float3 xformOp:scale = (1, 1, 1)
+		double3 xformOp:translate = (-135, 145, -135)
+		uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZXY", "xformOp:scale"]
+	}
 
-    def Mesh "RNormals" (
-        prepend apiSchemas = ["MaterialBindingAPI"]
-    )
-    {
-        int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
-        int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
-        rel material:binding = </Looks/RNormals>
-        normal3f[] normals = [(-1, 0, 0), (-1, 0, 0), (-1, 0, 0), (-1, 0, 0), (0, -1, 0), (0, -1, 0), (0, -1, 0), (0, -1, 0), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (1, 0, 0), (1, 0, 0), (1, 0, 0), (1, 0, 0), (0, 1, 0), (0, 1, 0), (0, 1, 0), (0, 1, 0), (0, 0, 1), (0, 0, 1), (0, 0, 1), (0, 0, 1)]
-        point3f[] points = [(0, 0, 0), (0, 0, 1), (0, 1, 1), (0, 1, 0), (1, 0, 1), (0, 0, 1), (0, 0, 0), (1, 0, 0), (1, 0, 0), (0, 0, 0), (0, 1, 0), (1, 1, 0), (1, 0, 1), (1, 0, 0), (1, 1, 0), (1, 1, 1), (0, 1, 1), (1, 1, 1), (1, 1, 0), (0, 1, 0), (0, 0, 1), (1, 0, 1), (1, 1, 1), (0, 1, 1)]
-        texCoord2f[] primvars:st = [(0, 0), (1, 0), (1, 1), (0, 1), (1, 0), (0, 0), (0, 1), (1, 1), (0, 0), (1, 0), (1, 1), (0, 1), (0, 0), (1, 0), (1, 1), (0, 1), (0, 0), (1, 0), (1, 1), (0, 1), (0, 0), (1, 0), (1, 1), (0, 1)] (
-            interpolation = "vertex"
-        )
-        double3 xformOp:rotateXYZ = (0, 0, 0)
-        double3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (1.1, 0, -1.1)
-        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
-    }
+	def Xform "Geom"
+	{
+		double3 xformOp:rotateXYZ = (0, 0, 0)
+		double3 xformOp:scale = (10, 10, 10)
+		double3 xformOp:translate = (0, 0, 0)
+		uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
 
-    def Mesh "RNormalsReversedX0BiasZ" (
-        prepend apiSchemas = ["MaterialBindingAPI"]
-    )
-    {
-        int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
-        int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
-        rel material:binding = </Looks/RNormalsReversedX0BiasZ>
-        normal3f[] normals = [(-1, 0, 0), (-1, 0, 0), (-1, 0, 0), (-1, 0, 0), (0, -1, 0), (0, -1, 0), (0, -1, 0), (0, -1, 0), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (1, 0, 0), (1, 0, 0), (1, 0, 0), (1, 0, 0), (0, 1, 0), (0, 1, 0), (0, 1, 0), (0, 1, 0), (0, 0, 1), (0, 0, 1), (0, 0, 1), (0, 0, 1)]
-        point3f[] points = [(0, 0, 0), (0, 0, 1), (0, 1, 1), (0, 1, 0), (1, 0, 1), (0, 0, 1), (0, 0, 0), (1, 0, 0), (1, 0, 0), (0, 0, 0), (0, 1, 0), (1, 1, 0), (1, 0, 1), (1, 0, 0), (1, 1, 0), (1, 1, 1), (0, 1, 1), (1, 1, 1), (1, 1, 0), (0, 1, 0), (0, 0, 1), (1, 0, 1), (1, 1, 1), (0, 1, 1)]
-        texCoord2f[] primvars:st = [(0, 0), (1, 0), (1, 1), (0, 1), (1, 0), (0, 0), (0, 1), (1, 1), (0, 0), (1, 0), (1, 1), (0, 1), (0, 0), (1, 0), (1, 1), (0, 1), (0, 0), (1, 0), (1, 1), (0, 1), (0, 0), (1, 0), (1, 1), (0, 1)] (
-            interpolation = "vertex"
-        )
-        double3 xformOp:rotateXYZ = (0, 0, 0)
-        double3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (0, 0, 0)
-        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
-    }
+		def Mesh "RNormals" (
+			prepend apiSchemas = ["MaterialBindingAPI"]
+		)
+		{
+			int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+			int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+			rel material:binding = </NormalsTextureBiasAndScale/Looks/RNormals>
+			normal3f[] normals = [(-1, 0, 0), (-1, 0, 0), (-1, 0, 0), (-1, 0, 0), (0, -1, 0), (0, -1, 0), (0, -1, 0), (0, -1, 0), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (1, 0, 0), (1, 0, 0), (1, 0, 0), (1, 0, 0), (0, 1, 0), (0, 1, 0), (0, 1, 0), (0, 1, 0), (0, 0, 1), (0, 0, 1), (0, 0, 1), (0, 0, 1)]
+			point3f[] points = [(0, 0, 0), (0, 0, 1), (0, 1, 1), (0, 1, 0), (1, 0, 1), (0, 0, 1), (0, 0, 0), (1, 0, 0), (1, 0, 0), (0, 0, 0), (0, 1, 0), (1, 1, 0), (1, 0, 1), (1, 0, 0), (1, 1, 0), (1, 1, 1), (0, 1, 1), (1, 1, 1), (1, 1, 0), (0, 1, 0), (0, 0, 1), (1, 0, 1), (1, 1, 1), (0, 1, 1)]
+			texCoord2f[] primvars:st = [(0, 0), (1, 0), (1, 1), (0, 1), (1, 0), (0, 0), (0, 1), (1, 1), (0, 0), (1, 0), (1, 1), (0, 1), (0, 0), (1, 0), (1, 1), (0, 1), (0, 0), (1, 0), (1, 1), (0, 1), (0, 0), (1, 0), (1, 1), (0, 1)] (
+				interpolation = "vertex"
+			)
+			double3 xformOp:rotateXYZ = (0, 0, 0)
+			double3 xformOp:scale = (1, 1, 1)
+			double3 xformOp:translate = (1.1, 0, -1.1)
+			uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+		}
 
-    def Mesh "RNormalsReversedY" (
-        prepend apiSchemas = ["MaterialBindingAPI"]
-    )
-    {
-        int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
-        int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
-        rel material:binding = </Looks/RNormalsReversedY>
-        normal3f[] normals = [(-1, 0, 0), (-1, 0, 0), (-1, 0, 0), (-1, 0, 0), (0, -1, 0), (0, -1, 0), (0, -1, 0), (0, -1, 0), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (1, 0, 0), (1, 0, 0), (1, 0, 0), (1, 0, 0), (0, 1, 0), (0, 1, 0), (0, 1, 0), (0, 1, 0), (0, 0, 1), (0, 0, 1), (0, 0, 1), (0, 0, 1)]
-        point3f[] points = [(0, 0, 0), (0, 0, 1), (0, 1, 1), (0, 1, 0), (1, 0, 1), (0, 0, 1), (0, 0, 0), (1, 0, 0), (1, 0, 0), (0, 0, 0), (0, 1, 0), (1, 1, 0), (1, 0, 1), (1, 0, 0), (1, 1, 0), (1, 1, 1), (0, 1, 1), (1, 1, 1), (1, 1, 0), (0, 1, 0), (0, 0, 1), (1, 0, 1), (1, 1, 1), (0, 1, 1)]
-        texCoord2f[] primvars:st = [(0, 0), (1, 0), (1, 1), (0, 1), (1, 0), (0, 0), (0, 1), (1, 1), (0, 0), (1, 0), (1, 1), (0, 1), (0, 0), (1, 0), (1, 1), (0, 1), (0, 0), (1, 0), (1, 1), (0, 1), (0, 0), (1, 0), (1, 1), (0, 1)] (
-            interpolation = "vertex"
-        )
-        double3 xformOp:rotateXYZ = (0, 0, 0)
-        double3 xformOp:scale = (1, 1, 1)
-        double3 xformOp:translate = (-1.1, 0, 1.1)
-        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
-    }
+		def Mesh "RNormalsReversedX0BiasZ" (
+			prepend apiSchemas = ["MaterialBindingAPI"]
+		)
+		{
+			int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+			int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+			rel material:binding = </NormalsTextureBiasAndScale/Looks/RNormalsReversedX0BiasZ>
+			normal3f[] normals = [(-1, 0, 0), (-1, 0, 0), (-1, 0, 0), (-1, 0, 0), (0, -1, 0), (0, -1, 0), (0, -1, 0), (0, -1, 0), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (1, 0, 0), (1, 0, 0), (1, 0, 0), (1, 0, 0), (0, 1, 0), (0, 1, 0), (0, 1, 0), (0, 1, 0), (0, 0, 1), (0, 0, 1), (0, 0, 1), (0, 0, 1)]
+			point3f[] points = [(0, 0, 0), (0, 0, 1), (0, 1, 1), (0, 1, 0), (1, 0, 1), (0, 0, 1), (0, 0, 0), (1, 0, 0), (1, 0, 0), (0, 0, 0), (0, 1, 0), (1, 1, 0), (1, 0, 1), (1, 0, 0), (1, 1, 0), (1, 1, 1), (0, 1, 1), (1, 1, 1), (1, 1, 0), (0, 1, 0), (0, 0, 1), (1, 0, 1), (1, 1, 1), (0, 1, 1)]
+			texCoord2f[] primvars:st = [(0, 0), (1, 0), (1, 1), (0, 1), (1, 0), (0, 0), (0, 1), (1, 1), (0, 0), (1, 0), (1, 1), (0, 1), (0, 0), (1, 0), (1, 1), (0, 1), (0, 0), (1, 0), (1, 1), (0, 1), (0, 0), (1, 0), (1, 1), (0, 1)] (
+				interpolation = "vertex"
+			)
+			double3 xformOp:rotateXYZ = (0, 0, 0)
+			double3 xformOp:scale = (1, 1, 1)
+			double3 xformOp:translate = (0, 0, 0)
+			uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+		}
 
-    def DistantLight "AngledLight" (
-        prepend apiSchemas = ["ShapingAPI"]
-        kind = "model"
-    )
-    {
-        float angle = 1
-        float intensity = 500
-        float shaping:cone:angle = 180
-        float shaping:cone:softness
-        float shaping:focus
-        color3f shaping:focusTint
-        asset shaping:ies:file
-        token visibility = "inherited"
-        float3 xformOp:rotateZXY = (235, 60, 0)
-        float3 xformOp:translate = (0, 0, 0)
-        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZXY"]
-    }
+		def Mesh "RNormalsReversedY" (
+			prepend apiSchemas = ["MaterialBindingAPI"]
+		)
+		{
+			int[] faceVertexCounts = [4, 4, 4, 4, 4, 4]
+			int[] faceVertexIndices = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23]
+			rel material:binding = </NormalsTextureBiasAndScale/Looks/RNormalsReversedY>
+			normal3f[] normals = [(-1, 0, 0), (-1, 0, 0), (-1, 0, 0), (-1, 0, 0), (0, -1, 0), (0, -1, 0), (0, -1, 0), (0, -1, 0), (0, 0, -1), (0, 0, -1), (0, 0, -1), (0, 0, -1), (1, 0, 0), (1, 0, 0), (1, 0, 0), (1, 0, 0), (0, 1, 0), (0, 1, 0), (0, 1, 0), (0, 1, 0), (0, 0, 1), (0, 0, 1), (0, 0, 1), (0, 0, 1)]
+			point3f[] points = [(0, 0, 0), (0, 0, 1), (0, 1, 1), (0, 1, 0), (1, 0, 1), (0, 0, 1), (0, 0, 0), (1, 0, 0), (1, 0, 0), (0, 0, 0), (0, 1, 0), (1, 1, 0), (1, 0, 1), (1, 0, 0), (1, 1, 0), (1, 1, 1), (0, 1, 1), (1, 1, 1), (1, 1, 0), (0, 1, 0), (0, 0, 1), (1, 0, 1), (1, 1, 1), (0, 1, 1)]
+			texCoord2f[] primvars:st = [(0, 0), (1, 0), (1, 1), (0, 1), (1, 0), (0, 0), (0, 1), (1, 1), (0, 0), (1, 0), (1, 1), (0, 1), (0, 0), (1, 0), (1, 1), (0, 1), (0, 0), (1, 0), (1, 1), (0, 1), (0, 0), (1, 0), (1, 1), (0, 1)] (
+				interpolation = "vertex"
+			)
+			double3 xformOp:rotateXYZ = (0, 0, 0)
+			double3 xformOp:scale = (1, 1, 1)
+			double3 xformOp:translate = (-1.1, 0, 1.1)
+			uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateXYZ", "xformOp:scale"]
+		}
+	}
 
-    def DistantLight "LightFromRight" (
-        prepend apiSchemas = ["ShapingAPI"]
-        kind = "model"
-    )
-    {
-        float angle = 1
-        float intensity = 500
-        float shaping:cone:angle = 180
-        float shaping:cone:softness
-        float shaping:focus
-        color3f shaping:focusTint
-        asset shaping:ies:file
-        token visibility = "invisible"
-        float3 xformOp:rotateZXY = (0, 270, 0)
-        float3 xformOp:translate = (0, 0, 0)
-        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZXY"]
-    }
+	def Xform "Lights"
+	{
+		def DistantLight "AngledLight" (
+			prepend apiSchemas = ["ShapingAPI"]
+			kind = "model"
+		)
+		{
+			float angle = 1
+			# The meaning of "intensity" varies among applications; no intensity often helps the viewer pick a default it likes.
+			# float inputs:intensity = 500
+			float shaping:cone:angle = 180
+			float shaping:cone:softness
+			float shaping:focus
+			color3f shaping:focusTint
+			asset shaping:ies:file
+			token visibility = "inherited"
+			float3 xformOp:rotateZXY = (235, 60, 0)
+			float3 xformOp:translate = (0, 0, 0)
+			uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZXY"]
+		}
 
-    def DistantLight "LightFromLeft" (
-        prepend apiSchemas = ["ShapingAPI"]
-        kind = "model"
-    )
-    {
-        float angle = 1
-        float intensity = 500
-        float shaping:cone:angle = 180
-        float shaping:cone:softness
-        float shaping:focus
-        color3f shaping:focusTint
-        asset shaping:ies:file
-        token visibility = "invisible"
-        float3 xformOp:rotateZXY = (0, 180, 0)
-        float3 xformOp:translate = (0, 0, 0)
-        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZXY"]
-    }
+		def DistantLight "LightFromRight" (
+			prepend apiSchemas = ["ShapingAPI"]
+			kind = "model"
+		)
+		{
+			float angle = 1
+			# The meaning of "intensity" varies among applications; no intensity often helps the viewer pick a default it likes.
+			# float inputs:intensity = 500
+			float shaping:cone:angle = 180
+			float shaping:cone:softness
+			float shaping:focus
+			color3f shaping:focusTint
+			asset shaping:ies:file
+			# If this light does not import properly - exists but invisible - you might comment out this next line:
+			token visibility = "invisible"
+			float3 xformOp:rotateZXY = (0, 270, 0)
+			float3 xformOp:translate = (0, 0, 0)
+			uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZXY"]
+		}
 
-    def DistantLight "LightFromAbove" (
-        prepend apiSchemas = ["ShapingAPI"]
-        kind = "model"
-    )
-    {
-        float angle = 1
-        float intensity = 500
-        float shaping:cone:angle = 180
-        float shaping:cone:softness
-        float shaping:focus
-        color3f shaping:focusTint
-        asset shaping:ies:file
-        token visibility = "invisible"
-        float3 xformOp:rotateZXY = (270, 0, 0)
-        float3 xformOp:translate = (0, 0, 0)
-        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZXY"]
-    }
-}
+		def DistantLight "LightFromLeft" (
+			prepend apiSchemas = ["ShapingAPI"]
+			kind = "model"
+		)
+		{
+			float angle = 1
+			# The meaning of "intensity" varies among applications; no intensity often helps the viewer pick a default it likes.
+			# float inputs:intensity = 500
+			float shaping:cone:angle = 180
+			float shaping:cone:softness
+			float shaping:focus
+			color3f shaping:focusTint
+			asset shaping:ies:file
+			# If this light does not import properly - exists but invisible - you might comment out this next line:
+			token visibility = "invisible"
+			float3 xformOp:rotateZXY = (0, 180, 0)
+			float3 xformOp:translate = (0, 0, 0)
+			uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZXY"]
+		}
 
-def Scope "Looks" (
-    kind = "model"
-)
-{
-    def Material "RNormals"
-    {
-        token outputs:displacement.connect = </Looks/RNormals/PreviewSurface.outputs:displacement>
-        token outputs:surface.connect = </Looks/RNormals/PreviewSurface.outputs:surface>
+		def DistantLight "LightFromAbove" (
+			prepend apiSchemas = ["ShapingAPI"]
+			kind = "model"
+		)
+		{
+			float angle = 1
+			# The meaning of "intensity" varies among applications; no intensity often helps the viewer pick a default it likes.
+			# float inputs:intensity = 500
+			float shaping:cone:angle = 180
+			float shaping:cone:softness
+			float shaping:focus
+			color3f shaping:focusTint
+			asset shaping:ies:file
+			# If this light does not import properly - exists but invisible - you might comment out this next line:
+			token visibility = "invisible"
+			float3 xformOp:rotateZXY = (270, 0, 0)
+			float3 xformOp:translate = (0, 0, 0)
+			uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:rotateZXY"]
+		}
+	}
 
-        def Shader "PreviewSurface"
-        {
-            uniform token info:id = "UsdPreviewSurface"
-            color3f inputs:diffuseColor = (0.486275, 0.486275, 0.486275)
-            float inputs:metallic = 0
-            normal3f inputs:normal.connect = </Looks/RNormals/NormalTexture.outputs:rgb>
-            float inputs:opacity = 1
-            float inputs:roughness = 1
-            int inputs:useSpecularWorkflow = 0
-            token outputs:out
-            token outputs:surface
-        }
+	def Scope "Looks" (
+		kind = "model"
+	)
+	{
+		def Material "RNormals"
+		{
+			token outputs:displacement.connect = </NormalsTextureBiasAndScale/Looks/RNormals/PreviewSurface.outputs:displacement>
+			token outputs:surface.connect = </NormalsTextureBiasAndScale/Looks/RNormals/PreviewSurface.outputs:surface>
 
-        def Shader "UVReader"
-        {
-            uniform token info:id = "UsdPrimvarReader_float2"
-            float2 inputs:fallback = (0, 0)
-            token inputs:varname = "st"
-            float2 outputs:result
-        }
+			def Shader "PreviewSurface"
+			{
+				uniform token info:id = "UsdPreviewSurface"
+				color3f inputs:diffuseColor = (0.486275, 0.486275, 0.486275)
+				float inputs:metallic = 0
+				float3 inputs:normal.connect = </NormalsTextureBiasAndScale/Looks/RNormals/NormalTexture.outputs:rgb>
+				float inputs:opacity = 1
+				float inputs:roughness = 1
+				int inputs:useSpecularWorkflow = 0
+				token outputs:out
+				token outputs:surface
+			}
 
-        def Shader "NormalTexture"
-        {
-            uniform token info:id = "UsdUVTexture"
-            float4 inputs:bias = (-1, -1, -1, -1)
-            asset inputs:file = @./r_normal_map.png@
-            float4 inputs:scale = (2, 2, 2, 2)
-            token inputs:sourceColorSpace = "raw"
-            float2 inputs:st.connect = </Looks/RNormals/UVReader.outputs:result>
-            token inputs:wrapS = "repeat"
-            token inputs:wrapT = "repeat"
-            float3 outputs:rgb
-        }
-    }
+			def Shader "UVReader"
+			{
+				uniform token info:id = "UsdPrimvarReader_float2"
+				float2 inputs:fallback = (0, 0)
+				token inputs:varname = "st"
+				float2 outputs:result
+			}
 
-    def Material "RNormalsReversedX0BiasZ"
-    {
-        token outputs:displacement.connect = </Looks/RNormalsReversedX0BiasZ/PreviewSurface.outputs:displacement>
-        token outputs:surface.connect = </Looks/RNormalsReversedX0BiasZ/PreviewSurface.outputs:surface>
+			def Shader "NormalTexture"
+			{
+				uniform token info:id = "UsdUVTexture"
+				float4 inputs:bias = (-1, -1, -1, -1)
+				asset inputs:file = @./r_normal_map.png@
+				float4 inputs:scale = (2, 2, 2, 2)
+				token inputs:sourceColorSpace = "raw"
+				float2 inputs:st.connect = </NormalsTextureBiasAndScale/Looks/RNormals/UVReader.outputs:result>
+				token inputs:wrapS = "repeat"
+				token inputs:wrapT = "repeat"
+				float3 outputs:rgb
+			}
+		}
 
-        def Shader "PreviewSurface"
-        {
-            uniform token info:id = "UsdPreviewSurface"
-            color3f inputs:diffuseColor = (0.486275, 0.486275, 0.486275)
-            float inputs:metallic = 0
-            normal3f inputs:normal.connect = </Looks/RNormalsReversedX0BiasZ/NormalTexture.outputs:rgb>
-            float inputs:opacity = 1
-            float inputs:roughness = 1
-            int inputs:useSpecularWorkflow = 0
-            token outputs:out
-            token outputs:surface
-        }
+		def Material "RNormalsReversedX0BiasZ"
+		{
+			token outputs:displacement.connect = </NormalsTextureBiasAndScale/Looks/RNormalsReversedX0BiasZ/PreviewSurface.outputs:displacement>
+			token outputs:surface.connect = </NormalsTextureBiasAndScale/Looks/RNormalsReversedX0BiasZ/PreviewSurface.outputs:surface>
 
-        def Shader "UVReader"
-        {
-            uniform token info:id = "UsdPrimvarReader_float2"
-            float2 inputs:fallback = (0, 0)
-            token inputs:varname = "st"
-            float2 outputs:result
-        }
+			def Shader "PreviewSurface"
+			{
+				uniform token info:id = "UsdPreviewSurface"
+				color3f inputs:diffuseColor = (0.486275, 0.486275, 0.486275)
+				float inputs:metallic = 0
+				float3 inputs:normal.connect = </NormalsTextureBiasAndScale/Looks/RNormalsReversedX0BiasZ/NormalTexture.outputs:rgb>
+				float inputs:opacity = 1
+				float inputs:roughness = 1
+				int inputs:useSpecularWorkflow = 0
+				token outputs:out
+				token outputs:surface
+			}
 
-        def Shader "NormalTexture"
-        {
-            uniform token info:id = "UsdUVTexture"
-            float4 inputs:bias = (1, -1, 0, -1)
-            asset inputs:file = @./r_normal_map_reversed_x_0_bias_z.png@
-            float4 inputs:scale = (-2, 2, 1, 2)
-            token inputs:sourceColorSpace = "raw"
-            float2 inputs:st.connect = </Looks/RNormalsReversedX0BiasZ/UVReader.outputs:result>
-            token inputs:wrapS = "repeat"
-            token inputs:wrapT = "repeat"
-            float3 outputs:rgb
-        }
-    }
+			def Shader "UVReader"
+			{
+				uniform token info:id = "UsdPrimvarReader_float2"
+				float2 inputs:fallback = (0, 0)
+				token inputs:varname = "st"
+				float2 outputs:result
+			}
 
-    def Material "RNormalsReversedY"
-    {
-        token outputs:displacement.connect = </Looks/RNormalsReversedY/PreviewSurface.outputs:displacement>
-        token outputs:surface.connect = </Looks/RNormalsReversedY/PreviewSurface.outputs:surface>
+			def Shader "NormalTexture"
+			{
+				uniform token info:id = "UsdUVTexture"
+				float4 inputs:bias = (1, -1, 0, -1)
+				asset inputs:file = @./r_normal_map_reversed_x_0_bias_z.png@
+				float4 inputs:scale = (-2, 2, 1, 2)
+				token inputs:sourceColorSpace = "raw"
+				float2 inputs:st.connect = </NormalsTextureBiasAndScale/Looks/RNormalsReversedX0BiasZ/UVReader.outputs:result>
+				token inputs:wrapS = "repeat"
+				token inputs:wrapT = "repeat"
+				float3 outputs:rgb
+			}
+		}
 
-        def Shader "PreviewSurface"
-        {
-            uniform token info:id = "UsdPreviewSurface"
-            color3f inputs:diffuseColor = (0.486275, 0.486275, 0.486275)
-            float inputs:metallic = 0
-            normal3f inputs:normal.connect = </Looks/RNormalsReversedY/NormalTexture.outputs:rgb>
-            float inputs:opacity = 1
-            float inputs:roughness = 1
-            int inputs:useSpecularWorkflow = 0
-            token outputs:out
-            token outputs:surface
-        }
+		def Material "RNormalsReversedY"
+		{
+			token outputs:displacement.connect = </NormalsTextureBiasAndScale/Looks/RNormalsReversedY/PreviewSurface.outputs:displacement>
+			token outputs:surface.connect = </NormalsTextureBiasAndScale/Looks/RNormalsReversedY/PreviewSurface.outputs:surface>
 
-        def Shader "UVReader"
-        {
-            uniform token info:id = "UsdPrimvarReader_float2"
-            float2 inputs:fallback = (0, 0)
-            token inputs:varname = "st"
-            float2 outputs:result
-        }
+			def Shader "PreviewSurface"
+			{
+				uniform token info:id = "UsdPreviewSurface"
+				color3f inputs:diffuseColor = (0.486275, 0.486275, 0.486275)
+				float inputs:metallic = 0
+				float3 inputs:normal.connect = </NormalsTextureBiasAndScale/Looks/RNormalsReversedY/NormalTexture.outputs:rgb>
+				float inputs:opacity = 1
+				float inputs:roughness = 1
+				int inputs:useSpecularWorkflow = 0
+				token outputs:out
+				token outputs:surface
+			}
 
-        def Shader "NormalTexture"
-        {
-            uniform token info:id = "UsdUVTexture"
-            float4 inputs:bias = (-1, 1, -1, -1)
-            asset inputs:file = @./r_normal_map_reversed_y.png@
-            float4 inputs:scale = (2, -2, 2, 2)
-            token inputs:sourceColorSpace = "raw"
-            float2 inputs:st.connect = </Looks/RNormalsReversedY/UVReader.outputs:result>
-            token inputs:wrapS = "repeat"
-            token inputs:wrapT = "repeat"
-            float3 outputs:rgb
-        }
-    }
+			def Shader "UVReader"
+			{
+				uniform token info:id = "UsdPrimvarReader_float2"
+				float2 inputs:fallback = (0, 0)
+				token inputs:varname = "st"
+				float2 outputs:result
+			}
+
+			def Shader "NormalTexture"
+			{
+				uniform token info:id = "UsdUVTexture"
+				float4 inputs:bias = (-1, 1, -1, -1)
+				asset inputs:file = @./r_normal_map_reversed_y.png@
+				float4 inputs:scale = (2, -2, 2, 2)
+				token inputs:sourceColorSpace = "raw"
+				float2 inputs:st.connect = </NormalsTextureBiasAndScale/Looks/RNormalsReversedY/UVReader.outputs:result>
+				token inputs:wrapS = "repeat"
+				token inputs:wrapT = "repeat"
+				float3 outputs:rgb
+			}
+		}
+	}
 }
 
