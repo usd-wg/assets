@@ -23,9 +23,9 @@ def Xform "Asset" (
             {
                 def Material "BackPlaneMat"
                 {
-                    token outputs:surface.connect = </Asset/Materials/UsdPreviewSurface/Materials/BackPlaneMat/node.outputs:surface>
+                    token outputs:surface.connect = </Asset/Materials/UsdPreviewSurface/Materials/BackPlaneMat/UsdPreviewSurface.outputs:surface>
 
-                    def Shader "node"
+                    def Shader "UsdPreviewSurface"
                     {
                         uniform token info:id = "UsdPreviewSurface"
                         float3 inputs:diffuseColor = (0.16000001, 0.16000001, 0.16000001)
@@ -41,12 +41,12 @@ def Xform "Asset" (
 
                 def Material "BottomLeftMat"
                 {
-                    token outputs:surface.connect = </Asset/Materials/UsdPreviewSurface/Materials/BottomLeftMat/node.outputs:surface>
+                    token outputs:surface.connect = </Asset/Materials/UsdPreviewSurface/Materials/BottomLeftMat/UsdPreviewSurface.outputs:surface>
 
-                    def Shader "node"
+                    def Shader "UsdPreviewSurface"
                     {
                         uniform token info:id = "UsdPreviewSurface"
-                        float3 inputs:diffuseColor.connect = </Asset/Materials/UsdPreviewSurface/Materials/BottomLeftMat/node1.outputs:rgb>
+                        float3 inputs:diffuseColor.connect = </Asset/Materials/UsdPreviewSurface/Materials/BottomLeftMat/TextureMapper.outputs:rgb>
                         float3 inputs:emissiveColor = (0, 0, 0)
                         float inputs:metallic = 0
                         float3 inputs:normal
@@ -56,20 +56,20 @@ def Xform "Asset" (
                         token outputs:surface
                     }
 
-                    def Shader "node1"
+                    def Shader "TextureMapper"
                     {
                         uniform token info:id = "UsdUVTexture"
                         float4 inputs:fallback = (1, 1, 1, 1)
                         asset inputs:file = @TextureCoordinateTemplate.png@
                         float4 inputs:scale = (0, 0.16000001, 0.8, 1)
                         token inputs:sourceColorSpace = "sRGB"
-                        float2 inputs:st.connect = </Asset/Materials/UsdPreviewSurface/Materials/BottomLeftMat/node2.outputs:result>
+                        float2 inputs:st.connect = </Asset/Materials/UsdPreviewSurface/Materials/BottomLeftMat/TextureCoordinateReader.outputs:result>
                         token inputs:wrapS = "repeat"
                         token inputs:wrapT = "repeat"
                         float3 outputs:rgb
                     }
 
-                    def Shader "node2"
+                    def Shader "TextureCoordinateReader"
                     {
                         uniform token info:id = "UsdPrimvarReader_float2"
                         string inputs:varname = "st0"
@@ -79,12 +79,12 @@ def Xform "Asset" (
 
                 def Material "BottomRightMat"
                 {
-                    token outputs:surface.connect = </Asset/Materials/UsdPreviewSurface/Materials/BottomRightMat/node.outputs:surface>
+                    token outputs:surface.connect = </Asset/Materials/UsdPreviewSurface/Materials/BottomRightMat/UsdPreviewSurface.outputs:surface>
 
-                    def Shader "node"
+                    def Shader "UsdPreviewSurface"
                     {
                         uniform token info:id = "UsdPreviewSurface"
-                        float3 inputs:diffuseColor.connect = </Asset/Materials/UsdPreviewSurface/Materials/BottomRightMat/node1.outputs:rgb>
+                        float3 inputs:diffuseColor.connect = </Asset/Materials/UsdPreviewSurface/Materials/BottomRightMat/TextureMapper.outputs:rgb>
                         float3 inputs:emissiveColor = (0, 0, 0)
                         float inputs:metallic = 0
                         float3 inputs:normal
@@ -94,20 +94,20 @@ def Xform "Asset" (
                         token outputs:surface
                     }
 
-                    def Shader "node1"
+                    def Shader "TextureMapper"
                     {
                         uniform token info:id = "UsdUVTexture"
                         float4 inputs:fallback = (1, 1, 1, 1)
                         asset inputs:file = @TextureCoordinateTemplate.png@
                         float4 inputs:scale = (0, 0.8, 0, 1)
                         token inputs:sourceColorSpace = "sRGB"
-                        float2 inputs:st.connect = </Asset/Materials/UsdPreviewSurface/Materials/BottomRightMat/node2.outputs:result>
+                        float2 inputs:st.connect = </Asset/Materials/UsdPreviewSurface/Materials/BottomRightMat/TextureCoordinateReader.outputs:result>
                         token inputs:wrapS = "repeat"
                         token inputs:wrapT = "repeat"
                         float3 outputs:rgb
                     }
 
-                    def Shader "node2"
+                    def Shader "TextureCoordinateReader"
                     {
                         uniform token info:id = "UsdPrimvarReader_float2"
                         string inputs:varname = "st0"
@@ -117,12 +117,12 @@ def Xform "Asset" (
 
                 def Material "TopLeftMat"
                 {
-                    token outputs:surface.connect = </Asset/Materials/UsdPreviewSurface/Materials/TopLeftMat/node.outputs:surface>
+                    token outputs:surface.connect = </Asset/Materials/UsdPreviewSurface/Materials/TopLeftMat/UsdPreviewSurface.outputs:surface>
 
-                    def Shader "node"
+                    def Shader "UsdPreviewSurface"
                     {
                         uniform token info:id = "UsdPreviewSurface"
-                        float3 inputs:diffuseColor.connect = </Asset/Materials/UsdPreviewSurface/Materials/TopLeftMat/node1.outputs:rgb>
+                        float3 inputs:diffuseColor.connect = </Asset/Materials/UsdPreviewSurface/Materials/TopLeftMat/TextureMapper.outputs:rgb>
                         float3 inputs:emissiveColor = (0, 0, 0)
                         float inputs:metallic = 0
                         float3 inputs:normal
@@ -132,20 +132,20 @@ def Xform "Asset" (
                         token outputs:surface
                     }
 
-                    def Shader "node1"
+                    def Shader "TextureMapper"
                     {
                         uniform token info:id = "UsdUVTexture"
                         float4 inputs:fallback = (1, 1, 1, 1)
                         asset inputs:file = @TextureCoordinateTemplate.png@
                         float4 inputs:scale = (0.8, 0.8, 0, 1)
                         token inputs:sourceColorSpace = "sRGB"
-                        float2 inputs:st.connect = </Asset/Materials/UsdPreviewSurface/Materials/TopLeftMat/node2.outputs:result>
+                        float2 inputs:st.connect = </Asset/Materials/UsdPreviewSurface/Materials/TopLeftMat/TextureCoordinateReader.outputs:result>
                         token inputs:wrapS = "repeat"
                         token inputs:wrapT = "repeat"
                         float3 outputs:rgb
                     }
 
-                    def Shader "node2"
+                    def Shader "TextureCoordinateReader"
                     {
                         uniform token info:id = "UsdPrimvarReader_float2"
                         string inputs:varname = "st0"
@@ -155,12 +155,12 @@ def Xform "Asset" (
 
                 def Material "TopRightMat"
                 {
-                    token outputs:surface.connect = </Asset/Materials/UsdPreviewSurface/Materials/TopRightMat/node.outputs:surface>
+                    token outputs:surface.connect = </Asset/Materials/UsdPreviewSurface/Materials/TopRightMat/UsdPreviewSurface.outputs:surface>
 
-                    def Shader "node"
+                    def Shader "UsdPreviewSurface"
                     {
                         uniform token info:id = "UsdPreviewSurface"
-                        float3 inputs:diffuseColor.connect = </Asset/Materials/UsdPreviewSurface/Materials/TopRightMat/node1.outputs:rgb>
+                        float3 inputs:diffuseColor.connect = </Asset/Materials/UsdPreviewSurface/Materials/TopRightMat/TextureMapper.outputs:rgb>
                         float3 inputs:emissiveColor = (0, 0, 0)
                         float inputs:metallic = 0
                         float3 inputs:normal
@@ -170,20 +170,20 @@ def Xform "Asset" (
                         token outputs:surface
                     }
 
-                    def Shader "node1"
+                    def Shader "TextureMapper"
                     {
                         uniform token info:id = "UsdUVTexture"
                         float4 inputs:fallback = (1, 1, 1, 1)
                         asset inputs:file = @TextureCoordinateTemplate.png@
                         float4 inputs:scale = (0.8, 0.080000006, 0, 1)
                         token inputs:sourceColorSpace = "sRGB"
-                        float2 inputs:st.connect = </Asset/Materials/UsdPreviewSurface/Materials/TopRightMat/node2.outputs:result>
+                        float2 inputs:st.connect = </Asset/Materials/UsdPreviewSurface/Materials/TopRightMat/TextureCoordinateReader.outputs:result>
                         token inputs:wrapS = "repeat"
                         token inputs:wrapT = "repeat"
                         float3 outputs:rgb
                     }
 
-                    def Shader "node2"
+                    def Shader "TextureCoordinateReader"
                     {
                         uniform token info:id = "UsdPrimvarReader_float2"
                         string inputs:varname = "st0"
