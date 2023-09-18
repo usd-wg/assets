@@ -210,7 +210,7 @@ def Xform "Asset" (
                         float3[] extent = [(-1.0000001, -1.0000001, -0.052591152), (1.0000001, 1.0000001, -0.052591003)]
                         int[] faceVertexCounts = [3, 3]
                         int[] faceVertexIndices = [0, 1, 2, 0, 3, 1]
-                        rel material:binding:preview = </Asset/Materials/UsdPreviewSurface/Materials/BackPlaneMat>
+                        rel material:binding = </Asset/Materials/UsdPreviewSurface/Materials/BackPlaneMat>
                         normal3f[] normals = [(1.0658143e-14, -7.450581e-8, -1), (1.0658143e-14, -7.450581e-8, -1), (1.0658143e-14, -7.450581e-8, -1), (1.0658143e-14, -7.450581e-8, -1)] (
                             interpolation = "vertex"
                         )
@@ -240,7 +240,7 @@ def Xform "Asset" (
                         float3[] extent = [(0.20000009, -1.2, 6.208698e-8), (1.2000002, -0.19999963, 5.2551184e-7)]
                         int[] faceVertexCounts = [3, 3]
                         int[] faceVertexIndices = [0, 1, 2, 3, 1, 0]
-                        rel material:binding:preview = </Asset/Materials/UsdPreviewSurface/Materials/BottomRightMat>
+                        rel material:binding = </Asset/Materials/UsdPreviewSurface/Materials/BottomRightMat>
                         normal3f[] normals = [(-1.7807025e-7, 2.853546e-7, 1), (-1.7807025e-7, 2.853546e-7, 1), (-1.7807025e-7, 2.853546e-7, 1), (-1.7807025e-7, 2.853546e-7, 1)] (
                             interpolation = "vertex"
                         )
@@ -273,7 +273,7 @@ def Xform "Asset" (
                         float3[] extent = [(-1.2, -1.2000002, 6.208701e-8), (-0.19999969, -0.20000008, 5.2551184e-7)]
                         int[] faceVertexCounts = [3, 3]
                         int[] faceVertexIndices = [0, 1, 2, 3, 1, 0]
-                        rel material:binding:preview = </Asset/Materials/UsdPreviewSurface/Materials/BottomLeftMat>
+                        rel material:binding = </Asset/Materials/UsdPreviewSurface/Materials/BottomLeftMat>
                         normal3f[] normals = [(-8.526513e-14, 4.6342487e-7, 1), (-8.526513e-14, 4.6342487e-7, 1), (-8.526513e-14, 4.6342487e-7, 1), (-8.526513e-14, 4.6342487e-7, 1)] (
                             interpolation = "vertex"
                         )
@@ -306,7 +306,7 @@ def Xform "Asset" (
                         float3[] extent = [(0.19999981, 0.20000005, -1.5933927e-7), (1.2, 1.2000002, -5.2054858e-8)]
                         int[] faceVertexCounts = [3, 3]
                         int[] faceVertexIndices = [0, 1, 2, 3, 1, 0]
-                        rel material:binding:preview = </Asset/Materials/UsdPreviewSurface/Materials/TopRightMat>
+                        rel material:binding = </Asset/Materials/UsdPreviewSurface/Materials/TopRightMat>
                         normal3f[] normals = [(-2.1316282e-14, 1.07284414e-7, 1), (-2.1316282e-14, 1.07284414e-7, 1), (-2.1316282e-14, 1.07284414e-7, 1), (-2.1316282e-14, 1.07284414e-7, 1)] (
                             interpolation = "vertex"
                         )
@@ -339,7 +339,7 @@ def Xform "Asset" (
                         float3[] extent = [(-1.2000002, 0.19999975, -3.3740952e-7), (-0.20000006, 1.2, 1.260154e-7)]
                         int[] faceVertexCounts = [3, 3]
                         int[] faceVertexIndices = [0, 1, 2, 3, 1, 0]
-                        rel material:binding:preview = </Asset/Materials/UsdPreviewSurface/Materials/TopLeftMat>
+                        rel material:binding = </Asset/Materials/UsdPreviewSurface/Materials/TopLeftMat>
                         normal3f[] normals = [(1.780702e-7, 2.853547e-7, 1), (1.780702e-7, 2.853547e-7, 1), (1.780702e-7, 2.853547e-7, 1), (1.780702e-7, 2.853547e-7, 1)] (
                             interpolation = "vertex"
                         )
