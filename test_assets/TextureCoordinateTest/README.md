@@ -6,6 +6,9 @@
 
 ## Description
 
+This model was converted from glTF to OpenUSD using RealityConverter.
+
+
 This model demonstrates the orientation of texture coordinates.  The materials and accessors have all been named according to function.  In particular, the accessor named `TopLeft_TEXCOORD_0` shows that the upper-left portion of the texture image is represented by texture coordinates ranging from roughly `0.0` to roughly `0.4`.
 
 ```
