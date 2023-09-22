@@ -9,7 +9,7 @@
     defaultPrim = "Teapot"
 )
 
-def "Teapot" (
+def Xform "Teapot" (
     assetInfo = {
         dictionary credits = {
             string FancyTeapot = "PolyHaven | Public Domain - CC0 | https://polyhaven.com/a/tea_set_01"
