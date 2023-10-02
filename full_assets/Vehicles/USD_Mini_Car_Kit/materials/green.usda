@@ -1,0 +1,35 @@
+#usda 1.0
+(
+    defaultPrim = "materials"
+    endTimeCode = 1
+    framesPerSecond = 24
+    metersPerUnit = 1
+    startTimeCode = 1
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+def Scope "materials"
+{
+    def Material "greenMaterial"
+    {
+        token outputs:displacement.connect = </materials/greenMaterial/greenShader.outputs:displacement>
+        token outputs:surface.connect = </materials/greenMaterial/greenShader.outputs:surface>
+
+        def Shader "greenShader"
+        {
+            uniform token info:id = "UsdPreviewSurface"
+            color3f inputs:diffuseColor.connect = </materials/greenMaterial/greenTexture.outputs:rgb>
+            token outputs:displacement
+            token outputs:surface
+        }
+
+        def Shader "greenTexture"
+        {
+            uniform token info:id = "UsdUVTexture"
+            asset inputs:file = @../textures/global-colors/green.jpg@
+            vector3f outputs:rgb
+        }
+    }
+}
+

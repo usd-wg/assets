@@ -1,0 +1,82 @@
+#usda 1.0
+(
+    defaultPrim = "ambulance"
+    endTimeCode = 1
+    framesPerSecond = 24
+    metersPerUnit = 1
+    startTimeCode = 1
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+def Xform "ambulance"
+{
+    def "geo" (
+        prepend references = @../geo/ambulanceGeo.usd@</ambulance>
+    )
+    {
+        over "_3_redMax" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </ambulance/materials/redMaterial>
+        }
+
+        over "_2_whiteMax" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </ambulance/materials/whiteMaterial>
+        }
+
+        over "_1_greyMediumMax" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </ambulance/materials/greyMediumMaterial>
+        }
+
+        over "_4_frontLightMax" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </ambulance/materials/frontLightMaterial>
+        }
+
+        over "_5_windowMax" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </ambulance/materials/windowMaterial>
+        }
+
+        over "_6_blueMax" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </ambulance/materials/blueMaterial>
+        }
+
+        over "_8_greyLightMax" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </ambulance/materials/greyLightMaterial>
+        }
+    }
+
+    def "materials" (
+        prepend references = [
+            @../../../../materials/lightGrey.usda@</materials>,
+            @../../../../materials/blue.usda@</materials>,
+            @../../../../materials/window.usda@</materials>,
+            @../../../../materials/frontLight.usda@</materials>,
+            @../../../../materials/mediumGrey.usda@</materials>,
+            @../../../../materials/white.usda@</materials>,
+            @../../../../materials/red.usda@</materials>
+        ]
+    )
+    {
+    }
+}
+

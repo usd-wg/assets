@@ -1,0 +1,74 @@
+#usda 1.0
+(
+    defaultPrim = "van"
+    endTimeCode = 1
+    framesPerSecond = 24
+    metersPerUnit = 1
+    startTimeCode = 1
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+def Xform "van"
+{
+    def "geo" (
+        prepend references = @../geo/vanGeo.usd@</van>
+    )
+    {
+        over "_2_blueMax" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </van/materials/blueMaterial>
+        }
+
+        over "_1_greyMediumMax" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </van/materials/greyMediumMaterial>
+        }
+
+        over "_3_windowMax" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </van/materials/windowMaterial>
+        }
+
+        over "_4_frontLightMax" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </van/materials/frontLightMaterial>
+        }
+
+        over "_5_backLightMax" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </van/materials/backLightMaterial>
+        }
+
+        over "_6_greyLightMax" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </van/materials/greyLightMaterial>
+        }
+    }
+
+    def "materials" (
+        prepend references = [
+            @../../../../materials/lightGrey.usda@</materials>,
+            @../../../../materials/backLight.usda@</materials>,
+            @../../../../materials/frontLight.usda@</materials>,
+            @../../../../materials/window.usda@</materials>,
+            @../../../../materials/mediumGrey.usda@</materials>,
+            @../../../../materials/blue.usda@</materials>
+        ]
+    )
+    {
+    }
+}
+

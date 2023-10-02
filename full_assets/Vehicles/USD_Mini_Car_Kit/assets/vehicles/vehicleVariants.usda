@@ -1,0 +1,78 @@
+#usda 1.0
+(
+    defaultPrim = "vehicleVariant"
+    endTimeCode = 1
+    framesPerSecond = 24
+    metersPerUnit = 1
+    startTimeCode = 1
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+def Xform "vehicleVariant" (
+    variants = {
+        string wheels = "tractor"
+    }
+    prepend variantSets = "wheels"
+)
+{
+    variantSet "wheels" = {
+        "4wd" {
+            def "_4wdFullAsset" (
+                prepend references = @./4wd/asset/4wdFullAsset.usda@
+            )
+            {
+            }
+
+        }
+        "ambulance" {
+            def "ambulanceFullAsset" (
+                prepend references = @./ambulance/asset/ambulanceFullAsset.usda@
+            )
+            {
+            }
+
+        }
+        "formula" {
+            def "formulaFullAsset" (
+                prepend references = @./formula/asset/formulaFullAsset.usda@
+            )
+            {
+            }
+
+        }
+        "sedan" {
+            def "sedanFullAsset" (
+                prepend references = @./sedan/asset/sedanFullAsset.usda@
+            )
+            {
+            }
+
+        }
+        "tractor" {
+            def "tractorFullAsset" (
+                prepend references = @./tractor/asset/tractorFullAsset.usda@
+            )
+            {
+            }
+
+        }
+        "truckFlat" {
+            def "truckFlatFullAsset" (
+                prepend references = @./truckFlat/asset/truckFlatFullAsset.usda@
+            )
+            {
+            }
+
+        }
+        "van" {
+            def "vanFullAsset" (
+                prepend references = @./van/asset/vanFullAsset.usda@
+            )
+            {
+            }
+
+        }
+    }
+}
+

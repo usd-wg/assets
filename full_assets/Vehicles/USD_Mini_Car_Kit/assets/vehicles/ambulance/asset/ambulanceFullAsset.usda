@@ -1,0 +1,52 @@
+#usda 1.0
+(
+    defaultPrim = "ambulance"
+    endTimeCode = 1
+    framesPerSecond = 24
+    metersPerUnit = 1
+    startTimeCode = 1
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+def Xform "ambulance"
+{
+    def "ambulance" (
+        prepend references = @./ambulanceBodyAsset.usda@</ambulance>
+    )
+    {
+    }
+
+    def "wheel1" (
+        prepend references = @../../../wheels/wheelVariants.usda@</wheelVariant>
+    )
+    {
+        matrix4d xformOp:transform:edit5 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (84, 0, 114.15765380859375, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform:edit5"]
+    }
+
+    def "wheel2" (
+        prepend references = @../../../wheels/wheelVariants.usda@</wheelVariant>
+    )
+    {
+        matrix4d xformOp:transform:edit5 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (62, 0, -146.33580017089844, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform:edit5"]
+    }
+
+    def "wheel3" (
+        prepend references = @../../../wheels/wheelVariants.usda@</wheelVariant>
+    )
+    {
+        matrix4d xformOp:transform:edit5 = ( (-1, 0, 1.2246468525851679e-16, 0), (0, 1, 0, 0), (-1.2246468525851679e-16, 0, -1, 0), (-84, 0, 114, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform:edit5"]
+    }
+
+    def "wheel4" (
+        prepend references = @../../../wheels/wheelVariants.usda@</wheelVariant>
+    )
+    {
+        matrix4d xformOp:transform:edit5 = ( (-1, 0, 1.2246468525851679e-16, 0), (0, 1, 0, 0), (-1.2246468525851679e-16, 0, -1, 0), (-62, 0, -146, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform:edit5"]
+    }
+}
+

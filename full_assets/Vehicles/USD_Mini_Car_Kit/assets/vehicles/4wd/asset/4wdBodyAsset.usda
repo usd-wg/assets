@@ -1,0 +1,74 @@
+#usda 1.0
+(
+    defaultPrim = "_4wd"
+    endTimeCode = 1
+    framesPerSecond = 24
+    metersPerUnit = 1
+    startTimeCode = 1
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+def Xform "_4wd"
+{
+    def "geo" (
+        prepend references = @../geo/4wdGeo.usd@</_wd>
+    )
+    {
+        over "_2_greenMax" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </_4wd/materials/greenMaterial>
+        }
+
+        over "_1_greyMediumMax" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </_4wd/materials/greyMediumMaterial>
+        }
+
+        over "_3_windowMax" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </_4wd/materials/windowMaterial>
+        }
+
+        over "_5_greyLightMax" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </_4wd/materials/greyLightMaterial>
+        }
+
+        over "_6_frontLightMax" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </_4wd/materials/frontLightMaterial>
+        }
+
+        over "_7_backLightMax" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </_4wd/materials/backLightMaterial>
+        }
+    }
+
+    def "materials" (
+        prepend references = [
+            @../../../../materials/backLight.usda@</materials>,
+            @../../../../materials/frontLight.usda@</materials>,
+            @../../../../materials/lightGrey.usda@</materials>,
+            @../../../../materials/window.usda@</materials>,
+            @../../../../materials/mediumGrey.usda@</materials>,
+            @../../../../materials/green.usda@</materials>
+        ]
+    )
+    {
+    }
+}
+
