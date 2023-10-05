@@ -45,6 +45,12 @@ a link.
  * [Polyhaven](https://github.com/minami110/polyhaven)
  * [Side FX - Bar Scene](https://www.sidefx.com/contentlibrary/bar-scene/)
  * [Side FX - Content Library](https://www.sidefx.com/contentlibrary/)
+ 
+### Notable Asset Stores with USD Content
+
+ * [CG Trader](https://www.cgtrader.com/3d-models/ext/usd)
+ * [SketchFab](https://sketchfab.com/) - all models available as USDZ
+ * [Turbo Squid](https://www.turbosquid.com/Search/3D-Models/usd)
 
 ### Tutorial Assets, Blogs & Videos
 
@@ -52,9 +58,3 @@ a link.
  * [The Book of USD](https://remedy-entertainment.github.io/USDBook/) by Remedy Entertainment
  * [USD Hello World](https://github.com/carlynorama/USDHelloWorld) also see the related [Blog Post](https://github.com/carlynorama/USDHelloWorld#toc) by carlynorama
  * [UsdSkell Tutorial](https://www.youtube.com/playlist?list=PL5P7shki7MOWkMgMpRkPl-nNVJEKRU8fQ) by Matias Codesal
- 
-### Notable Asset Stores with USD Content
-
- * [CG Trader](https://www.cgtrader.com/3d-models/ext/usd)
- * [SketchFab](https://sketchfab.com/) - all models available as USDZ
- * [Turbo Squid](https://www.turbosquid.com/Search/3D-Models/usd)
