@@ -46,6 +46,13 @@ a link.
  * [Side FX - Bar Scene](https://www.sidefx.com/contentlibrary/bar-scene/)
  * [Side FX - Content Library](https://www.sidefx.com/contentlibrary/)
 
+### Tutorial Assets, Blogs & Videos
+
+ * [Awesome OpenUSD](https://github.com/matiascodesal/awesome-openusd) a collection of tutorials and educational links by Matias Codesal
+ * [The Book of USD](https://remedy-entertainment.github.io/USDBook/) by Remedy Entertainment
+ * [USD Hello World](https://github.com/carlynorama/USDHelloWorld) also see the related [Blog Post](https://github.com/carlynorama/USDHelloWorld#toc) by carlynorama
+ * [UsdSkell Tutorial](https://www.youtube.com/playlist?list=PL5P7shki7MOWkMgMpRkPl-nNVJEKRU8fQ) by Matias Codesal
+ 
 ### Notable Asset Stores with USD Content
 
  * [CG Trader](https://www.cgtrader.com/3d-models/ext/usd)
