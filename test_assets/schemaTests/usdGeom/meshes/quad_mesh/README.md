@@ -2,7 +2,7 @@
 
 ## Screenshot
 
-![screenshot](screenshots/quad_usdrecord_22.08.png)
+![screenshot](./screenshots/quads_usdrecord_22.08.png)
 _usdrecord 22.08_
 
 ## Description
