@@ -37,6 +37,11 @@ A minimal schema test asset should include one representative asset per USD sche
 descriptions, along with screenshots of what the asset should look like when correctly imported and exported. In addition, the
 readme page should offer high-level guidance on round-trip concerns or common issues specific to the schema.
 
+## What's the difference between ASWF USD Assets vs. ASWF DPEL Assets?
+
+The Digital Production Example Library (DPEL) is for production assets of all data formats, where the USD Assets group is purely for USD assets,
+which are explicitly small and/or educational (very much NOT production assets).
+
 # Even Moar USD Assets
 
 The USD Assets repository is limited to small assets designed for testing, validation, and learning; the external links we've collected below
