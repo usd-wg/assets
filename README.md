@@ -45,3 +45,9 @@ a link.
  * [Polyhaven](https://github.com/minami110/polyhaven)
  * [Side FX - Bar Scene](https://www.sidefx.com/contentlibrary/bar-scene/)
  * [Side FX - Content Library](https://www.sidefx.com/contentlibrary/)
+
+### Notable Asset Stores with USD Content
+
+ * [CG Trader](https://www.cgtrader.com/3d-models/ext/usd)
+ * [SketchFab](https://sketchfab.com/) - all models available as USDZ
+ * [Turbo Squid](https://www.turbosquid.com/Search/3D-Models/usd)
