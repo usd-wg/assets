@@ -19,6 +19,9 @@ written descriptions of intent or reference images to show how a given asset sho
 
 **Full Assets:** The full_assets folder contains examples of assets that you might find in the wild, in terms of their structure, but are still limited in terms of file size. The largest "full asset" at the time of this writing is 30mb.
 
+![image](https://github.com/usd-wg/assets/assets/1510114/e4d19125-371c-4940-9894-17af119822bc)
+(Full asset example: [StandardShaderBall](full_assets/StandardShaderBall/))
+
 ## Contributing
 If you'd like to get involved to contribute, discuss schema, or just generally talk about USD assets, please reach out on slack or join our monthly sync:
 
