@@ -1,15 +1,16 @@
 #usda 1.0
 (
+    defaultPrim = "Teapot"
     endTimeCode = 1
     framesPerSecond = 24
     metersPerUnit = 1
     startTimeCode = 1
     timeCodesPerSecond = 24
     upAxis = "Y"
-    defaultPrim = "Teapot"
 )
 
 def Xform "Teapot" (
+    prepend apiSchemas = ["AssetPreviewsAPI"]
     assetInfo = {
         dictionary credits = {
             string FancyTeapot = "PolyHaven | Public Domain - CC0 | https://polyhaven.com/a/tea_set_01"
@@ -17,6 +18,13 @@ def Xform "Teapot" (
         }
         asset identifier = @Teapot.usd@
         string name = "Teapot"
+        dictionary previews = {
+            dictionary thumbnails = {
+                dictionary default = {
+                    asset defaultImage = @renders/Teapot.exr@
+                }
+            }
+        }
         string version = "1.0"
     }
     prepend payload = @./Teapot_Payload.usd@
