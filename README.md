@@ -25,10 +25,10 @@ written descriptions of intent or reference images to show how a given asset sho
 ## Contributing
 If you'd like to get involved to contribute, discuss schema, or just generally talk about USD assets, please reach out on slack or join our monthly sync:
 
- * [Calendar](https://lists.aswf.io/g/wg-usd/calendar)
- * [Wiki Page](https://wiki.aswf.io/display/WGUSD/USD+Assets)
  * Slack: [#wg-usd-assets](https://academysoftwarefdn.slack.com/archives/C02TZPYMP8S) on [academysoftwarefdn.slack.com](https://join.slack.com/t/academysoftwarefdn/shared_invite/zt-24cnganaf-~1UQpPJIdeoQohWk0k5X5g)
  * [Meeting Notes](https://drive.google.com/drive/u/0/folders/1jIosOIcpnLDLdcjv78NN8g7TWJR3KaIZ)
+ * [Wiki Page](https://wiki.aswf.io/display/WGUSD/USD+Assets)
+ * [Calendar](https://lists.aswf.io/g/wg-usd/calendar)
  * Zoom: note that after the switch to LXF, you must now register for the event and will be given a personalized zoom link (also note that this link is personalized and cannot be shared).
 
 ### Submitting a New Asset
@@ -40,7 +40,7 @@ A minimal schema test asset should include one representative asset per USD sche
 descriptions, along with screenshots of what the asset should look like when correctly imported and exported. In addition, the
 readme page should offer high-level guidance on round-trip concerns or common issues specific to the schema.
 
-## What's the difference between ASWF USD Assets vs. ASWF DPEL Assets?
+## Why ASWF USD Assets and ASWF DPEL Assets?
 
 The Digital Production Example Library (DPEL) is for production assets of all data formats, where the USD Assets group is purely for USD assets,
 which are explicitly small and/or educational (very much NOT production assets).
@@ -79,4 +79,8 @@ If you have suggestions for this list, please open a GitHub issue and share a li
  * [Awesome OpenUSD](https://github.com/matiascodesal/awesome-openusd) a collection of tutorials and educational links by Matias Codesal
  * [The Book of USD](https://remedy-entertainment.github.io/USDBook/) by Remedy Entertainment
  * [USD Hello World](https://github.com/carlynorama/USDHelloWorld) also see the related [Blog Post](https://github.com/carlynorama/USDHelloWorld#toc) by carlynorama
- * [UsdSkell Tutorial](https://www.youtube.com/playlist?list=PL5P7shki7MOWkMgMpRkPl-nNVJEKRU8fQ) by Matias Codesal
+ * [UsdSkel Tutorial](https://www.youtube.com/playlist?list=PL5P7shki7MOWkMgMpRkPl-nNVJEKRU8fQ) by Matias Codesal
+
+# Licenses
+
+Each asset has a license declared in the readme, typically CC0 or something highly permissive. Everything else is provided under the [repository license](LICENSE).
