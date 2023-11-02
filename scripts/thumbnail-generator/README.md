@@ -13,9 +13,12 @@ positional arguments:
 optional arguments:
   - `-h`, `--help` : Show help
   - `--create-usdz-result` :  Returns the resulting files as a new USDZ file called `<subject_usd_file>_Thumbnail.usdz`
-  - `--output-extension` :    The file extension of the output image you want (exr, png..). If using exr, make sure your usd install includes OpenEXR
+  - `--output-extension` :    The file extension of the output image you want (exr, png..). If using exr, make sure your USD install includes OpenEXR (exr is natively included in USD as of version 23.11)
   - `--verbose` :             Prints out the steps as they happen
-  - `--dome-light` :          The path to the dome light HDR image to use, if any
+  - `--dome-light` :          The path to the dome light HDR image to use, 
+  - `--width` :          The width of the image in pixels to generate. Default is 2048.
+
+  - `--height` :          The height of the image in pixels to generate. Default is 2048. If height is not specified, the image is square.
 
   Note: You must have usd installed and available in your path. [Install Steps Here](https://github.com/PixarAnimationStudios/OpenUSD#getting-and-building-the-code)
 
@@ -28,7 +31,7 @@ Given a USD file to use as the subject of the thumbnail do the following
     - macOS
         - `usdrecord --camera ZCamera --imageWidth 2048 --renderer Metal camera.usda <input>.png` 
     - windows
-        - `usdrecord --camera ZCamera --imageWidth 2048 --renderer GL camera.usda <input>.#.png` 
+        - `usdrecord --camera ZCamera --imageWidth 2048 --renderer GL camera.usda <input>.png` 
         - note: this will run with `shell=True` for the subprocess call
     - linux
         - `usdrecord --camera ZCamera --imageWidth 2048 --renderer Metal camera.usda <input>.png`
