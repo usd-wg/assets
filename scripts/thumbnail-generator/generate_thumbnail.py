@@ -46,7 +46,7 @@ def parse_args():
 THUMBNAIL_LAYER_SUFFIX_USDA = "_Thumbnail.usda"
 THUMBNAIL_LAYER_SUFFIX = "_Thumbnail"
 DEFAULT_THUMBNAIL_FILENAME = "default_thumbnail.usda"
-THUMBNAIL_FOLDER_NAME = "renders"
+THUMBNAIL_FOLDER_NAME = "thumbnails"
 RENDER_PURPOSE_MAP = {
     "default": UsdGeom.Tokens.default_,
     "render": UsdGeom.Tokens.render,
