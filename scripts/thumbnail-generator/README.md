@@ -20,6 +20,7 @@ optional arguments:
 
   - `--height` :          The height of the image in pixels to generate. Default is 2048. If height is not specified, the image is square.
   - `--apply-thumbnail`:    Saves the image as the thumbnail for the given USD file.
+  - `--render-purposes`:    A comma separated list of render purposes to include in the thumbnail. Valid values are: default, render, proxy, guide.
 
   Note: You must have usd installed and available in your path. [Install Steps Here](https://github.com/PixarAnimationStudios/OpenUSD#getting-and-building-the-code)
 

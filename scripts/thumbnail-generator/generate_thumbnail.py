@@ -36,41 +36,46 @@ def parse_args():
     parser.add_argument('--apply-thumbnail', 
                         action='store_true',
                         help='Saves the image as the thumbnail for the given USD file.')
+    parser.add_argument('--render-purposes', 
+                        type=str,
+                        help='A comma separated list of render purposes to include in the thumbnail. Valid values are: default, render, proxy, guide.',
+                        default='default')
+
     return parser.parse_args()
 
 THUMBNAIL_LAYER_SUFFIX_USDA = "_Thumbnail.usda"
 THUMBNAIL_LAYER_SUFFIX = "_Thumbnail"
 DEFAULT_THUMBNAIL_FILENAME = "default_thumbnail.usda"
 THUMBNAIL_FOLDER_NAME = "renders"
+RENDER_PURPOSE_MAP = {
+    "default": UsdGeom.Tokens.default_,
+    "render": UsdGeom.Tokens.render,
+    "proxy": UsdGeom.Tokens.proxy,
+    "guide": UsdGeom.Tokens.guide
+}
 
-def generate_thumbnail(usd_file, verbose, extension):
+def generate_thumbnail(usd_file, verbose, extension, render_purpose_tokens):
     if verbose: 
         print("Step 1: Setting up the camera...")
     
     subject_stage = Usd.Stage.Open(usd_file)
     subject_file = usd_file
 
-    setup_camera(subject_stage, subject_file)
+    setup_camera(subject_stage, subject_file, render_purpose_tokens)
     
     if verbose:
         print("Step 2: Taking the snapshot...")
-    
-    Path(THUMBNAIL_FOLDER_NAME).mkdir(parents=True, exist_ok=True)
 
-    image_path = os.path.join(THUMBNAIL_FOLDER_NAME, create_image_filename(usd_file, extension)).replace("\\", "/")
-    image_name = take_snapshot(image_path)
+    image_path = create_image_filename(usd_file, extension)
+    return take_snapshot(image_path)
 
-    return image_name
-
-
-def setup_camera(subject_stage, usd_file):
+def setup_camera(subject_stage, usd_file, render_purpose_tokens):
     up_axis = UsdGeom.GetStageUpAxis(subject_stage)
     is_z_up = up_axis == 'Z'
 
     camera_stage = create_camera(up_axis)
-    move_camera(camera_stage, subject_stage, is_z_up)
+    move_camera(camera_stage, subject_stage, render_purpose_tokens, is_z_up)
 
-    # check if string is not empty
     if args.dome_light:
         add_domelight(camera_stage, is_z_up)
 
@@ -80,16 +85,12 @@ def setup_camera(subject_stage, usd_file):
 def create_camera(up_axis):
     stage = Usd.Stage.CreateNew(DEFAULT_THUMBNAIL_FILENAME)
 
-    # Set metadata on the stage.
     stage.SetDefaultPrim(stage.DefinePrim('/ThumbnailGenerator', 'Xform'))
     stage.SetMetadata('metersPerUnit', 0.01)
-
     UsdGeom.SetStageUpAxis(stage, up_axis) 
 
-    # Define the "MainCamera" under the "ThumbnailGenerator".
     camera = UsdGeom.Camera.Define(stage, '/ThumbnailGenerator/MainCamera')
 
-    # Set the camera attributes.
     camera.CreateFocusDistanceAttr(168.60936)
     camera.CreateFStopAttr(0)
     camera.CreateHorizontalApertureAttr(24)
@@ -110,9 +111,9 @@ def set_camera_stage_draw_mode(camera_stage, subject_stage):
     geom_model_api.CreateModelDrawModeAttr(UsdGeom.Tokens.default_)
     camera_stage.Save()
 
-def move_camera(camera_stage, subject_stage, is_z_up):
+def move_camera(camera_stage, subject_stage, render_purpose_tokens, is_z_up):
     camera_prim = UsdGeom.Camera.Get(camera_stage, '/ThumbnailGenerator/MainCamera')
-    camera_translation = create_camera_translation_and_clipping(subject_stage, camera_prim, is_z_up)
+    camera_translation = create_camera_translation_and_clipping(subject_stage, camera_prim, render_purpose_tokens, is_z_up)
     apply_camera_transforms(camera_stage, camera_prim, camera_translation, is_z_up)
 
 def add_domelight(camera_stage, is_z_up):
@@ -125,8 +126,8 @@ def add_domelight(camera_stage, is_z_up):
         xformRoot = UsdGeom.Xformable(domeLight.GetPrim())
         xformRoot.AddRotateXOp().Set(90)
 
-def create_camera_translation_and_clipping(subject_stage, camera_prim, is_z_up):
-    bounding_box = get_bounding_box(subject_stage)
+def create_camera_translation_and_clipping(subject_stage, camera_prim, render_purpose_tokens, is_z_up):
+    bounding_box = get_bounding_box(subject_stage, render_purpose_tokens)
     min_bound = bounding_box.GetMin()
     max_bound = bounding_box.GetMax()
 
@@ -154,8 +155,8 @@ def create_camera_translation_and_clipping(subject_stage, camera_prim, is_z_up):
 
     return cameraPosition
 
-def get_bounding_box(subject_stage):
-    bboxCache = UsdGeom.BBoxCache(Usd.TimeCode(0.0), [UsdGeom.Tokens.default_])
+def get_bounding_box(subject_stage, render_purpose_tokens):
+    bboxCache = UsdGeom.BBoxCache(Usd.TimeCode(0.0), render_purpose_tokens)
     # Compute the bounding box for all geometry under the root
     root = subject_stage.GetPseudoRoot()
     return bboxCache.ComputeWorldBound(root).GetBox()
@@ -243,7 +244,15 @@ def run_os_specific_command(cmd):
             subprocess.run(cmd, check=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
 
 def create_image_filename(input_path, extension):
-    return Path(input_path).with_suffix("." + extension)
+    if not isinstance(input_path, Path):
+        input_path = Path(input_path)
+    if THUMBNAIL_FOLDER_NAME:
+        thumbnail_folder_dir = Path().joinpath(input_path.parent, THUMBNAIL_FOLDER_NAME)
+    else:
+        thumbnail_folder_dir = input_path.parent
+    thumbnail_folder_dir.mkdir(parents=True, exist_ok=True)
+    return str(Path().joinpath(thumbnail_folder_dir, input_path.name).with_suffix("." + extension)).replace("\\", "/")
+
 
 def link_image_to_subject(subject_stage, image_name):
     subject_root_prim = subject_stage.GetDefaultPrim()
@@ -277,8 +286,6 @@ def zip_results(usd_file, is_usdz):
     if is_usdz:
         os.remove(usd_file.replace(usdPath.suffix, THUMBNAIL_LAYER_SUFFIX_USDA))
 
-    
-
 def list_resolved_dependencies(stage_path):
     resolved_dependencies = []
     layers, assets, unresolved = UsdUtils.ComputeAllDependencies(stage_path)
@@ -288,19 +295,25 @@ def list_resolved_dependencies(stage_path):
     resolved_dependencies.extend(resolved_assets)
     return resolved_dependencies
 
+def convert_render_purposes_to_tokens(render_purposes):
+    return [RENDER_PURPOSE_MAP[key] for key in render_purposes.split(',')]
+
 if __name__ == "__main__":
 
     args = parse_args()
 
     usd_file = args.usd_file
     is_usdz = usd_file.endswith(".usdz")
+
+    purpose_tokens = convert_render_purposes_to_tokens(args.render_purposes)
         
-    image_name = generate_thumbnail(usd_file, args.verbose, args.output_extension)
+    image_name = generate_thumbnail(usd_file, args.verbose, args.output_extension, purpose_tokens)
     subject_stage = create_usdz_wrapper_stage(usd_file) if is_usdz and args.apply_thumbnail else Usd.Stage.Open(usd_file)
     
     if args.apply_thumbnail:
         if args.verbose:
             print("Step 3: Linking thumbnail to subject...")
+            
         link_image_to_subject(subject_stage, image_name)
 
     if args.create_usdz_result:
