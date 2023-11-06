@@ -38,7 +38,8 @@ def parse_args():
                         help='Saves the image as the thumbnail for the given USD file.')
     return parser.parse_args()
 
-THUMBNAIL_LAYER_SUFFIX = "_Thumbnail.usda"
+THUMBNAIL_LAYER_SUFFIX_USDA = "_Thumbnail.usda"
+THUMBNAIL_LAYER_SUFFIX = "_Thumbnail"
 DEFAULT_THUMBNAIL_FILENAME = "default_thumbnail.usda"
 THUMBNAIL_FOLDER_NAME = "renders"
 
@@ -49,7 +50,7 @@ def generate_thumbnail(usd_file, verbose, extension):
     subject_stage = Usd.Stage.Open(usd_file)
     subject_file = usd_file
 
-    setup_camera(subject_stage, subject_file, UsdGeom.GetStageUpAxis(subject_stage) == 'Z')
+    setup_camera(subject_stage, subject_file)
     
     if verbose:
         print("Step 2: Taking the snapshot...")
@@ -62,8 +63,11 @@ def generate_thumbnail(usd_file, verbose, extension):
     return image_name
 
 
-def setup_camera(subject_stage, usd_file, is_z_up):
-    camera_stage = create_camera(UsdGeom.GetStageUpAxis(subject_stage))
+def setup_camera(subject_stage, usd_file):
+    up_axis = UsdGeom.GetStageUpAxis(subject_stage)
+    is_z_up = up_axis == 'Z'
+
+    camera_stage = create_camera(up_axis)
     move_camera(camera_stage, subject_stage, is_z_up)
 
     # check if string is not empty
@@ -71,6 +75,7 @@ def setup_camera(subject_stage, usd_file, is_z_up):
         add_domelight(camera_stage, is_z_up)
 
     sublayer_subject(camera_stage, usd_file)
+    set_camera_stage_draw_mode(camera_stage, subject_stage)
 
 def create_camera(up_axis):
     stage = Usd.Stage.CreateNew(DEFAULT_THUMBNAIL_FILENAME)
@@ -97,6 +102,13 @@ def create_camera(up_axis):
         camera.CreateHorizontalApertureAttr(24 * args.width / args.height)
 
     return stage
+
+def set_camera_stage_draw_mode(camera_stage, subject_stage):
+    defaultPrim_path = subject_stage.GetDefaultPrim().GetPath()
+    subject_defaultPrim = camera_stage.GetPrimAtPath(defaultPrim_path)
+    geom_model_api = UsdGeom.ModelAPI(subject_defaultPrim)
+    geom_model_api.CreateModelDrawModeAttr(UsdGeom.Tokens.default_)
+    camera_stage.Save()
 
 def move_camera(camera_stage, subject_stage, is_z_up):
     camera_prim = UsdGeom.Camera.Get(camera_stage, '/ThumbnailGenerator/MainCamera')
@@ -200,10 +212,12 @@ def sublayer_subject(camera_stage, input_file):
     camera_stage.GetRootLayer().subLayerPaths = [input_file]
     camera_stage.GetRootLayer().Save()
 
+    return camera_stage
+
 def take_snapshot(image_name):
     renderer = get_renderer()
     cmd = ['usdrecord', '--camera', 'MainCamera', '--imageWidth', str(args.width), '--renderer', renderer, DEFAULT_THUMBNAIL_FILENAME, image_name]
-    run_os_specific_usdrecord(cmd)
+    run_os_specific_command(cmd)
     os.remove(DEFAULT_THUMBNAIL_FILENAME)
     return image_name
 
@@ -219,7 +233,7 @@ def get_renderer():
             print("linux default renderer GL being used...")
             return 'GL'
 
-def run_os_specific_usdrecord(cmd):
+def run_os_specific_command(cmd):
     if os.name == 'nt':
         subprocess.run(cmd, check=True, shell=True, stdout=subprocess.DEVNULL, stderr=subprocess.STDOUT)
     else:
@@ -241,7 +255,7 @@ def link_image_to_subject(subject_stage, image_name):
 def create_usdz_wrapper_stage(usdz_file):
     file_name = usdz_file.split('.')[0]
     existing_stage = Usd.Stage.Open(usd_file)
-    new_stage = Usd.Stage.CreateNew(file_name + THUMBNAIL_LAYER_SUFFIX)
+    new_stage = Usd.Stage.CreateNew(file_name + THUMBNAIL_LAYER_SUFFIX_USDA)
     
     UsdUtils.CopyLayerMetadata(existing_stage.GetRootLayer(), new_stage.GetRootLayer())
 
@@ -249,27 +263,41 @@ def create_usdz_wrapper_stage(usdz_file):
     new_stage.GetRootLayer().Save()
     return new_stage
 
-def zip_results(usd_file, image_name, is_usdz):
-    file_list = [usd_file, image_name]
+def zip_results(usd_file, is_usdz):
+    file_list = list_resolved_dependencies(usd_file)
     usdPath = Path(usd_file)
 
     if is_usdz:
-        file_list.append(usdPath.with_suffix(THUMBNAIL_LAYER_SUFFIX))
-        
-    usdz_file = usdPath.with_suffix('_Thumbnail.usdz')
+        file_list.append(usd_file.replace(usdPath.suffix, THUMBNAIL_LAYER_SUFFIX_USDA))
+
+    usdz_file = usd_file.replace(usdPath.suffix, THUMBNAIL_LAYER_SUFFIX)
     cmd = ["usdzip", "-r", usdz_file] + file_list
-    subprocess.run(cmd)
+    run_os_specific_command(cmd)
+
+    if is_usdz:
+        os.remove(usd_file.replace(usdPath.suffix, THUMBNAIL_LAYER_SUFFIX_USDA))
+
+    
+
+def list_resolved_dependencies(stage_path):
+    resolved_dependencies = []
+    layers, assets, unresolved = UsdUtils.ComputeAllDependencies(stage_path)
+    resolved_layers = [os.path.normpath(layer.realPath) for layer in layers]
+    resolved_dependencies.extend(resolved_layers)
+    resolved_assets = [os.path.normpath(asset) for asset in assets]
+    resolved_dependencies.extend(resolved_assets)
+    return resolved_dependencies
 
 if __name__ == "__main__":
 
     args = parse_args()
 
     usd_file = args.usd_file
-    is_usdz = ".usdz" in usd_file
+    is_usdz = usd_file.endswith(".usdz")
         
     image_name = generate_thumbnail(usd_file, args.verbose, args.output_extension)
-    subject_stage = create_usdz_wrapper_stage(usd_file) if is_usdz else Usd.Stage.Open(usd_file)
-
+    subject_stage = create_usdz_wrapper_stage(usd_file) if is_usdz and args.apply_thumbnail else Usd.Stage.Open(usd_file)
+    
     if args.apply_thumbnail:
         if args.verbose:
             print("Step 3: Linking thumbnail to subject...")
@@ -279,4 +307,4 @@ if __name__ == "__main__":
         if args.verbose:
             print("Step 4: Creating usdz result...")
         
-        zip_results(usd_file, image_name, is_usdz)
+        zip_results(usd_file, is_usdz)
