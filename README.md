@@ -3,7 +3,7 @@
 This repository contains examples of USD assets provided under the umbrella of the [ASWF USD WG](https://wiki.aswf.io/display/WGUSD).
 Our objective is to foster information exchange within the USD community regarding USD asset import/export, asset structure, testing, and schema design. The overarching goal of this group is to bolster the U of USD.
 
-The GitHub repository is only half the story: much of the value this working group provides is in the montly sync where folks present schema, discuss asset/pipeline problems, and share plans for this repository -- please consider joining!
+The GitHub repository is only half the story: much of the value this working group provides is in the monthly sync where folks present schema, discuss asset/pipeline problems, and share plans for this repository -- please consider joining!
 
 ## What's in this Repo?
 
@@ -11,7 +11,7 @@ The repository is roughly structure into three buckets: documentation, test asse
 
 **Documentation:** A collection of markdown docs and educational assets designed for education and common practices for asset design.
 
-**Test Assets:** Test assets are intended to be used as unit tests and includ docs and screenshots.
+**Test Assets:** Test assets are intended to be used as unit tests and include docs and screenshots.
 Correct and intentionally malformed assets are included in this collection.
 Schema-specific assets are designed to aid developers in correctly handling various USD schema. It's often unclear exactly how a specific
 schema should be imported or exported based on the schema docs alone and the unit tests provided by the schema typically don't include
@@ -34,7 +34,7 @@ If you'd like to get involved to contribute, discuss schema, or just generally t
 ### Submitting a New Asset
 
 Before submitting, take a look at an existing asset. A well formed example should include a read me doc with license, a screenshot and comments
-on how the asset is intented to be used and common issues to avoid.
+on how the asset is intended to be used and common issues to avoid.
 
 A minimal schema test asset should include one representative asset per USD schema, with qualitative & quantitative
 descriptions, along with screenshots of what the asset should look like when correctly imported and exported. In addition, the
