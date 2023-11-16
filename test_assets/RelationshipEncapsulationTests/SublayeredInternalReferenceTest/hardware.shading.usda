@@ -97,8 +97,7 @@ over "World"
                             float min = 0
                         }
                     }
-                    doc = """This parameter is unused.
-"""
+                    doc = """This parameter is unused."""
                     hidden = false
                 )
                 float inputs:opacity = 1 (
