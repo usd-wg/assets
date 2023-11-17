@@ -1,5 +1,7 @@
 # Unencapsulated Relationship Tests
 
+> **NOTE**: This contains tests that show behavior changes introduced in newer versions of USD.
+
 These tests focus on demonstrating valid and invalid uses of unencapsulated relationship targets. A relationship target is unencapsulated when the target prim path is outside of the scope of a reference target prim and its descendants. When these sorts of relationships are referenced, the composition engine is unable to resolve and update the prim path of the relationship target because the target no longer exists in the new context. This can happen due to:
 1. Bad asset structure with relationships target prims outside of the default prim.
 2. Misuse of a reference by targeting a prim that wasn't designed or intended to be a reference target.
@@ -81,6 +83,8 @@ Warning (secondary thread): in _ReportErrors at line 3157 of W:\257786efc4f464db
 ```
 
 ## Internal reference with unencapsulated material binding (InternalReferenceTest)
+> **NOTE**: This test shows behavior changes introduced in newer versions of USD (23.05+).
+
 The `InternalReferenceTest.usda` stage is an assembly asset with some prototype component assets defined inline. These prototype assets are then used as internal references and potentially natively instanced as a workflow and performance optimization. This is a useful technique for DCCs that may want to export an assembly asset as a single layer, but still identify component assets within the assembly say a car from a CAD application with fully modeled hardware that is repeated many times with the car asset.
 
 This can get tricky when a developer wants to share one material across multiple component assets (e.g. a copper metal material shared between bolts and washers). One valid, but tedious approach is to bind the shared material after the prototypes have been referenced within the assembly. 
@@ -187,6 +191,8 @@ Warning (secondary thread): in _ReportErrors at line 2874 of W:\e7f6a7475fd8ed53
 ![](screenshots/InternalReferenceTest_23.05-plus.png)
 
 ## Internal reference with unencapsulated material bindings across sublayers (SublayeredInternalReferenceTest)
+> **NOTE**: This test shows behavior changes introduced in newer versions of USD (23.05+).
+
 This is similar to the [regular internal reference example](#internal-reference-with-unencapsulated-material-binding-internalreferencetest), but extends the example to utilize sublayers to show that the unencapsulated material binding in an internal reference is respected for the whole LayerStack as of 23.05. The example shows an assembly where the developer wanted to separate the modeling and shading work into sublayers. The component model prototypes and the assembly layout are defined in a `*.modeling.usda` sublayer and a shared material is created and bound to the prototypes in a `*.shading.usda` sublayer.
 
 ### Result: (Invalid in <23.05)
@@ -257,11 +263,6 @@ class Scope "Prototypes"
 {
     def Xform "bolt" (kind = "component") { ... }        
 }
-```
-
-__Note__ 
-```
-I think the internal references are resolved and the primspec from the prototypes applied to each copy before the external reference of the assembly is resolved. The assembly's LayerStack is essentially fully resolved when the it is externally referenced so that the unencapsulation of the internal references don't matter.
 ```
 
 ### Result: (Valid in <23.05)
