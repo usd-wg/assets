@@ -1,5 +1,7 @@
 #usda 1.0
 (
+    defaultPrim = "Environment"
+    metersPerUnit = 0.01
     upAxis = "Z"
 )
 

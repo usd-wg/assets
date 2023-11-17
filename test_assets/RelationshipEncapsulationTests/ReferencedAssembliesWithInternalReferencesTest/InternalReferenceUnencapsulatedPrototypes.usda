@@ -5,7 +5,7 @@
     metersPerUnit = 0.01
     startTimeCode = 0
     subLayers = [
-        @./utils/Environment.usda@
+        @../utils/Environment.usda@
     ]
     timeCodesPerSecond = 60
     upAxis = "Z"
