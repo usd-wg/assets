@@ -17,6 +17,9 @@ _washer.usda_
 ```python
 #usda 1.0
 (
+    defaultPrim = "World"
+    metersPerUnit = 0.01
+    upAxis = "Z"
 )
 
 def Xform "World" (
@@ -49,6 +52,9 @@ _Stage_
 ```python
 #usda 1.0
 (
+    defaultPrim = "World"
+    metersPerUnit = 0.01
+    upAxis = "Z"
 )
 
 def Xform "World"
@@ -82,6 +88,9 @@ This can get tricky when a developer wants to share one material across multiple
 ```python
 #usda 1.0
 (
+    defaultPrim = "World"
+    metersPerUnit = 0.01
+    upAxis = "Z"
 )
 
 class Scope "Prototypes"
@@ -124,6 +133,9 @@ Another approach would be to create an unencapsulated relationship for the mater
 ```python
 #usda 1.0
 (
+    defaultPrim = "World"
+    metersPerUnit = 0.01
+    upAxis = "Z"
 )
 
 class Scope "Prototypes"
