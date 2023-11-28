@@ -273,3 +273,7 @@ As expected, the unencapsulated material binding in the internal references will
 ### Result: (Valid in 23.05+)
 
 ![](screenshots/ReferencedAssembliesWithInternalReferencesTest_23.05-plus.png)
+
+## License
+
+These assets are provided under the [Apache 2.0](../../LICENSE) license.
