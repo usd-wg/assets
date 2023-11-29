@@ -1,0 +1,192 @@
+#usda 1.0
+(
+    defaultPrim = "World"
+    metersPerUnit = 0.01
+    upAxis = "Z"
+)
+
+over "World"
+{
+    def Scope "Looks"
+    {
+        def Material "metal"
+        {
+            token outputs:displacement.connect = </World/Looks/metal/Shader.outputs:displacement>
+            token outputs:surface.connect = </World/Looks/metal/Shader.outputs:surface>
+
+            def Shader "Shader"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                float inputs:clearcoat = 0 (
+                    customData = {
+                        float default = 0
+                        dictionary range = {
+                            float max = 1
+                            float min = 0
+                        }
+                    }
+                    hidden = false
+                )
+                float inputs:clearcoatRoughness = 0.01 (
+                    customData = {
+                        float default = 0.01
+                        dictionary range = {
+                            float max = 1
+                            float min = 0
+                        }
+                    }
+                    hidden = false
+                )
+                color3f inputs:diffuseColor = (1, 0.7243665, 0.20462048) (
+                    customData = {
+                        float3 default = (0.18, 0.18, 0.18)
+                    }
+                    hidden = false
+                    renderType = "color"
+                )
+                float inputs:displacement = 0 (
+                    customData = {
+                        float default = 0
+                    }
+                    hidden = false
+                )
+                color3f inputs:emissiveColor = (0, 0, 0) (
+                    customData = {
+                        float3 default = (0, 0, 0)
+                    }
+                    hidden = false
+                    renderType = "color"
+                )
+                float inputs:ior = 1.5 (
+                    customData = {
+                        float default = 1.5
+                        dictionary range = {
+                            float max = 3.4028235e38
+                            float min = 0
+                        }
+                        dictionary soft_range = {
+                            float max = 5
+                            float min = 1
+                        }
+                    }
+                    hidden = false
+                )
+                float inputs:metallic = 1 (
+                    customData = {
+                        float default = 0
+                        dictionary range = {
+                            float max = 1
+                            float min = 0
+                        }
+                    }
+                    hidden = false
+                )
+                normal3f inputs:normal = (0, 0, 1) (
+                    customData = {
+                        float3 default = (0, 0, 1)
+                        dictionary range = {
+                            float3 max = (1, 1, 1)
+                            float3 min = (-1, -1, -1)
+                        }
+                    }
+                    hidden = false
+                )
+                float inputs:occlusion = 1 (
+                    customData = {
+                        float default = 1
+                        dictionary range = {
+                            float max = 1
+                            float min = 0
+                        }
+                    }
+                    doc = """This parameter is unused."""
+                    hidden = false
+                )
+                float inputs:opacity = 1 (
+                    customData = {
+                        float default = 1
+                        dictionary range = {
+                            float max = 1
+                            float min = 0
+                        }
+                    }
+                    hidden = false
+                )
+                float inputs:opacityThreshold = 0 (
+                    connectability = "interfaceOnly"
+                    customData = {
+                        float default = 0
+                        dictionary range = {
+                            float max = 1
+                            float min = 0
+                        }
+                    }
+                    hidden = false
+                )
+                float inputs:roughness = 0.26999998 (
+                    customData = {
+                        float default = 0.5
+                        dictionary range = {
+                            float max = 1
+                            float min = 0
+                        }
+                    }
+                    hidden = false
+                )
+                color3f inputs:specularColor = (0, 0, 0) (
+                    customData = {
+                        float3 default = (0, 0, 0)
+                    }
+                    hidden = false
+                    renderType = "color"
+                )
+                int inputs:useSpecularWorkflow = 0 (
+                    connectability = "interfaceOnly"
+                    customData = {
+                        int default = 0
+                        dictionary range = {
+                            int max = 1
+                            int min = 0
+                        }
+                        string widgetType = "checkBox"
+                    }
+                    hidden = false
+                )
+                token outputs:displacement (
+                    renderType = "material"
+                )
+                token outputs:surface (
+                    renderType = "material"
+                )
+            }
+        }
+    }
+}
+
+over "Prototypes"
+{
+    over "washer"
+    {
+        over "washer" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </World/Looks/metal> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+        }
+    }
+
+    over "bolt"
+    {
+        over "bolt" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </World/Looks/metal> (
+                bindMaterialAs = "weakerThanDescendants"
+            )
+        }
+    }
+}
+
