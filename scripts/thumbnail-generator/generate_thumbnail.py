@@ -12,7 +12,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description="This script takes a thumbnail image of the given USD file supplied and associates it with the file.")
     parser.add_argument('usd_file', 
                         type=str, 
-                        help='The USD file you want to add a thumbnail to. If USDZ is input, a new USD file will be created to wrap the existing one called <input>_Thumbnail.usd')
+                        help='The USD file you want to add a thumbnail to. If USDZ is input, a new USD file will be created to wrap the existing one called `<subject_usd_file>_Thumbnail.usd`, this is required by the script but ignored in the case that `--directory` is set.')
     parser.add_argument('--dome-light',
                         type=str,
                         help='The path to the dome light HDR image to use, if any')
@@ -40,6 +40,13 @@ def parse_args():
                         type=str,
                         help='A comma separated list of render purposes to include in the thumbnail. Valid values are: default, render, proxy, guide.',
                         default='default')
+    parser.add_argument('--directory', 
+                        type=str,
+                        help='A directory to generate thumbnails for all .usd, .usda, .usdc, and .usdz files. When a directory is supplied, usd-file is ignored.',
+                        default='default')
+    parser.add_argument('--directory-recursive', 
+                        action='store_true',
+                        help='Will recursively search all directories underneath a given directory, requires a directory to be set.')
 
     return parser.parse_args()
 
@@ -47,6 +54,7 @@ THUMBNAIL_LAYER_SUFFIX_USDA = "_Thumbnail.usda"
 THUMBNAIL_LAYER_SUFFIX = "_Thumbnail"
 DEFAULT_THUMBNAIL_FILENAME = "default_thumbnail.usda"
 THUMBNAIL_FOLDER_NAME = "thumbnails"
+EXTENSIONS = ('.usd', '.usda', '.usdc', '.usdz')
 RENDER_PURPOSE_MAP = {
     "default": UsdGeom.Tokens.default_,
     "render": UsdGeom.Tokens.render,
@@ -298,11 +306,7 @@ def list_resolved_dependencies(stage_path):
 def convert_render_purposes_to_tokens(render_purposes):
     return [RENDER_PURPOSE_MAP[key] for key in render_purposes.split(',')]
 
-if __name__ == "__main__":
-
-    args = parse_args()
-
-    usd_file = args.usd_file
+def generate_single_thumbnail(usd_file, args):
     is_usdz = usd_file.endswith(".usdz")
 
     purpose_tokens = convert_render_purposes_to_tokens(args.render_purposes)
@@ -321,3 +325,30 @@ if __name__ == "__main__":
             print("Step 4: Creating usdz result...")
         
         zip_results(usd_file, is_usdz)
+
+if __name__ == "__main__":
+
+    args = parse_args()
+
+    if args.directory and args.directory_recursive:
+        for root, dirs, files in os.walk(args.directory):
+            for file in files:
+                if file.endswith(EXTENSIONS):
+                    file_path = os.path.join(root, file)
+                    print(f"Processing {file_path}...")
+                    try: 
+                        generate_single_thumbnail(file_path, args)
+                    except Exception as e:
+                        print(f"Error processing {file_path}: {e}")
+    elif args.directory:
+        for file in os.listdir(args.directory):
+            if file.endswith(EXTENSIONS):
+                file_path = os.path.join(args.directory, file)
+                print(f"Processing {file_path}...")
+                try: 
+                    generate_single_thumbnail(file_path, args)
+                except Exception as e:
+                    print(f"Error processing {file_path}: {e}")
+    else:
+        usd_file = args.usd_file
+        generate_single_thumbnail(usd_file, args)
