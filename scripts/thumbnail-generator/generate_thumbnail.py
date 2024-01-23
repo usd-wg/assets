@@ -10,9 +10,9 @@ from pathlib import Path
 
 def parse_args():
     parser = argparse.ArgumentParser(description="This script takes a thumbnail image of the given USD file supplied and associates it with the file.")
-    parser.add_argument('usd_file', 
+    parser.add_argument('--usd-file', 
                         type=str, 
-                        help='The USD file you want to add a thumbnail to. If USDZ is input, a new USD file will be created to wrap the existing one called `<subject_usd_file>_Thumbnail.usd`, this is required by the script but ignored in the case that `--directory` is set.')
+                        help='The USD file you want to add a thumbnail to. If USDZ is input, a new USD file will be created to wrap the existing one called `<subject_usd_file>_Thumbnail.usd`')
     parser.add_argument('--dome-light',
                         type=str,
                         help='The path to the dome light HDR image to use, if any')
@@ -42,9 +42,8 @@ def parse_args():
                         default='default')
     parser.add_argument('--directory', 
                         type=str,
-                        help='A directory to generate thumbnails for all .usd, .usda, .usdc, and .usdz files. When a directory is supplied, usd-file is ignored.',
-                        default='default')
-    parser.add_argument('--directory-recursive', 
+                        help='A directory to generate thumbnails for all .usd, .usda, .usdc, and .usdz files. When a directory is supplied, usd-file is ignored.')
+    parser.add_argument('--recursive', 
                         action='store_true',
                         help='Will recursively search all directories underneath a given directory, requires a directory to be set.')
 
@@ -330,7 +329,7 @@ if __name__ == "__main__":
 
     args = parse_args()
 
-    if args.directory and args.directory_recursive:
+    if args.directory and args.recursive:
         for root, dirs, files in os.walk(args.directory):
             for file in files:
                 if file.endswith(EXTENSIONS):
@@ -349,6 +348,8 @@ if __name__ == "__main__":
                     generate_single_thumbnail(file_path, args)
                 except Exception as e:
                     print(f"Error processing {file_path}: {e}")
-    else:
+    elif args.usd_file:
         usd_file = args.usd_file
         generate_single_thumbnail(usd_file, args)
+    else:
+        print("Either --usd-file or --directory must be set.")
