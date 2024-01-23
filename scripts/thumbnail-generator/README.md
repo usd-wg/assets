@@ -5,22 +5,23 @@ Given a USD file, take a picture and assign it as it's thumbnail.
 
 ## Usage
 
-`python generate_thumbnail.py <usd_file>`
-
-positional arguments:
-  - `usd_file` : The USD file you want to add a thumbnail to. If USDZ is input, a new USD file will be created to wrap the existing one called `<subject_usd_file>_Thumbnail.usd`
+Single File Generation: `python generate_thumbnail.py --usd-file <usd_file>`
+Generation for Entire Directory: `python generate_thumbnail.py --directory <directory>`
+Generation for Entire Directory and Recursive Child Folders: `python generate_thumbnail.py --directory <directory> --recursive`
 
 optional arguments:
-  - `-h`, `--help` : Show help
+  - `-h`, `--help` :          Show help
+  - `--usd-file` :              The USD file you want to add a thumbnail to. If USDZ is input, a new USD file will be created to wrap the existing one called `<subject_usd_file>_Thumbnail.usd`
   - `--create-usdz-result` :  Returns the resulting files as a new USDZ file called `<subject_usd_file>_Thumbnail.usdz`
   - `--output-extension` :    The file extension of the output image you want (exr, png..). If using exr, make sure your USD install includes OpenEXR (exr is natively included in USD as of version 23.11)
   - `--verbose` :             Prints out the steps as they happen
   - `--dome-light` :          The path to the dome light HDR image to use, 
-  - `--width` :          The width of the image in pixels to generate. Default is 2048.
-
-  - `--height` :          The height of the image in pixels to generate. Default is 2048. If height is not specified, the image is square.
-  - `--apply-thumbnail`:    Saves the image as the thumbnail for the given USD file.
-  - `--render-purposes`:    A comma separated list of render purposes to include in the thumbnail. Valid values are: default, render, proxy, guide.
+  - `--width` :               The width of the image in pixels to generate. Default is 2048.
+  - `--height` :              The height of the image in pixels to generate. Default is 2048. If height is not specified, the image is square.
+  - `--apply-thumbnail` :     Saves the image as the thumbnail for the given USD file.
+  - `--render-purposes` :     A comma separated list of render purposes to include in the thumbnail. Valid values are: default, render, proxy, guide.
+  - `--directory` :           A directory to generate thumbnails for all .usd, .usda, .usdc, and .usdz files. When a directory is supplied, usd-file is ignored.
+  - `--recursive` : Will recursively search all directories underneath a given directory, requires a directory to be set.
 
   Note: You must have usd installed and available in your path. [Install Steps Here](https://github.com/PixarAnimationStudios/OpenUSD#getting-and-building-the-code)
 
@@ -29,7 +30,7 @@ Given a USD file to use as the subject of the thumbnail do the following
 
 1. Generate a camera such that the subject is in view
 2. Sublayer the subject in the camera
-3. Run `usdrecord` to take a snapshot and store it in `/renders/<input>.png`
+3. Run `usdrecord` to take a snapshot and store it in `/thumbnails/<input>.png`
     - macOS
         - `usdrecord --camera ZCamera --imageWidth 2048 --renderer Metal camera.usda <input>.png` 
     - windows
