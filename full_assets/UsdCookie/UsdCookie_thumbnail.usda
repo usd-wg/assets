@@ -3,6 +3,7 @@
     framesPerSecond = 24
     metersPerUnit = 1
     timeCodesPerSecond = 24
+    defaultPrim = "Cookie"
     upAxis = "Y"
 )
 
