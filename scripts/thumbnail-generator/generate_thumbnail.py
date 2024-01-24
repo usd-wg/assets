@@ -46,12 +46,16 @@ def parse_args():
     parser.add_argument('--recursive', 
                         action='store_true',
                         help='Will recursively search all directories underneath a given directory, requires a directory to be set.')
-
+    parser.add_argument('--camera',
+                        type=str,
+                        help='The path to the camera prim to use for the thumbnail image')
+    
     return parser.parse_args()
 
 THUMBNAIL_LAYER_SUFFIX_USDA = "_Thumbnail.usda"
 THUMBNAIL_LAYER_SUFFIX = "_Thumbnail"
 DEFAULT_THUMBNAIL_FILENAME = "default_thumbnail.usda"
+DEFAULT_CAMERA_NAME = 'MainCamera'
 THUMBNAIL_FOLDER_NAME = "thumbnails"
 EXTENSIONS = ('.usd', '.usda', '.usdc', '.usdz')
 RENDER_PURPOSE_MAP = {
@@ -61,22 +65,23 @@ RENDER_PURPOSE_MAP = {
     "guide": UsdGeom.Tokens.guide
 }
 
-def generate_thumbnail(usd_file, verbose, extension, render_purpose_tokens):
+def generate_thumbnail(usd_file, verbose, extension, render_purpose_tokens, camera):
     if verbose: 
         print("Step 1: Setting up the camera...")
     
     subject_stage = Usd.Stage.Open(usd_file)
     subject_file = usd_file
 
-    setup_camera(subject_stage, subject_file, render_purpose_tokens)
-    
+    file_to_snapshot = usd_file if camera else get_or_create_file_to_snapshot(subject_stage, subject_file, render_purpose_tokens)
+    image_path = create_image_filename(usd_file, extension)
+    camera_to_snapshot_from = camera if camera else DEFAULT_CAMERA_NAME
+
     if verbose:
         print("Step 2: Taking the snapshot...")
 
-    image_path = create_image_filename(usd_file, extension)
-    return take_snapshot(image_path)
+    return take_snapshot(file_to_snapshot, camera_to_snapshot_from, image_path)
 
-def setup_camera(subject_stage, usd_file, render_purpose_tokens):
+def get_or_create_file_to_snapshot(subject_stage, usd_file, render_purpose_tokens):
     up_axis = UsdGeom.GetStageUpAxis(subject_stage)
     is_z_up = up_axis == 'Z'
 
@@ -88,6 +93,9 @@ def setup_camera(subject_stage, usd_file, render_purpose_tokens):
 
     sublayer_subject(camera_stage, usd_file)
     set_camera_stage_draw_mode(camera_stage, subject_stage)
+
+    return DEFAULT_THUMBNAIL_FILENAME
+
 
 def create_camera(up_axis):
     stage = Usd.Stage.CreateNew(DEFAULT_THUMBNAIL_FILENAME)
@@ -222,11 +230,10 @@ def sublayer_subject(camera_stage, input_file):
 
     return camera_stage
 
-def take_snapshot(image_name):
+def take_snapshot(file, camera, image_name):
     renderer = get_renderer()
-    cmd = ['usdrecord', '--camera', 'MainCamera', '--imageWidth', str(args.width), '--renderer', renderer, DEFAULT_THUMBNAIL_FILENAME, image_name]
+    cmd = ['usdrecord', '--camera', camera, '--imageWidth', str(args.width), '--renderer', renderer, file, image_name]
     run_os_specific_command(cmd)
-    os.remove(DEFAULT_THUMBNAIL_FILENAME)
     return image_name
 
 def get_renderer():
@@ -310,7 +317,11 @@ def generate_single_thumbnail(usd_file, args):
 
     purpose_tokens = convert_render_purposes_to_tokens(args.render_purposes)
         
-    image_name = generate_thumbnail(usd_file, args.verbose, args.output_extension, purpose_tokens)
+    image_name = generate_thumbnail(usd_file, args.verbose, args.output_extension, purpose_tokens, args.camera)
+
+    if not args.camera:
+        os.remove(DEFAULT_THUMBNAIL_FILENAME)
+
     subject_stage = create_usdz_wrapper_stage(usd_file) if is_usdz and args.apply_thumbnail else Usd.Stage.Open(usd_file)
     
     if args.apply_thumbnail:

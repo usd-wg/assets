@@ -22,6 +22,7 @@ optional arguments:
   - `--render-purposes` :     A comma separated list of render purposes to include in the thumbnail. Valid values are: default, render, proxy, guide.
   - `--directory` :           A directory to generate thumbnails for all .usd, .usda, .usdc, and .usdz files. When a directory is supplied, usd-file is ignored.
   - `--recursive` : Will recursively search all directories underneath a given directory, requires a directory to be set.
+  - `--camera` : The path to the camera prim to use for the thumbnail image
 
   Note: You must have usd installed and available in your path. [Install Steps Here](https://github.com/PixarAnimationStudios/OpenUSD#getting-and-building-the-code)
 
