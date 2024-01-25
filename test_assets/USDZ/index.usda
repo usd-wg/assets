@@ -1,0 +1,52 @@
+#usda 1.0
+(
+    defaultPrim = </AnimatedCube>
+    startTimeCode = 0
+    endTimeCode = 48
+)
+
+def "AnimatedCube" (
+    prepend references = @./AnimatedCube/AnimatedCube.usdz@
+    active=false
+)
+{}
+
+def "AnimatedTriangle" (
+    prepend references = @./AnimatedTriangle/AnimatedTriangle.usdz@
+)
+{}
+
+def "BoxAnimated" (
+    prepend references = @./BoxAnimated/BoxAnimated.usdz@
+)
+{}
+
+def "BrainStem" (
+    prepend references = @./BrainStem/BrainStem.usdz@
+)
+{}
+
+def "CesiumMan" (
+    prepend references = @./CesiumMan/CesiumMan.usdz@
+)
+{}
+
+def "DamagedHelmet" (
+    prepend references = @./DamagedHelmet/DamagedHelmet.usdz@
+)
+{}
+
+def "InterpolationTest" (
+    prepend references = @./InterpolationTest/InterpolationTest.usdz@
+)
+{}
+
+def "RiggedFigure" (
+    prepend references = @./RiggedFigure/RiggedFigure.usdz@
+)
+{}
+
+def "RiggedSimple" (
+    prepend references = @./RiggedSimple/RiggedSimple.usdz@
+)
+{}

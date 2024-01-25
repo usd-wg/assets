@@ -1,0 +1,9 @@
+#usda 1.0
+(
+    defaultPrim = </CarbonFrameBike>
+)
+
+def "CarbonFrameBike" (
+    prepend references = @./CarbonFrameBike.usdz@
+)
+{}

@@ -1,0 +1,9 @@
+#usda 1.0
+(
+    defaultPrim = </NormalsTextureBiasAndScale>
+)
+
+def "NormalsTextureBiasAndScale" (
+    prepend references = @./NormalsTextureBiasAndScale.usda@
+)
+{}

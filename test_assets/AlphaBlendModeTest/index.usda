@@ -1,0 +1,9 @@
+#usda 1.0
+(
+    defaultPrim = </AlphablendModeTest>
+)
+
+def "AlphablendModeTest" (
+    prepend references = @./AlphablendModeTest.usd@
+)
+{}

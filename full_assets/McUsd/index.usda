@@ -1,0 +1,17 @@
+#usda 1.0
+(
+    defaultPrim = </McUsd>
+)
+
+def Xform "McUsd"
+{
+    def "McUsd" (
+        prepend references = @./McUsd.usdz@</McUsd>
+    ) {}
+
+    def "Materials" (
+        prepend references = @./McUsd.usdz@</Looks>
+    ) {}
+}
+
+

@@ -1,0 +1,9 @@
+#usda 1.0
+(
+    defaultPrim = </AlphaBlendSortTest>
+)
+
+def "AlphaBlendSortTest" (
+    prepend references = @./AlphaBlendSortTest.usda@
+)
+{}

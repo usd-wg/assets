@@ -1,0 +1,25 @@
+#usda 1.0
+(
+    defaultPrim = </Basic>
+)
+
+def "Basic" (
+    prepend references = @./basic.usda@
+)
+{}
+
+def "Basic_Flatten" (
+    prepend references = @./basic_flatten.usda@
+)
+{}
+
+
+def "BasicTextured" (
+    prepend references = @./basicTextured.usda@
+)
+{}
+
+def "BasicTextured_Flatten" (
+    prepend references = @./basicTextured_flatten.usda@
+)
+{}

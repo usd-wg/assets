@@ -1,0 +1,29 @@
+#usda 1.0
+(
+    defaultPrim = </FourWD>
+)
+
+def "FourWD" (
+    prepend references = @./USD_Mini_Car_Kit/assets/vehicles/4wd/asset/4wdFullAsset.usda@
+)
+{}
+
+def "Ambulance" (
+    prepend references = @./USD_Mini_Car_Kit/assets/vehicles/ambulance/asset/ambulanceFullAsset.usda@
+)
+{}
+
+def "Formula" (
+    prepend references = @./USD_Mini_Car_Kit/assets/vehicles/formula/asset/formulaFullAsset.usda@
+)
+{}
+
+def "Sedan" (
+    prepend references = @./USD_Mini_Car_Kit/assets/vehicles/sedan/asset/sedanFullAsset.usda@
+)
+{}
+
+def "Van" (
+    prepend references = @./USD_Mini_Car_Kit/assets/vehicles/van/asset/vanFullAsset.usda@
+)
+{}

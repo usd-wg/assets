@@ -1,0 +1,9 @@
+#usda 1.0
+(
+    defaultPrim = </RoughnessTest>
+)
+
+def "RoughnessTest" (
+    prepend references = @./RoughnessTest.usdz@
+)
+{}

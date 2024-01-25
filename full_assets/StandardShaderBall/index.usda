@@ -1,0 +1,12 @@
+#usda 1.0
+(
+    defaultPrim = </StandardShaderBall>
+)
+
+def "StandardShaderBall" (
+    prepend references = @./standard_shader_ball_scene.usda@
+    variants = {
+        string example_material = "mtlx_gold"
+    }
+)
+{}
