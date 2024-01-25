@@ -1,6 +1,6 @@
 #usda 1.0
 (
-    defaultPrim = </FourWD>
+    defaultPrim = "FourWD"
 )
 
 def "FourWD" (
