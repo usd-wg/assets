@@ -4,6 +4,6 @@
 )
 
 def "TextureTransformTest" (
-    prepend references = @./TextureTransformTest.usdz@
+    prepend references = @./TextureTransformTest.usd@
 )
 {}
