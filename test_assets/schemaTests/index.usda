@@ -1,9 +1,142 @@
 #usda 1.0
 (
-    defaultPrim = "AlphaBlendModeTest"
 )
 
-def "AlphaBlendModeTest" (
-    prepend references = @./AlphaBlendModeTest.usdz@
-)
-{}
+def Scope "Extent"
+{
+    def "Regular_Extent" (
+        prepend references = @./usdGeom/extent/regular_extent.usda@
+    )
+    {}
+
+    def "Scaled_Extent" (
+        prepend references = @./usdGeom/extent/scaled_extent.usda@
+    )
+    {}
+
+    def "Zero_Extent" (
+        prepend references = @./usdGeom/extent/zero_extent.usda@
+    )
+    {}
+}
+
+def Scope "Meshes"
+{
+    def "FiveFace" (
+        prepend references = @./usdGeom/meshes/5_face/5_face.usda@
+    )
+    {}
+    def "DoubleSided_Quad" (
+        prepend references = @./usdGeom/meshes/doubleSided/doubleSided_quad.usda@
+    )
+    {}
+    def "Empty" (
+        prepend references = @./usdGeom/meshes/empty_mesh/empty.usda@
+    )
+    {}
+    def "Mixed" (
+        prepend references = @./usdGeom/meshes/mixed_faceVertexCounts/mixed.usda@
+    )
+    {}
+    def "NormalsTypes" (
+        prepend references = @./usdGeom/meshes/normals_types/normalsTypes.usda@
+    )
+    {}
+    def "PointsTypes" (
+        prepend references = @./usdGeom/meshes/points_types/pointsTypes.usda@
+    )
+    {}
+    def "Quads" (
+        prepend references = @./usdGeom/meshes/quad_mesh/quads.usda@
+    )
+    {}
+    def "SingleSided" (
+        prepend references = @./usdGeom/meshes/singleSided/singleSided.usda@
+    )
+    {}
+    def "Subdiv_Bilinear" (
+        prepend references = @./usdGeom/meshes/subdiv_bilinear/subdiv_bilinear.usda@
+    )
+    {}
+    def "Subdiv_CatmullClark" (
+        prepend references = @./usdGeom/meshes/subdiv_catmullClark/subdiv_catmullClark.usda@
+    )
+    {}
+    def "Subdiv_Loop_Quads" (
+        prepend references = @./usdGeom/meshes/subdiv_loop_quads/subdiv_loop_quads.usda@
+    )
+    {}
+    def "Subdiv_Loop_Triangles" (
+        prepend references = @./usdGeom/meshes/subdiv_loop_triangles/subdiv_loop_triangles.usda@
+    )
+    {}
+    def "Subdiv_None" (
+        prepend references = @./usdGeom/meshes/subdiv_none/subdiv_none.usda@
+    )
+    {}
+    def "Triangles" (
+        prepend references = @./usdGeom/meshes/triangled_mesh/triangles.usda@
+    )
+    {}
+}
+
+def Scope "Primitives"
+{
+    def "All_Primitives" (
+        prepend references = @./usdGeom/primitives/all_primitives.usda@
+    )
+    {}
+    def "Capsule" (
+        prepend references = @./usdGeom/primitives/capsule.usda@
+    )
+    {}
+    def "Cone" (
+        prepend references = @./usdGeom/primitives/cone.usda@
+    )
+    {}
+    def "Cube" (
+        prepend references = @./usdGeom/primitives/cube.usda@
+    )
+    {}
+    def "Cylinder" (
+        prepend references = @./usdGeom/primitives/cylinder.usda@
+    )
+    {}
+    def "Sphere" (
+        prepend references = @./usdGeom/primitives/sphere.usda@
+    )
+    {}
+
+}
+
+def Scope "Transforms"
+{
+    def "Complex_Transform" (
+        prepend references = @./usdGeom/transforms/complex_transform.usda@
+    )
+    {}
+    def "Matrix_Transform" (
+        prepend references = @./usdGeom/transforms/matrix_transform.usda@
+    )
+    {}
+
+    def "Scopes_And_Xforms_Nested" (
+        prepend references = @./usdGeom/transforms/scopes_and_xforms_nested.usda@
+    )
+    {}
+
+    def "Simple_Transform" (
+        prepend references = @./usdGeom/transforms/simple_transform.usda@
+    )
+    {}
+
+    def "Weird_MAtrix_Transform" (
+        prepend references = @./usdGeom/transforms/weird_matrix_transform.usda@
+    )
+    {}
+
+    def "Xforms_Nested" (
+        prepend references = @./usdGeom/transforms/xforms_nested.usda@
+    )
+    {}
+}
