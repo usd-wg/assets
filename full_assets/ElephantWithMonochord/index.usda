@@ -4,6 +4,6 @@
 )
 
 def "ElephantWithMonochord" (
-    prepend references = @./ElephantWithMonochord.usd@
+    prepend references = @./SoC-ElephantWithMonochord.usdc@
 )
 {}
