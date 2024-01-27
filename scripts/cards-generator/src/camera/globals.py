@@ -1,0 +1,5 @@
+#!/usr/bin/env python3
+
+FOCAL_LENGTH = 50
+APERTURE = 24
+FOCUS_DISTANCE = 168.60936
