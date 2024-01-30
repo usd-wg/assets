@@ -1,3 +1,4 @@
 # ignore temp files when using usdfixbrokenpixarschemas
 *.bck.*
 .DS_Store
+*.pyc
