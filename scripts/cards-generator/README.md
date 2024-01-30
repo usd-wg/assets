@@ -1,7 +1,7 @@
 # USD Cards Generator
 
 ## Purpose
-Given a USD file, take pictures of each of it's axes and assign them as it's card images
+Given a USD file, take pictures of each of it's axes and assign them as the cards' images
 
 ## Usage
 
