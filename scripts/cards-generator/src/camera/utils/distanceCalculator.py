@@ -1,8 +1,8 @@
 import math
 
-def get_distance_to_frame_subject(bounding_box, aperture, focal_length):
-    distance_to_capture_horizontal = calculate_field_of_view_distance(aperture, bounding_box.width, focal_length)
-    distance_to_capture_vertical = calculate_field_of_view_distance(aperture, bounding_box.height, focal_length)
+def get_distance_to_frame_subject(bounding_box, sensor_size, focal_length):
+    distance_to_capture_horizontal = calculate_field_of_view_distance(sensor_size, bounding_box.width, focal_length)
+    distance_to_capture_vertical = calculate_field_of_view_distance(sensor_size, bounding_box.height, focal_length)
 
     return max(distance_to_capture_horizontal, distance_to_capture_vertical)
 

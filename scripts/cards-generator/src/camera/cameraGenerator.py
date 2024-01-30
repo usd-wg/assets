@@ -2,12 +2,12 @@
 
 from pxr import UsdGeom, Gf
 from camera.utils.distanceCalculator import get_distance_to_frame_subject
-from camera.globals import APERTURE, FOCAL_LENGTH, FOCUS_DISTANCE
+from camera.globals import SENSOR_SIZE, FOCAL_LENGTH, FOCUS_DISTANCE
 
 def create_camera_for_card(card, camera_stage, center_of_card_face, bounding_box, camera_view_axis_distance):
     camera_prim = create_camera_with_defaults(camera_stage, card.name)
 
-    distance = get_distance_to_frame_subject(bounding_box, APERTURE, FOCAL_LENGTH)
+    distance = get_distance_to_frame_subject(bounding_box, SENSOR_SIZE, FOCAL_LENGTH)
 
     nearClip = distance / 10.0
     farClip = (( distance + camera_view_axis_distance ) / 10.0) * 2
