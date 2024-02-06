@@ -8,16 +8,14 @@ from concurrent.futures import ThreadPoolExecutor
 
 CARDS_FOLDER_NAME = "cards"
 
-
-def take_snapshots(cards, output_extension, image_width):
+def take_snapshots(cards, output_extension):
     images = []
     renderer = get_renderer()
-    IMAGE_WIDTH = image_width
 
     def task(card):
         cardName = card.usdFileName + "_" + card.name
         image_name = create_image_filename(cardName, output_extension, card.parentPath)
-        cmd = ['usdrecord','--camera', card.name, '--imageWidth', str(IMAGE_WIDTH), '--renderer', renderer, 'cameras.usda', image_name]
+        cmd = ['usdrecord','--camera', card.name, '--imageWidth', str(card.imageWidth), '--renderer', renderer, 'cameras.usda', image_name]
         run_os_specific_command(cmd)
         return image_name
     
