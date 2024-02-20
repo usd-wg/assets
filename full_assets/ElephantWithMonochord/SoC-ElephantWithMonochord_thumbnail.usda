@@ -1,0 +1,40 @@
+#usda 1.0
+(
+    framesPerSecond = 24
+    metersPerUnit = 1
+    timeCodesPerSecond = 24
+    defaultPrim = "Elephant"
+    upAxis = "Y"
+)
+
+def "Elephant" (
+    kind = "component"
+    prepend references = @SoC-ElephantWithMonochord.usdc@
+)
+{
+    matrix4d xformOp:transform
+    matrix4d xformOp:transform:xform1 = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+    uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:xform1"]
+}
+
+def Xform "cameras"
+{
+    def Camera "thumbnail_camera"
+    {
+        float2 clippingRange = (1, 1000000)
+        float exposure = 0
+        float focalLength = 0.5
+        float focusDistance = 5
+        float fStop = 0
+        float horizontalAperture = 0.11787187
+        float horizontalApertureOffset = 0
+        token projection = "perspective"
+        double shutter:close = 0.25
+        double shutter:open = -0.25
+        float verticalAperture = 0.11787187
+        float verticalApertureOffset = 0
+        matrix4d xformOp:transform = ( (0.9910474834212168, -1.570123107919041e-9, -0.13350987081288368, 0), (-0.026176251550166015, 0.9805914400857846, -0.1943070546461696, 0), (0.13091863679115867, 0.19606230548090348, 0.9718126789203039, 0), (17.011857294812835, 39.108272051296815, 132.87990243980298, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+}
+

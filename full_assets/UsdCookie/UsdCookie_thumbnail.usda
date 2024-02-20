@@ -1,0 +1,39 @@
+#usda 1.0
+(
+    framesPerSecond = 24
+    metersPerUnit = 1
+    timeCodesPerSecond = 24
+    defaultPrim = "Cookie"
+    upAxis = "Y"
+)
+
+def "Cookie" (
+    kind = "component"
+    prepend references = @UsdCookie.usdz@
+)
+{
+    matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 0, 0, 1) )
+    uniform token[] xformOpOrder = ["xformOp:transform"]
+}
+
+def Xform "cameras"
+{
+    def Camera "thumbnail_camera"
+    {
+        float2 clippingRange = (1, 1000000)
+        float exposure = 0
+        float focalLength = 0.5
+        float focusDistance = 5
+        float fStop = 0
+        float horizontalAperture = 0.11787187
+        float horizontalApertureOffset = 0
+        token projection = "perspective"
+        double shutter:close = 0.25
+        double shutter:open = -0.25
+        float verticalAperture = 0.11787187
+        float verticalApertureOffset = 0
+        matrix4d xformOp:transform = ( (-0.9985086386209923, 1.2336458397248059e-8, -0.054593942880619695, 0), (0.0007695292388446494, 0.9999006566035167, -0.014074258367913763, 0), (0.054588519159280015, -0.014095280197856132, -0.9984094433909071, 0), (0.21233206980445954, -0.0450005203593666, -3.5206879489797465, 1) )
+        uniform token[] xformOpOrder = ["xformOp:transform"]
+    }
+}
+
