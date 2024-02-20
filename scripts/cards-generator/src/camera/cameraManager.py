@@ -3,6 +3,7 @@
 from pxr import Usd, UsdGeom, UsdLux, Gf
 from collections import namedtuple
 from camera.cameraGenerator import create_camera_for_card
+import math
 
 BoundingBox = namedtuple('BoundingBox', ['width', 'height'])
 RENDER_PURPOSE_MAP = {
@@ -12,9 +13,9 @@ RENDER_PURPOSE_MAP = {
     "guide": UsdGeom.Tokens.guide
 }
 
-def setup_cameras(subject_stage, usd_file, cards, dome_light, render_purposes):
+def setup_cameras(subject_stage, usd_file, cards, dome_light, render_purposes, image_width):
     camera_stage = create_camera_stage()
-    create_cameras(camera_stage, subject_stage, cards, render_purposes)
+    create_cameras(camera_stage, subject_stage, cards, render_purposes, image_width)
     sublayer_subject(camera_stage, usd_file)
 
     if dome_light:
@@ -28,7 +29,7 @@ def create_camera_stage():
 
     return stage
 
-def create_cameras(camera_stage, subject_stage, cards, render_purposes):
+def create_cameras(camera_stage, subject_stage, cards, render_purposes, image_width):
     render_purpose_tokens = convert_render_purposes_to_tokens(render_purposes)
     stage_bounding_box = get_bounding_box(subject_stage, render_purpose_tokens)
     min_bound = stage_bounding_box.GetMin()
@@ -39,6 +40,25 @@ def create_cameras(camera_stage, subject_stage, cards, render_purposes):
         card_width = (max_bound[card.horizontalIndex] - min_bound[card.horizontalIndex]) * 10
         card_height = (max_bound[card.verticalIndex] - min_bound[card.verticalIndex]) * 10
         card_bounding_box = BoundingBox(card_width, card_height)
+
+        if is_x_axis_card(card):
+            if card_width > card_height:
+                ratio = card_height / card_width * 1.0
+                card.update_image_width(math.floor(image_width * ratio))
+            else:
+                card.update_image_width(image_width)
+        elif is_y_axis_card(card):
+            if card_width > card_height:
+                ratio = card_height / card_width * 1.0
+                card.update_image_width(math.floor(image_width * ratio))
+            else:
+                card.update_image_width(image_width)
+        elif is_z_axis_card(card):
+            if card_width < card_height:
+                ratio = card_width / card_height * 1.0
+                card.update_image_width(math.floor(image_width * ratio))
+            else:
+                card.update_image_width(image_width)
         
         faceTranslationValue = max_bound[card.translationIndex] if card.sign > 0 else min_bound[card.translationIndex]
         center_of_card_face = Gf.Vec3d(subject_center[0], subject_center[1], subject_center[2])
@@ -47,6 +67,15 @@ def create_cameras(camera_stage, subject_stage, cards, render_purposes):
         camera_view_axis_distance = card_height = (max_bound[card.translationIndex] - min_bound[card.translationIndex])
 
         create_camera_for_card(card, camera_stage, center_of_card_face, card_bounding_box, camera_view_axis_distance)
+
+def is_x_axis_card(card):
+    return card.translationIndex == 0
+
+def is_y_axis_card(card):
+    return card.translationIndex == 1
+
+def is_z_axis_card(card):
+    return card.translationIndex == 2
 
 def convert_render_purposes_to_tokens(render_purposes):
     return [RENDER_PURPOSE_MAP[key] for key in render_purposes.split(',')]

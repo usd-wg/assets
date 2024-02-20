@@ -1,25 +1,15 @@
 #!/usr/bin/env python3
 
+from objects.card import Card
+from objects.rotation import Rotation
 from pxr import Usd, UsdGeom, UsdUtils
 
-from collections import namedtuple
 from camera.cameraManager import setup_cameras
 from camera.renderManger import run_os_specific_command, take_snapshots
+from camera.globals import IMAGE_WIDTH
 from utils.arg_parser import parse_args
 from pathlib import Path
 import os
-
-Card = namedtuple('Card', ['name', 'horizontalIndex', 'verticalIndex', 'sign', 'rotations', 'translationIndex', 'parentPath', 'usdFileName'])
-Rotation = namedtuple('Rotation', ['index', 'amount'])
-
-cards = [
-    Card('XPos', 2, 1, 1, [Rotation(0, 90), Rotation(1, 90)], 0, None, None),
-    Card('XNeg', 2, 1, -1, [Rotation(0, 90), Rotation(1, 270)], 0, None, None),
-    Card('YPos', 2, 0, 1, [Rotation(1, 180), Rotation(0, 270)], 1, None, None),
-    Card('YNeg', 2, 0, -1, [Rotation(0, 90)], 1, None, None),
-    Card('ZPos', 0, 1, 1, [], 2, None, None),
-    Card('ZNeg', 0, 1, -1, [Rotation(2, 180), Rotation(1, 180)], 2, None, None)
-]
 
 CARDS_LAYER_SUFFIX_USDA = "_Cards.usda"
 CARDS_LAYER_SUFFIX = "_Cards"
@@ -29,25 +19,31 @@ def generate_card_images(usd_file, subject_stage, dome_light, output_extension, 
 
     if apply_cards:
         if verbose: 
-            print("Step 1: Applying cards default values...")
+            print("Applying cards default values...")
         apply_cards_defaults(subject_stage)
 
-    if verbose: 
-        print("Step 2: Setting up the cameras...")
+    cards = instantiate_cards(Path(usd_file))
 
-    setup_cameras(subject_stage, usd_file, cards, dome_light, render_purposes)
+    if verbose: 
+        print("Setting up the cameras...")
+    setup_cameras(subject_stage, usd_file, cards, dome_light, render_purposes, image_width)
     
     if verbose:
-        print("Step 3: Taking the snapshots...")
-
-    usd_file_path = Path(usd_file)
-
-    for i, card in enumerate(cards):
-        cards[i] = card._replace(parentPath=usd_file_path.parent, usdFileName=usd_file_path.stem)
-
-    image_names = take_snapshots(cards, output_extension, image_width)
+        print("Taking the snapshots...")
+    image_names = take_snapshots(cards, output_extension)
 
     return image_names
+
+def instantiate_cards(usd_file_path):
+    cards = [
+        Card('XPos', 2, 1, 1, [Rotation(0, 90), Rotation(1, 90)], 0, usd_file_path.parent, usd_file_path.stem, IMAGE_WIDTH),
+        Card('XNeg', 2, 1, -1, [Rotation(0, 90), Rotation(1, 270)], 0, usd_file_path.parent, usd_file_path.stem, IMAGE_WIDTH),
+        Card('YPos', 2, 0, 1, [Rotation(1, 180), Rotation(0, 270)], 1, usd_file_path.parent, usd_file_path.stem, IMAGE_WIDTH),
+        Card('YNeg', 2, 0, -1, [Rotation(0, 90)], 1, usd_file_path.parent, usd_file_path.stem, IMAGE_WIDTH),
+        Card('ZPos', 0, 1, 1, [], 2, usd_file_path.parent, usd_file_path.stem, IMAGE_WIDTH),
+        Card('ZNeg', 0, 1, -1, [Rotation(2, 180), Rotation(1, 180)], 2, usd_file_path.parent, usd_file_path.stem, IMAGE_WIDTH)
+    ]
+    return cards
 
 def apply_cards_defaults(subject_stage):
     subject_root_prim = subject_stage.GetDefaultPrim()
@@ -103,13 +99,13 @@ def generate_cards_for_single_asset(usd_file, args):
 
     if args.apply_cards:
         if args.verbose:
-            print("Step 4: Linking cards to subject...")
+            print("Linking cards to subject...")
         stripped_image_paths = [image.replace(str(Path(usd_file).parent), "").lstrip('/') for image in images]
         link_images_to_subject(subject_stage, stripped_image_paths)
 
     if args.create_usdz_result:
         if args.verbose:
-            print("Step 5: Zipping cards as usdz...")
+            print("Zipping cards as usdz...")
         
         zip_results(args.usd_file, images, args.is_usdz)
 
