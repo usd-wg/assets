@@ -6,47 +6,84 @@
 )
 
 def "AnimatedCube" (
+    assetInfo = {
+        string name = "AnimatedCube"
+        string version = "1"
+    }
+    kind = "model"
     prepend references = @./AnimatedCube/AnimatedCube.usdz@
     active=false
 )
 {}
 
 def "AnimatedTriangle" (
+    assetInfo = {
+        string name = "AnimatedTriangle"
+        string version = "1"
+    }
     prepend references = @./AnimatedTriangle/AnimatedTriangle.usdz@
 )
 {}
 
 def "BoxAnimated" (
+    assetInfo = {
+        string name = "BoxAnimated"
+        string version = "1"
+    }
     prepend references = @./BoxAnimated/BoxAnimated.usdz@
 )
 {}
 
 def "BrainStem" (
+    assetInfo = {
+        string name = "BrainStem"
+        string version = "1"
+    }
     prepend references = @./BrainStem/BrainStem.usdz@
 )
 {}
 
 def "CesiumMan" (
+    assetInfo = {
+        string name = "CesiumMan"
+        string version = "1"
+    }
     prepend references = @./CesiumMan/CesiumMan.usdz@
 )
 {}
 
 def "DamagedHelmet" (
+    assetInfo = {
+        string name = "DamagedHelmet"
+        string version = "1"
+    }
     prepend references = @./DamagedHelmet/DamagedHelmet.usdz@
 )
 {}
 
 def "InterpolationTest" (
+    assetInfo = {
+        string name = "InterpolationTest"
+        string version = "1"
+    }
     prepend references = @./InterpolationTest/InterpolationTest.usdz@
 )
 {}
 
 def "RiggedFigure" (
+    assetInfo = {
+        string name = "RiggedFigure"
+        string version = "1"
+    }
     prepend references = @./RiggedFigure/RiggedFigure.usdz@
 )
 {}
 
 def "RiggedSimple" (
+    assetInfo = {
+        string name = "RiggedSimple"
+        string version = "1"
+    }
     prepend references = @./RiggedSimple/RiggedSimple.usdz@
 )
 {}

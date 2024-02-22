@@ -3,106 +3,229 @@
 )
 
 def Scope "Extent"
-{
+(
+    kind = "group"
+){
     def "Regular_Extent" (
+        assetInfo = {
+            string name = "Regular_Extent"
+            string version = "1"
+        }
+        kind = "model"
         prepend references = @./usdGeom/extent/regular_extent.usda@
     )
     {}
 
     def "Scaled_Extent" (
+        assetInfo = {
+            string name = "Scaled_Extent"
+            string version = "1"
+        }
+        kind = "model"
         prepend references = @./usdGeom/extent/scaled_extent.usda@
     )
     {}
 
     def "Zero_Extent" (
+        assetInfo = {
+            string name = "Zero_Extent"
+            string version = "1"
+        }
+        kind = "model"
         prepend references = @./usdGeom/extent/zero_extent.usda@
     )
     {}
 }
 
 def Scope "Meshes"
+(
+    kind = "group"
+)
 {
     def "FiveFace" (
+        assetInfo = {
+            string name = "FiveFace"
+            string version = "1"
+        }
+        kind = "model"
         prepend references = @./usdGeom/meshes/5_face/5_face.usda@
     )
     {}
     def "DoubleSided_Quad" (
+        assetInfo = {
+            string name = "DoubleSided_Quad"
+            string version = "1"
+        }
+        kind = "model"
         prepend references = @./usdGeom/meshes/doubleSided/doubleSided_quad.usda@
     )
     {}
     def "Empty" (
+        assetInfo = {
+            string name = "Empty"
+            string version = "1"
+        }
+        kind = "model"
         prepend references = @./usdGeom/meshes/empty_mesh/empty.usda@
     )
     {}
     def "Mixed" (
+        assetInfo = {
+            string name = "Mixed"
+            string version = "1"
+        }
+        kind = "model"
         prepend references = @./usdGeom/meshes/mixed_faceVertexCounts/mixed.usda@
     )
     {}
     def "NormalsTypes" (
+        assetInfo = {
+            string name = "NormalsTypes"
+            string version = "1"
+        }
+        kind = "model"
         prepend references = @./usdGeom/meshes/normals_types/normalsTypes.usda@
     )
     {}
     def "PointsTypes" (
+        assetInfo = {
+            string name = "PointsTypes"
+            string version = "1"
+        }
+        kind = "model"
         prepend references = @./usdGeom/meshes/points_types/pointsTypes.usda@
     )
     {}
     def "Quads" (
+        assetInfo = {
+            string name = "Quads"
+            string version = "1"
+        }
+        kind = "model"
         prepend references = @./usdGeom/meshes/quad_mesh/quads.usda@
     )
     {}
     def "SingleSided" (
+        assetInfo = {
+            string name = "SingleSided"
+            string version = "1"
+        }
+        kind = "model"
         prepend references = @./usdGeom/meshes/singleSided/singleSided.usda@
     )
     {}
     def "Subdiv_Bilinear" (
+        assetInfo = {
+            string name = "Subdiv_Bilinear"
+            string version = "1"
+        }
+        kind = "model"
         prepend references = @./usdGeom/meshes/subdiv_bilinear/subdiv_bilinear.usda@
     )
     {}
     def "Subdiv_CatmullClark" (
+        assetInfo = {
+            string name = "Subdiv_CatmullClark"
+            string version = "1"
+        }
+        kind = "model"
         prepend references = @./usdGeom/meshes/subdiv_catmullClark/subdiv_catmullClark.usda@
     )
     {}
     def "Subdiv_Loop_Quads" (
+        assetInfo = {
+            string name = "Subdiv_Loop_Quads"
+            string version = "1"
+        }
+        kind = "model"
         prepend references = @./usdGeom/meshes/subdiv_loop_quads/subdiv_loop_quads.usda@
     )
     {}
     def "Subdiv_Loop_Triangles" (
+        assetInfo = {
+            string name = "Subdiv_Loop_Triangles"
+            string version = "1"
+        }
+        kind = "model"
         prepend references = @./usdGeom/meshes/subdiv_loop_triangles/subdiv_loop_triangles.usda@
     )
     {}
     def "Subdiv_None" (
+        assetInfo = {
+            string name = "Subdiv_None"
+            string version = "1"
+        }
+        kind = "model"
         prepend references = @./usdGeom/meshes/subdiv_none/subdiv_none.usda@
     )
     {}
     def "Triangles" (
+        assetInfo = {
+            string name = "Triangles"
+            string version = "1"
+        }
+        kind = "model"
         prepend references = @./usdGeom/meshes/triangled_mesh/triangles.usda@
     )
     {}
 }
 
 def Scope "Primitives"
+(
+    kind = "group"
+)
 {
     def "All_Primitives" (
+        assetInfo = {
+            string name = "All_Primitives"
+            string version = "1"
+        }
+        kind = "model"
         prepend references = @./usdGeom/primitives/all_primitives.usda@
     )
     {}
     def "Capsule" (
+        assetInfo = {
+            string name = "Capsule"
+            string version = "1"
+        }
+        kind = "model"
         prepend references = @./usdGeom/primitives/capsule.usda@
     )
     {}
     def "Cone" (
+        assetInfo = {
+            string name = "Cone"
+            string version = "1"
+        }
+        kind = "model"
         prepend references = @./usdGeom/primitives/cone.usda@
     )
     {}
     def "Cube" (
+        assetInfo = {
+            string name = "Cube"
+            string version = "1"
+        }
+        kind = "model"
         prepend references = @./usdGeom/primitives/cube.usda@
     )
     {}
     def "Cylinder" (
+        assetInfo = {
+            string name = "Cylinder"
+            string version = "1"
+        }
+        kind = "model"
         prepend references = @./usdGeom/primitives/cylinder.usda@
     )
     {}
     def "Sphere" (
+        assetInfo = {
+            string name = "Sphere"
+            string version = "1"
+        }
+        kind = "model"
         prepend references = @./usdGeom/primitives/sphere.usda@
     )
     {}
@@ -110,32 +233,65 @@ def Scope "Primitives"
 }
 
 def Scope "Transforms"
+(
+    kind = "group"
+)
 {
     def "Complex_Transform" (
+        assetInfo = {
+            string name = "Complex_Transform"
+            string version = "1"
+        }
+        kind = "model"
         prepend references = @./usdGeom/transforms/complex_transform.usda@
     )
     {}
     def "Matrix_Transform" (
+        assetInfo = {
+            string name = "Matrix_Transform"
+            string version = "1"
+        }
+        kind = "model"
         prepend references = @./usdGeom/transforms/matrix_transform.usda@
     )
     {}
 
     def "Scopes_And_Xforms_Nested" (
+        assetInfo = {
+            string name = "Scopes_And_Xforms_Nested"
+            string version = "1"
+        }
+        kind = "model"
         prepend references = @./usdGeom/transforms/scopes_and_xforms_nested.usda@
     )
     {}
 
     def "Simple_Transform" (
+        assetInfo = {
+            string name = "Simple_Transform"
+            string version = "1"
+        }
+        kind = "model"
         prepend references = @./usdGeom/transforms/simple_transform.usda@
     )
     {}
 
-    def "Weird_MAtrix_Transform" (
+    def "Weird_Matrix_Transform" (
+        assetInfo = {
+            string name = "Weird_Matrix_Transform"
+            string version = "1"
+        }
+        kind = "model"
         prepend references = @./usdGeom/transforms/weird_matrix_transform.usda@
     )
     {}
 
     def "Xforms_Nested" (
+        assetInfo = {
+            string name = "Xforms_Nested"
+            string version = "1"
+        }
+        kind = "model"
         prepend references = @./usdGeom/transforms/xforms_nested.usda@
     )
     {}

@@ -4,6 +4,11 @@
 )
 
 def "AlphaBlendSortTest" (
+    assetInfo = {
+        string name = "AlphaBlendSortTest"
+        string version = "1"
+    }
+    kind = "model"
     prepend references = @./AlphaBlendSortTest.usda@
 )
 {}

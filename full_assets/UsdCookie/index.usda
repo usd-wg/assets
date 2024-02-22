@@ -4,6 +4,11 @@
 )
 
 def "UsdCookie" (
+    assetInfo = {
+        string name = "UsdCookie"
+        string version = "1"
+    }
+    kind = "model"
     prepend references = @./UsdCookie.usdz@
 )
 {}

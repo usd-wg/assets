@@ -4,6 +4,11 @@
 )
 
 def "TextureTransformTest" (
+    assetInfo = {
+        string name = "TextureTransformTest"
+        string version = "1"
+    }
+    kind = "model"
     prepend references = @./TextureTransformTest.usd@
 )
 {}

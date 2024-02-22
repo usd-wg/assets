@@ -1,9 +1,16 @@
 #usda 1.0
 (
     defaultPrim = "CarbonFrameBike"
+    startTimeCode = 0
+    endTimeCode = 358.75
 )
 
 def "CarbonFrameBike" (
+    assetInfo = {
+        string name = "CarbonFrameBike"
+        string version = "1"
+    }
+    kind = "model"
     prepend references = @./CarbonFrameBike.usdz@
 )
 {}

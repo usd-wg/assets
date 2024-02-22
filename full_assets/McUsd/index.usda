@@ -4,6 +4,13 @@
 )
 
 def Xform "McUsd"
+(
+    assetInfo = {
+        string name = "McUsd"
+        string version = "1"
+    }
+    kind = "model"
+)
 {
     def "McUsd" (
         prepend references = @./McUsd.usdz@</McUsd>

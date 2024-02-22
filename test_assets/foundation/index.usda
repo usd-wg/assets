@@ -3,7 +3,12 @@
     defaultPrim = "AlphaBlendModeTest"
 )
 
-def "AlphaBlendModeTest" (
+def "Foundation" (
+    assetInfo = {
+        string name = "Foundation"
+        string version = "1"
+    }
+    kind = "model"
     prepend references = @./AlphaBlendModeTest.usdz@
 )
 {}

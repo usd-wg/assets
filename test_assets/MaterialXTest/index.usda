@@ -4,22 +4,42 @@
 )
 
 def "Basic" (
+    assetInfo = {
+        string name = "MaterialX Basic"
+        string version = "1"
+    }
+    kind = "model"
     prepend references = @./basic.usda@
 )
 {}
 
 def "Basic_Flatten" (
+    assetInfo = {
+        string name = "MaterialX Basic_Flatten"
+        string version = "1"
+    }
+    kind = "model"
     prepend references = @./basic_flatten.usda@
 )
 {}
 
 
 def "BasicTextured" (
+    assetInfo = {
+        string name = "MaterialX BasicTextured"
+        string version = "1"
+    }
+    kind = "model"
     prepend references = @./basicTextured.usda@
 )
 {}
 
 def "BasicTextured_Flatten" (
+    assetInfo = {
+        string name = "MaterialX BasicTextured_Flatten"
+        string version = "1"
+    }
+    kind = "model"
     prepend references = @./basicTextured_flatten.usda@
 )
 {}

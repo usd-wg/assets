@@ -1,9 +1,18 @@
 #usda 1.0
 (
     defaultPrim = "ElephantWithMonochord"
+    startTimeCode = 0
+    endTimeCode = 3023
 )
 
 def "ElephantWithMonochord" (
+    assetInfo = {
+        string name = "ElephantWithMonochord"
+        string version = "1"
+    }
+    kind = "model"
     prepend references = @./SoC-ElephantWithMonochord.usdc@
 )
-{}
+{
+}
+

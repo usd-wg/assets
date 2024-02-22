@@ -4,6 +4,11 @@
 )
 
 def "RoughnessTest" (
+    assetInfo = {
+        string name = "RoughnessTest"
+        string version = "1"
+    }
+    kind = "model"
     prepend references = @./RoughnessTest.usdz@
 )
 {}

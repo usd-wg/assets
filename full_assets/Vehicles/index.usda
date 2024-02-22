@@ -4,26 +4,51 @@
 )
 
 def "FourWD" (
+    assetInfo = {
+        string name = "FourWD"
+        string version = "1"
+    }
+    kind = "model"
     prepend references = @./USD_Mini_Car_Kit/assets/vehicles/4wd/asset/4wdFullAsset.usda@
 )
 {}
 
 def "Ambulance" (
+    assetInfo = {
+        string name = "Ambulance"
+        string version = "1"
+    }
+    kind = "model"
     prepend references = @./USD_Mini_Car_Kit/assets/vehicles/ambulance/asset/ambulanceFullAsset.usda@
 )
 {}
 
 def "Formula" (
+    assetInfo = {
+        string name = "Formula"
+        string version = "1"
+    }
+    kind = "model"
     prepend references = @./USD_Mini_Car_Kit/assets/vehicles/formula/asset/formulaFullAsset.usda@
 )
 {}
 
 def "Sedan" (
+    assetInfo = {
+        string name = "Sedan"
+        string version = "1"
+    }
+    kind = "model"
     prepend references = @./USD_Mini_Car_Kit/assets/vehicles/sedan/asset/sedanFullAsset.usda@
 )
 {}
 
 def "Van" (
+    assetInfo = {
+        string name = "Van"
+        string version = "1"
+    }
+    kind = "model"
     prepend references = @./USD_Mini_Car_Kit/assets/vehicles/van/asset/vanFullAsset.usda@
 )
 {}
