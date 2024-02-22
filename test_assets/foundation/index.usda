@@ -1,0 +1,14 @@
+#usda 1.0
+(
+    defaultPrim = "AlphaBlendModeTest"
+)
+
+def "Foundation" (
+    assetInfo = {
+        string name = "Foundation"
+        string version = "1"
+    }
+    kind = "model"
+    prepend references = @./AlphaBlendModeTest.usdz@
+)
+{}

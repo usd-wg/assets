@@ -1,0 +1,14 @@
+#usda 1.0
+(
+    defaultPrim = "Teapot"
+)
+
+def "Teapot" (
+    assetInfo = {
+        string name = "Teapot"
+        string version = "1"
+    }
+    kind = "model"
+    prepend references = @./Teapot.usd@
+)
+{}
