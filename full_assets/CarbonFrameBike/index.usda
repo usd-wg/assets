@@ -3,6 +3,8 @@
     defaultPrim = "CarbonFrameBike"
     startTimeCode = 0
     endTimeCode = 358.75
+    upAxis = "Y"
+    metersPerUnit = 1.0
 )
 
 def "CarbonFrameBike" (

@@ -3,6 +3,8 @@
     defaultPrim = "ElephantWithMonochord"
     startTimeCode = 0
     endTimeCode = 3023
+    upAxis = "Y"
+    metersPerUnit = 0.01
 )
 
 def "ElephantWithMonochord" (
