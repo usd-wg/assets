@@ -2,10 +2,12 @@
 (
     customLayerData = {
         string License = "CC BY 4.0"
-        string Version = "1.0"
+        string Version = "1.1"
     }
     defaultPrim = "standard_shader_ball_scene"
+    framesPerSecond = 24
     metersPerUnit = 0.01
+    timeCodesPerSecond = 24
     upAxis = "Y"
 )
 
@@ -18,8 +20,10 @@ def Xform "standard_shader_ball_scene"
         float horizontalAperture = 20.955
         token projection = "perspective"
         float verticalAperture = 20.955
-        matrix4d xformOp:transform = ( (0.9396926207859084, 0, -0.3420201433256687, 0), (-0.2203032561704394, 0.7649214009184319, -0.6052782217606094, 0), (0.26161852717499334, 0.6441236297613865, 0.7187909959242699, 0), (6.531538924716362, 19.5, 17.948521838355774, 1) )
-        uniform token[] xformOpOrder = ["xformOp:transform"]
+        float3 xformOp:rotateXYZ = (-40.1, 20, 0)
+        double3 xformOp:translate = (6.53154, 19.5, 17.9485)
+        float3 xformOp:translate:pivot = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate", "xformOp:translate:pivot", "xformOp:rotateXYZ", "!invert!xformOp:translate:pivot"]
     }
 }
 
