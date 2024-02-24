@@ -72,12 +72,6 @@ def Xform "standard_shader_ball_scene" (
                 float3[] extent = [(0, -10.311456, -10.311456), (0, 10.311456, 10.311456)]
                 int[] faceVertexCounts = [3, 3]
                 int[] faceVertexIndices = [0, 3, 1, 3, 0, 2]
-                float[] height = [0, 0, 0, 0] (
-                    interpolation = "vertex"
-                )
-                float[] intensity = [0, 0, 0, 0] (
-                    interpolation = "vertex"
-                )
                 normal3f[] normals = [(1, 0, 0), (1, 0, 0), (1, 0, 0), (1, 0, 0)] (
                     interpolation = "vertex"
                 )
@@ -85,14 +79,11 @@ def Xform "standard_shader_ball_scene" (
                 point3f[] points = [(0, -10.311456, -10.311456), (0, -10.311456, 10.311456), (0, 10.311456, -10.311456), (0, 10.311456, 10.311456)] (
                     interpolation = "vertex"
                 )
-                color3f[] primvars:displayColor = [(0.502, 0.502, 0.502), (0.502, 0.502, 0.502)] (
-                    interpolation = "uniform"
+                color3f[] primvars:displayColor = [(0.502, 0.502, 0.502)] (
+                    interpolation = "constant"
                 )
                 int[] primvars:displayColor:indices = None
                 uniform token subdivisionScheme = "none"
-                float[] width = [0, 0, 0, 0] (
-                    interpolation = "vertex"
-                )
             }
         }
 
@@ -154,12 +145,6 @@ def Xform "standard_shader_ball_scene" (
                 float3[] extent = [(-31.54725, 0, -31.6542), (31.54725, 0, 31.6542)]
                 int[] faceVertexCounts = [3, 3]
                 int[] faceVertexIndices = [0, 3, 1, 3, 0, 2]
-                float[] height = [0, 0, 0, 0] (
-                    interpolation = "vertex"
-                )
-                float[] intensity = [0, 0, 0, 0] (
-                    interpolation = "vertex"
-                )
                 normal3f[] normals = [(0, 1, 0), (0, 1, 0), (0, 1, 0), (0, 1, 0)] (
                     interpolation = "vertex"
                 )
@@ -167,14 +152,11 @@ def Xform "standard_shader_ball_scene" (
                 point3f[] points = [(-31.54725, 0, -31.6542), (31.54725, 0, -31.6542), (-31.54725, 0, 31.6542), (31.54725, 0, 31.6542)] (
                     interpolation = "vertex"
                 )
-                color3f[] primvars:displayColor = [(0.502, 0.502, 0.502), (0.502, 0.502, 0.502)] (
-                    interpolation = "uniform"
+                color3f[] primvars:displayColor = [(0.502, 0.502, 0.502)] (
+                    interpolation = "constant"
                 )
                 int[] primvars:displayColor:indices = None
                 uniform token subdivisionScheme = "none"
-                float[] width = [0, 0, 0, 0] (
-                    interpolation = "vertex"
-                )
             }
         }
     }
