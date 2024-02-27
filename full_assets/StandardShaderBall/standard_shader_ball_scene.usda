@@ -5,10 +5,10 @@
         string Version = "1.1"
     }
     defaultPrim = "standard_shader_ball_scene"
-    endTimeCode = 1
+    endTimeCode = 3
     framesPerSecond = 24
     metersPerUnit = 0.01
-    startTimeCode = 1
+    startTimeCode = 3
     subLayers = [
         @./layers/example_materials.usda@,
         @./layers/shaderball.usda@,
