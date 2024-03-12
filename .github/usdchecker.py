@@ -123,9 +123,7 @@ def main():
 
     # Skip 'missing' .mtlx documents, until usd-core includes UsdMtlX
     if failedChecks:
-      failedChecks = [check for check in failedChecks \
-                      if "MissingReferenceChecker" in check and \
-                      ".mtlx" not in check]
+        failedChecks = [check for check in failedChecks if '.mtlx' not in check]
     
     with _Stream(outFile, 'w') as ofp:
         
