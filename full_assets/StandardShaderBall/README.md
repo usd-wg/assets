@@ -400,6 +400,9 @@ anisotropic roughnesses are being exercised.
 
 1.0 2023-05-21 First release of USD scene packages with textures and
 this specification document.
+1.1 2024-02-23 Changed the geometry winding order to right-handed, which
+should render the same for packages that support both winding orders. Also
+added normals to triangulated surface geometry. Camera transform clarified.
 
 # Contributors
 

@@ -2,13 +2,13 @@
 (
     customLayerData = {
         string License = "CC BY 4.0"
-        string Version = "1.0"
+        string Version = "1.1"
     }
     defaultPrim = "standard_shader_ball_scene"
-    endTimeCode = 8
+    endTimeCode = 3
     framesPerSecond = 24
     metersPerUnit = 0.01
-    startTimeCode = 8
+    startTimeCode = 3
     subLayers = [
         @./layers/example_materials.usda@,
         @./layers/shaderball.usda@,

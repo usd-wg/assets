@@ -2,7 +2,7 @@
 (
     customLayerData = {
         string License = "CC BY 4.0"
-        string Version = "1.0"
+        string Version = "1.1"
     }
     defaultPrim = "standard_shader_ball_scene"
     framesPerSecond = 24
