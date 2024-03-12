@@ -121,6 +121,10 @@ def main():
     errors = checker.GetErrors()
     failedChecks = checker.GetFailedChecks()
     
+    # Skip .mtlx checks, until usd-core includes UsdMtlX
+    if failedChecks:
+        failedChecks = [check for check in failedChecks if '.mtlx' not in check]
+
     with _Stream(outFile, 'w') as ofp:
         
         for msg in warnings:
