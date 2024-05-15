@@ -1,0 +1,22 @@
+#usda 1.0
+(
+    defaultPrim = "Scene"
+    upAxis = "Y"
+    subLayers = [
+        @_scene.usda@
+    ]
+)
+
+over "Scene"
+{
+    over "Looks"
+    {
+        over "MainMaterial"
+        {
+            over "Diffuse"
+            {
+                asset inputs:file = @png_rgb_16-bit.png@
+            }
+        }
+    }
+}

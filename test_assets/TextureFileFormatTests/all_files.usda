@@ -1,0 +1,90 @@
+#usda 1.0
+(
+    defaultPrim = "Scene"
+    upAxis = "Y"
+)
+
+def Scope "Scene" (
+    kind = "component"
+)
+{
+    def Camera "main_cam"
+    {
+        double3 xformOp:translate = (1, 3, 25)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+    }
+
+    def Xform "jpeg" {
+        double3 xformOp:translate = (0, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        over "jpeg_cmyk_8bit" (
+            references = [@./jpeg_cmyk_8-bit.usda@]
+        )
+        {
+            double3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        over "jpeg_grayscale_8bit" (
+            references = [@./jpeg_grayscale_8-bit.usda@]
+        )
+        {
+            double3 xformOp:translate = (0, 1.1, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        over "jpeg_rgb_8bit" (
+            references = [@./jpeg_rgb_8-bit.usda@]
+        )
+        {
+            double3 xformOp:translate = (0, 2.2, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+    }
+
+    def Xform "png" {
+        double3 xformOp:translate = (2, 0, 0)
+        uniform token[] xformOpOrder = ["xformOp:translate"]
+
+        over "png_grayscale_8bit" (
+            references = [@./png_grayscale_8-bit.usda@]
+        )
+        {
+            double3 xformOp:translate = (0, 0, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        over "png_grayscale_16bit" (
+            references = [@./png_grayscale_16-bit.usda@]
+        )
+        {
+            double3 xformOp:translate = (0, 1.1, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        over "png_rgb_8bit" (
+            references = [@./png_rgb_8-bit.usda@]
+        )
+        {
+            double3 xformOp:translate = (0, 2.2, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        over "png_rgb_16bit" (
+            references = [@./png_rgb_16-bit.usda@]
+        )
+        {
+            double3 xformOp:translate = (0, 3.3, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+
+        over "png_rgb_32bit" (
+            references = [@./png_rgb_32-bit.usda@]
+        )
+        {
+            double3 xformOp:translate = (0, 4.4, 0)
+            uniform token[] xformOpOrder = ["xformOp:translate"]
+        }
+    }
+}
