@@ -2,7 +2,7 @@
 (
     customLayerData = {
         string License = "CC BY 4.0"
-        string Version = "1.0"
+        string Version = "1.1"
     }
     defaultPrim = "standard_shader_ball_scene"
     framesPerSecond = 24
@@ -32,12 +32,12 @@ def Xform "standard_shader_ball_scene" (
         {
             float3[] extent = [(-50, 0, -50), (50, 0, 50)]
             int[] faceVertexCounts = [3, 3]
-            int[] faceVertexIndices = [0, 1, 3, 3, 2, 0]
-            uniform token orientation = "leftHanded"
+            int[] faceVertexIndices = [0, 3, 1, 3, 0, 2]
+            uniform token orientation = "rightHanded"
             point3f[] points = [(-50, 0, -50), (50, 0, -50), (-50, 0, 50), (50, 0, 50)] (
                 interpolation = "vertex"
             )
-            texCoord2f[] primvars:st = [(0, 0), (1, 0), (1, -1), (1, -1), (0, -1), (0, 0)] (
+            texCoord2f[] primvars:st = [(0, 0), (1, -1), (1, 0), (1, -1), (0, 0), (0, -1)] (
                 interpolation = "faceVarying"
             )
             int[] primvars:st:indices = None
@@ -56,15 +56,12 @@ def Xform "standard_shader_ball_scene" (
             matrix4d xformOp:transform:tweak_lights_position = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 2, 3, 1) )
             uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:tweak_lights_position"]
 
-            def RectLight "light" (
-                prepend apiSchemas = ["KarmaLightSettingsAPI"]
-            )
+            def RectLight "light"
             {
                 float3[] extent = [(-7.4800005, -7.4800005, -0), (7.4800005, 7.4800005, 0)]
                 float inputs:height = 14.960001
                 float inputs:intensity = 9
                 float inputs:width = 14.960001
-                bool karma:light:renderlightgeo = 1
                 rel light:filters = None
                 matrix4d xformOp:transform = ( (-0, 0, 1, 0), (0, 1, 0, 0), (-1, 0, 0, 0), (0.0010000000474974513, 0, 0, 1) )
                 uniform token[] xformOpOrder = ["xformOp:transform"]
@@ -74,28 +71,19 @@ def Xform "standard_shader_ball_scene" (
             {
                 float3[] extent = [(0, -10.311456, -10.311456), (0, 10.311456, 10.311456)]
                 int[] faceVertexCounts = [3, 3]
-                int[] faceVertexIndices = [0, 1, 3, 3, 2, 0]
-                float[] height = [0, 0, 0, 0] (
-                    interpolation = "vertex"
-                )
-                float[] intensity = [0, 0, 0, 0] (
-                    interpolation = "vertex"
-                )
+                int[] faceVertexIndices = [0, 3, 1, 3, 0, 2]
                 normal3f[] normals = [(1, 0, 0), (1, 0, 0), (1, 0, 0), (1, 0, 0)] (
                     interpolation = "vertex"
                 )
-                uniform token orientation = "leftHanded"
+                uniform token orientation = "rightHanded"
                 point3f[] points = [(0, -10.311456, -10.311456), (0, -10.311456, 10.311456), (0, 10.311456, -10.311456), (0, 10.311456, 10.311456)] (
                     interpolation = "vertex"
                 )
-                color3f[] primvars:displayColor = [(0.502, 0.502, 0.502), (0.502, 0.502, 0.502)] (
-                    interpolation = "uniform"
+                color3f[] primvars:displayColor = [(0.502, 0.502, 0.502)] (
+                    interpolation = "constant"
                 )
                 int[] primvars:displayColor:indices = None
                 uniform token subdivisionScheme = "none"
-                float[] width = [0, 0, 0, 0] (
-                    interpolation = "vertex"
-                )
             }
         }
 
@@ -108,57 +96,45 @@ def Xform "standard_shader_ball_scene" (
             matrix4d xformOp:transform:tweak_lights_position = ( (1, 0, 0, 0), (0, 1, 0, 0), (0, 0, 1, 0), (0, 2, 3, 1) )
             uniform token[] xformOpOrder = ["xformOp:transform", "xformOp:transform:tweak_lights_position"]
 
-            def RectLight "light3" (
-                prepend apiSchemas = ["KarmaLightSettingsAPI"]
-            )
+            def RectLight "light3"
             {
                 float3[] extent = [(-12.18, -12.18, -0), (12.18, 12.18, 0)]
                 float inputs:height = 24.36
                 float inputs:intensity = 6
                 float inputs:width = 24.36
-                bool karma:light:renderlightgeo = 1
                 rel light:filters = None
                 matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 0, -1, 0), (0, 1, 0, 0), (14.300071716308594, -0.00009999999747378752, -15.162029266357422, 1) )
                 uniform token[] xformOpOrder = ["xformOp:transform"]
             }
 
-            def RectLight "light2" (
-                prepend apiSchemas = ["KarmaLightSettingsAPI"]
-            )
+            def RectLight "light2"
             {
                 float3[] extent = [(-12.18, -12.18, -0), (12.18, 12.18, 0)]
                 float inputs:height = 24.36
                 float inputs:intensity = 6
                 float inputs:width = 24.36
-                bool karma:light:renderlightgeo = 1
                 rel light:filters = None
                 matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 0, -1, 0), (0, 1, 0, 0), (-15.162029266357422, -0.00009999999747378752, -14.300069808959961, 1) )
                 uniform token[] xformOpOrder = ["xformOp:transform"]
             }
 
-            def RectLight "light1" (
-                prepend apiSchemas = ["KarmaLightSettingsAPI"]
-            )
+            def RectLight "light1"
             {
                 float3[] extent = [(-12.18, -12.18, -0), (12.18, 12.18, 0)]
                 float inputs:height = 24.36
                 float inputs:intensity = 6
                 float inputs:width = 24.36
-                bool karma:light:renderlightgeo = 1
                 rel light:filters = None
                 matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 0, -1, 0), (0, 1, 0, 0), (15.162029266357422, -0.00009999999747378752, 14.300069808959961, 1) )
                 uniform token[] xformOpOrder = ["xformOp:transform"]
             }
 
-            def RectLight "light0" (
-                prepend apiSchemas = ["KarmaLightSettingsAPI"]
-            )
+            def RectLight "light0"
             {
                 float3[] extent = [(-12.18, -12.18, -0), (12.18, 12.18, 0)]
                 float inputs:height = 24.36
                 float inputs:intensity = 6
                 float inputs:width = 24.36
-                bool karma:light:renderlightgeo = 1
                 rel light:filters = None
                 matrix4d xformOp:transform = ( (1, 0, 0, 0), (0, 0, -1, 0), (0, 1, 0, 0), (-14.300070762634277, -0.00009999999747378752, 15.162029266357422, 1) )
                 uniform token[] xformOpOrder = ["xformOp:transform"]
@@ -168,28 +144,19 @@ def Xform "standard_shader_ball_scene" (
             {
                 float3[] extent = [(-31.54725, 0, -31.6542), (31.54725, 0, 31.6542)]
                 int[] faceVertexCounts = [3, 3]
-                int[] faceVertexIndices = [0, 1, 3, 3, 2, 0]
-                float[] height = [0, 0, 0, 0] (
-                    interpolation = "vertex"
-                )
-                float[] intensity = [0, 0, 0, 0] (
-                    interpolation = "vertex"
-                )
+                int[] faceVertexIndices = [0, 3, 1, 3, 0, 2]
                 normal3f[] normals = [(0, 1, 0), (0, 1, 0), (0, 1, 0), (0, 1, 0)] (
                     interpolation = "vertex"
                 )
-                uniform token orientation = "leftHanded"
+                uniform token orientation = "rightHanded"
                 point3f[] points = [(-31.54725, 0, -31.6542), (31.54725, 0, -31.6542), (-31.54725, 0, 31.6542), (31.54725, 0, 31.6542)] (
                     interpolation = "vertex"
                 )
-                color3f[] primvars:displayColor = [(0.502, 0.502, 0.502), (0.502, 0.502, 0.502)] (
-                    interpolation = "uniform"
+                color3f[] primvars:displayColor = [(0.502, 0.502, 0.502)] (
+                    interpolation = "constant"
                 )
                 int[] primvars:displayColor:indices = None
                 uniform token subdivisionScheme = "none"
-                float[] width = [0, 0, 0, 0] (
-                    interpolation = "vertex"
-                )
             }
         }
     }
@@ -207,13 +174,13 @@ def Xform "standard_shader_ball_scene" (
         {
             float3[] extent = [(-50, 0, 50), (50, 75.8639, 50)]
             int[] faceVertexCounts = [3, 3]
-            int[] faceVertexIndices = [0, 1, 3, 3, 2, 0]
+            int[] faceVertexIndices = [0, 3, 1, 3, 0, 2]
             rel material:binding:full = </standard_shader_ball_scene/materials/back>
-            uniform token orientation = "leftHanded"
+            uniform token orientation = "rightHanded"
             point3f[] points = [(50, 75.8639, 50), (-50, 75.8639, 50), (50, 0, 50), (-50, 0, 50)] (
                 interpolation = "vertex"
             )
-            texCoord2f[] primvars:st = [(0, 0), (1, 0), (1, -1), (1, -1), (0, -1), (0, 0)] (
+            texCoord2f[] primvars:st = [(0, 0), (1, -1), (1, 0), (1, -1), (0, 0), (0, -1)] (
                 interpolation = "faceVarying"
             )
             int[] primvars:st:indices = None
@@ -226,13 +193,13 @@ def Xform "standard_shader_ball_scene" (
         {
             float3[] extent = [(50, 0, -50), (50, 75.8639, 50)]
             int[] faceVertexCounts = [3, 3]
-            int[] faceVertexIndices = [0, 1, 3, 3, 2, 0]
+            int[] faceVertexIndices = [0, 3, 1, 3, 0, 2]
             rel material:binding:full = </standard_shader_ball_scene/materials/right>
-            uniform token orientation = "leftHanded"
+            uniform token orientation = "rightHanded"
             point3f[] points = [(50, 75.8639, -50), (50, 75.8639, 50), (50, 0, -50), (50, 0, 50)] (
                 interpolation = "vertex"
             )
-            texCoord2f[] primvars:st = [(0, 0), (1, 0), (1, -1), (1, -1), (0, -1), (0, 0)] (
+            texCoord2f[] primvars:st = [(0, 0), (1, -1), (1, 0), (1, -1), (0, 0), (0, -1)] (
                 interpolation = "faceVarying"
             )
             int[] primvars:st:indices = None
@@ -245,13 +212,13 @@ def Xform "standard_shader_ball_scene" (
         {
             float3[] extent = [(-50, 75.8639, -50), (50, 75.8639, 50)]
             int[] faceVertexCounts = [3, 3]
-            int[] faceVertexIndices = [0, 2, 3, 3, 1, 0]
+            int[] faceVertexIndices = [0, 3, 2, 3, 0, 1]
             rel material:binding:full = </standard_shader_ball_scene/materials/top>
-            uniform token orientation = "leftHanded"
+            uniform token orientation = "rightHanded"
             point3f[] points = [(-50, 75.8639, -50), (50, 75.8639, -50), (-50, 75.8639, 50), (50, 75.8639, 50)] (
                 interpolation = "vertex"
             )
-            texCoord2f[] primvars:st = [(0, 0), (0, -1), (1, -1), (1, -1), (1, 0), (0, 0)] (
+            texCoord2f[] primvars:st = [(0, 0), (1, -1), (0, -1), (1, -1), (0, 0), (1, 0)] (
                 interpolation = "faceVarying"
             )
             int[] primvars:st:indices = None
@@ -264,13 +231,13 @@ def Xform "standard_shader_ball_scene" (
         {
             float3[] extent = [(-50, 0, -50), (50, 75.8639, -50)]
             int[] faceVertexCounts = [3, 3]
-            int[] faceVertexIndices = [0, 1, 3, 3, 2, 0]
+            int[] faceVertexIndices = [0, 3, 1, 3, 0, 2]
             rel material:binding:full = </standard_shader_ball_scene/materials/front>
-            uniform token orientation = "leftHanded"
+            uniform token orientation = "rightHanded"
             point3f[] points = [(-50, 75.8639, -50), (50, 75.8639, -50), (-50, 0, -50), (50, 0, -50)] (
                 interpolation = "vertex"
             )
-            texCoord2f[] primvars:st = [(0, 0), (1, 0), (1, -1), (1, -1), (0, -1), (0, 0)] (
+            texCoord2f[] primvars:st = [(0, 0), (1, -1), (1, 0), (1, -1), (0, 0), (0, -1)] (
                 interpolation = "faceVarying"
             )
             int[] primvars:st:indices = None
@@ -283,13 +250,13 @@ def Xform "standard_shader_ball_scene" (
         {
             float3[] extent = [(-50, 0, -50), (-50, 75.8639, 50)]
             int[] faceVertexCounts = [3, 3]
-            int[] faceVertexIndices = [0, 1, 3, 3, 2, 0]
+            int[] faceVertexIndices = [0, 3, 1, 3, 0, 2]
             rel material:binding:full = </standard_shader_ball_scene/materials/left>
-            uniform token orientation = "leftHanded"
+            uniform token orientation = "rightHanded"
             point3f[] points = [(-50, 75.8639, 50), (-50, 75.8639, -50), (-50, 0, 50), (-50, 0, -50)] (
                 interpolation = "vertex"
             )
-            texCoord2f[] primvars:st = [(0, 0), (1, 0), (1, -1), (1, -1), (0, -1), (0, 0)] (
+            texCoord2f[] primvars:st = [(0, 0), (1, -1), (1, 0), (1, -1), (0, 0), (0, -1)] (
                 interpolation = "faceVarying"
             )
             int[] primvars:st:indices = None

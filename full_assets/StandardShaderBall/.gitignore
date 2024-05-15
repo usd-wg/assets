@@ -1,0 +1,5 @@
+# Ignore Auto-Generated .rat files from Karma
+*.rat
+
+# Ignore Houdini's backup folder
+src/backup
