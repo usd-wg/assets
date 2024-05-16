@@ -25,7 +25,7 @@ jobs:
         files_ignore_from_source_file: .github/usdchecker-skiplist.txt
 
     - name: Install usd-core PyPI package
-      run: pip install usd-core --user
+      run: pip install usd-core==24.03 --user
 
     - name: Test usdchecker
       run: python .github/usdchecker.py --help
