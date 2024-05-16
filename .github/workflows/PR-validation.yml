@@ -24,11 +24,6 @@ jobs:
           **/*.usd*
         files_ignore_from_source_file: .github/usdchecker-skiplist.txt
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
-      with:
-          python-version: '3.7'
-
     - name: Install usd-core PyPI package
       run: pip install usd-core --user
 
