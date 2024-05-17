@@ -48,7 +48,7 @@ def Scope "Scene" (
     }
 
     def Xform "png" {
-        double3 xformOp:translate = (2, 0, 0)
+        double3 xformOp:translate = (3, 0, 0)
         uniform token[] xformOpOrder = ["xformOp:translate"]
 
         over "png_grayscale_8bit" (

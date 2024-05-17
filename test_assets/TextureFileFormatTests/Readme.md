@@ -2,6 +2,8 @@
 
 This set of assets is intended to test support for loading and rendering basic texture file formats.
 
+The left material for each texture case is not using opacity. The right material is.
+
 ## Screenshot
 
 ![screenshot](screenshots/all_files.png)  

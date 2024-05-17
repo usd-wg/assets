@@ -22,5 +22,13 @@ over "Scene"
                 asset inputs:file = @jpeg_cmyk_8-bit.jpg@
             }
         }
+
+        over "MainMaterialWithOpacity"
+        {
+            over "Diffuse"
+            {
+                asset inputs:file = @jpeg_cmyk_8-bit.jpg@
+            }
+        }
     }
 }

@@ -22,5 +22,13 @@ over "Scene"
                 asset inputs:file = @png_rgb_32-bit.png@
             }
         }
+
+        over "MainMaterialWithOpacity"
+        {
+            over "Diffuse"
+            {
+                asset inputs:file = @png_rgb_32-bit.png@
+            }
+        }
     }
 }
