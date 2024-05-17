@@ -2,6 +2,10 @@
 (
     defaultPrim = "Scene"
     upAxis = "Y"
+    metersPerUnit = 1
+    customLayerData = {
+        string copyright = "Copyright 2024 Apple Inc. All rights reserved."
+    }
 )
 
 def Scope "Scene" (
