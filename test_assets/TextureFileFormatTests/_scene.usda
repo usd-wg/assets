@@ -1,0 +1,106 @@
+#usda 1.0
+(
+    defaultPrim = "Scene"
+    upAxis = "Y"
+    metersPerUnit = 1
+    customLayerData = {
+        string copyright = "Copyright 2024 Apple Inc. All rights reserved."
+    }
+)
+
+def Xform "Scene" (
+    kind = "component"
+)
+{
+    def Scope "Looks"
+    {
+        def Material "MainMaterial"
+        {
+            token outputs:surface.connect = </Scene/Looks/MainMaterial/PbrPreview.outputs:surface>
+
+            def Shader "PbrPreview"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor.connect  = </Scene/Looks/MainMaterial/Diffuse.outputs:rgb>
+                token outputs:surface
+            }
+
+            def Shader "Diffuse"
+            {
+                uniform token info:id = "UsdUVTexture"
+                float2 inputs:st.connect = </Scene/Looks/MainMaterial/Primvar.outputs:result>
+                float3 outputs:rgb
+            }
+
+            def Shader "Primvar"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                string inputs:varname = "st"
+                float2 outputs:result
+            }
+        }
+
+        def Material "MainMaterialWithOpacity"
+        {
+            token outputs:surface.connect = </Scene/Looks/MainMaterialWithOpacity/PbrPreview.outputs:surface>
+
+            def Shader "PbrPreview"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor.connect  = </Scene/Looks/MainMaterialWithOpacity/Diffuse.outputs:rgb>
+                float inputs:opacity.connect = </Scene/Looks/MainMaterialWithOpacity/Diffuse.outputs:a>
+                token outputs:surface
+            }
+
+            def Shader "Diffuse"
+            {
+                uniform token info:id = "UsdUVTexture"
+                float2 inputs:st.connect = </Scene/Looks/MainMaterialWithOpacity/Primvar.outputs:result>
+                float3 outputs:rgb
+                float outputs:a
+            }
+
+            def Shader "Primvar"
+            {
+                uniform token info:id = "UsdPrimvarReader_float2"
+                string inputs:varname = "st"
+                float2 outputs:result
+            }
+        }
+    }
+
+    def Xform "Geom"
+    {
+        def Mesh "Backgroud"
+        {
+            color3f[] primvars:displayColor = [(0.7, 0, 0.7)] (
+                interpolation = "constant"
+            )
+            int[] faceVertexCounts = [4]
+            int[] faceVertexIndices = [0, 1, 2, 3]
+            point3f[] points = [(-0.1,-0.1,-0.1), (2.2,-0.1,-0.1), (2.2,1.1,-0.1), (-0.1,1.1,-0.1)]
+        }
+
+        def Mesh "Plane" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Scene/Looks/MainMaterial>
+            float2[] primvars:st = [(0, 0), (1, 0), (1, 1), (0, 1)] (interpolation = "vertex")
+            int[] faceVertexCounts = [4]
+            int[] faceVertexIndices = [0, 1, 2, 3]
+            point3f[] points = [(0,0,0), (1,0,0), (1,1,0), (0,1,0)]
+        }
+
+        def Mesh "PlaneWithOpacity" (
+            prepend apiSchemas = ["MaterialBindingAPI"]
+        )
+        {
+            rel material:binding = </Scene/Looks/MainMaterialWithOpacity>
+            float2[] primvars:st = [(0, 0), (1, 0), (1, 1), (0, 1)] (interpolation = "vertex")
+            int[] faceVertexCounts = [4]
+            int[] faceVertexIndices = [0, 1, 2, 3]
+            point3f[] points = [(1.1,0,0), (2.1,0,0), (2.1,1,0), (1.1,1,0)]
+        }
+    }
+}
