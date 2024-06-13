@@ -5,6 +5,10 @@ Our objective is to foster information exchange within the USD community regardi
 
 The GitHub repository is only half the story: much of the value this working group provides is in the monthly sync where folks present schema, discuss asset/pipeline problems, and share plans for this repository -- please consider joining!
 
+## Web Catalog
+
+You can browse and preview the assets in this repository live in the online [Web Catalog](https://usd-assets.needle.tools/), which renders the USD assets using USD-WASM.
+
 ## What's in this Repo?
 
 The repository is roughly structure into three buckets: documentation, test assets, and full assets.
