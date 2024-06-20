@@ -1,0 +1,14 @@
+#usda 1.0
+(
+    defaultPrim = "TextureCoordinateTest"
+)
+
+def "TextureCoordinateTest" (
+    assetInfo = {
+        string name = "TextureCoordinateTest"
+        string version = "1"
+    }
+    kind = "model"
+    prepend references = @./TextureCoordinateTest.usda@
+)
+{}
