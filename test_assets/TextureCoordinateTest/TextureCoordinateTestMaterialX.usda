@@ -1,0 +1,198 @@
+#usda 1.0
+(
+    defaultPrim = "Asset"
+    doc = "Converted from glTF with guc 0.2"
+    metersPerUnit = 1
+    upAxis = "Y"
+)
+
+def Xform "Asset" (
+    customData = {
+        string copyright = "Copyright 2017-2018 Analytical Graphics, Inc., CC-BY 4.0 https://creativecommons.org/licenses/by/4.0/ - Mesh and textures by Ed Mackey."
+        string generator = "guc conversion from Khronos Blender glTF 2.0 exporter, plus hand-edits"
+        string version = "2.0"
+    }
+    kind = "component"
+)
+{
+    def Scope "Materials"
+    {
+        def "MaterialX"
+        {
+            def Scope "Materials" (
+                prepend references = @./TextureCoordinateTest.mtlx@</MaterialX/Materials>
+            )
+            {
+            }
+        }
+    }
+
+    def Xform "Scenes"
+    {
+        def Xform "Scene"
+        {
+            def Xform "BackPlane"
+            {
+                def Xform "BackPlaneMesh"
+                {
+                    def Mesh "submesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(-1.0, -1.0, -0.05), (1.0, 1.0, -0.05)]
+                        int[] faceVertexCounts = [3, 3]
+                        int[] faceVertexIndices = [0, 1, 2, 0, 3, 1]
+                        rel material:binding = </Asset/Materials/MaterialX/Materials/BackPlaneMat>
+                        normal3f[] normals = [(0.0, 0.0, -1.0), (0.0, 0.0, -1.0), (0.0, 0.0, -1.0), (0.0, 0.0, -1.0)] (
+                            interpolation = "vertex"
+                        )
+                        point3f[] points = [(-1.0, 1.0, -0.05), (1.0, -1.0, -0.05), (-1.0, -1.0, -0.05), (1.0, 1.0, -0.05)]
+                        color3f[] primvars:displayColor = [(0.16, 0.16, 0.16)] (
+                            customData = {
+                                dictionary guc = {
+                                    bool generated = 1
+                                }
+                            }
+                            interpolation = "constant"
+                        )
+                        uniform token subdivisionScheme = "none"
+                    }
+                }
+            }
+
+            def Xform "BottomRightObj"
+            {
+                def Xform "BottomRightMesh"
+                {
+                    def Mesh "submesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(0.2, -1.2, 0.0), (1.2, -0.2, 0.0)]
+                        int[] faceVertexCounts = [3, 3]
+                        int[] faceVertexIndices = [0, 1, 2, 3, 1, 0]
+                        rel material:binding = </Asset/Materials/MaterialX/Materials/BottomRightMat>
+                        normal3f[] normals = [(0.0, 0.0, 1.0), (0.0, 0.0, 1.0), (0.0, 0.0, 1.0), (0.0, 0.0, 1.0)] (
+                            interpolation = "vertex"
+                        )
+                        point3f[] points = [(1.2, -1.2, 0.0), (0.2, -0.2, 0.0), (0.2, -1.2, 0.0), (1.2, -0.2, 0.0)]
+                        color3f[] primvars:displayColor = [(0, 0.8, 0)] (
+                            customData = {
+                                dictionary guc = {
+                                    bool generated = 1
+                                }
+                            }
+                            interpolation = "constant"
+                        )
+                        texCoord2f[] primvars:st = [(1.0, 0.0), (0.6, 0.4), (0.6, 0.0), (1.0, 0.4)] (
+                            interpolation = "vertex"
+                        )
+                        uniform token subdivisionScheme = "none"
+                    }
+                }
+            }
+
+            def Xform "BottomLeftObj"
+            {
+                def Xform "BottomLeftMesh"
+                {
+                    def Mesh "submesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(-1.2, -1.2, 0.0), (-0.2, -0.2, 0.0)]
+                        int[] faceVertexCounts = [3, 3]
+                        int[] faceVertexIndices = [0, 1, 2, 3, 1, 0]
+                        rel material:binding = </Asset/Materials/MaterialX/Materials/BottomLeftMat>
+                        normal3f[] normals = [(0.0, 0.0, 1.0), (0.0, 0.0, 1.0), (0.0, 0.0, 1.0), (0.0, 0.0, 1.0)] (
+                            interpolation = "vertex"
+                        )
+                        point3f[] points = [(-0.2, -1.2, 0.0), (-1.2, -0.2, 0.0), (-1.2, -1.2, 0.0), (-0.2, -0.2, 0.0)]
+                        color3f[] primvars:displayColor = [(0, 0.16, 0.8)] (
+                            customData = {
+                                dictionary guc = {
+                                    bool generated = 1
+                                }
+                            }
+                            interpolation = "constant"
+                        )
+                        texCoord2f[] primvars:st = [(0.4, 0.0), (0.0, 0.4), (0.0, 0.0), (0.4, 0.4)] (
+                            interpolation = "vertex"
+                        )
+                        uniform token subdivisionScheme = "none"
+                    }
+                }
+            }
+
+            def Xform "TopRightObj"
+            {
+                def Xform "TopRightMesh"
+                {
+                    def Mesh "submesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(0.2, 0.2, 0.0), (1.2, 1.2, 0.0)]
+                        int[] faceVertexCounts = [3, 3]
+                        int[] faceVertexIndices = [0, 1, 2, 3, 1, 0]
+                        rel material:binding = </Asset/Materials/MaterialX/Materials/TopRightMat>
+                        normal3f[] normals = [(0.0, 0.0, 1.0), (0.0, 0.0, 1.0), (0.0, 0.0, 1.0), (0.0, 0.0, 1.0)] (
+                            interpolation = "vertex"
+                        )
+                        point3f[] points = [(1.2, 0.2, 0.0), (0.2, 1.2, 0.0), (0.2, 0.2, 0.0), (1.2, 1.2, 0.0)]
+                        color3f[] primvars:displayColor = [(0.8, 0.08, 0)] (
+                            customData = {
+                                dictionary guc = {
+                                    bool generated = 1
+                                }
+                            }
+                            interpolation = "constant"
+                        )
+                        texCoord2f[] primvars:st = [(1.0, 0.6), (0.6, 1.0), (0.6, 0.6), (1.0, 1.0)] (
+                            interpolation = "vertex"
+                        )
+                        uniform token subdivisionScheme = "none"
+                    }
+                }
+            }
+
+            def Xform "TopLeftObj"
+            {
+                def Xform "TopLeftMesh"
+                {
+                    def Mesh "submesh" (
+                        prepend apiSchemas = ["MaterialBindingAPI"]
+                    )
+                    {
+                        uniform bool doubleSided = 1
+                        float3[] extent = [(-1.2, 0.2, 0.0), (-0.2, 1.2, 0.0)]
+                        int[] faceVertexCounts = [3, 3]
+                        int[] faceVertexIndices = [0, 1, 2, 3, 1, 0]
+                        rel material:binding = </Asset/Materials/MaterialX/Materials/TopLeftMat>
+                        normal3f[] normals = [(0.0, 0.0, 1.0), (0.0, 0.0, 1.0), (0.0, 0.0, 1.0), (0.0, 0.0, 1.0)] (
+                            interpolation = "vertex"
+                        )
+                        point3f[] points = [(-0.2, 0.2, 0.0), (-1.2, 1.2, 0.0), (-1.2, 0.2, 0.0), (-0.2, 1.2, 0.0)]
+                        color3f[] primvars:displayColor = [(0.8, 0.8, 0)] (
+                            customData = {
+                                dictionary guc = {
+                                    bool generated = 1
+                                }
+                            }
+                            interpolation = "constant"
+                        )
+                        texCoord2f[] primvars:st = [(0.4, 0.6), (0.0, 1.0), (0.0, 0.6), (0.4, 1.0)] (
+                            interpolation = "vertex"
+                        )
+                        uniform token subdivisionScheme = "none"
+                    }
+                }
+            }
+        }
+    }
+}
+

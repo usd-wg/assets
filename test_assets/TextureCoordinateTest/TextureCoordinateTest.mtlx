@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<materialx version="1.38" colorspace="lin_rec709">
+
+  <nodegraph name="TextureCoordinateTemplate_NodeGraph">
+    <image name="TextureCoordinateTemplate_Image" type="color3">
+      <input name="file" type="filename" value="TextureCoordinateTemplate.png" />
+    </image>
+    <output name="base_color_output" type="color3" nodename="TextureCoordinateTemplate_Image" />
+  </nodegraph>
+
+  <!-- BackPlaneMat -->
+  <standard_surface name="BackPlaneMat_Surface" type="surfaceshader">
+    <input name="base" type="float" value="1" />
+    <input name="base_color" type="color3" value="0.16000001, 0.16000001, 0.16000001" />
+    <input name="specular_roughness" type="float" value="1.0" />
+  </standard_surface>
+  <surfacematerial name="BackPlaneMat" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="BackPlaneMat_Surface" />
+  </surfacematerial>
+
+  <!-- BottomLeftMat -->
+  <standard_surface name="BottomLeftMat_Surface" type="surfaceshader">
+    <input name="base" type="float" value="1" />
+    <input name="base_color" type="color3" nodegraph="TextureCoordinateTemplate_NodeGraph" output="base_color_output"/>
+    <input name="specular_roughness" type="float" value="1.0" />
+  </standard_surface>
+  <surfacematerial name="BottomLeftMat" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="BottomLeftMat_Surface" />
+  </surfacematerial>
+
+  <!-- BottomRightMat -->
+  <standard_surface name="BottomRightMat_Surface" type="surfaceshader">
+    <input name="base" type="float" value="1" />
+    <input name="base_color" type="color3" nodegraph="TextureCoordinateTemplate_NodeGraph" output="base_color_output"/>
+    <input name="specular_roughness" type="float" value="1.0" />
+  </standard_surface>
+  <surfacematerial name="BottomRightMat" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="BottomRightMat_Surface" />
+  </surfacematerial>
+
+  <!-- TopLeftMat -->
+  <standard_surface name="TopLeftMat_Surface" type="surfaceshader">
+    <input name="base" type="float" value="1" />
+    <input name="base_color" type="color3" nodegraph="TextureCoordinateTemplate_NodeGraph" output="base_color_output"/>
+    <input name="specular_roughness" type="float" value="1.0" />
+  </standard_surface>
+  <surfacematerial name="TopLeftMat" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="TopLeftMat_Surface" />
+  </surfacematerial>
+
+  <!-- TopRightMat -->
+  <standard_surface name="TopRightMat_Surface" type="surfaceshader">
+    <input name="base" type="float" value="1" />
+    <input name="base_color" type="color3" nodegraph="TextureCoordinateTemplate_NodeGraph" output="base_color_output"/>
+    <input name="specular_roughness" type="float" value="1.0" />
+  </standard_surface>
+  <surfacematerial name="TopRightMat" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="TopRightMat_Surface" />
+  </surfacematerial>
+
+</materialx>
