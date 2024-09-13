@@ -1,0 +1,50 @@
+#usda 1.0
+(
+    defaultPrim = "Pyramid"
+    framesPerSecond = 24
+    metersPerUnit = 1
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+def Xform "Pyramid" (
+    assetInfo = {
+        asset identifier = @./Pyramid.usd@
+        string name = "Pyramid"
+        asset thumbnail = @./thumbnail.png@
+    }
+    prepend inherits = </__class__/Pyramid>
+    kind = "component"
+    prepend payload = @./payload.usda@
+    variants = {
+        string geo = "quad_creases"
+        string mtl = "previewsurface"
+    }
+    prepend variantSets = "geo"
+)
+{
+    variantSet "geo" = {
+        "quad_creases" (
+            prepend apiSchemas = ["GeomModelAPI"]
+            kind = "component"
+        ) {
+            float3[] extentsHint = [(-0.9428103, 0, -0.8164976), (0.47140515, 1.3333297, 0.8164976)]
+
+        }
+        "quad_holes" (
+            prepend apiSchemas = ["GeomModelAPI"]
+            kind = "component"
+        ) {
+            float3[] extentsHint = [(-0.9428103, 0, -0.8164976), (0.47140515, 1.3333297, 0.8164976)]
+
+        }
+    }
+}
+
+class "__class__"
+{
+    class "Pyramid"
+    {
+    }
+}
+

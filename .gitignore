@@ -2,3 +2,4 @@
 *.bck.*
 .DS_Store
 *.pyc
+**/backup/
