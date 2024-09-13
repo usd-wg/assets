@@ -1,0 +1,19 @@
+#usda 1.0
+(
+    defaultPrim = "Pyramid"
+    framesPerSecond = 24
+    metersPerUnit = 1
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+def "Pyramid" (
+    kind = "component"
+    prepend references = [
+        @./mtl.usda@,
+        @./geo.usda@
+    ]
+)
+{
+}
+
