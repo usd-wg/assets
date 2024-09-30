@@ -1,0 +1,2361 @@
+#usda 1.0
+(
+    defaultPrim = "Scene"
+    endTimeCode = 1
+    metersPerUnit = 1
+    startTimeCode = 1
+    subLayers = [
+        @./teapotScene.usd@
+    ]
+    upAxis = "Y"
+)
+
+class "_red_teapot"
+{
+    over "mtl"
+    {
+        over "default_material"
+        {
+            over "default_shader_mtlx"
+            {
+                custom color3f inputs:base_color = (1, 0, 0)
+            }
+        }
+    }
+}
+
+class "_green_teapot"
+{
+    over "mtl"
+    {
+        over "default_material"
+        {
+            over "default_shader_mtlx"
+            {
+                custom color3f inputs:base_color = (0, 1, 0)
+            }
+        }
+    }
+}
+
+class "_blue_teapot"
+{
+    over "mtl"
+    {
+        over "default_material"
+        {
+            over "default_shader_mtlx"
+            {
+                custom color3f inputs:base_color = (0, 0, 1)
+            }
+        }
+    }
+}
+
+over "Scene"
+{
+    over "ring000"
+    {
+        over "teapot002" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot004" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot006" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot007" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot008" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot010" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot011" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot014" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+    }
+
+    over "ring001"
+    {
+        over "teapot016" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot018" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot019" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot020" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot023" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot025" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot026" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot027" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+    }
+
+    over "ring002"
+    {
+        over "teapot028" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot029" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot030" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot031" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot033" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot034" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot035" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot036" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot037" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot038" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot039" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot040" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot041" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot042" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot043" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot044" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+    }
+
+    over "ring003"
+    {
+        over "instancer_teapot003"
+        {
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_green_teapot>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring004"
+    {
+        over "teapot060" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot062" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot064" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot065" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot066" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot068" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot069" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot071" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot072" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot073" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+    }
+
+    over "ring006"
+    {
+        over "teapot092" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot094" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot096" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot097" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot098" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot099" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot100" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot101" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot102" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot104" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot106" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+    }
+
+    over "ring007"
+    {
+        over "instancer_teapot007"
+        {
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_red_teapot>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring008"
+    {
+        over "instancer_teapot008"
+        {
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_blue_teapot>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring012"
+    {
+        over "teapot193" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot194" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot195" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot196" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot197" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot200" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot202" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot204" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot206" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot207" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot208" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot209" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot210" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot211" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+    }
+
+    over "ring013"
+    {
+        over "teapot212" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot213" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot214" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot215" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot216" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot217" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot218" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot219" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot220" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot223" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot225" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot226" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot228" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot229" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot230" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+    }
+
+    over "ring014"
+    {
+        over "instancer_teapot014"
+        {
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_red_teapot>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring016"
+    {
+        over "instancer_teapot016"
+        {
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_blue_teapot>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring017"
+    {
+        over "teapot290" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot291" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot292" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot293" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot296" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot297" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot298" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot299" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot300" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot301" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot302" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot303" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot305" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot306" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+    }
+
+    over "ring018"
+    {
+        over "instancer_teapot018"
+        {
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_green_teapot>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring020"
+    {
+        over "instancer_teapot020"
+        {
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_green_teapot>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring021"
+    {
+        over "teapot371" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot372" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot373" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot374" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot375" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot376" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot378" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot379" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot380" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot384" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot385" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot387" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot389" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+    }
+
+    over "ring022"
+    {
+        over "teapot390" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot391" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot392" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot393" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot394" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot395" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot396" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot397" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot398" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot399" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot400" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot401" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot402" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot403" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot405" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot407" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot408" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot409" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot410" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot411" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot412" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+    }
+
+    over "ring024"
+    {
+        over "teapot436" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot437" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot438" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot439" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot440" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot441" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot442" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot443" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot444" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot446" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot448" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot449" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot450" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot452" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot453" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot454" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot456" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot457" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot458" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot459" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+    }
+
+    over "ring025"
+    {
+        over "teapot461" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot463" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot464" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot465" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot466" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot467" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot468" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot469" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot471" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot472" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot473" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot474" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot475" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot478" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot479" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot480" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot482" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot484" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot485" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+    }
+
+    over "ring027"
+    {
+        over "instancer_teapot027"
+        {
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_blue_teapot>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring028"
+    {
+        over "instancer_teapot028"
+        {
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_red_teapot>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring029"
+    {
+        over "instancer_teapot029"
+        {
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_blue_teapot>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring030"
+    {
+        over "teapot587" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot588" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot589" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot590" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot591" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot592" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot593" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot594" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot596" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot598" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot599" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot600" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot601" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot604" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot605" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot606" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot607" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot608" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot609" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot610" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot611" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+    }
+
+    over "ring031"
+    {
+        over "instancer_teapot031"
+        {
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_red_teapot>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring032"
+    {
+        over "teapot637" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot638" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot640" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot642" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot643" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot644" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot646" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot647" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot648" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot649" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot650" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot655" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot657" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot659" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot660" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot662" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+    }
+
+    over "ring033"
+    {
+        over "instancer_teapot033"
+        {
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_green_teapot>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring034"
+    {
+        over "instancer_teapot034"
+        {
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_blue_teapot>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring035"
+    {
+        over "instancer_teapot035"
+        {
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_red_teapot>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring036"
+    {
+        over "teapot745" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot748" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot749" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot752" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot756" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot757" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot758" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot759" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot760" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot761" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot764" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot765" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot767" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot768" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot769" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot771" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot772" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot774" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+    }
+
+    over "ring037"
+    {
+        over "teapot776" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot777" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot778" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot779" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot781" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot782" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot785" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot786" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot788" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot792" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot793" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot794" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot797" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot799" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot800" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot801" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot802" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+    }
+
+    over "ring038"
+    {
+        over "teapot803" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot805" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot806" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot809" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot810" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot811" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot812" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot815" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot816" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot818" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot819" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot820" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot821" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot822" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot823" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot824" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot825" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot826" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot827" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot828" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot829" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot830" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot831" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+    }
+
+    over "ring039"
+    {
+        over "instancer_teapot039"
+        {
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_red_teapot>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring040"
+    {
+        over "teapot859" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot861" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot862" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot863" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot865" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot866" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot867" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot869" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot870" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot872" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot875" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot876" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot877" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot878" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot879" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot882" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot883" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot884" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot885" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot886" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot887" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot889" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot890" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+    }
+
+    over "ring041"
+    {
+        over "teapot891" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot892" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot895" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot897" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot898" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot899" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot900" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot902" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot903" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot904" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot905" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot906" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot907" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot908" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot909" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot914" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot915" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot916" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot917" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot918" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot919" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot920" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+    }
+
+    over "ring043"
+    {
+        over "teapot959" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot960" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot962" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot964" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot966" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot967" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot970" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot971" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot972" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot973" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot974" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot976" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot977" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot978" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot979" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot982" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot983" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot984" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot985" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot986" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot987" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot988" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot990" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot991" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot992" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+    }
+
+    over "ring044"
+    {
+        over "instancer_teapot044"
+        {
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_green_teapot>
+                )
+                {
+                }
+            }
+        }
+    }
+}
+
