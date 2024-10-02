@@ -36,7 +36,7 @@ def build_asset_root(i_stage, i_asset_root_path,
 def add_readprimvar_shader(i_stage,i_material,i_varname,i_type):
     prim_path = i_material.GetPath().AppendChild("generic_primvar_reader_{}".format(i_varname))
     prim = UsdShade.Shader.Define( i_stage, prim_path )
-    prim.CreateIdAttr("UsdPrimvarReader_{}".format(type))
+    prim.CreateIdAttr("UsdPrimvarReader_{}".format(i_type))
     prim.CreateInput( "varname", Sdf.ValueTypeNames.Token ).Set( i_varname )
     result_output = None
     if i_type == "float2":

@@ -22,6 +22,10 @@ class "_red_teapot"
             }
         }
     }
+
+    over "i_am_red_teapot"
+    {
+    }
 }
 
 class "_green_teapot"
@@ -36,6 +40,10 @@ class "_green_teapot"
             }
         }
     }
+
+    over "i_am_green_teapot"
+    {
+    }
 }
 
 class "_blue_teapot"
@@ -49,6 +57,36 @@ class "_blue_teapot"
                 custom color3f inputs:base_color = (0, 0, 1)
             }
         }
+    }
+
+    over "i_am_blue_teapot"
+    {
+    }
+}
+
+class "_rgb_teapot"
+{
+    def "mtl"
+    {
+        def "default_material"
+        {
+            over "default_shader_mtlx"
+            {
+                color3f inputs:base_color.connect = </_rgb_teapot/mtl/default_material/generic_primvar_reader_custom_color.outputs:out>
+            }
+
+            def Shader "generic_primvar_reader_custom_color"
+            {
+                uniform token info:id = "ND_UsdPrimvarReader_vector3"
+                color3f inputs:fallback = (0.18, 0.18, 0.18)
+                token inputs:varname = "custom_color"
+                color3f outputs:out
+            }
+        }
+    }
+
+    over "i_am_rgb_teapot"
+    {
     }
 }
 
@@ -259,10 +297,14 @@ over "Scene"
     {
         over "instancer_teapot003"
         {
+            custom color3f[] primvars:custom_color = [(0.37452164, 0.031841308, 0.75417316), (0.18146491, 0.8201902, 0.9136459), (0.65807414, 0.17012689, 0.33691615), (0.3911933, 0.07329078, 0.45676708), (0.5731685, 0.3361061, 0.18906187), (0.088157296, 0.62831753, 0.012829109), (0.3519137, 0.22912976, 0.5319975), (0.72366333, 0.9091533, 0.63880086), (0.9917931, 0.9640592, 0.6299907), (0.23337318, 0.48381147, 0.17758973), (0.9919578, 0.4444999, 0.75165015), (0.044129856, 0.1347276, 0.19317697), (0.25636235, 0.35204753, 0.27192986), (0.4342686, 0.42035732, 0.10862084), (0.06260878, 0.35506144, 0.088788904)] (
+                interpolation = "vertex"
+            )
+
             over "Prototypes"
             {
                 over "teapot" (
-                    prepend inherits = </_green_teapot>
+                    prepend inherits = </_rgb_teapot>
                 )
                 {
                 }
@@ -279,25 +321,31 @@ over "Scene"
         }
 
         over "teapot062" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_green_teapot>
         )
         {
         }
 
         over "teapot064" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_green_teapot>
         )
         {
         }
 
         over "teapot065" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_red_teapot>
         )
         {
         }
 
         over "teapot066" (
-            prepend inherits = </_green_teapot>
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot067" (
+            prepend inherits = </_red_teapot>
         )
         {
         }
@@ -309,6 +357,12 @@ over "Scene"
         }
 
         over "teapot069" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot070" (
             prepend inherits = </_red_teapot>
         )
         {
@@ -327,28 +381,53 @@ over "Scene"
         }
 
         over "teapot073" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
     }
 
+    over "ring005"
+    {
+        over "instancer_teapot005"
+        {
+            custom color3f[] primvars:custom_color = [(0.41903782, 0.7177179, 0.67905194), (0.37210962, 0.23496343, 0.07837648), (0.87890893, 0.057159215, 0.5186961), (0.5375364, 0.14613923, 0.6559317), (0.9158232, 0.77613294, 0.38925928), (0.12646995, 0.9749296, 0.5171035), (0.62961763, 0.8022767, 0.38624617), (0.062055763, 0.13601579, 0.66844714), (0.3495397, 0.8710772, 0.7401645), (0.9804391, 0.6688343, 0.30380577), (0.79110914, 0.028258035, 0.52159077), (0.8713947, 0.5147191, 0.1373715), (0.5001225, 0.5454577, 0.36900055), (0.8934336, 0.34008086, 0.27175137), (0.50630146, 0.20327204, 0.32205722), (0.39817017, 0.93826246, 0.08036181), (0.19709487, 0.19949934, 0.995265)] (
+                interpolation = "vertex"
+            )
+
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_rgb_teapot>
+                )
+                {
+                }
+            }
+        }
+    }
+
     over "ring006"
     {
-        over "teapot092" (
+        over "teapot091" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot093" (
             prepend inherits = </_green_teapot>
         )
         {
         }
 
-        over "teapot094" (
+        over "teapot095" (
             prepend inherits = </_red_teapot>
         )
         {
         }
 
         over "teapot096" (
-            prepend inherits = </_green_teapot>
+            prepend inherits = </_red_teapot>
         )
         {
         }
@@ -366,13 +445,13 @@ over "Scene"
         }
 
         over "teapot099" (
-            prepend inherits = </_green_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
 
         over "teapot100" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_green_teapot>
         )
         {
         }
@@ -384,12 +463,24 @@ over "Scene"
         }
 
         over "teapot102" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot103" (
             prepend inherits = </_green_teapot>
         )
         {
         }
 
         over "teapot104" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot105" (
             prepend inherits = </_red_teapot>
         )
         {
@@ -406,10 +497,14 @@ over "Scene"
     {
         over "instancer_teapot007"
         {
+            custom color3f[] primvars:custom_color = [(0.48611996, 0.39581332, 0.22414981), (0.50125754, 0.12610623, 0.63478273), (0.8982682, 0.79052603, 0.6091578), (0.4944744, 0.6957822, 0.12231632), (0.052435372, 0.86164707, 0.36184108), (0.6689473, 0.42076167, 0.35867056), (0.77028596, 0.34303328, 0.75371397), (0.82047814, 0.18067606, 0.9772304), (0.06244219, 0.41472736, 0.5004748), (0.82935774, 0.17487867, 0.5590305), (0.3685172, 0.92168283, 0.12232679), (0.26541606, 0.8198026, 0.322234), (0.9442211, 0.051603917, 0.38841817), (0.1074659, 0.5735303, 0.9631246), (0.32469514, 0.64683586, 0.26591432), (0.43922165, 0.5715211, 0.24841331)] (
+                interpolation = "vertex"
+            )
+
             over "Prototypes"
             {
                 over "teapot" (
-                    prepend inherits = </_red_teapot>
+                    prepend inherits = </_rgb_teapot>
                 )
                 {
                 }
@@ -421,10 +516,131 @@ over "Scene"
     {
         over "instancer_teapot008"
         {
+            custom color3f[] primvars:custom_color = [(0.5009958, 0.9054632, 0.27502128), (0.9548546, 0.18220584, 0.019912224), (0.66020465, 0.7337625, 0.47732174), (0.04276007, 0.99813426, 0.14155176), (0.87046725, 0.8915326, 0.22085701), (0.86393905, 0.46340632, 0.8995825), (0.8875234, 0.7742974, 0.28871024), (0.5801048, 0.9813136, 0.32062337), (0.38650087, 0.6879893, 0.062635645), (0.25336194, 0.16802037, 0.41605672), (0.42497647, 0.6070585, 0.4968097), (0.16476955, 0.046621073, 0.5247722), (0.7638567, 0.9268939, 0.83963835), (0.3027528, 0.86567324, 0.46739155), (0.28244704, 0.09215873, 0.44271243), (0.54496133, 0.27929938, 0.19529882), (0.9408905, 0.06777492, 0.93939227)] (
+                interpolation = "vertex"
+            )
+
             over "Prototypes"
             {
                 over "teapot" (
-                    prepend inherits = </_blue_teapot>
+                    prepend inherits = </_rgb_teapot>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring009"
+    {
+        over "instancer_teapot009"
+        {
+            int[] protoIndices = [3, 0, 2, 3, 1, 1, 1, 0, 0, 0, 0, 3, 0, 3, 0, 2, 2, 0, 3, 2]
+            prepend rel prototypes = [
+                </Scene/ring009/instancer_teapot009/Prototypes/red_teapot>,
+                </Scene/ring009/instancer_teapot009/Prototypes/green_teapot>,
+                </Scene/ring009/instancer_teapot009/Prototypes/blue_teapot>,
+            ]
+
+            over "Prototypes"
+            {
+                def Xform "red_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_red_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
+                )
+                {
+                }
+
+                def Xform "green_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_green_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
+                )
+                {
+                }
+
+                def Xform "blue_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_blue_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring010"
+    {
+        over "instancer_teapot010"
+        {
+            custom color3f[] primvars:custom_color = [(0.43566385, 0.29138318, 0.18592796), (0.11271949, 0.6709499, 0.8217968), (0.21201111, 0.025966292, 0.3615328), (0.15287468, 0.22493398, 0.22204968), (0.6624214, 0.4346032, 0.5604855), (0.39008683, 0.98367083, 0.49693337), (0.042594608, 0.13922265, 0.73122084), (0.9126274, 0.1259788, 0.46010438), (0.86215085, 0.5518002, 0.017422568), (0.52087224, 0.28875658, 0.21337345), (0.9366177, 0.10572695, 0.82970047), (0.75300974, 0.59282315, 0.32486424), (0.082770474, 0.66874516, 0.9592258), (0.17979665, 0.12614697, 0.47516418), (0.8513572, 0.0053152977, 0.7888337), (0.08630661, 0.0322911, 0.14640918)] (
+                interpolation = "vertex"
+            )
+
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_rgb_teapot>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring011"
+    {
+        over "instancer_teapot011"
+        {
+            int[] protoIndices = [3, 2, 0, 0, 1, 0, 2, 1, 3, 3, 3, 0, 1, 2, 0, 0, 1]
+            prepend rel prototypes = [
+                </Scene/ring011/instancer_teapot011/Prototypes/red_teapot>,
+                </Scene/ring011/instancer_teapot011/Prototypes/green_teapot>,
+                </Scene/ring011/instancer_teapot011/Prototypes/blue_teapot>,
+            ]
+
+            over "Prototypes"
+            {
+                def Xform "red_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_red_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
+                )
+                {
+                }
+
+                def Xform "green_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_green_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
+                )
+                {
+                }
+
+                def Xform "blue_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_blue_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
                 )
                 {
                 }
@@ -441,49 +657,61 @@ over "Scene"
         }
 
         over "teapot194" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
 
         over "teapot195" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot198" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot199" (
             prepend inherits = </_red_teapot>
         )
         {
         }
 
-        over "teapot196" (
-            prepend inherits = </_red_teapot>
-        )
-        {
-        }
-
-        over "teapot197" (
-            prepend inherits = </_red_teapot>
-        )
-        {
-        }
-
-        over "teapot200" (
-            prepend inherits = </_red_teapot>
+        over "teapot201" (
+            prepend inherits = </_blue_teapot>
         )
         {
         }
 
         over "teapot202" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot203" (
+            prepend inherits = </_green_teapot>
         )
         {
         }
 
         over "teapot204" (
-            prepend inherits = </_green_teapot>
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot205" (
+            prepend inherits = </_blue_teapot>
         )
         {
         }
 
         over "teapot206" (
-            prepend inherits = </_green_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
@@ -495,13 +723,13 @@ over "Scene"
         }
 
         over "teapot208" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_red_teapot>
         )
         {
         }
 
         over "teapot209" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
@@ -513,7 +741,7 @@ over "Scene"
         }
 
         over "teapot211" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_green_teapot>
         )
         {
         }
@@ -522,13 +750,13 @@ over "Scene"
     over "ring013"
     {
         over "teapot212" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
 
         over "teapot213" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
@@ -540,49 +768,49 @@ over "Scene"
         }
 
         over "teapot215" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_red_teapot>
         )
         {
         }
 
         over "teapot216" (
-            prepend inherits = </_blue_teapot>
-        )
-        {
-        }
-
-        over "teapot217" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_green_teapot>
         )
         {
         }
 
         over "teapot218" (
-            prepend inherits = </_green_teapot>
-        )
-        {
-        }
-
-        over "teapot219" (
-            prepend inherits = </_green_teapot>
-        )
-        {
-        }
-
-        over "teapot220" (
             prepend inherits = </_red_teapot>
         )
         {
         }
 
-        over "teapot223" (
+        over "teapot219" (
             prepend inherits = </_blue_teapot>
         )
         {
         }
 
-        over "teapot225" (
+        over "teapot220" (
             prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot222" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot223" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot224" (
+            prepend inherits = </_red_teapot>
         )
         {
         }
@@ -593,20 +821,14 @@ over "Scene"
         {
         }
 
-        over "teapot228" (
+        over "teapot227" (
             prepend inherits = </_green_teapot>
         )
         {
         }
 
         over "teapot229" (
-            prepend inherits = </_blue_teapot>
-        )
-        {
-        }
-
-        over "teapot230" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_green_teapot>
         )
         {
         }
@@ -616,10 +838,93 @@ over "Scene"
     {
         over "instancer_teapot014"
         {
+            int[] protoIndices = [1, 3, 1, 3, 3, 0, 0, 2, 3, 3, 2, 3, 1, 0, 3, 2, 1, 3, 0]
+            prepend rel prototypes = [
+                </Scene/ring014/instancer_teapot014/Prototypes/red_teapot>,
+                </Scene/ring014/instancer_teapot014/Prototypes/green_teapot>,
+                </Scene/ring014/instancer_teapot014/Prototypes/blue_teapot>,
+            ]
+
             over "Prototypes"
             {
-                over "teapot" (
-                    prepend inherits = </_red_teapot>
+                def Xform "red_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_red_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
+                )
+                {
+                }
+
+                def Xform "green_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_green_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
+                )
+                {
+                }
+
+                def Xform "blue_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_blue_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring015"
+    {
+        over "instancer_teapot015"
+        {
+            int[] protoIndices = [1, 0, 1, 2, 2, 2, 0, 2, 3, 1, 3, 2, 3, 2, 1, 0, 0, 0, 0]
+            prepend rel prototypes = [
+                </Scene/ring015/instancer_teapot015/Prototypes/red_teapot>,
+                </Scene/ring015/instancer_teapot015/Prototypes/green_teapot>,
+                </Scene/ring015/instancer_teapot015/Prototypes/blue_teapot>,
+            ]
+
+            over "Prototypes"
+            {
+                def Xform "red_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_red_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
+                )
+                {
+                }
+
+                def Xform "green_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_green_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
+                )
+                {
+                }
+
+                def Xform "blue_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_blue_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
                 )
                 {
                 }
@@ -631,10 +936,14 @@ over "Scene"
     {
         over "instancer_teapot016"
         {
+            custom color3f[] primvars:custom_color = [(0.8373133, 0.8176169, 0.88479716), (0.35876852, 0.6740881, 0.82027996), (0.13230424, 0.00034839968, 0.20965585), (0.91576385, 0.80767256, 0.12964234), (0.84717405, 0.17465174, 0.26668188), (0.16814803, 0.8839397, 0.8280676), (0.06491853, 0.023827367, 0.7912337), (0.39368868, 0.5684228, 0.6381098), (0.54359734, 0.18799539, 0.31033248), (0.59744644, 0.7842863, 0.3382181), (0.02266085, 0.14526652, 0.284885), (0.9611734, 0.42697588, 0.497494), (0.42272207, 0.86610144, 0.8006351), (0.15395735, 0.6660732, 0.54987967), (0.89751387, 0.06273097, 0.57829046), (0.18981954, 0.569344, 0.8171745), (0.43402705, 0.53479874, 0.36512756), (0.94483477, 0.86241007, 0.08969085), (0.042731732, 0.5349332, 0.31145886), (0.031235287, 0.6752074, 0.15618528), (0.6438237, 0.098611586, 0.7139256)] (
+                interpolation = "vertex"
+            )
+
             over "Prototypes"
             {
                 over "teapot" (
-                    prepend inherits = </_blue_teapot>
+                    prepend inherits = </_rgb_teapot>
                 )
                 {
                 }
@@ -645,13 +954,13 @@ over "Scene"
     over "ring017"
     {
         over "teapot290" (
-            prepend inherits = </_green_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
 
         over "teapot291" (
-            prepend inherits = </_green_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
@@ -663,6 +972,12 @@ over "Scene"
         }
 
         over "teapot293" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot294" (
             prepend inherits = </_red_teapot>
         )
         {
@@ -675,43 +990,25 @@ over "Scene"
         }
 
         over "teapot297" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
 
         over "teapot298" (
-            prepend inherits = </_blue_teapot>
-        )
-        {
-        }
-
-        over "teapot299" (
-            prepend inherits = </_green_teapot>
-        )
-        {
-        }
-
-        over "teapot300" (
-            prepend inherits = </_blue_teapot>
-        )
-        {
-        }
-
-        over "teapot301" (
             prepend inherits = </_green_teapot>
         )
         {
         }
 
         over "teapot302" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
 
-        over "teapot303" (
-            prepend inherits = </_blue_teapot>
+        over "teapot304" (
+            prepend inherits = </_green_teapot>
         )
         {
         }
@@ -723,7 +1020,7 @@ over "Scene"
         }
 
         over "teapot306" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_red_teapot>
         )
         {
         }
@@ -733,10 +1030,93 @@ over "Scene"
     {
         over "instancer_teapot018"
         {
+            int[] protoIndices = [1, 1, 0, 2, 2, 2, 3, 3, 3, 2, 0, 3, 3, 2, 1, 2, 2, 3, 1, 1, 3]
+            prepend rel prototypes = [
+                </Scene/ring018/instancer_teapot018/Prototypes/red_teapot>,
+                </Scene/ring018/instancer_teapot018/Prototypes/green_teapot>,
+                </Scene/ring018/instancer_teapot018/Prototypes/blue_teapot>,
+            ]
+
             over "Prototypes"
             {
-                over "teapot" (
-                    prepend inherits = </_green_teapot>
+                def Xform "red_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_red_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
+                )
+                {
+                }
+
+                def Xform "green_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_green_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
+                )
+                {
+                }
+
+                def Xform "blue_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_blue_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring019"
+    {
+        over "instancer_teapot019"
+        {
+            int[] protoIndices = [2, 1, 2, 2, 2, 3, 1, 0, 1, 2, 1, 1, 1, 0, 0, 2, 0, 2, 3, 2]
+            prepend rel prototypes = [
+                </Scene/ring019/instancer_teapot019/Prototypes/red_teapot>,
+                </Scene/ring019/instancer_teapot019/Prototypes/green_teapot>,
+                </Scene/ring019/instancer_teapot019/Prototypes/blue_teapot>,
+            ]
+
+            over "Prototypes"
+            {
+                def Xform "red_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_red_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
+                )
+                {
+                }
+
+                def Xform "green_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_green_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
+                )
+                {
+                }
+
+                def Xform "blue_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_blue_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
                 )
                 {
                 }
@@ -748,10 +1128,14 @@ over "Scene"
     {
         over "instancer_teapot020"
         {
+            custom color3f[] primvars:custom_color = [(0.76353824, 0.4881111, 0.5256826), (0.23172921, 0.6271362, 0.52521634), (0.335248, 0.93777704, 0.6316294), (0.41625845, 0.902638, 0.76342875), (0.97008586, 0.33784264, 0.4808884), (0.235278, 0.7287958, 0.8406315), (0.69085526, 0.711176, 0.14371158), (0.93329436, 0.14030315, 0.8072371), (0.16724056, 0.6858919, 0.7443524), (0.17882787, 0.55816257, 0.24902475), (0.95281345, 0.18264726, 0.98295665), (0.50013334, 0.0052409656, 0.15576653), (0.35018206, 0.67670006, 0.6384596), (0.22480339, 0.42687693, 0.8486562), (0.47238123, 0.3185801, 0.6378692), (0.8647903, 0.69721395, 0.9802989), (0.44341072, 0.014467814, 0.038005862), (0.9718196, 0.36513755, 0.77831155), (0.9706255, 0.5482457, 0.67336494), (0.5620799, 0.72949046, 0.8221772), (0.6951878, 0.6655734, 0.032661267), (0.12667067, 0.44878498, 0.8156939), (0.83646536, 0.4285673, 0.83792704)] (
+                interpolation = "vertex"
+            )
+
             over "Prototypes"
             {
                 over "teapot" (
-                    prepend inherits = </_green_teapot>
+                    prepend inherits = </_rgb_teapot>
                 )
                 {
                 }
@@ -762,25 +1146,19 @@ over "Scene"
     over "ring021"
     {
         over "teapot371" (
-            prepend inherits = </_green_teapot>
+            prepend inherits = </_red_teapot>
         )
         {
         }
 
         over "teapot372" (
-            prepend inherits = </_red_teapot>
-        )
-        {
-        }
-
-        over "teapot373" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_green_teapot>
         )
         {
         }
 
         over "teapot374" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
@@ -792,43 +1170,43 @@ over "Scene"
         }
 
         over "teapot376" (
-            prepend inherits = </_green_teapot>
-        )
-        {
-        }
-
-        over "teapot378" (
-            prepend inherits = </_red_teapot>
-        )
-        {
-        }
-
-        over "teapot379" (
             prepend inherits = </_red_teapot>
         )
         {
         }
 
         over "teapot380" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot381" (
             prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot383" (
+            prepend inherits = </_red_teapot>
         )
         {
         }
 
         over "teapot384" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_red_teapot>
         )
         {
         }
 
         over "teapot385" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_green_teapot>
         )
         {
         }
 
-        over "teapot387" (
-            prepend inherits = </_green_teapot>
+        over "teapot388" (
+            prepend inherits = </_red_teapot>
         )
         {
         }
@@ -849,30 +1227,24 @@ over "Scene"
         }
 
         over "teapot391" (
-            prepend inherits = </_green_teapot>
+            prepend inherits = </_red_teapot>
         )
         {
         }
 
         over "teapot392" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_red_teapot>
         )
         {
         }
 
         over "teapot393" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_red_teapot>
         )
         {
         }
 
         over "teapot394" (
-            prepend inherits = </_green_teapot>
-        )
-        {
-        }
-
-        over "teapot395" (
             prepend inherits = </_blue_teapot>
         )
         {
@@ -891,12 +1263,6 @@ over "Scene"
         }
 
         over "teapot398" (
-            prepend inherits = </_blue_teapot>
-        )
-        {
-        }
-
-        over "teapot399" (
             prepend inherits = </_red_teapot>
         )
         {
@@ -909,37 +1275,37 @@ over "Scene"
         }
 
         over "teapot401" (
-            prepend inherits = </_green_teapot>
+            prepend inherits = </_red_teapot>
         )
         {
         }
 
         over "teapot402" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_green_teapot>
         )
         {
         }
 
         over "teapot403" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot404" (
+            prepend inherits = </_blue_teapot>
         )
         {
         }
 
         over "teapot405" (
-            prepend inherits = </_green_teapot>
+            prepend inherits = </_red_teapot>
         )
         {
         }
 
-        over "teapot407" (
-            prepend inherits = </_green_teapot>
-        )
-        {
-        }
-
-        over "teapot408" (
-            prepend inherits = </_blue_teapot>
+        over "teapot406" (
+            prepend inherits = </_red_teapot>
         )
         {
         }
@@ -951,7 +1317,7 @@ over "Scene"
         }
 
         over "teapot410" (
-            prepend inherits = </_green_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
@@ -963,40 +1329,53 @@ over "Scene"
         }
 
         over "teapot412" (
-            prepend inherits = </_green_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
     }
 
+    over "ring023"
+    {
+        over "instancer_teapot023"
+        {
+            custom color3f[] primvars:custom_color = [(0.36778048, 0.0631075, 0.6056908), (0.12109309, 0.4443928, 0.50008726), (0.032969758, 0.20461935, 0.28700328), (0.702928, 0.15170678, 0.6049695), (0.36069867, 0.5343931, 0.86566764), (0.6156339, 0.8383758, 0.20798978), (0.24072288, 0.47586632, 0.22163731), (0.31215522, 0.7765609, 0.19688572), (0.4823085, 0.33081895, 0.6264427), (0.46324193, 0.9100187, 0.43635774), (0.9135036, 0.079324774, 0.39365327), (0.46598777, 0.098543786, 0.87154484), (0.8443222, 0.38276905, 0.56380093), (0.53039235, 0.2331484, 0.057361737), (0.6961627, 0.789944, 0.44414577), (0.6095141, 0.6073977, 0.777076), (0.17496829, 0.5202721, 0.9080414), (0.41724327, 0.736496, 0.082896784), (0.38557866, 0.06317725, 0.4657898), (0.6326734, 0.13487202, 0.16823582), (0.69960487, 0.1283557, 0.96465564), (0.7983811, 0.415953, 0.16030917)] (
+                interpolation = "vertex"
+            )
+
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_rgb_teapot>
+                )
+                {
+                }
+            }
+        }
+    }
+
     over "ring024"
     {
-        over "teapot436" (
-            prepend inherits = </_blue_teapot>
+        over "teapot435" (
+            prepend inherits = </_red_teapot>
         )
         {
         }
 
         over "teapot437" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
 
         over "teapot438" (
-            prepend inherits = </_green_teapot>
+            prepend inherits = </_red_teapot>
         )
         {
         }
 
         over "teapot439" (
-            prepend inherits = </_red_teapot>
-        )
-        {
-        }
-
-        over "teapot440" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_green_teapot>
         )
         {
         }
@@ -1008,7 +1387,7 @@ over "Scene"
         }
 
         over "teapot442" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
@@ -1020,42 +1399,24 @@ over "Scene"
         }
 
         over "teapot444" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_green_teapot>
         )
         {
         }
 
-        over "teapot446" (
-            prepend inherits = </_blue_teapot>
-        )
-        {
-        }
-
-        over "teapot448" (
+        over "teapot447" (
             prepend inherits = </_red_teapot>
         )
         {
         }
 
-        over "teapot449" (
+        over "teapot448" (
             prepend inherits = </_green_teapot>
-        )
-        {
-        }
-
-        over "teapot450" (
-            prepend inherits = </_blue_teapot>
         )
         {
         }
 
         over "teapot452" (
-            prepend inherits = </_green_teapot>
-        )
-        {
-        }
-
-        over "teapot453" (
             prepend inherits = </_red_teapot>
         )
         {
@@ -1067,26 +1428,26 @@ over "Scene"
         {
         }
 
-        over "teapot456" (
+        over "teapot455" (
             prepend inherits = </_red_teapot>
         )
         {
         }
 
         over "teapot457" (
-            prepend inherits = </_blue_teapot>
-        )
-        {
-        }
-
-        over "teapot458" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_green_teapot>
         )
         {
         }
 
         over "teapot459" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot460" (
+            prepend inherits = </_green_teapot>
         )
         {
         }
@@ -1106,14 +1467,8 @@ over "Scene"
         {
         }
 
-        over "teapot464" (
-            prepend inherits = </_blue_teapot>
-        )
-        {
-        }
-
         over "teapot465" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
@@ -1125,13 +1480,13 @@ over "Scene"
         }
 
         over "teapot467" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_green_teapot>
         )
         {
         }
 
         over "teapot468" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
@@ -1142,8 +1497,14 @@ over "Scene"
         {
         }
 
+        over "teapot470" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
         over "teapot471" (
-            prepend inherits = </_green_teapot>
+            prepend inherits = </_red_teapot>
         )
         {
         }
@@ -1160,13 +1521,13 @@ over "Scene"
         {
         }
 
-        over "teapot474" (
-            prepend inherits = </_red_teapot>
+        over "teapot476" (
+            prepend inherits = </_green_teapot>
         )
         {
         }
 
-        over "teapot475" (
+        over "teapot477" (
             prepend inherits = </_blue_teapot>
         )
         {
@@ -1179,25 +1540,25 @@ over "Scene"
         }
 
         over "teapot479" (
-            prepend inherits = </_green_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
 
         over "teapot480" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_green_teapot>
         )
         {
         }
 
-        over "teapot482" (
+        over "teapot481" (
             prepend inherits = </_blue_teapot>
         )
         {
         }
 
-        over "teapot484" (
-            prepend inherits = </_blue_teapot>
+        over "teapot483" (
+            prepend inherits = </_green_teapot>
         )
         {
         }
@@ -1209,14 +1570,97 @@ over "Scene"
         }
     }
 
+    over "ring026"
+    {
+        over "instancer_teapot026"
+        {
+            int[] protoIndices = [1, 0, 0, 2, 2, 2, 0, 2, 0, 2, 3, 3, 0, 1, 2, 1, 3, 2, 3, 0, 2, 0, 2, 3]
+            prepend rel prototypes = [
+                </Scene/ring026/instancer_teapot026/Prototypes/red_teapot>,
+                </Scene/ring026/instancer_teapot026/Prototypes/green_teapot>,
+                </Scene/ring026/instancer_teapot026/Prototypes/blue_teapot>,
+            ]
+
+            over "Prototypes"
+            {
+                def Xform "red_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_red_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
+                )
+                {
+                }
+
+                def Xform "green_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_green_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
+                )
+                {
+                }
+
+                def Xform "blue_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_blue_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
+                )
+                {
+                }
+            }
+        }
+    }
+
     over "ring027"
     {
         over "instancer_teapot027"
         {
+            int[] protoIndices = [1, 2, 1, 1, 3, 2, 0, 1, 1, 2, 1, 1, 2, 1, 1, 3, 0, 1, 3, 1, 2, 0, 0, 2, 1, 1]
+            prepend rel prototypes = [
+                </Scene/ring027/instancer_teapot027/Prototypes/red_teapot>,
+                </Scene/ring027/instancer_teapot027/Prototypes/green_teapot>,
+                </Scene/ring027/instancer_teapot027/Prototypes/blue_teapot>,
+            ]
+
             over "Prototypes"
             {
-                over "teapot" (
-                    prepend inherits = </_blue_teapot>
+                def Xform "red_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_red_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
+                )
+                {
+                }
+
+                def Xform "green_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_green_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
+                )
+                {
+                }
+
+                def Xform "blue_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_blue_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
                 )
                 {
                 }
@@ -1228,10 +1672,44 @@ over "Scene"
     {
         over "instancer_teapot028"
         {
+            int[] protoIndices = [0, 0, 2, 0, 1, 0, 3, 2, 2, 1, 1, 1, 2, 3, 3, 1, 2, 2, 0, 3, 3, 0, 2, 0, 2]
+            prepend rel prototypes = [
+                </Scene/ring028/instancer_teapot028/Prototypes/red_teapot>,
+                </Scene/ring028/instancer_teapot028/Prototypes/green_teapot>,
+                </Scene/ring028/instancer_teapot028/Prototypes/blue_teapot>,
+            ]
+
             over "Prototypes"
             {
-                over "teapot" (
-                    prepend inherits = </_red_teapot>
+                def Xform "red_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_red_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
+                )
+                {
+                }
+
+                def Xform "green_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_green_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
+                )
+                {
+                }
+
+                def Xform "blue_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_blue_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
                 )
                 {
                 }
@@ -1243,10 +1721,44 @@ over "Scene"
     {
         over "instancer_teapot029"
         {
+            int[] protoIndices = [2, 1, 2, 2, 1, 3, 0, 0, 0, 1, 1, 2, 2, 0, 2, 0, 1, 1, 1, 1, 1, 3, 2, 1, 0, 0]
+            prepend rel prototypes = [
+                </Scene/ring029/instancer_teapot029/Prototypes/red_teapot>,
+                </Scene/ring029/instancer_teapot029/Prototypes/green_teapot>,
+                </Scene/ring029/instancer_teapot029/Prototypes/blue_teapot>,
+            ]
+
             over "Prototypes"
             {
-                over "teapot" (
-                    prepend inherits = </_blue_teapot>
+                def Xform "red_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_red_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
+                )
+                {
+                }
+
+                def Xform "green_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_green_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
+                )
+                {
+                }
+
+                def Xform "blue_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_blue_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
                 )
                 {
                 }
@@ -1274,20 +1786,14 @@ over "Scene"
         {
         }
 
-        over "teapot590" (
-            prepend inherits = </_green_teapot>
-        )
-        {
-        }
-
         over "teapot591" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_red_teapot>
         )
         {
         }
 
         over "teapot592" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
@@ -1299,18 +1805,18 @@ over "Scene"
         }
 
         over "teapot594" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot595" (
             prepend inherits = </_green_teapot>
         )
         {
         }
 
         over "teapot596" (
-            prepend inherits = </_red_teapot>
-        )
-        {
-        }
-
-        over "teapot598" (
             prepend inherits = </_red_teapot>
         )
         {
@@ -1323,13 +1829,19 @@ over "Scene"
         }
 
         over "teapot600" (
-            prepend inherits = </_green_teapot>
+            prepend inherits = </_red_teapot>
         )
         {
         }
 
-        over "teapot601" (
+        over "teapot602" (
             prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot603" (
+            prepend inherits = </_blue_teapot>
         )
         {
         }
@@ -1341,7 +1853,7 @@ over "Scene"
         }
 
         over "teapot605" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_green_teapot>
         )
         {
         }
@@ -1358,26 +1870,8 @@ over "Scene"
         {
         }
 
-        over "teapot608" (
-            prepend inherits = </_red_teapot>
-        )
-        {
-        }
-
-        over "teapot609" (
-            prepend inherits = </_blue_teapot>
-        )
-        {
-        }
-
-        over "teapot610" (
-            prepend inherits = </_red_teapot>
-        )
-        {
-        }
-
         over "teapot611" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
@@ -1387,10 +1881,14 @@ over "Scene"
     {
         over "instancer_teapot031"
         {
+            custom color3f[] primvars:custom_color = [(0.48028108, 0.6265751, 0.29106075), (0.9324797, 0.3242901, 0.39228222), (0.62778413, 0.19880836, 0.622203), (0.8265418, 0.0349113, 0.6776358), (0.88170683, 0.6263175, 0.2993127), (0.8608246, 0.28693646, 0.538867), (0.39108914, 0.1263867, 0.15262887), (0.9497946, 0.6338706, 0.9570479), (0.106356286, 0.43802384, 0.056173716), (0.7513698, 0.3699427, 0.7578667), (0.56458086, 0.6481274, 0.39073563), (0.72570443, 0.74934864, 0.655729), (0.17128189, 0.19591191, 0.76836187), (0.85941786, 0.3031405, 0.41194394), (0.44280666, 0.6256937, 0.20267682), (0.33057392, 0.9225453, 0.58351433), (0.7659198, 0.25444716, 0.626115), (0.36910692, 0.5843931, 0.15820548), (0.4970681, 0.06492603, 0.13287486), (0.6397569, 0.7403758, 0.66659856), (0.39337713, 0.49301794, 0.21094912), (0.3285392, 0.20951562, 0.22828008), (0.8725315, 0.12696846, 0.24752496), (0.13679959, 0.5822676, 0.38248464)] (
+                interpolation = "vertex"
+            )
+
             over "Prototypes"
             {
                 over "teapot" (
-                    prepend inherits = </_red_teapot>
+                    prepend inherits = </_rgb_teapot>
                 )
                 {
                 }
@@ -1407,7 +1905,7 @@ over "Scene"
         }
 
         over "teapot638" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
@@ -1418,14 +1916,20 @@ over "Scene"
         {
         }
 
+        over "teapot641" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
         over "teapot642" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_green_teapot>
         )
         {
         }
 
         over "teapot643" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
@@ -1436,7 +1940,7 @@ over "Scene"
         {
         }
 
-        over "teapot646" (
+        over "teapot645" (
             prepend inherits = </_green_teapot>
         )
         {
@@ -1454,13 +1958,31 @@ over "Scene"
         {
         }
 
-        over "teapot649" (
+        over "teapot650" (
             prepend inherits = </_red_teapot>
         )
         {
         }
 
-        over "teapot650" (
+        over "teapot651" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot652" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot653" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot654" (
             prepend inherits = </_red_teapot>
         )
         {
@@ -1472,26 +1994,44 @@ over "Scene"
         {
         }
 
+        over "teapot656" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
         over "teapot657" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot658" (
             prepend inherits = </_blue_teapot>
         )
         {
         }
 
         over "teapot659" (
-            prepend inherits = </_green_teapot>
+            prepend inherits = </_red_teapot>
         )
         {
         }
 
         over "teapot660" (
-            prepend inherits = </_green_teapot>
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot661" (
+            prepend inherits = </_red_teapot>
         )
         {
         }
 
         over "teapot662" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_green_teapot>
         )
         {
         }
@@ -1501,10 +2041,14 @@ over "Scene"
     {
         over "instancer_teapot033"
         {
+            custom color3f[] primvars:custom_color = [(0.037407883, 0.75889224, 0.6391871), (0.7773292, 0.98309255, 0.715367), (0.018442083, 0.018429581, 0.93437153), (0.057021152, 0.062684715, 0.71580845), (0.095410146, 0.33581138, 0.19038898), (0.25551015, 0.1897293, 0.24630119), (0.023014665, 0.07001193, 0.21736586), (0.32958132, 0.13789816, 0.16477828), (0.95360017, 0.7418845, 0.58088917), (0.67028487, 0.23786561, 0.42282602), (0.46137795, 0.6601114, 0.35102025), (0.8700871, 0.87567645, 0.1426716), (0.45110935, 0.53339154, 0.82097375), (0.13989845, 0.2229639, 0.16407003), (0.87078404, 0.26576293, 0.6240459), (0.09497388, 0.23498708, 0.6813664), (0.37265894, 0.3628176, 0.8785683), (0.2390609, 0.9169621, 0.014110183), (0.06346198, 0.738412, 0.27963406), (0.77210087, 0.691718, 0.6515184), (0.5164356, 0.24523267, 0.85102373), (0.91427803, 0.8602043, 0.20934588), (0.43686512, 0.0387166, 0.7823672), (0.05514566, 0.10795664, 0.90022826), (0.3907501, 0.52335805, 0.6993936), (0.7173494, 0.010489552, 0.5494114)] (
+                interpolation = "vertex"
+            )
+
             over "Prototypes"
             {
                 over "teapot" (
-                    prepend inherits = </_green_teapot>
+                    prepend inherits = </_rgb_teapot>
                 )
                 {
                 }
@@ -1516,10 +2060,14 @@ over "Scene"
     {
         over "instancer_teapot034"
         {
+            custom color3f[] primvars:custom_color = [(0.9619837, 0.72768545, 0.15265861), (0.95356786, 0.857162, 0.56705207), (0.6230455, 0.5791135, 0.6960997), (0.85502404, 0.06296883, 0.93849707), (0.446884, 0.8653162, 0.27448305), (0.5013827, 0.26183584, 0.6657261), (0.8008481, 0.46313408, 0.12282207), (0.46458882, 0.13787594, 0.99032056), (0.6214345, 0.53710186, 0.5948312), (0.30935964, 0.7404822, 0.9021844), (0.88398665, 0.6327077, 0.8697698), (0.57522815, 0.28884453, 0.19845009), (0.22422732, 0.64799225, 0.31460103), (0.09356118, 0.8753427, 0.24807541), (0.39512372, 0.6993612, 0.3094763), (0.5364183, 0.913286, 0.7050738), (0.28109586, 0.87776303, 0.5914538), (0.73319095, 0.7254541, 0.107533336), (0.68298614, 0.13879834, 0.88605356), (0.13876314, 0.67112887, 0.4610747), (0.95706195, 0.8609791, 0.27416518), (0.8018254, 0.08513995, 0.6122862), (0.8385961, 0.9326848, 0.33786786), (0.31587514, 0.68658864, 0.29565734), (0.24697448, 0.97813183, 0.56690353), (0.05399277, 0.52444136, 0.37095287), (0.7722864, 0.6309671, 0.2619309), (0.8443828, 0.29395434, 0.6701215), (0.21531926, 0.07128333, 0.2178843)] (
+                interpolation = "vertex"
+            )
+
             over "Prototypes"
             {
                 over "teapot" (
-                    prepend inherits = </_blue_teapot>
+                    prepend inherits = </_rgb_teapot>
                 )
                 {
                 }
@@ -1531,10 +2079,14 @@ over "Scene"
     {
         over "instancer_teapot035"
         {
+            custom color3f[] primvars:custom_color = [(0.51223963, 0.68450224, 0.13143171), (0.18449484, 0.08092269, 0.35649174), (0.23539242, 0.9510328, 0.81433225), (0.75225335, 0.0077875503, 0.5037585), (0.0077070734, 0.7161856, 0.4380579), (0.17103857, 0.29618353, 0.2994133), (0.954456, 0.05589254, 0.8945907), (0.97845227, 0.8837843, 0.22562654), (0.85517853, 0.36427847, 0.8421251), (0.14241385, 0.9859919, 0.8930939), (0.74559, 0.8303334, 0.5743676), (0.19340484, 0.45972076, 0.16834141), (0.8129308, 0.14776567, 0.14526361), (0.9626251, 0.5535815, 0.5478647), (0.53420126, 0.51819956, 0.059210397), (0.08999509, 0.46488073, 0.47913656), (0.82055753, 0.9684587, 0.8378267), (0.5118022, 0.181863, 0.42167056), (0.48675773, 0.024771927, 0.69315803), (0.9889159, 0.25776, 0.89187306), (0.38370365, 0.631395, 0.7434454), (0.57634324, 0.53584987, 0.17332946), (0.90345436, 0.7860403, 0.49953812), (0.40242955, 0.13923201, 0.60992026), (0.7844606, 0.89535207, 0.4599018), (0.28278652, 0.14186683, 0.112105586), (0.22573003, 0.5847614, 0.70187914)] (
+                interpolation = "vertex"
+            )
+
             over "Prototypes"
             {
                 over "teapot" (
-                    prepend inherits = </_red_teapot>
+                    prepend inherits = </_rgb_teapot>
                 )
                 {
                 }
@@ -1545,6 +2097,18 @@ over "Scene"
     over "ring036"
     {
         over "teapot745" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot746" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot747" (
             prepend inherits = </_red_teapot>
         )
         {
@@ -1556,7 +2120,13 @@ over "Scene"
         {
         }
 
-        over "teapot749" (
+        over "teapot750" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot751" (
             prepend inherits = </_blue_teapot>
         )
         {
@@ -1568,6 +2138,24 @@ over "Scene"
         {
         }
 
+        over "teapot753" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot754" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot755" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
         over "teapot756" (
             prepend inherits = </_green_teapot>
         )
@@ -1575,13 +2163,13 @@ over "Scene"
         }
 
         over "teapot757" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
 
         over "teapot758" (
-            prepend inherits = </_green_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
@@ -1592,32 +2180,32 @@ over "Scene"
         {
         }
 
-        over "teapot760" (
-            prepend inherits = </_blue_teapot>
-        )
-        {
-        }
-
         over "teapot761" (
             prepend inherits = </_red_teapot>
         )
         {
         }
 
-        over "teapot764" (
+        over "teapot762" (
             prepend inherits = </_green_teapot>
         )
         {
         }
 
-        over "teapot765" (
-            prepend inherits = </_blue_teapot>
+        over "teapot763" (
+            prepend inherits = </_green_teapot>
         )
         {
         }
 
-        over "teapot767" (
+        over "teapot764" (
             prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot765" (
+            prepend inherits = </_green_teapot>
         )
         {
         }
@@ -1634,6 +2222,12 @@ over "Scene"
         {
         }
 
+        over "teapot770" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
         over "teapot771" (
             prepend inherits = </_green_teapot>
         )
@@ -1641,13 +2235,13 @@ over "Scene"
         }
 
         over "teapot772" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_green_teapot>
         )
         {
         }
 
         over "teapot774" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_red_teapot>
         )
         {
         }
@@ -1655,19 +2249,13 @@ over "Scene"
 
     over "ring037"
     {
+        over "teapot775" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
         over "teapot776" (
-            prepend inherits = </_blue_teapot>
-        )
-        {
-        }
-
-        over "teapot777" (
-            prepend inherits = </_blue_teapot>
-        )
-        {
-        }
-
-        over "teapot778" (
             prepend inherits = </_green_teapot>
         )
         {
@@ -1679,31 +2267,67 @@ over "Scene"
         {
         }
 
+        over "teapot780" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
         over "teapot781" (
             prepend inherits = </_green_teapot>
         )
         {
         }
 
-        over "teapot782" (
-            prepend inherits = </_blue_teapot>
+        over "teapot783" (
+            prepend inherits = </_green_teapot>
         )
         {
         }
 
-        over "teapot785" (
+        over "teapot784" (
             prepend inherits = </_red_teapot>
         )
         {
         }
 
+        over "teapot785" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
         over "teapot786" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot787" (
             prepend inherits = </_blue_teapot>
         )
         {
         }
 
         over "teapot788" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot789" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot790" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot791" (
             prepend inherits = </_blue_teapot>
         )
         {
@@ -1722,25 +2346,37 @@ over "Scene"
         }
 
         over "teapot794" (
-            prepend inherits = </_green_teapot>
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot795" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot796" (
+            prepend inherits = </_blue_teapot>
         )
         {
         }
 
         over "teapot797" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot798" (
             prepend inherits = </_red_teapot>
         )
         {
         }
 
         over "teapot799" (
-            prepend inherits = </_green_teapot>
-        )
-        {
-        }
-
-        over "teapot800" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
@@ -1750,36 +2386,36 @@ over "Scene"
         )
         {
         }
-
-        over "teapot802" (
-            prepend inherits = </_blue_teapot>
-        )
-        {
-        }
     }
 
     over "ring038"
     {
         over "teapot803" (
-            prepend inherits = </_blue_teapot>
-        )
-        {
-        }
-
-        over "teapot805" (
             prepend inherits = </_red_teapot>
         )
         {
         }
 
+        over "teapot805" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
         over "teapot806" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot808" (
             prepend inherits = </_green_teapot>
         )
         {
         }
 
         over "teapot809" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_green_teapot>
         )
         {
         }
@@ -1790,20 +2426,26 @@ over "Scene"
         {
         }
 
-        over "teapot811" (
-            prepend inherits = </_blue_teapot>
+        over "teapot812" (
+            prepend inherits = </_green_teapot>
         )
         {
         }
 
-        over "teapot812" (
+        over "teapot813" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot814" (
             prepend inherits = </_blue_teapot>
         )
         {
         }
 
         over "teapot815" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_green_teapot>
         )
         {
         }
@@ -1814,26 +2456,14 @@ over "Scene"
         {
         }
 
-        over "teapot818" (
-            prepend inherits = </_blue_teapot>
-        )
-        {
-        }
-
-        over "teapot819" (
-            prepend inherits = </_blue_teapot>
-        )
-        {
-        }
-
-        over "teapot820" (
-            prepend inherits = </_green_teapot>
+        over "teapot817" (
+            prepend inherits = </_red_teapot>
         )
         {
         }
 
         over "teapot821" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_green_teapot>
         )
         {
         }
@@ -1851,13 +2481,7 @@ over "Scene"
         }
 
         over "teapot824" (
-            prepend inherits = </_red_teapot>
-        )
-        {
-        }
-
-        over "teapot825" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_green_teapot>
         )
         {
         }
@@ -1869,7 +2493,7 @@ over "Scene"
         }
 
         over "teapot827" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
@@ -1881,18 +2505,12 @@ over "Scene"
         }
 
         over "teapot829" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_green_teapot>
         )
         {
         }
 
         over "teapot830" (
-            prepend inherits = </_blue_teapot>
-        )
-        {
-        }
-
-        over "teapot831" (
             prepend inherits = </_green_teapot>
         )
         {
@@ -1903,10 +2521,44 @@ over "Scene"
     {
         over "instancer_teapot039"
         {
+            int[] protoIndices = [1, 1, 2, 2, 3, 0, 2, 3, 0, 0, 1, 2, 0, 1, 2, 0, 1, 3, 1, 1, 1, 2, 1, 2, 2, 0, 2]
+            prepend rel prototypes = [
+                </Scene/ring039/instancer_teapot039/Prototypes/red_teapot>,
+                </Scene/ring039/instancer_teapot039/Prototypes/green_teapot>,
+                </Scene/ring039/instancer_teapot039/Prototypes/blue_teapot>,
+            ]
+
             over "Prototypes"
             {
-                over "teapot" (
-                    prepend inherits = </_red_teapot>
+                def Xform "red_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_red_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
+                )
+                {
+                }
+
+                def Xform "green_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_green_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
+                )
+                {
+                }
+
+                def Xform "blue_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_blue_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
                 )
                 {
                 }
@@ -1917,25 +2569,31 @@ over "Scene"
     over "ring040"
     {
         over "teapot859" (
-            prepend inherits = </_green_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
 
         over "teapot861" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
 
         over "teapot862" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_red_teapot>
         )
         {
         }
 
         over "teapot863" (
             prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot864" (
+            prepend inherits = </_red_teapot>
         )
         {
         }
@@ -1958,8 +2616,14 @@ over "Scene"
         {
         }
 
-        over "teapot869" (
+        over "teapot868" (
             prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot869" (
+            prepend inherits = </_blue_teapot>
         )
         {
         }
@@ -1970,14 +2634,32 @@ over "Scene"
         {
         }
 
-        over "teapot872" (
+        over "teapot871" (
             prepend inherits = </_green_teapot>
         )
         {
         }
 
-        over "teapot875" (
+        over "teapot872" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot873" (
             prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot874" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot875" (
+            prepend inherits = </_green_teapot>
         )
         {
         }
@@ -1995,13 +2677,25 @@ over "Scene"
         }
 
         over "teapot878" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_red_teapot>
         )
         {
         }
 
         over "teapot879" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot880" (
             prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot881" (
+            prepend inherits = </_green_teapot>
         )
         {
         }
@@ -2019,7 +2713,7 @@ over "Scene"
         }
 
         over "teapot884" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_green_teapot>
         )
         {
         }
@@ -2031,25 +2725,25 @@ over "Scene"
         }
 
         over "teapot886" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_red_teapot>
         )
         {
         }
 
         over "teapot887" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot888" (
             prepend inherits = </_red_teapot>
         )
         {
         }
 
         over "teapot889" (
-            prepend inherits = </_blue_teapot>
-        )
-        {
-        }
-
-        over "teapot890" (
-            prepend inherits = </_green_teapot>
+            prepend inherits = </_red_teapot>
         )
         {
         }
@@ -2057,14 +2751,14 @@ over "Scene"
 
     over "ring041"
     {
-        over "teapot891" (
+        over "teapot892" (
             prepend inherits = </_red_teapot>
         )
         {
         }
 
-        over "teapot892" (
-            prepend inherits = </_blue_teapot>
+        over "teapot894" (
+            prepend inherits = </_green_teapot>
         )
         {
         }
@@ -2076,25 +2770,31 @@ over "Scene"
         }
 
         over "teapot897" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
 
         over "teapot898" (
-            prepend inherits = </_green_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
 
         over "teapot899" (
-            prepend inherits = </_green_teapot>
+            prepend inherits = </_red_teapot>
         )
         {
         }
 
         over "teapot900" (
-            prepend inherits = </_green_teapot>
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot901" (
+            prepend inherits = </_blue_teapot>
         )
         {
         }
@@ -2106,13 +2806,13 @@ over "Scene"
         }
 
         over "teapot903" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_red_teapot>
         )
         {
         }
 
         over "teapot904" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_green_teapot>
         )
         {
         }
@@ -2123,26 +2823,26 @@ over "Scene"
         {
         }
 
-        over "teapot906" (
-            prepend inherits = </_green_teapot>
-        )
-        {
-        }
-
         over "teapot907" (
             prepend inherits = </_blue_teapot>
         )
         {
         }
 
-        over "teapot908" (
+        over "teapot909" (
+            prepend inherits = </_blue_teapot>
+        )
+        {
+        }
+
+        over "teapot910" (
             prepend inherits = </_green_teapot>
         )
         {
         }
 
-        over "teapot909" (
-            prepend inherits = </_red_teapot>
+        over "teapot912" (
+            prepend inherits = </_green_teapot>
         )
         {
         }
@@ -2165,18 +2865,6 @@ over "Scene"
         {
         }
 
-        over "teapot917" (
-            prepend inherits = </_blue_teapot>
-        )
-        {
-        }
-
-        over "teapot918" (
-            prepend inherits = </_red_teapot>
-        )
-        {
-        }
-
         over "teapot919" (
             prepend inherits = </_green_teapot>
         )
@@ -2188,24 +2876,91 @@ over "Scene"
         )
         {
         }
+
+        over "teapot921" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+    }
+
+    over "ring042"
+    {
+        over "instancer_teapot042"
+        {
+            int[] protoIndices = [0, 0, 1, 0, 2, 3, 2, 0, 2, 2, 0, 2, 0, 0, 3, 2, 3, 1, 0, 0, 2, 0, 1, 3, 0, 2, 3, 0, 1, 0, 1, 2, 1, 1, 0, 1]
+            prepend rel prototypes = [
+                </Scene/ring042/instancer_teapot042/Prototypes/red_teapot>,
+                </Scene/ring042/instancer_teapot042/Prototypes/green_teapot>,
+                </Scene/ring042/instancer_teapot042/Prototypes/blue_teapot>,
+            ]
+
+            over "Prototypes"
+            {
+                def Xform "red_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_red_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
+                )
+                {
+                }
+
+                def Xform "green_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_green_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
+                )
+                {
+                }
+
+                def Xform "blue_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_blue_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
+                )
+                {
+                }
+            }
+        }
     }
 
     over "ring043"
     {
-        over "teapot959" (
-            prepend inherits = </_blue_teapot>
+        over "teapot958" (
+            prepend inherits = </_green_teapot>
         )
         {
         }
 
         over "teapot960" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot961" (
+            prepend inherits = </_red_teapot>
         )
         {
         }
 
         over "teapot962" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot963" (
+            prepend inherits = </_red_teapot>
         )
         {
         }
@@ -2216,8 +2971,14 @@ over "Scene"
         {
         }
 
+        over "teapot965" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
         over "teapot966" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_green_teapot>
         )
         {
         }
@@ -2228,14 +2989,20 @@ over "Scene"
         {
         }
 
-        over "teapot970" (
+        over "teapot968" (
             prepend inherits = </_blue_teapot>
         )
         {
         }
 
-        over "teapot971" (
+        over "teapot969" (
             prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot971" (
+            prepend inherits = </_green_teapot>
         )
         {
         }
@@ -2247,36 +3014,42 @@ over "Scene"
         }
 
         over "teapot973" (
-            prepend inherits = </_green_teapot>
-        )
-        {
-        }
-
-        over "teapot974" (
-            prepend inherits = </_green_teapot>
-        )
-        {
-        }
-
-        over "teapot976" (
             prepend inherits = </_red_teapot>
         )
         {
         }
 
-        over "teapot977" (
+        over "teapot974" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot975" (
             prepend inherits = </_green_teapot>
         )
         {
         }
 
-        over "teapot978" (
-            prepend inherits = </_blue_teapot>
+        over "teapot977" (
+            prepend inherits = </_red_teapot>
         )
         {
         }
 
         over "teapot979" (
+            prepend inherits = </_red_teapot>
+        )
+        {
+        }
+
+        over "teapot980" (
+            prepend inherits = </_green_teapot>
+        )
+        {
+        }
+
+        over "teapot981" (
             prepend inherits = </_red_teapot>
         )
         {
@@ -2289,13 +3062,13 @@ over "Scene"
         }
 
         over "teapot983" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_red_teapot>
         )
         {
         }
 
         over "teapot984" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
@@ -2307,19 +3080,19 @@ over "Scene"
         }
 
         over "teapot986" (
-            prepend inherits = </_red_teapot>
+            prepend inherits = </_blue_teapot>
         )
         {
         }
 
         over "teapot987" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_red_teapot>
         )
         {
         }
 
-        over "teapot988" (
-            prepend inherits = </_blue_teapot>
+        over "teapot989" (
+            prepend inherits = </_red_teapot>
         )
         {
         }
@@ -2330,14 +3103,8 @@ over "Scene"
         {
         }
 
-        over "teapot991" (
-            prepend inherits = </_green_teapot>
-        )
-        {
-        }
-
         over "teapot992" (
-            prepend inherits = </_blue_teapot>
+            prepend inherits = </_red_teapot>
         )
         {
         }
@@ -2347,10 +3114,44 @@ over "Scene"
     {
         over "instancer_teapot044"
         {
+            int[] protoIndices = [0, 2, 2, 3, 2, 3]
+            prepend rel prototypes = [
+                </Scene/ring044/instancer_teapot044/Prototypes/red_teapot>,
+                </Scene/ring044/instancer_teapot044/Prototypes/green_teapot>,
+                </Scene/ring044/instancer_teapot044/Prototypes/blue_teapot>,
+            ]
+
             over "Prototypes"
             {
-                over "teapot" (
-                    prepend inherits = </_green_teapot>
+                def Xform "red_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_red_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
+                )
+                {
+                }
+
+                def Xform "green_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_green_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
+                )
+                {
+                }
+
+                def Xform "blue_teapot" (
+                    prepend inherits = [
+                        </_class_/teapot>,
+                        </_blue_teapot>
+                    ]
+                    instanceable = true
+                    prepend references = @../assets/teapot/teapot.usd@
                 )
                 {
                 }

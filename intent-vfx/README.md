@@ -50,7 +50,13 @@ There are two scripts to generate a `simpleAsset` and a `teapot` asset, and they
 
 The `simpleAsset` has 2 purposes, with a `cube` for the `proxy` purpose, and a `sphere` for the `render` purpose.
 
+![simpleAsset_proxypurpose](images/simpleAsset_proxypurpose.png "simpleAsset_proxypurpose")
+
+![simpleAsset_renderpurpose](images/simpleAsset_renderpurpose.png "simpleAsset_renderpurpose")
+
 The `teapot` asset has only a `default` purpose.
+
+![teapot_defaultpurpose](images/teapot_defaultpurpose.png "teapot_defaultpurpose")
 
 To run the script
 
@@ -79,12 +85,20 @@ cd scenes
 python ../build_scene_teapot.py
 ```
 
+![teapotScene_default](images/teapotScene_default.png "teapotScene_default")
+
 or
 
 ```
 cd scenes
 python ../build_scene_simpleAsset.py
 ```
+
+![simpleAssetScene_proxy](images/simpleAssetScene_proxy.png "simpleAssetScene_proxy")
+
+![simpleAssetScene_render](images/simpleAssetScene_render.png "simpleAssetScene_render")
+
+## Material overrides with implicit and explicit instancing
 
 A third script is provided to generate a new-layer for the `teapotScene`, with overrides to materials and geometry, with a controlled implicit prototypes creation, where each set of "overrides" is provided as an abstract prim inherited on elements and PointInstancers where edits are applied.
 
@@ -94,3 +108,71 @@ To run the script to build the overrides:
 cd scenes
 python ../build_scene_teapot_overrides.py
 ```
+
+This override-scene shows a few examples of how to apply edits on `PointInstancers` or `native-instancing` (instanceable-metadata enabled).
+
+Please note that there are other possible ways to do this.
+
+![karma](images/karma.png "karma")
+
+### input parameter override
+
+Three classes are created with overrides for the `inputs:base_color` with values set for `red`, `green` and `blue`.
+
+![material_input_override](images/material_input_override.png "material_input_override")
+
+Those classes are inherited randomly on the individual elements with `instanceable` metadata enabled
+
+![elements_with_overrides](images/elements_with_overrides.png "elements_with_overrides")
+
+and they are also added as new explicit prototypes to some PointInstancers, also overriding the `protoIndices` to randomly point to these new prototypes
+
+![random_proto_ids](images/random_proto_ids.png "random_proto_ids")
+
+### per-instance primvars with a dedicated material
+
+Another class is created with an override to the `inputs:base_color`, to enable reading a primvar called `custom_color`.
+
+The override on the `inputs:base_color` is to connect that input parameter to a new shader
+
+![per_instance_primvars_override](images/per_instance_primvars_override.png "per_instance_primvars_override")
+
+and the new shader is used to read the primvar from the primitive is running on
+
+![readprimvar_shader](images/readprimvar_shader.png "readprimvar_shader")
+
+This class `rgb_teapot` allows the same material to be used for PointInstancers (NOTE: this could also be done on instanceable-elements), providing now per-instance primvars with randomly distributed color values, as now the colors are not used to define new implicit prototypes, they are instead provided as per-instance variations (NOTE: renderers will need to support per-instance variations).
+
+![per_instance_primvars](images/per_instance_primvars.png "per_instance_primvars")
+
+### implicit prototypes handled by OpenUSD and small trick
+
+By adding a new composition-arc on those elements, we are telling OpenUSD to calculate new implicit prototypes.
+
+To notice that we've used a trick here to be able to visually understand which prototype points to which class.
+
+By adding an empty prim with an explicit name in the classes for the overrides
+
+![label_trick_classes](images/label_trick_classes.png "label_trick_classes")
+
+we are going to be able to see in the outliner which elements points to which override
+
+![elements_with_overrides](images/elements_with_overrides.png "elements_with_overrides")
+
+and we can also see where the implicit prototypes are coming from
+
+![label_trick_prototypes](images/label_trick_prototypes.png "label_trick_prototypes")
+
+Due to how we've built the overrides (and it is a good exercise to try to redo this differently to "solve" this!) you have noticed that there two implicit prototypes per each colored-override, one shared across all the individual elements and one shared across all the PointInstancers.
+
+![one_for_elements_one_for_pointinstancers](images/one_for_elements_one_for_pointinstancers.png "one_for_elements_one_for_pointinstancers")
+
+### renders
+
+Note that `Storm` doesn't show the `rgb_teapot` variation, I'm not entirely sure if it is the scene or a bug, I need to follow up (if you know more, please, contribute).
+
+![render_storm](images/render_storm.png "render_storm")
+
+but this is how it should look like, here rendered in Karma, with some of the PointInstancers having a lot more color-variations thanks to the per-instance primvars approach
+
+![render_karma](images/render_karma.png "render_karma")
