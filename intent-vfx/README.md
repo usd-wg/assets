@@ -72,6 +72,22 @@ cd assets/simpleAsst
 python ../../build_simpleAsset.py
 ```
 
+## Animation Cycle generation
+
+A script has been provided to generate an anim-cycle for the Teapot, via creating an override for the points.
+
+This is an example of an asset-specific animation-cycle, which could be re-used multiple times in a scene, with time-offsets.
+
+To run the script
+
+```
+cd assets/teapot
+python ../../build_teapot_animcycle.py
+```
+
+and this will create a `teapot_animCycle.usd` file alongside the `teapot.usd` file, which will be used in the overrides when building the scene later on.
+
+
 ## Layout generation
 
 There are 2 scripts to generate a layout per asset, in a concentric-ring distribution, having each ring to randomly use PointInstancers or native-instancing for its instances.
@@ -82,7 +98,7 @@ To run the script to build the layouts:
 
 ```
 cd scenes
-python ../build_scene_teapot.py
+python ../build_scene_teapot_layout.py
 ```
 
 ![teapotScene_default](images/teapotScene_default.png "teapotScene_default")
@@ -106,7 +122,7 @@ To run the script to build the overrides:
 
 ```
 cd scenes
-python ../build_scene_teapot_overrides.py
+python ../build_scene_teapot_layout_overrides.py
 ```
 
 This override-scene shows a few examples of how to apply edits on `PointInstancers` or `native-instancing` (instanceable-metadata enabled).
@@ -167,7 +183,48 @@ Due to how we've built the overrides (and it is a good exercise to try to redo t
 
 ![one_for_elements_one_for_pointinstancers](images/one_for_elements_one_for_pointinstancers.png "one_for_elements_one_for_pointinstancers")
 
-### renders
+## Camera generation
+
+A script to generate procedurally a simple camera animation is also provide.
+
+To run the script
+
+```
+cd scenes
+python ../build_scene_teapot_camera.py
+```
+
+## Animate the layout
+
+A script is provide to generate anim-cycles variations in the previously generated layout.
+
+To run the script
+
+```
+cd scenes
+python ../build_scene_teapot_animcycle.py
+```
+
+This script will generate a layer providing a random distribution of specific anim-cycle with time-offsets, to control the amount of variations in the scene.
+
+## Generate the scene step-by-step
+
+As an example pipeline for generating all the contributions to the final scene, we can consider the following steps:
+
+```
+cd assets/teapot
+python ../../build_teapot.py
+python ../../build_teapot_animcycle.py
+
+cd scenes
+python ../build_scene_teapot_layout.py
+python ../build_scene_teapot_layout_overrides.py
+python ../build_scene_teapot_camera.py
+python ../build_scene_teapot_animcycle.py
+python ../build_scene_teapot.py
+```
+
+## renders
 
 Note that `Storm` doesn't show the `rgb_teapot` variation, I'm not entirely sure if it is the scene or a bug, I need to follow up (if you know more, please, contribute).
 
