@@ -1,226 +1,11 @@
 #usda 1.0
 (
+    defaultPrim = "Scene"
     endTimeCode = 1
     metersPerUnit = 1
     startTimeCode = 1
     upAxis = "Y"
 )
-
-class "_teapot_animCycle_offset_0" (
-    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot>
-)
-{
-    over "i_am_anim_offset_0"
-    {
-    }
-}
-
-class "_teapot_animCycle_offset_2" (
-    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 2)
-)
-{
-    over "i_am_anim_offset_2"
-    {
-    }
-}
-
-class "_teapot_animCycle_offset_4" (
-    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 4)
-)
-{
-    over "i_am_anim_offset_4"
-    {
-    }
-}
-
-class "_teapot_animCycle_offset_6" (
-    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 6)
-)
-{
-    over "i_am_anim_offset_6"
-    {
-    }
-}
-
-class "_teapot_animCycle_offset_8" (
-    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 8)
-)
-{
-    over "i_am_anim_offset_8"
-    {
-    }
-}
-
-class "_teapot_animCycle_offset_10" (
-    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 10)
-)
-{
-    over "i_am_anim_offset_10"
-    {
-    }
-}
-
-class "_teapot_animCycle_offset_12" (
-    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 12)
-)
-{
-    over "i_am_anim_offset_12"
-    {
-    }
-}
-
-class "_teapot_animCycle_offset_14" (
-    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 14)
-)
-{
-    over "i_am_anim_offset_14"
-    {
-    }
-}
-
-class "_teapot_animCycle_offset_16" (
-    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 16)
-)
-{
-    over "i_am_anim_offset_16"
-    {
-    }
-}
-
-class "_teapot_animCycle_offset_18" (
-    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 18)
-)
-{
-    over "i_am_anim_offset_18"
-    {
-    }
-}
-
-class "_teapot_animCycle_offset_20" (
-    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 20)
-)
-{
-    over "i_am_anim_offset_20"
-    {
-    }
-}
-
-class "_teapot_animCycle_offset_22" (
-    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 22)
-)
-{
-    over "i_am_anim_offset_22"
-    {
-    }
-}
-
-class "_teapot_animCycle_offset_24" (
-    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 24)
-)
-{
-    over "i_am_anim_offset_24"
-    {
-    }
-}
-
-class "_teapot_animCycle_offset_26" (
-    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 26)
-)
-{
-    over "i_am_anim_offset_26"
-    {
-    }
-}
-
-class "_teapot_animCycle_offset_28" (
-    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 28)
-)
-{
-    over "i_am_anim_offset_28"
-    {
-    }
-}
-
-class "_teapot_animCycle_offset_30" (
-    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 30)
-)
-{
-    over "i_am_anim_offset_30"
-    {
-    }
-}
-
-class "_teapot_animCycle_offset_32" (
-    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 32)
-)
-{
-    over "i_am_anim_offset_32"
-    {
-    }
-}
-
-class "_teapot_animCycle_offset_34" (
-    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 34)
-)
-{
-    over "i_am_anim_offset_34"
-    {
-    }
-}
-
-class "_teapot_animCycle_offset_36" (
-    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 36)
-)
-{
-    over "i_am_anim_offset_36"
-    {
-    }
-}
-
-class "_teapot_animCycle_offset_38" (
-    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 38)
-)
-{
-    over "i_am_anim_offset_38"
-    {
-    }
-}
-
-class "_teapot_animCycle_offset_40" (
-    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 40)
-)
-{
-    over "i_am_anim_offset_40"
-    {
-    }
-}
-
-class "_teapot_animCycle_offset_42" (
-    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 42)
-)
-{
-    over "i_am_anim_offset_42"
-    {
-    }
-}
-
-class "_teapot_animCycle_offset_44" (
-    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 44)
-)
-{
-    over "i_am_anim_offset_44"
-    {
-    }
-}
-
-class "_teapot_animCycle_offset_46" (
-    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 46)
-)
-{
-    over "i_am_anim_offset_46"
-    {
-    }
-}
 
 over "Scene"
 {
@@ -3639,6 +3424,222 @@ over "Scene"
         )
         {
         }
+    }
+}
+
+class "_teapot_animCycle_offset_0" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot>
+)
+{
+    over "i_am_anim_offset_0"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_2" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 2)
+)
+{
+    over "i_am_anim_offset_2"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_4" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 4)
+)
+{
+    over "i_am_anim_offset_4"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_6" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 6)
+)
+{
+    over "i_am_anim_offset_6"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_8" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 8)
+)
+{
+    over "i_am_anim_offset_8"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_10" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 10)
+)
+{
+    over "i_am_anim_offset_10"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_12" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 12)
+)
+{
+    over "i_am_anim_offset_12"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_14" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 14)
+)
+{
+    over "i_am_anim_offset_14"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_16" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 16)
+)
+{
+    over "i_am_anim_offset_16"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_18" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 18)
+)
+{
+    over "i_am_anim_offset_18"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_20" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 20)
+)
+{
+    over "i_am_anim_offset_20"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_22" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 22)
+)
+{
+    over "i_am_anim_offset_22"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_24" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 24)
+)
+{
+    over "i_am_anim_offset_24"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_26" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 26)
+)
+{
+    over "i_am_anim_offset_26"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_28" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 28)
+)
+{
+    over "i_am_anim_offset_28"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_30" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 30)
+)
+{
+    over "i_am_anim_offset_30"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_32" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 32)
+)
+{
+    over "i_am_anim_offset_32"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_34" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 34)
+)
+{
+    over "i_am_anim_offset_34"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_36" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 36)
+)
+{
+    over "i_am_anim_offset_36"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_38" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 38)
+)
+{
+    over "i_am_anim_offset_38"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_40" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 40)
+)
+{
+    over "i_am_anim_offset_40"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_42" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 42)
+)
+{
+    over "i_am_anim_offset_42"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_44" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 44)
+)
+{
+    over "i_am_anim_offset_44"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_46" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 46)
+)
+{
+    over "i_am_anim_offset_46"
+    {
     }
 }
 

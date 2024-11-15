@@ -31,6 +31,10 @@ def main():
     #
     stage = stage_begin(scene_with_overrides, startTime, endTime)
 
+    root_path = Sdf.Path.absoluteRootPath
+    root_scene_path = root_path.AppendChild("teapot")
+    root_over = stage.OverridePrim(root_scene_path)
+
     # add original scene as sublayer
     #
     stage.GetRootLayer().subLayerPaths.append( original_scene )
@@ -54,6 +58,7 @@ def main():
     stage.GetRootLayer().subLayerPaths = []
 
     # close the stage
+    stage.SetDefaultPrim(root_over)
     stage_end(stage)
 
 

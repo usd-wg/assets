@@ -33,6 +33,11 @@ def main():
     for layer in sublayers:
         stage.GetRootLayer().subLayerPaths.append( layer )
 
+    root_path = Sdf.Path.absoluteRootPath
+    root_scene_path = root_path.AppendChild("Scene")
+    root_over = stage.OverridePrim(root_scene_path)
+    stage.SetDefaultPrim(root_over)
+
     # close the stage
     stage_end(stage)
 

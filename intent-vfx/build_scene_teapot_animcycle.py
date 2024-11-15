@@ -22,6 +22,10 @@ def main():
     #
     stage = stage_begin('./teapotScene_animCycle.usd')
 
+    root_path = Sdf.Path.absoluteRootPath
+    root_scene_path = root_path.AppendChild("Scene")
+    root_over = stage.OverridePrim(root_scene_path)
+
     # add original scene as sublayer with layoutOverrides too
     #
     stage.GetRootLayer().subLayerPaths.append( './teapotScene_layoutOverrides.usd' )
@@ -67,7 +71,8 @@ def main():
     # remove sublayers
     stage.GetRootLayer().subLayerPaths = []
 
-    # close the stage
+    # set default prim and close the stage
+    stage.SetDefaultPrim(root_over)
     stage_end(stage)
 
 
