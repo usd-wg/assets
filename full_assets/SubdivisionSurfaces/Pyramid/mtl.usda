@@ -1,0 +1,64 @@
+#usda 1.0
+(
+    defaultPrim = "Pyramid"
+    framesPerSecond = 24
+    metersPerUnit = 1
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+over "ASSET_mtl_previewsurface"
+{
+    def Scope "mtl"
+    {
+        def Material "PyramidMaterial" (
+            prepend inherits = </__class_mtl__/PyramidMaterial>
+        )
+        {
+            token outputs:surface.connect = </ASSET_mtl_previewsurface/mtl/PyramidMaterial/usdpreviewsurface1.outputs:surface>
+
+            def Shader "usdpreviewsurface1"
+            {
+                uniform token info:id = "UsdPreviewSurface"
+                color3f inputs:diffuseColor.connect = </ASSET_mtl_previewsurface/mtl/PyramidMaterial/usdprimvarreader1.outputs:result>
+                float inputs:roughness = 0.1625
+                token outputs:surface
+            }
+
+            def Shader "usdprimvarreader1"
+            {
+                uniform token info:id = "UsdPrimvarReader_float3"
+                string inputs:varname = "displayColor"
+                vector3f outputs:result
+            }
+        }
+    }
+}
+
+def Xform "Pyramid" (
+    prepend references = </ASSET_mtl_previewsurface>
+    variants = {
+        string mtl = "previewsurface"
+    }
+    prepend variantSets = "mtl"
+)
+{
+    def Scope "mtl"
+    {
+    }
+    variantSet "mtl" = {
+        "previewsurface" {
+            over "geo"
+            {
+                over "shape" (
+                    prepend apiSchemas = ["MaterialBindingAPI"]
+                )
+                {
+                    rel material:binding = </Pyramid/mtl/PyramidMaterial>
+                }
+            }
+
+        }
+    }
+}
+
