@@ -1,0 +1,21 @@
+#usda 1.0
+(
+    defaultPrim = "teapot"
+    endTimeCode = 1
+    metersPerUnit = 1
+    startTimeCode = 1
+    upAxis = "Y"
+)
+
+def Xform "teapot" (
+    assetInfo = {
+        asset identifier = @./payload.usd@
+        string name = "teapot"
+        string version = "1.0"
+    }
+    kind = "component"
+    prepend payload = @./payload.usd@
+)
+{
+}
+

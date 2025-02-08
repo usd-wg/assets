@@ -1,0 +1,18 @@
+#usda 1.0
+(
+    defaultPrim = "simpleAsset"
+    endTimeCode = 1
+    metersPerUnit = 0.01
+    startTimeCode = 1
+    subLayers = [
+        @./mtl.usd@
+    ]
+    upAxis = "Y"
+)
+
+over "simpleAsset" (
+    kind = "component"
+)
+{
+}
+
