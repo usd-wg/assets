@@ -1,0 +1,44 @@
+#usda 1.0
+(
+    customLayerData = {
+        string License = "CC BY 4.0"
+        string Version = "1.1"
+    }
+    defaultPrim = "standard_shader_ball_scene"
+    endTimeCode = 3
+    framesPerSecond = 24
+    metersPerUnit = 0.01
+    startTimeCode = 3
+    subLayers = [
+        @./standard_shader_ball_scene.usda@
+    ]
+    timeCodesPerSecond = 24
+    upAxis = "Y"
+)
+
+over "standard_shader_ball_scene" 
+{
+    over "materials" (
+        variants = {
+            string material_model = "OpenPBR"
+        }
+    )
+    {
+        over "box_base" (
+            variants = {
+                string material_model = "OpenPBR"
+            }
+        )
+        {
+        }
+        
+        over "examples" (
+            variants = {
+                string material_model = "OpenPBR"
+            }
+        )
+        {
+        }
+    }
+}
+
