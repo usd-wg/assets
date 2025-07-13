@@ -268,7 +268,7 @@ def Xform "standard_shader_ball_scene" (
     {
         def Material "box_base" (
             variants = {
-                string material_model = "standard_surface"
+                string material_model = "OpenPBRSurface"
             }
             prepend variantSets = "material_model"
         )
