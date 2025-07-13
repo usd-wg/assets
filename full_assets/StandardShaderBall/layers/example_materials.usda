@@ -81,7 +81,7 @@ over "standard_shader_ball_scene" (
                     {
                     }
                 }
-                "OpenPBR" {
+                "OpenPBRSurface" {
                     over "mtlx" (
                         prepend references = [
                             @../example_materials/plastic_openpbr.mtlx@</MaterialX/Materials>,

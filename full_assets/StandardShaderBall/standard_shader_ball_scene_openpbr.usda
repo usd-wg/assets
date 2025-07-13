@@ -20,13 +20,13 @@ over "standard_shader_ball_scene"
 {
     over "materials" (
         variants = {
-            string material_model = "OpenPBR"
+            string material_model = "OpenPBRSurface"
         }
     )
     {
         over "box_base" (
             variants = {
-                string material_model = "OpenPBR"
+                string material_model = "OpenPBRSurface"
             }
         )
         {
@@ -34,7 +34,7 @@ over "standard_shader_ball_scene"
         
         over "examples" (
             variants = {
-                string material_model = "OpenPBR"
+                string material_model = "OpenPBRSurface"
             }
         )
         {

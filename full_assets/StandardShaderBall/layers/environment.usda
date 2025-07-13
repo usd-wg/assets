@@ -426,7 +426,7 @@ def Xform "standard_shader_ball_scene" (
                 "standard_surface" {
                     token outputs:mtlx:surface.connect = </standard_shader_ball_scene/materials/box_base/mtlxstandard_surface1.outputs:out>
                 }
-                "OpenPBR" {
+                "OpenPBRSurface" {
                     token outputs:mtlx:surface.connect = </standard_shader_ball_scene/materials/box_base/open_pbr_surface1.outputs:out>
                 }
             }

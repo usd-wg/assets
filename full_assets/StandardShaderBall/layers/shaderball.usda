@@ -555,7 +555,7 @@ def Xform "standard_shader_ball_scene" (
                     token outputs:mtlx:surface.connect = </standard_shader_ball_scene/materials/uvgrid/mtlxstandard_surface1.outputs:out>
                 }
             }
-            "OpenPBR" {
+            "OpenPBRSurface" {
                 over "neutral"
                 {
                     over "mtlx"
