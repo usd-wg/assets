@@ -25,18 +25,18 @@ def Xform "TextureTransformTest"
                 uniform token info:id = "UsdPreviewSurface"
                 float inputs:clearcoat = 0
                 float inputs:clearcoatRoughness = 0.01
-                float3 inputs:diffuseColor = (0.18, 0.18, 0.18)
-                float3 inputs:diffuseColor.connect = </TextureTransformTest/Materials/Offset_U_53148/_BaseColorTexture.outputs:rgb>
+                color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+                color3f inputs:diffuseColor.connect = </TextureTransformTest/Materials/Offset_U_53148/_BaseColorTexture.outputs:rgb>
                 float inputs:displacement = 0
-                float3 inputs:emissiveColor = (0, 0, 0)
+                color3f inputs:emissiveColor = (0, 0, 0)
                 float inputs:ior = 1.5
                 float inputs:metallic = 0
-                float3 inputs:normal = (0, 0, 1)
+                normal3f inputs:normal = (0, 0, 1)
                 float inputs:occlusion = 1
                 float inputs:opacity = 1
                 float inputs:opacityThreshold = 0
                 float inputs:roughness = 1
-                float3 inputs:specularColor = (0, 0, 0)
+                color3f inputs:specularColor = (0, 0, 0)
                 int inputs:useSpecularWorkflow = 1
                 token outputs:displacement
                 token outputs:surface
@@ -48,14 +48,14 @@ def Xform "TextureTransformTest"
             {
                 uniform token info:id = "UsdPrimvarReader_float2"
                 float2 inputs:fallback = (0, 0)
-                token inputs:varname = "st"
+                string inputs:varname = "st"
                 float2 outputs:result
             }
 
             def Shader "usdTransform"
             {
                 uniform token info:id = "UsdTransform2d"
-                token inputs:in.connect = </TextureTransformTest/Materials/Offset_U_53148/uvReader.outputs:result>
+                float2 inputs:in.connect = </TextureTransformTest/Materials/Offset_U_53148/uvReader.outputs:result>
                 float inputs:rotation = 0
                 float2 inputs:scale = (1, 1)
                 float2 inputs:translation = (0.5, 0)
@@ -94,18 +94,18 @@ def Xform "TextureTransformTest"
                 uniform token info:id = "UsdPreviewSurface"
                 float inputs:clearcoat = 0
                 float inputs:clearcoatRoughness = 0.01
-                float3 inputs:diffuseColor = (0.18, 0.18, 0.18)
-                float3 inputs:diffuseColor.connect = </TextureTransformTest/Materials/Offset_V_53152/_BaseColorTexture.outputs:rgb>
+                color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+                color3f inputs:diffuseColor.connect = </TextureTransformTest/Materials/Offset_V_53152/_BaseColorTexture.outputs:rgb>
                 float inputs:displacement = 0
-                float3 inputs:emissiveColor = (0, 0, 0)
+                color3f inputs:emissiveColor = (0, 0, 0)
                 float inputs:ior = 1.5
                 float inputs:metallic = 0
-                float3 inputs:normal = (0, 0, 1)
+                normal3f inputs:normal = (0, 0, 1)
                 float inputs:occlusion = 1
                 float inputs:opacity = 1
                 float inputs:opacityThreshold = 0
                 float inputs:roughness = 1
-                float3 inputs:specularColor = (0, 0, 0)
+                color3f inputs:specularColor = (0, 0, 0)
                 int inputs:useSpecularWorkflow = 1
                 token outputs:displacement
                 token outputs:surface
@@ -117,14 +117,14 @@ def Xform "TextureTransformTest"
             {
                 uniform token info:id = "UsdPrimvarReader_float2"
                 float2 inputs:fallback = (0, 0)
-                token inputs:varname = "st"
+                string inputs:varname = "st"
                 float2 outputs:result
             }
 
             def Shader "usdTransform"
             {
                 uniform token info:id = "UsdTransform2d"
-                token inputs:in.connect = </TextureTransformTest/Materials/Offset_V_53152/uvReader.outputs:result>
+                float2 inputs:in.connect = </TextureTransformTest/Materials/Offset_V_53152/uvReader.outputs:result>
                 float inputs:rotation = 0
                 float2 inputs:scale = (1, 1)
                 float2 inputs:translation = (0, -0.5)
@@ -163,18 +163,18 @@ def Xform "TextureTransformTest"
                 uniform token info:id = "UsdPreviewSurface"
                 float inputs:clearcoat = 0
                 float inputs:clearcoatRoughness = 0.01
-                float3 inputs:diffuseColor = (0.18, 0.18, 0.18)
-                float3 inputs:diffuseColor.connect = </TextureTransformTest/Materials/Offset_UV_53150/_BaseColorTexture.outputs:rgb>
+                color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+                color3f inputs:diffuseColor.connect = </TextureTransformTest/Materials/Offset_UV_53150/_BaseColorTexture.outputs:rgb>
                 float inputs:displacement = 0
-                float3 inputs:emissiveColor = (0, 0, 0)
+                color3f inputs:emissiveColor = (0, 0, 0)
                 float inputs:ior = 1.5
                 float inputs:metallic = 0
-                float3 inputs:normal = (0, 0, 1)
+                normal3f inputs:normal = (0, 0, 1)
                 float inputs:occlusion = 1
                 float inputs:opacity = 1
                 float inputs:opacityThreshold = 0
                 float inputs:roughness = 1
-                float3 inputs:specularColor = (0, 0, 0)
+                color3f inputs:specularColor = (0, 0, 0)
                 int inputs:useSpecularWorkflow = 1
                 token outputs:displacement
                 token outputs:surface
@@ -186,14 +186,14 @@ def Xform "TextureTransformTest"
             {
                 uniform token info:id = "UsdPrimvarReader_float2"
                 float2 inputs:fallback = (0, 0)
-                token inputs:varname = "st"
+                string inputs:varname = "st"
                 float2 outputs:result
             }
 
             def Shader "usdTransform"
             {
                 uniform token info:id = "UsdTransform2d"
-                token inputs:in.connect = </TextureTransformTest/Materials/Offset_UV_53150/uvReader.outputs:result>
+                float2 inputs:in.connect = </TextureTransformTest/Materials/Offset_UV_53150/uvReader.outputs:result>
                 float inputs:rotation = 0
                 float2 inputs:scale = (1, 1)
                 float2 inputs:translation = (0.5, -0.5)
@@ -232,18 +232,18 @@ def Xform "TextureTransformTest"
                 uniform token info:id = "UsdPreviewSurface"
                 float inputs:clearcoat = 0
                 float inputs:clearcoatRoughness = 0.01
-                float3 inputs:diffuseColor = (0.18, 0.18, 0.18)
-                float3 inputs:diffuseColor.connect = </TextureTransformTest/Materials/Rotation_53154/_BaseColorTexture.outputs:rgb>
+                color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+                color3f inputs:diffuseColor.connect = </TextureTransformTest/Materials/Rotation_53154/_BaseColorTexture.outputs:rgb>
                 float inputs:displacement = 0
-                float3 inputs:emissiveColor = (0, 0, 0)
+                color3f inputs:emissiveColor = (0, 0, 0)
                 float inputs:ior = 1.5
                 float inputs:metallic = 0
-                float3 inputs:normal = (0, 0, 1)
+                normal3f inputs:normal = (0, 0, 1)
                 float inputs:occlusion = 1
                 float inputs:opacity = 1
                 float inputs:opacityThreshold = 0
                 float inputs:roughness = 1
-                float3 inputs:specularColor = (0, 0, 0)
+                color3f inputs:specularColor = (0, 0, 0)
                 int inputs:useSpecularWorkflow = 1
                 token outputs:displacement
                 token outputs:surface
@@ -255,14 +255,14 @@ def Xform "TextureTransformTest"
             {
                 uniform token info:id = "UsdPrimvarReader_float2"
                 float2 inputs:fallback = (0, 0)
-                token inputs:varname = "st"
+                string inputs:varname = "st"
                 float2 outputs:result
             }
 
             def Shader "usdTransform"
             {
                 uniform token info:id = "UsdTransform2d"
-                token inputs:in.connect = </TextureTransformTest/Materials/Rotation_53154/uvReader.outputs:result>
+                float2 inputs:in.connect = </TextureTransformTest/Materials/Rotation_53154/uvReader.outputs:result>
                 float inputs:rotation = 22.5
                 float2 inputs:scale = (1, 1)
                 float2 inputs:translation = (0.38268343, 0.076120496)
@@ -301,18 +301,18 @@ def Xform "TextureTransformTest"
                 uniform token info:id = "UsdPreviewSurface"
                 float inputs:clearcoat = 0
                 float inputs:clearcoatRoughness = 0.01
-                float3 inputs:diffuseColor = (0.18, 0.18, 0.18)
-                float3 inputs:diffuseColor.connect = </TextureTransformTest/Materials/Correct_53142/_BaseColorTexture.outputs:rgb>
+                color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+                color3f inputs:diffuseColor.connect = </TextureTransformTest/Materials/Correct_53142/_BaseColorTexture.outputs:rgb>
                 float inputs:displacement = 0
-                float3 inputs:emissiveColor = (0, 0, 0)
+                color3f inputs:emissiveColor = (0, 0, 0)
                 float inputs:ior = 1.5
                 float inputs:metallic = 0
-                float3 inputs:normal = (0, 0, 1)
+                normal3f inputs:normal = (0, 0, 1)
                 float inputs:occlusion = 1
                 float inputs:opacity = 1
                 float inputs:opacityThreshold = 0
                 float inputs:roughness = 1
-                float3 inputs:specularColor = (0, 0, 0)
+                color3f inputs:specularColor = (0, 0, 0)
                 int inputs:useSpecularWorkflow = 1
                 token outputs:displacement
                 token outputs:surface
@@ -324,7 +324,7 @@ def Xform "TextureTransformTest"
             {
                 uniform token info:id = "UsdPrimvarReader_float2"
                 float2 inputs:fallback = (0, 0)
-                token inputs:varname = "st"
+                string inputs:varname = "st"
                 float2 outputs:result
             }
 
@@ -360,18 +360,18 @@ def Xform "TextureTransformTest"
                 uniform token info:id = "UsdPreviewSurface"
                 float inputs:clearcoat = 0
                 float inputs:clearcoatRoughness = 0.01
-                float3 inputs:diffuseColor = (0.18, 0.18, 0.18)
-                float3 inputs:diffuseColor.connect = </TextureTransformTest/Materials/Not_Supported_53146/_BaseColorTexture.outputs:rgb>
+                color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+                color3f inputs:diffuseColor.connect = </TextureTransformTest/Materials/Not_Supported_53146/_BaseColorTexture.outputs:rgb>
                 float inputs:displacement = 0
-                float3 inputs:emissiveColor = (0, 0, 0)
+                color3f inputs:emissiveColor = (0, 0, 0)
                 float inputs:ior = 1.5
                 float inputs:metallic = 0
-                float3 inputs:normal = (0, 0, 1)
+                normal3f inputs:normal = (0, 0, 1)
                 float inputs:occlusion = 1
                 float inputs:opacity = 1
                 float inputs:opacityThreshold = 0
                 float inputs:roughness = 1
-                float3 inputs:specularColor = (0, 0, 0)
+                color3f inputs:specularColor = (0, 0, 0)
                 int inputs:useSpecularWorkflow = 1
                 token outputs:displacement
                 token outputs:surface
@@ -383,7 +383,7 @@ def Xform "TextureTransformTest"
             {
                 uniform token info:id = "UsdPrimvarReader_float2"
                 float2 inputs:fallback = (0, 0)
-                token inputs:varname = "st"
+                string inputs:varname = "st"
                 float2 outputs:result
             }
 
@@ -419,18 +419,18 @@ def Xform "TextureTransformTest"
                 uniform token info:id = "UsdPreviewSurface"
                 float inputs:clearcoat = 0
                 float inputs:clearcoatRoughness = 0.01
-                float3 inputs:diffuseColor = (0.18, 0.18, 0.18)
-                float3 inputs:diffuseColor.connect = </TextureTransformTest/Materials/Error_53144/_BaseColorTexture.outputs:rgb>
+                color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+                color3f inputs:diffuseColor.connect = </TextureTransformTest/Materials/Error_53144/_BaseColorTexture.outputs:rgb>
                 float inputs:displacement = 0
-                float3 inputs:emissiveColor = (0, 0, 0)
+                color3f inputs:emissiveColor = (0, 0, 0)
                 float inputs:ior = 1.5
                 float inputs:metallic = 0
-                float3 inputs:normal = (0, 0, 1)
+                normal3f inputs:normal = (0, 0, 1)
                 float inputs:occlusion = 1
                 float inputs:opacity = 1
                 float inputs:opacityThreshold = 0
                 float inputs:roughness = 1
-                float3 inputs:specularColor = (0, 0, 0)
+                color3f inputs:specularColor = (0, 0, 0)
                 int inputs:useSpecularWorkflow = 1
                 token outputs:displacement
                 token outputs:surface
@@ -442,7 +442,7 @@ def Xform "TextureTransformTest"
             {
                 uniform token info:id = "UsdPrimvarReader_float2"
                 float2 inputs:fallback = (0, 0)
-                token inputs:varname = "st"
+                string inputs:varname = "st"
                 float2 outputs:result
             }
 
@@ -478,18 +478,18 @@ def Xform "TextureTransformTest"
                 uniform token info:id = "UsdPreviewSurface"
                 float inputs:clearcoat = 0
                 float inputs:clearcoatRoughness = 0.01
-                float3 inputs:diffuseColor = (0.18, 0.18, 0.18)
-                float3 inputs:diffuseColor.connect = </TextureTransformTest/Materials/Scale_53156/_BaseColorTexture.outputs:rgb>
+                color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+                color3f inputs:diffuseColor.connect = </TextureTransformTest/Materials/Scale_53156/_BaseColorTexture.outputs:rgb>
                 float inputs:displacement = 0
-                float3 inputs:emissiveColor = (0, 0, 0)
+                color3f inputs:emissiveColor = (0, 0, 0)
                 float inputs:ior = 1.5
                 float inputs:metallic = 0
-                float3 inputs:normal = (0, 0, 1)
+                normal3f inputs:normal = (0, 0, 1)
                 float inputs:occlusion = 1
                 float inputs:opacity = 1
                 float inputs:opacityThreshold = 0
                 float inputs:roughness = 1
-                float3 inputs:specularColor = (0, 0, 0)
+                color3f inputs:specularColor = (0, 0, 0)
                 int inputs:useSpecularWorkflow = 1
                 token outputs:displacement
                 token outputs:surface
@@ -501,14 +501,14 @@ def Xform "TextureTransformTest"
             {
                 uniform token info:id = "UsdPrimvarReader_float2"
                 float2 inputs:fallback = (0, 0)
-                token inputs:varname = "st"
+                string inputs:varname = "st"
                 float2 outputs:result
             }
 
             def Shader "usdTransform"
             {
                 uniform token info:id = "UsdTransform2d"
-                token inputs:in.connect = </TextureTransformTest/Materials/Scale_53156/uvReader.outputs:result>
+                float2 inputs:in.connect = </TextureTransformTest/Materials/Scale_53156/uvReader.outputs:result>
                 float inputs:rotation = 0
                 float2 inputs:scale = (1.5, 1.5)
                 float2 inputs:translation = (0, -0.5)
@@ -547,18 +547,18 @@ def Xform "TextureTransformTest"
                 uniform token info:id = "UsdPreviewSurface"
                 float inputs:clearcoat = 0
                 float inputs:clearcoatRoughness = 0.01
-                float3 inputs:diffuseColor = (0.18, 0.18, 0.18)
-                float3 inputs:diffuseColor.connect = </TextureTransformTest/Materials/All_53140/_BaseColorTexture.outputs:rgb>
+                color3f inputs:diffuseColor = (0.18, 0.18, 0.18)
+                color3f inputs:diffuseColor.connect = </TextureTransformTest/Materials/All_53140/_BaseColorTexture.outputs:rgb>
                 float inputs:displacement = 0
-                float3 inputs:emissiveColor = (0, 0, 0)
+                color3f inputs:emissiveColor = (0, 0, 0)
                 float inputs:ior = 1.5
                 float inputs:metallic = 0
-                float3 inputs:normal = (0, 0, 1)
+                normal3f inputs:normal = (0, 0, 1)
                 float inputs:occlusion = 1
                 float inputs:opacity = 1
                 float inputs:opacityThreshold = 0
                 float inputs:roughness = 1
-                float3 inputs:specularColor = (0, 0, 0)
+                color3f inputs:specularColor = (0, 0, 0)
                 int inputs:useSpecularWorkflow = 1
                 token outputs:displacement
                 token outputs:surface
@@ -570,14 +570,14 @@ def Xform "TextureTransformTest"
             {
                 uniform token info:id = "UsdPrimvarReader_float2"
                 float2 inputs:fallback = (0, 0)
-                token inputs:varname = "st"
+                string inputs:varname = "st"
                 float2 outputs:result
             }
 
             def Shader "usdTransform"
             {
                 uniform token info:id = "UsdTransform2d"
-                token inputs:in.connect = </TextureTransformTest/Materials/All_53140/uvReader.outputs:result>
+                float2 inputs:in.connect = </TextureTransformTest/Materials/All_53140/uvReader.outputs:result>
                 float inputs:rotation = 17.188734
                 float2 inputs:scale = (1.5, 1.5)
                 float2 inputs:translation = (0.24328034, -0.33300462)
