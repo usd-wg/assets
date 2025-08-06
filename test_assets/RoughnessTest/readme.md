@@ -2,7 +2,7 @@
 
 ## Screenshot
 
-![screenshot](screenshots/usdview-20.08.png)  
+![screenshot](screenshots/usdview-25.08.png)  
 
 ## Description
 
@@ -15,9 +15,9 @@ The meshes are aligned intentionally to make it easy to compare lighting between
 use for debugging is to catch a light highlight directly on the split between meshes to enable easy visual inspection of the 
 lighting response (see below).
 
-![screenshot](screenshots/usdview-split000-20.08.png)  
-![screenshot](screenshots/usdview-split033-20.08.png)  
-![screenshot](screenshots/usdview-split066-20.08.png)  
+![screenshot](screenshots/usdview-split000-25.08.png)  
+![screenshot](screenshots/usdview-split033-25.08.png)  
+![screenshot](screenshots/usdview-split066-25.08.png)  
 
 The roughness values are packed into a single texture, with the red channel set to 0.00, the green channel set to 0.33, and the
 blue channel is set to 0.66.
