@@ -1,0 +1,3645 @@
+#usda 1.0
+(
+    defaultPrim = "Scene"
+    endTimeCode = 1
+    metersPerUnit = 1
+    startTimeCode = 1
+    upAxis = "Y"
+)
+
+over "Scene"
+{
+    over "ring000"
+    {
+        over "teapot000" (
+            prepend inherits = </_teapot_animCycle_offset_2>
+        )
+        {
+        }
+
+        over "teapot001" (
+            prepend inherits = </_teapot_animCycle_offset_4>
+        )
+        {
+        }
+
+        over "teapot002" (
+            prepend inherits = </_teapot_animCycle_offset_18>
+        )
+        {
+        }
+
+        over "teapot003" (
+            prepend inherits = </_teapot_animCycle_offset_4>
+        )
+        {
+        }
+
+        over "teapot004" (
+            prepend inherits = </_teapot_animCycle_offset_42>
+        )
+        {
+        }
+
+        over "teapot005" (
+            prepend inherits = </_teapot_animCycle_offset_0>
+        )
+        {
+        }
+
+        over "teapot006" (
+            prepend inherits = </_teapot_animCycle_offset_24>
+        )
+        {
+        }
+
+        over "teapot007" (
+            prepend inherits = </_teapot_animCycle_offset_14>
+        )
+        {
+        }
+
+        over "teapot008" (
+            prepend inherits = </_teapot_animCycle_offset_40>
+        )
+        {
+        }
+
+        over "teapot009" (
+            prepend inherits = </_teapot_animCycle_offset_6>
+        )
+        {
+        }
+
+        over "teapot010" (
+            prepend inherits = </_teapot_animCycle_offset_16>
+        )
+        {
+        }
+
+        over "teapot011" (
+            prepend inherits = </_teapot_animCycle_offset_16>
+        )
+        {
+        }
+
+        over "teapot012" (
+            prepend inherits = </_teapot_animCycle_offset_10>
+        )
+        {
+        }
+
+        over "teapot013" (
+            prepend inherits = </_teapot_animCycle_offset_0>
+        )
+        {
+        }
+
+        over "teapot014" (
+            prepend inherits = </_teapot_animCycle_offset_20>
+        )
+        {
+        }
+
+        over "teapot015" (
+            prepend inherits = </_teapot_animCycle_offset_4>
+        )
+        {
+        }
+    }
+
+    over "ring001"
+    {
+        over "instancer_teapot001"
+        {
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_28>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring002"
+    {
+        over "instancer_teapot002"
+        {
+            over "Prototypes"
+            {
+                over "red_teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_2>
+                )
+                {
+                }
+
+                over "green_teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_14>
+                )
+                {
+                }
+
+                over "blue_teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_20>
+                )
+                {
+                }
+
+                over "teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_42>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring003"
+    {
+        over "instancer_teapot003"
+        {
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_4>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring004"
+    {
+        over "teapot060" (
+            prepend inherits = </_teapot_animCycle_offset_6>
+        )
+        {
+        }
+
+        over "teapot061" (
+            prepend inherits = </_teapot_animCycle_offset_36>
+        )
+        {
+        }
+
+        over "teapot062" (
+            prepend inherits = </_teapot_animCycle_offset_0>
+        )
+        {
+        }
+
+        over "teapot063" (
+            prepend inherits = </_teapot_animCycle_offset_42>
+        )
+        {
+        }
+
+        over "teapot064" (
+            prepend inherits = </_teapot_animCycle_offset_26>
+        )
+        {
+        }
+
+        over "teapot065" (
+            prepend inherits = </_teapot_animCycle_offset_12>
+        )
+        {
+        }
+
+        over "teapot066" (
+            prepend inherits = </_teapot_animCycle_offset_40>
+        )
+        {
+        }
+
+        over "teapot067" (
+            prepend inherits = </_teapot_animCycle_offset_36>
+        )
+        {
+        }
+
+        over "teapot068" (
+            prepend inherits = </_teapot_animCycle_offset_16>
+        )
+        {
+        }
+
+        over "teapot069" (
+            prepend inherits = </_teapot_animCycle_offset_38>
+        )
+        {
+        }
+
+        over "teapot070" (
+            prepend inherits = </_teapot_animCycle_offset_8>
+        )
+        {
+        }
+
+        over "teapot071" (
+            prepend inherits = </_teapot_animCycle_offset_28>
+        )
+        {
+        }
+
+        over "teapot072" (
+            prepend inherits = </_teapot_animCycle_offset_24>
+        )
+        {
+        }
+
+        over "teapot073" (
+            prepend inherits = </_teapot_animCycle_offset_38>
+        )
+        {
+        }
+
+        over "teapot074" (
+            prepend inherits = </_teapot_animCycle_offset_14>
+        )
+        {
+        }
+
+        over "teapot075" (
+            prepend inherits = </_teapot_animCycle_offset_18>
+        )
+        {
+        }
+
+        over "teapot076" (
+            prepend inherits = </_teapot_animCycle_offset_36>
+        )
+        {
+        }
+    }
+
+    over "ring005"
+    {
+        over "instancer_teapot005"
+        {
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_24>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring006"
+    {
+        over "teapot092" (
+            prepend inherits = </_teapot_animCycle_offset_32>
+        )
+        {
+        }
+
+        over "teapot093" (
+            prepend inherits = </_teapot_animCycle_offset_30>
+        )
+        {
+        }
+
+        over "teapot094" (
+            prepend inherits = </_teapot_animCycle_offset_30>
+        )
+        {
+        }
+
+        over "teapot095" (
+            prepend inherits = </_teapot_animCycle_offset_42>
+        )
+        {
+        }
+
+        over "teapot096" (
+            prepend inherits = </_teapot_animCycle_offset_22>
+        )
+        {
+        }
+
+        over "teapot097" (
+            prepend inherits = </_teapot_animCycle_offset_32>
+        )
+        {
+        }
+
+        over "teapot098" (
+            prepend inherits = </_teapot_animCycle_offset_16>
+        )
+        {
+        }
+
+        over "teapot099" (
+            prepend inherits = </_teapot_animCycle_offset_0>
+        )
+        {
+        }
+
+        over "teapot100" (
+            prepend inherits = </_teapot_animCycle_offset_36>
+        )
+        {
+        }
+
+        over "teapot101" (
+            prepend inherits = </_teapot_animCycle_offset_8>
+        )
+        {
+        }
+
+        over "teapot102" (
+            prepend inherits = </_teapot_animCycle_offset_38>
+        )
+        {
+        }
+
+        over "teapot103" (
+            prepend inherits = </_teapot_animCycle_offset_42>
+        )
+        {
+        }
+
+        over "teapot104" (
+            prepend inherits = </_teapot_animCycle_offset_30>
+        )
+        {
+        }
+
+        over "teapot105" (
+            prepend inherits = </_teapot_animCycle_offset_8>
+        )
+        {
+        }
+    }
+
+    over "ring007"
+    {
+        over "teapot106" (
+            prepend inherits = </_teapot_animCycle_offset_16>
+        )
+        {
+        }
+
+        over "teapot107" (
+            prepend inherits = </_teapot_animCycle_offset_18>
+        )
+        {
+        }
+
+        over "teapot108" (
+            prepend inherits = </_teapot_animCycle_offset_2>
+        )
+        {
+        }
+
+        over "teapot109" (
+            prepend inherits = </_teapot_animCycle_offset_20>
+        )
+        {
+        }
+
+        over "teapot110" (
+            prepend inherits = </_teapot_animCycle_offset_26>
+        )
+        {
+        }
+
+        over "teapot111" (
+            prepend inherits = </_teapot_animCycle_offset_16>
+        )
+        {
+        }
+
+        over "teapot112" (
+            prepend inherits = </_teapot_animCycle_offset_8>
+        )
+        {
+        }
+
+        over "teapot113" (
+            prepend inherits = </_teapot_animCycle_offset_4>
+        )
+        {
+        }
+
+        over "teapot114" (
+            prepend inherits = </_teapot_animCycle_offset_30>
+        )
+        {
+        }
+
+        over "teapot115" (
+            prepend inherits = </_teapot_animCycle_offset_0>
+        )
+        {
+        }
+
+        over "teapot116" (
+            prepend inherits = </_teapot_animCycle_offset_16>
+        )
+        {
+        }
+
+        over "teapot117" (
+            prepend inherits = </_teapot_animCycle_offset_10>
+        )
+        {
+        }
+
+        over "teapot118" (
+            prepend inherits = </_teapot_animCycle_offset_24>
+        )
+        {
+        }
+
+        over "teapot119" (
+            prepend inherits = </_teapot_animCycle_offset_34>
+        )
+        {
+        }
+
+        over "teapot120" (
+            prepend inherits = </_teapot_animCycle_offset_42>
+        )
+        {
+        }
+    }
+
+    over "ring008"
+    {
+        over "instancer_teapot008"
+        {
+            over "Prototypes"
+            {
+                over "red_teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_30>
+                )
+                {
+                }
+
+                over "green_teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_46>
+                )
+                {
+                }
+
+                over "blue_teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_46>
+                )
+                {
+                }
+
+                over "teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_30>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring009"
+    {
+        over "instancer_teapot009"
+        {
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_10>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring010"
+    {
+        over "teapot152" (
+            prepend inherits = </_teapot_animCycle_offset_22>
+        )
+        {
+        }
+
+        over "teapot153" (
+            prepend inherits = </_teapot_animCycle_offset_8>
+        )
+        {
+        }
+
+        over "teapot154" (
+            prepend inherits = </_teapot_animCycle_offset_46>
+        )
+        {
+        }
+
+        over "teapot155" (
+            prepend inherits = </_teapot_animCycle_offset_20>
+        )
+        {
+        }
+
+        over "teapot156" (
+            prepend inherits = </_teapot_animCycle_offset_36>
+        )
+        {
+        }
+
+        over "teapot157" (
+            prepend inherits = </_teapot_animCycle_offset_2>
+        )
+        {
+        }
+
+        over "teapot158" (
+            prepend inherits = </_teapot_animCycle_offset_6>
+        )
+        {
+        }
+
+        over "teapot159" (
+            prepend inherits = </_teapot_animCycle_offset_8>
+        )
+        {
+        }
+
+        over "teapot160" (
+            prepend inherits = </_teapot_animCycle_offset_12>
+        )
+        {
+        }
+
+        over "teapot161" (
+            prepend inherits = </_teapot_animCycle_offset_16>
+        )
+        {
+        }
+
+        over "teapot162" (
+            prepend inherits = </_teapot_animCycle_offset_12>
+        )
+        {
+        }
+
+        over "teapot163" (
+            prepend inherits = </_teapot_animCycle_offset_20>
+        )
+        {
+        }
+
+        over "teapot164" (
+            prepend inherits = </_teapot_animCycle_offset_20>
+        )
+        {
+        }
+
+        over "teapot165" (
+            prepend inherits = </_teapot_animCycle_offset_4>
+        )
+        {
+        }
+
+        over "teapot166" (
+            prepend inherits = </_teapot_animCycle_offset_2>
+        )
+        {
+        }
+
+        over "teapot167" (
+            prepend inherits = </_teapot_animCycle_offset_16>
+        )
+        {
+        }
+    }
+
+    over "ring011"
+    {
+        over "instancer_teapot011"
+        {
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_4>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring012"
+    {
+        over "teapot185" (
+            prepend inherits = </_teapot_animCycle_offset_20>
+        )
+        {
+        }
+
+        over "teapot186" (
+            prepend inherits = </_teapot_animCycle_offset_0>
+        )
+        {
+        }
+
+        over "teapot187" (
+            prepend inherits = </_teapot_animCycle_offset_24>
+        )
+        {
+        }
+
+        over "teapot188" (
+            prepend inherits = </_teapot_animCycle_offset_2>
+        )
+        {
+        }
+
+        over "teapot189" (
+            prepend inherits = </_teapot_animCycle_offset_32>
+        )
+        {
+        }
+
+        over "teapot190" (
+            prepend inherits = </_teapot_animCycle_offset_18>
+        )
+        {
+        }
+
+        over "teapot191" (
+            prepend inherits = </_teapot_animCycle_offset_46>
+        )
+        {
+        }
+
+        over "teapot192" (
+            prepend inherits = </_teapot_animCycle_offset_12>
+        )
+        {
+        }
+
+        over "teapot193" (
+            prepend inherits = </_teapot_animCycle_offset_22>
+        )
+        {
+        }
+
+        over "teapot194" (
+            prepend inherits = </_teapot_animCycle_offset_36>
+        )
+        {
+        }
+
+        over "teapot195" (
+            prepend inherits = </_teapot_animCycle_offset_16>
+        )
+        {
+        }
+
+        over "teapot196" (
+            prepend inherits = </_teapot_animCycle_offset_16>
+        )
+        {
+        }
+
+        over "teapot197" (
+            prepend inherits = </_teapot_animCycle_offset_30>
+        )
+        {
+        }
+
+        over "teapot198" (
+            prepend inherits = </_teapot_animCycle_offset_46>
+        )
+        {
+        }
+
+        over "teapot199" (
+            prepend inherits = </_teapot_animCycle_offset_42>
+        )
+        {
+        }
+
+        over "teapot200" (
+            prepend inherits = </_teapot_animCycle_offset_20>
+        )
+        {
+        }
+
+        over "teapot201" (
+            prepend inherits = </_teapot_animCycle_offset_34>
+        )
+        {
+        }
+
+        over "teapot202" (
+            prepend inherits = </_teapot_animCycle_offset_32>
+        )
+        {
+        }
+
+        over "teapot203" (
+            prepend inherits = </_teapot_animCycle_offset_16>
+        )
+        {
+        }
+
+        over "teapot204" (
+            prepend inherits = </_teapot_animCycle_offset_10>
+        )
+        {
+        }
+    }
+
+    over "ring013"
+    {
+        over "teapot205" (
+            prepend inherits = </_teapot_animCycle_offset_2>
+        )
+        {
+        }
+
+        over "teapot206" (
+            prepend inherits = </_teapot_animCycle_offset_42>
+        )
+        {
+        }
+
+        over "teapot207" (
+            prepend inherits = </_teapot_animCycle_offset_2>
+        )
+        {
+        }
+
+        over "teapot208" (
+            prepend inherits = </_teapot_animCycle_offset_24>
+        )
+        {
+        }
+
+        over "teapot209" (
+            prepend inherits = </_teapot_animCycle_offset_24>
+        )
+        {
+        }
+
+        over "teapot210" (
+            prepend inherits = </_teapot_animCycle_offset_6>
+        )
+        {
+        }
+
+        over "teapot211" (
+            prepend inherits = </_teapot_animCycle_offset_30>
+        )
+        {
+        }
+
+        over "teapot212" (
+            prepend inherits = </_teapot_animCycle_offset_42>
+        )
+        {
+        }
+
+        over "teapot213" (
+            prepend inherits = </_teapot_animCycle_offset_36>
+        )
+        {
+        }
+
+        over "teapot214" (
+            prepend inherits = </_teapot_animCycle_offset_18>
+        )
+        {
+        }
+
+        over "teapot215" (
+            prepend inherits = </_teapot_animCycle_offset_6>
+        )
+        {
+        }
+
+        over "teapot216" (
+            prepend inherits = </_teapot_animCycle_offset_46>
+        )
+        {
+        }
+
+        over "teapot217" (
+            prepend inherits = </_teapot_animCycle_offset_24>
+        )
+        {
+        }
+
+        over "teapot218" (
+            prepend inherits = </_teapot_animCycle_offset_30>
+        )
+        {
+        }
+
+        over "teapot219" (
+            prepend inherits = </_teapot_animCycle_offset_38>
+        )
+        {
+        }
+
+        over "teapot220" (
+            prepend inherits = </_teapot_animCycle_offset_18>
+        )
+        {
+        }
+
+        over "teapot221" (
+            prepend inherits = </_teapot_animCycle_offset_2>
+        )
+        {
+        }
+
+        over "teapot222" (
+            prepend inherits = </_teapot_animCycle_offset_6>
+        )
+        {
+        }
+    }
+
+    over "ring014"
+    {
+        over "teapot223" (
+            prepend inherits = </_teapot_animCycle_offset_32>
+        )
+        {
+        }
+
+        over "teapot224" (
+            prepend inherits = </_teapot_animCycle_offset_16>
+        )
+        {
+        }
+
+        over "teapot225" (
+            prepend inherits = </_teapot_animCycle_offset_40>
+        )
+        {
+        }
+
+        over "teapot226" (
+            prepend inherits = </_teapot_animCycle_offset_34>
+        )
+        {
+        }
+
+        over "teapot227" (
+            prepend inherits = </_teapot_animCycle_offset_46>
+        )
+        {
+        }
+
+        over "teapot228" (
+            prepend inherits = </_teapot_animCycle_offset_32>
+        )
+        {
+        }
+
+        over "teapot229" (
+            prepend inherits = </_teapot_animCycle_offset_14>
+        )
+        {
+        }
+
+        over "teapot230" (
+            prepend inherits = </_teapot_animCycle_offset_36>
+        )
+        {
+        }
+
+        over "teapot231" (
+            prepend inherits = </_teapot_animCycle_offset_0>
+        )
+        {
+        }
+
+        over "teapot232" (
+            prepend inherits = </_teapot_animCycle_offset_24>
+        )
+        {
+        }
+
+        over "teapot233" (
+            prepend inherits = </_teapot_animCycle_offset_40>
+        )
+        {
+        }
+
+        over "teapot234" (
+            prepend inherits = </_teapot_animCycle_offset_24>
+        )
+        {
+        }
+
+        over "teapot235" (
+            prepend inherits = </_teapot_animCycle_offset_6>
+        )
+        {
+        }
+
+        over "teapot236" (
+            prepend inherits = </_teapot_animCycle_offset_24>
+        )
+        {
+        }
+
+        over "teapot237" (
+            prepend inherits = </_teapot_animCycle_offset_26>
+        )
+        {
+        }
+
+        over "teapot238" (
+            prepend inherits = </_teapot_animCycle_offset_16>
+        )
+        {
+        }
+
+        over "teapot239" (
+            prepend inherits = </_teapot_animCycle_offset_42>
+        )
+        {
+        }
+
+        over "teapot240" (
+            prepend inherits = </_teapot_animCycle_offset_16>
+        )
+        {
+        }
+
+        over "teapot241" (
+            prepend inherits = </_teapot_animCycle_offset_12>
+        )
+        {
+        }
+    }
+
+    over "ring015"
+    {
+        over "instancer_teapot015"
+        {
+            over "Prototypes"
+            {
+                over "red_teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_24>
+                )
+                {
+                }
+
+                over "green_teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_8>
+                )
+                {
+                }
+
+                over "blue_teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_14>
+                )
+                {
+                }
+
+                over "teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_18>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring016"
+    {
+        over "instancer_teapot016"
+        {
+            over "Prototypes"
+            {
+                over "red_teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_44>
+                )
+                {
+                }
+
+                over "green_teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_2>
+                )
+                {
+                }
+
+                over "blue_teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_8>
+                )
+                {
+                }
+
+                over "teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_8>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring017"
+    {
+        over "teapot281" (
+            prepend inherits = </_teapot_animCycle_offset_46>
+        )
+        {
+        }
+
+        over "teapot282" (
+            prepend inherits = </_teapot_animCycle_offset_42>
+        )
+        {
+        }
+
+        over "teapot283" (
+            prepend inherits = </_teapot_animCycle_offset_8>
+        )
+        {
+        }
+
+        over "teapot284" (
+            prepend inherits = </_teapot_animCycle_offset_26>
+        )
+        {
+        }
+
+        over "teapot285" (
+            prepend inherits = </_teapot_animCycle_offset_4>
+        )
+        {
+        }
+
+        over "teapot286" (
+            prepend inherits = </_teapot_animCycle_offset_14>
+        )
+        {
+        }
+
+        over "teapot287" (
+            prepend inherits = </_teapot_animCycle_offset_16>
+        )
+        {
+        }
+
+        over "teapot288" (
+            prepend inherits = </_teapot_animCycle_offset_24>
+        )
+        {
+        }
+
+        over "teapot289" (
+            prepend inherits = </_teapot_animCycle_offset_44>
+        )
+        {
+        }
+
+        over "teapot290" (
+            prepend inherits = </_teapot_animCycle_offset_38>
+        )
+        {
+        }
+
+        over "teapot291" (
+            prepend inherits = </_teapot_animCycle_offset_24>
+        )
+        {
+        }
+
+        over "teapot292" (
+            prepend inherits = </_teapot_animCycle_offset_36>
+        )
+        {
+        }
+
+        over "teapot293" (
+            prepend inherits = </_teapot_animCycle_offset_22>
+        )
+        {
+        }
+
+        over "teapot294" (
+            prepend inherits = </_teapot_animCycle_offset_34>
+        )
+        {
+        }
+
+        over "teapot295" (
+            prepend inherits = </_teapot_animCycle_offset_36>
+        )
+        {
+        }
+
+        over "teapot296" (
+            prepend inherits = </_teapot_animCycle_offset_12>
+        )
+        {
+        }
+
+        over "teapot297" (
+            prepend inherits = </_teapot_animCycle_offset_38>
+        )
+        {
+        }
+
+        over "teapot298" (
+            prepend inherits = </_teapot_animCycle_offset_26>
+        )
+        {
+        }
+
+        over "teapot299" (
+            prepend inherits = </_teapot_animCycle_offset_22>
+        )
+        {
+        }
+
+        over "teapot300" (
+            prepend inherits = </_teapot_animCycle_offset_18>
+        )
+        {
+        }
+    }
+
+    over "ring018"
+    {
+        over "teapot301" (
+            prepend inherits = </_teapot_animCycle_offset_10>
+        )
+        {
+        }
+
+        over "teapot302" (
+            prepend inherits = </_teapot_animCycle_offset_24>
+        )
+        {
+        }
+
+        over "teapot303" (
+            prepend inherits = </_teapot_animCycle_offset_6>
+        )
+        {
+        }
+
+        over "teapot304" (
+            prepend inherits = </_teapot_animCycle_offset_30>
+        )
+        {
+        }
+
+        over "teapot305" (
+            prepend inherits = </_teapot_animCycle_offset_42>
+        )
+        {
+        }
+
+        over "teapot306" (
+            prepend inherits = </_teapot_animCycle_offset_36>
+        )
+        {
+        }
+
+        over "teapot307" (
+            prepend inherits = </_teapot_animCycle_offset_28>
+        )
+        {
+        }
+
+        over "teapot308" (
+            prepend inherits = </_teapot_animCycle_offset_22>
+        )
+        {
+        }
+
+        over "teapot309" (
+            prepend inherits = </_teapot_animCycle_offset_32>
+        )
+        {
+        }
+
+        over "teapot310" (
+            prepend inherits = </_teapot_animCycle_offset_4>
+        )
+        {
+        }
+
+        over "teapot311" (
+            prepend inherits = </_teapot_animCycle_offset_2>
+        )
+        {
+        }
+
+        over "teapot312" (
+            prepend inherits = </_teapot_animCycle_offset_40>
+        )
+        {
+        }
+
+        over "teapot313" (
+            prepend inherits = </_teapot_animCycle_offset_16>
+        )
+        {
+        }
+
+        over "teapot314" (
+            prepend inherits = </_teapot_animCycle_offset_32>
+        )
+        {
+        }
+
+        over "teapot315" (
+            prepend inherits = </_teapot_animCycle_offset_20>
+        )
+        {
+        }
+
+        over "teapot316" (
+            prepend inherits = </_teapot_animCycle_offset_16>
+        )
+        {
+        }
+
+        over "teapot317" (
+            prepend inherits = </_teapot_animCycle_offset_36>
+        )
+        {
+        }
+
+        over "teapot318" (
+            prepend inherits = </_teapot_animCycle_offset_16>
+        )
+        {
+        }
+
+        over "teapot319" (
+            prepend inherits = </_teapot_animCycle_offset_36>
+        )
+        {
+        }
+
+        over "teapot320" (
+            prepend inherits = </_teapot_animCycle_offset_38>
+        )
+        {
+        }
+    }
+
+    over "ring019"
+    {
+        over "instancer_teapot019"
+        {
+            over "Prototypes"
+            {
+                over "red_teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_8>
+                )
+                {
+                }
+
+                over "green_teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_46>
+                )
+                {
+                }
+
+                over "blue_teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_2>
+                )
+                {
+                }
+
+                over "teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_18>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring020"
+    {
+        over "teapot344" (
+            prepend inherits = </_teapot_animCycle_offset_24>
+        )
+        {
+        }
+
+        over "teapot345" (
+            prepend inherits = </_teapot_animCycle_offset_38>
+        )
+        {
+        }
+
+        over "teapot346" (
+            prepend inherits = </_teapot_animCycle_offset_8>
+        )
+        {
+        }
+
+        over "teapot347" (
+            prepend inherits = </_teapot_animCycle_offset_26>
+        )
+        {
+        }
+
+        over "teapot348" (
+            prepend inherits = </_teapot_animCycle_offset_16>
+        )
+        {
+        }
+
+        over "teapot349" (
+            prepend inherits = </_teapot_animCycle_offset_44>
+        )
+        {
+        }
+
+        over "teapot350" (
+            prepend inherits = </_teapot_animCycle_offset_4>
+        )
+        {
+        }
+
+        over "teapot351" (
+            prepend inherits = </_teapot_animCycle_offset_12>
+        )
+        {
+        }
+
+        over "teapot352" (
+            prepend inherits = </_teapot_animCycle_offset_38>
+        )
+        {
+        }
+
+        over "teapot353" (
+            prepend inherits = </_teapot_animCycle_offset_14>
+        )
+        {
+        }
+
+        over "teapot354" (
+            prepend inherits = </_teapot_animCycle_offset_44>
+        )
+        {
+        }
+
+        over "teapot355" (
+            prepend inherits = </_teapot_animCycle_offset_2>
+        )
+        {
+        }
+
+        over "teapot356" (
+            prepend inherits = </_teapot_animCycle_offset_18>
+        )
+        {
+        }
+
+        over "teapot357" (
+            prepend inherits = </_teapot_animCycle_offset_4>
+        )
+        {
+        }
+
+        over "teapot358" (
+            prepend inherits = </_teapot_animCycle_offset_26>
+        )
+        {
+        }
+
+        over "teapot359" (
+            prepend inherits = </_teapot_animCycle_offset_46>
+        )
+        {
+        }
+
+        over "teapot360" (
+            prepend inherits = </_teapot_animCycle_offset_14>
+        )
+        {
+        }
+
+        over "teapot361" (
+            prepend inherits = </_teapot_animCycle_offset_30>
+        )
+        {
+        }
+
+        over "teapot362" (
+            prepend inherits = </_teapot_animCycle_offset_12>
+        )
+        {
+        }
+    }
+
+    over "ring021"
+    {
+        over "instancer_teapot021"
+        {
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_20>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring022"
+    {
+        over "teapot383" (
+            prepend inherits = </_teapot_animCycle_offset_26>
+        )
+        {
+        }
+
+        over "teapot384" (
+            prepend inherits = </_teapot_animCycle_offset_10>
+        )
+        {
+        }
+
+        over "teapot385" (
+            prepend inherits = </_teapot_animCycle_offset_32>
+        )
+        {
+        }
+
+        over "teapot386" (
+            prepend inherits = </_teapot_animCycle_offset_24>
+        )
+        {
+        }
+
+        over "teapot387" (
+            prepend inherits = </_teapot_animCycle_offset_42>
+        )
+        {
+        }
+
+        over "teapot388" (
+            prepend inherits = </_teapot_animCycle_offset_12>
+        )
+        {
+        }
+
+        over "teapot389" (
+            prepend inherits = </_teapot_animCycle_offset_44>
+        )
+        {
+        }
+
+        over "teapot390" (
+            prepend inherits = </_teapot_animCycle_offset_8>
+        )
+        {
+        }
+
+        over "teapot391" (
+            prepend inherits = </_teapot_animCycle_offset_0>
+        )
+        {
+        }
+
+        over "teapot392" (
+            prepend inherits = </_teapot_animCycle_offset_30>
+        )
+        {
+        }
+
+        over "teapot393" (
+            prepend inherits = </_teapot_animCycle_offset_34>
+        )
+        {
+        }
+
+        over "teapot394" (
+            prepend inherits = </_teapot_animCycle_offset_22>
+        )
+        {
+        }
+
+        over "teapot395" (
+            prepend inherits = </_teapot_animCycle_offset_2>
+        )
+        {
+        }
+
+        over "teapot396" (
+            prepend inherits = </_teapot_animCycle_offset_46>
+        )
+        {
+        }
+
+        over "teapot397" (
+            prepend inherits = </_teapot_animCycle_offset_6>
+        )
+        {
+        }
+
+        over "teapot398" (
+            prepend inherits = </_teapot_animCycle_offset_40>
+        )
+        {
+        }
+
+        over "teapot399" (
+            prepend inherits = </_teapot_animCycle_offset_42>
+        )
+        {
+        }
+
+        over "teapot400" (
+            prepend inherits = </_teapot_animCycle_offset_10>
+        )
+        {
+        }
+
+        over "teapot401" (
+            prepend inherits = </_teapot_animCycle_offset_40>
+        )
+        {
+        }
+
+        over "teapot402" (
+            prepend inherits = </_teapot_animCycle_offset_22>
+        )
+        {
+        }
+    }
+
+    over "ring023"
+    {
+        over "instancer_teapot023"
+        {
+            over "Prototypes"
+            {
+                over "red_teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_42>
+                )
+                {
+                }
+
+                over "green_teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_42>
+                )
+                {
+                }
+
+                over "blue_teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_36>
+                )
+                {
+                }
+
+                over "teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_12>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring024"
+    {
+        over "instancer_teapot024"
+        {
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_26>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring025"
+    {
+        over "instancer_teapot025"
+        {
+            over "Prototypes"
+            {
+                over "red_teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_46>
+                )
+                {
+                }
+
+                over "green_teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_14>
+                )
+                {
+                }
+
+                over "blue_teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_18>
+                )
+                {
+                }
+
+                over "teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_32>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring026"
+    {
+        over "instancer_teapot026"
+        {
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_2>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring027"
+    {
+        over "teapot492" (
+            prepend inherits = </_teapot_animCycle_offset_12>
+        )
+        {
+        }
+
+        over "teapot493" (
+            prepend inherits = </_teapot_animCycle_offset_8>
+        )
+        {
+        }
+
+        over "teapot494" (
+            prepend inherits = </_teapot_animCycle_offset_18>
+        )
+        {
+        }
+
+        over "teapot495" (
+            prepend inherits = </_teapot_animCycle_offset_20>
+        )
+        {
+        }
+
+        over "teapot496" (
+            prepend inherits = </_teapot_animCycle_offset_28>
+        )
+        {
+        }
+
+        over "teapot497" (
+            prepend inherits = </_teapot_animCycle_offset_22>
+        )
+        {
+        }
+
+        over "teapot498" (
+            prepend inherits = </_teapot_animCycle_offset_6>
+        )
+        {
+        }
+
+        over "teapot499" (
+            prepend inherits = </_teapot_animCycle_offset_2>
+        )
+        {
+        }
+
+        over "teapot500" (
+            prepend inherits = </_teapot_animCycle_offset_24>
+        )
+        {
+        }
+
+        over "teapot501" (
+            prepend inherits = </_teapot_animCycle_offset_36>
+        )
+        {
+        }
+
+        over "teapot502" (
+            prepend inherits = </_teapot_animCycle_offset_44>
+        )
+        {
+        }
+
+        over "teapot503" (
+            prepend inherits = </_teapot_animCycle_offset_40>
+        )
+        {
+        }
+
+        over "teapot504" (
+            prepend inherits = </_teapot_animCycle_offset_14>
+        )
+        {
+        }
+
+        over "teapot505" (
+            prepend inherits = </_teapot_animCycle_offset_40>
+        )
+        {
+        }
+
+        over "teapot506" (
+            prepend inherits = </_teapot_animCycle_offset_22>
+        )
+        {
+        }
+
+        over "teapot507" (
+            prepend inherits = </_teapot_animCycle_offset_12>
+        )
+        {
+        }
+
+        over "teapot508" (
+            prepend inherits = </_teapot_animCycle_offset_4>
+        )
+        {
+        }
+
+        over "teapot509" (
+            prepend inherits = </_teapot_animCycle_offset_20>
+        )
+        {
+        }
+
+        over "teapot510" (
+            prepend inherits = </_teapot_animCycle_offset_26>
+        )
+        {
+        }
+
+        over "teapot511" (
+            prepend inherits = </_teapot_animCycle_offset_12>
+        )
+        {
+        }
+
+        over "teapot512" (
+            prepend inherits = </_teapot_animCycle_offset_8>
+        )
+        {
+        }
+
+        over "teapot513" (
+            prepend inherits = </_teapot_animCycle_offset_44>
+        )
+        {
+        }
+
+        over "teapot514" (
+            prepend inherits = </_teapot_animCycle_offset_2>
+        )
+        {
+        }
+
+        over "teapot515" (
+            prepend inherits = </_teapot_animCycle_offset_44>
+        )
+        {
+        }
+    }
+
+    over "ring028"
+    {
+        over "teapot516" (
+            prepend inherits = </_teapot_animCycle_offset_18>
+        )
+        {
+        }
+
+        over "teapot517" (
+            prepend inherits = </_teapot_animCycle_offset_36>
+        )
+        {
+        }
+
+        over "teapot518" (
+            prepend inherits = </_teapot_animCycle_offset_4>
+        )
+        {
+        }
+
+        over "teapot519" (
+            prepend inherits = </_teapot_animCycle_offset_26>
+        )
+        {
+        }
+
+        over "teapot520" (
+            prepend inherits = </_teapot_animCycle_offset_36>
+        )
+        {
+        }
+
+        over "teapot521" (
+            prepend inherits = </_teapot_animCycle_offset_20>
+        )
+        {
+        }
+
+        over "teapot522" (
+            prepend inherits = </_teapot_animCycle_offset_16>
+        )
+        {
+        }
+
+        over "teapot523" (
+            prepend inherits = </_teapot_animCycle_offset_22>
+        )
+        {
+        }
+
+        over "teapot524" (
+            prepend inherits = </_teapot_animCycle_offset_8>
+        )
+        {
+        }
+
+        over "teapot525" (
+            prepend inherits = </_teapot_animCycle_offset_10>
+        )
+        {
+        }
+
+        over "teapot526" (
+            prepend inherits = </_teapot_animCycle_offset_10>
+        )
+        {
+        }
+
+        over "teapot527" (
+            prepend inherits = </_teapot_animCycle_offset_0>
+        )
+        {
+        }
+
+        over "teapot528" (
+            prepend inherits = </_teapot_animCycle_offset_42>
+        )
+        {
+        }
+
+        over "teapot529" (
+            prepend inherits = </_teapot_animCycle_offset_2>
+        )
+        {
+        }
+
+        over "teapot530" (
+            prepend inherits = </_teapot_animCycle_offset_44>
+        )
+        {
+        }
+
+        over "teapot531" (
+            prepend inherits = </_teapot_animCycle_offset_0>
+        )
+        {
+        }
+
+        over "teapot532" (
+            prepend inherits = </_teapot_animCycle_offset_30>
+        )
+        {
+        }
+
+        over "teapot533" (
+            prepend inherits = </_teapot_animCycle_offset_26>
+        )
+        {
+        }
+
+        over "teapot534" (
+            prepend inherits = </_teapot_animCycle_offset_2>
+        )
+        {
+        }
+
+        over "teapot535" (
+            prepend inherits = </_teapot_animCycle_offset_44>
+        )
+        {
+        }
+
+        over "teapot536" (
+            prepend inherits = </_teapot_animCycle_offset_34>
+        )
+        {
+        }
+
+        over "teapot537" (
+            prepend inherits = </_teapot_animCycle_offset_42>
+        )
+        {
+        }
+
+        over "teapot538" (
+            prepend inherits = </_teapot_animCycle_offset_20>
+        )
+        {
+        }
+
+        over "teapot539" (
+            prepend inherits = </_teapot_animCycle_offset_12>
+        )
+        {
+        }
+
+        over "teapot540" (
+            prepend inherits = </_teapot_animCycle_offset_8>
+        )
+        {
+        }
+    }
+
+    over "ring029"
+    {
+        over "teapot541" (
+            prepend inherits = </_teapot_animCycle_offset_4>
+        )
+        {
+        }
+
+        over "teapot542" (
+            prepend inherits = </_teapot_animCycle_offset_32>
+        )
+        {
+        }
+
+        over "teapot543" (
+            prepend inherits = </_teapot_animCycle_offset_38>
+        )
+        {
+        }
+
+        over "teapot544" (
+            prepend inherits = </_teapot_animCycle_offset_10>
+        )
+        {
+        }
+
+        over "teapot545" (
+            prepend inherits = </_teapot_animCycle_offset_0>
+        )
+        {
+        }
+
+        over "teapot546" (
+            prepend inherits = </_teapot_animCycle_offset_16>
+        )
+        {
+        }
+
+        over "teapot547" (
+            prepend inherits = </_teapot_animCycle_offset_6>
+        )
+        {
+        }
+
+        over "teapot548" (
+            prepend inherits = </_teapot_animCycle_offset_10>
+        )
+        {
+        }
+
+        over "teapot549" (
+            prepend inherits = </_teapot_animCycle_offset_10>
+        )
+        {
+        }
+
+        over "teapot550" (
+            prepend inherits = </_teapot_animCycle_offset_30>
+        )
+        {
+        }
+
+        over "teapot551" (
+            prepend inherits = </_teapot_animCycle_offset_20>
+        )
+        {
+        }
+
+        over "teapot552" (
+            prepend inherits = </_teapot_animCycle_offset_26>
+        )
+        {
+        }
+
+        over "teapot553" (
+            prepend inherits = </_teapot_animCycle_offset_18>
+        )
+        {
+        }
+
+        over "teapot554" (
+            prepend inherits = </_teapot_animCycle_offset_46>
+        )
+        {
+        }
+
+        over "teapot555" (
+            prepend inherits = </_teapot_animCycle_offset_22>
+        )
+        {
+        }
+
+        over "teapot556" (
+            prepend inherits = </_teapot_animCycle_offset_2>
+        )
+        {
+        }
+
+        over "teapot557" (
+            prepend inherits = </_teapot_animCycle_offset_6>
+        )
+        {
+        }
+
+        over "teapot558" (
+            prepend inherits = </_teapot_animCycle_offset_34>
+        )
+        {
+        }
+
+        over "teapot559" (
+            prepend inherits = </_teapot_animCycle_offset_42>
+        )
+        {
+        }
+
+        over "teapot560" (
+            prepend inherits = </_teapot_animCycle_offset_6>
+        )
+        {
+        }
+
+        over "teapot561" (
+            prepend inherits = </_teapot_animCycle_offset_22>
+        )
+        {
+        }
+
+        over "teapot562" (
+            prepend inherits = </_teapot_animCycle_offset_40>
+        )
+        {
+        }
+
+        over "teapot563" (
+            prepend inherits = </_teapot_animCycle_offset_26>
+        )
+        {
+        }
+
+        over "teapot564" (
+            prepend inherits = </_teapot_animCycle_offset_0>
+        )
+        {
+        }
+    }
+
+    over "ring030"
+    {
+        over "teapot565" (
+            prepend inherits = </_teapot_animCycle_offset_24>
+        )
+        {
+        }
+
+        over "teapot566" (
+            prepend inherits = </_teapot_animCycle_offset_12>
+        )
+        {
+        }
+
+        over "teapot567" (
+            prepend inherits = </_teapot_animCycle_offset_10>
+        )
+        {
+        }
+
+        over "teapot568" (
+            prepend inherits = </_teapot_animCycle_offset_44>
+        )
+        {
+        }
+
+        over "teapot569" (
+            prepend inherits = </_teapot_animCycle_offset_4>
+        )
+        {
+        }
+
+        over "teapot570" (
+            prepend inherits = </_teapot_animCycle_offset_38>
+        )
+        {
+        }
+
+        over "teapot571" (
+            prepend inherits = </_teapot_animCycle_offset_36>
+        )
+        {
+        }
+
+        over "teapot572" (
+            prepend inherits = </_teapot_animCycle_offset_28>
+        )
+        {
+        }
+
+        over "teapot573" (
+            prepend inherits = </_teapot_animCycle_offset_14>
+        )
+        {
+        }
+
+        over "teapot574" (
+            prepend inherits = </_teapot_animCycle_offset_2>
+        )
+        {
+        }
+
+        over "teapot575" (
+            prepend inherits = </_teapot_animCycle_offset_32>
+        )
+        {
+        }
+
+        over "teapot576" (
+            prepend inherits = </_teapot_animCycle_offset_46>
+        )
+        {
+        }
+
+        over "teapot577" (
+            prepend inherits = </_teapot_animCycle_offset_8>
+        )
+        {
+        }
+
+        over "teapot578" (
+            prepend inherits = </_teapot_animCycle_offset_6>
+        )
+        {
+        }
+
+        over "teapot579" (
+            prepend inherits = </_teapot_animCycle_offset_22>
+        )
+        {
+        }
+
+        over "teapot580" (
+            prepend inherits = </_teapot_animCycle_offset_40>
+        )
+        {
+        }
+
+        over "teapot581" (
+            prepend inherits = </_teapot_animCycle_offset_0>
+        )
+        {
+        }
+
+        over "teapot582" (
+            prepend inherits = </_teapot_animCycle_offset_36>
+        )
+        {
+        }
+
+        over "teapot583" (
+            prepend inherits = </_teapot_animCycle_offset_4>
+        )
+        {
+        }
+
+        over "teapot584" (
+            prepend inherits = </_teapot_animCycle_offset_0>
+        )
+        {
+        }
+
+        over "teapot585" (
+            prepend inherits = </_teapot_animCycle_offset_6>
+        )
+        {
+        }
+
+        over "teapot586" (
+            prepend inherits = </_teapot_animCycle_offset_20>
+        )
+        {
+        }
+
+        over "teapot587" (
+            prepend inherits = </_teapot_animCycle_offset_44>
+        )
+        {
+        }
+
+        over "teapot588" (
+            prepend inherits = </_teapot_animCycle_offset_30>
+        )
+        {
+        }
+
+        over "teapot589" (
+            prepend inherits = </_teapot_animCycle_offset_2>
+        )
+        {
+        }
+
+        over "teapot590" (
+            prepend inherits = </_teapot_animCycle_offset_6>
+        )
+        {
+        }
+    }
+
+    over "ring031"
+    {
+        over "teapot591" (
+            prepend inherits = </_teapot_animCycle_offset_22>
+        )
+        {
+        }
+
+        over "teapot592" (
+            prepend inherits = </_teapot_animCycle_offset_4>
+        )
+        {
+        }
+
+        over "teapot593" (
+            prepend inherits = </_teapot_animCycle_offset_32>
+        )
+        {
+        }
+
+        over "teapot594" (
+            prepend inherits = </_teapot_animCycle_offset_16>
+        )
+        {
+        }
+
+        over "teapot595" (
+            prepend inherits = </_teapot_animCycle_offset_44>
+        )
+        {
+        }
+
+        over "teapot596" (
+            prepend inherits = </_teapot_animCycle_offset_38>
+        )
+        {
+        }
+
+        over "teapot597" (
+            prepend inherits = </_teapot_animCycle_offset_38>
+        )
+        {
+        }
+
+        over "teapot598" (
+            prepend inherits = </_teapot_animCycle_offset_10>
+        )
+        {
+        }
+
+        over "teapot599" (
+            prepend inherits = </_teapot_animCycle_offset_20>
+        )
+        {
+        }
+
+        over "teapot600" (
+            prepend inherits = </_teapot_animCycle_offset_32>
+        )
+        {
+        }
+
+        over "teapot601" (
+            prepend inherits = </_teapot_animCycle_offset_4>
+        )
+        {
+        }
+
+        over "teapot602" (
+            prepend inherits = </_teapot_animCycle_offset_0>
+        )
+        {
+        }
+
+        over "teapot603" (
+            prepend inherits = </_teapot_animCycle_offset_14>
+        )
+        {
+        }
+
+        over "teapot604" (
+            prepend inherits = </_teapot_animCycle_offset_18>
+        )
+        {
+        }
+
+        over "teapot605" (
+            prepend inherits = </_teapot_animCycle_offset_36>
+        )
+        {
+        }
+
+        over "teapot606" (
+            prepend inherits = </_teapot_animCycle_offset_38>
+        )
+        {
+        }
+
+        over "teapot607" (
+            prepend inherits = </_teapot_animCycle_offset_2>
+        )
+        {
+        }
+
+        over "teapot608" (
+            prepend inherits = </_teapot_animCycle_offset_2>
+        )
+        {
+        }
+
+        over "teapot609" (
+            prepend inherits = </_teapot_animCycle_offset_44>
+        )
+        {
+        }
+
+        over "teapot610" (
+            prepend inherits = </_teapot_animCycle_offset_12>
+        )
+        {
+        }
+
+        over "teapot611" (
+            prepend inherits = </_teapot_animCycle_offset_6>
+        )
+        {
+        }
+
+        over "teapot612" (
+            prepend inherits = </_teapot_animCycle_offset_38>
+        )
+        {
+        }
+
+        over "teapot613" (
+            prepend inherits = </_teapot_animCycle_offset_36>
+        )
+        {
+        }
+
+        over "teapot614" (
+            prepend inherits = </_teapot_animCycle_offset_28>
+        )
+        {
+        }
+
+        over "teapot615" (
+            prepend inherits = </_teapot_animCycle_offset_36>
+        )
+        {
+        }
+    }
+
+    over "ring032"
+    {
+        over "instancer_teapot032"
+        {
+            over "Prototypes"
+            {
+                over "red_teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_40>
+                )
+                {
+                }
+
+                over "green_teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_40>
+                )
+                {
+                }
+
+                over "blue_teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_12>
+                )
+                {
+                }
+
+                over "teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_20>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring033"
+    {
+        over "instancer_teapot033"
+        {
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_46>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring034"
+    {
+        over "instancer_teapot034"
+        {
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_16>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring035"
+    {
+        over "teapot704" (
+            prepend inherits = </_teapot_animCycle_offset_30>
+        )
+        {
+        }
+
+        over "teapot705" (
+            prepend inherits = </_teapot_animCycle_offset_40>
+        )
+        {
+        }
+
+        over "teapot706" (
+            prepend inherits = </_teapot_animCycle_offset_42>
+        )
+        {
+        }
+
+        over "teapot707" (
+            prepend inherits = </_teapot_animCycle_offset_28>
+        )
+        {
+        }
+
+        over "teapot708" (
+            prepend inherits = </_teapot_animCycle_offset_16>
+        )
+        {
+        }
+
+        over "teapot709" (
+            prepend inherits = </_teapot_animCycle_offset_32>
+        )
+        {
+        }
+
+        over "teapot710" (
+            prepend inherits = </_teapot_animCycle_offset_0>
+        )
+        {
+        }
+
+        over "teapot711" (
+            prepend inherits = </_teapot_animCycle_offset_16>
+        )
+        {
+        }
+
+        over "teapot712" (
+            prepend inherits = </_teapot_animCycle_offset_36>
+        )
+        {
+        }
+
+        over "teapot713" (
+            prepend inherits = </_teapot_animCycle_offset_30>
+        )
+        {
+        }
+
+        over "teapot714" (
+            prepend inherits = </_teapot_animCycle_offset_2>
+        )
+        {
+        }
+
+        over "teapot715" (
+            prepend inherits = </_teapot_animCycle_offset_34>
+        )
+        {
+        }
+
+        over "teapot716" (
+            prepend inherits = </_teapot_animCycle_offset_28>
+        )
+        {
+        }
+
+        over "teapot717" (
+            prepend inherits = </_teapot_animCycle_offset_20>
+        )
+        {
+        }
+
+        over "teapot718" (
+            prepend inherits = </_teapot_animCycle_offset_4>
+        )
+        {
+        }
+
+        over "teapot719" (
+            prepend inherits = </_teapot_animCycle_offset_28>
+        )
+        {
+        }
+
+        over "teapot720" (
+            prepend inherits = </_teapot_animCycle_offset_34>
+        )
+        {
+        }
+
+        over "teapot721" (
+            prepend inherits = </_teapot_animCycle_offset_8>
+        )
+        {
+        }
+
+        over "teapot722" (
+            prepend inherits = </_teapot_animCycle_offset_30>
+        )
+        {
+        }
+
+        over "teapot723" (
+            prepend inherits = </_teapot_animCycle_offset_2>
+        )
+        {
+        }
+
+        over "teapot724" (
+            prepend inherits = </_teapot_animCycle_offset_8>
+        )
+        {
+        }
+
+        over "teapot725" (
+            prepend inherits = </_teapot_animCycle_offset_16>
+        )
+        {
+        }
+
+        over "teapot726" (
+            prepend inherits = </_teapot_animCycle_offset_36>
+        )
+        {
+        }
+
+        over "teapot727" (
+            prepend inherits = </_teapot_animCycle_offset_12>
+        )
+        {
+        }
+
+        over "teapot728" (
+            prepend inherits = </_teapot_animCycle_offset_42>
+        )
+        {
+        }
+
+        over "teapot729" (
+            prepend inherits = </_teapot_animCycle_offset_46>
+        )
+        {
+        }
+
+        over "teapot730" (
+            prepend inherits = </_teapot_animCycle_offset_6>
+        )
+        {
+        }
+
+        over "teapot731" (
+            prepend inherits = </_teapot_animCycle_offset_0>
+        )
+        {
+        }
+
+        over "teapot732" (
+            prepend inherits = </_teapot_animCycle_offset_34>
+        )
+        {
+        }
+
+        over "teapot733" (
+            prepend inherits = </_teapot_animCycle_offset_36>
+        )
+        {
+        }
+
+        over "teapot734" (
+            prepend inherits = </_teapot_animCycle_offset_42>
+        )
+        {
+        }
+
+        over "teapot735" (
+            prepend inherits = </_teapot_animCycle_offset_32>
+        )
+        {
+        }
+
+        over "teapot736" (
+            prepend inherits = </_teapot_animCycle_offset_36>
+        )
+        {
+        }
+
+        over "teapot737" (
+            prepend inherits = </_teapot_animCycle_offset_16>
+        )
+        {
+        }
+    }
+
+    over "ring036"
+    {
+        over "teapot738" (
+            prepend inherits = </_teapot_animCycle_offset_4>
+        )
+        {
+        }
+
+        over "teapot739" (
+            prepend inherits = </_teapot_animCycle_offset_46>
+        )
+        {
+        }
+
+        over "teapot740" (
+            prepend inherits = </_teapot_animCycle_offset_28>
+        )
+        {
+        }
+
+        over "teapot741" (
+            prepend inherits = </_teapot_animCycle_offset_12>
+        )
+        {
+        }
+
+        over "teapot742" (
+            prepend inherits = </_teapot_animCycle_offset_42>
+        )
+        {
+        }
+
+        over "teapot743" (
+            prepend inherits = </_teapot_animCycle_offset_2>
+        )
+        {
+        }
+
+        over "teapot744" (
+            prepend inherits = </_teapot_animCycle_offset_2>
+        )
+        {
+        }
+
+        over "teapot745" (
+            prepend inherits = </_teapot_animCycle_offset_12>
+        )
+        {
+        }
+
+        over "teapot746" (
+            prepend inherits = </_teapot_animCycle_offset_6>
+        )
+        {
+        }
+
+        over "teapot747" (
+            prepend inherits = </_teapot_animCycle_offset_18>
+        )
+        {
+        }
+
+        over "teapot748" (
+            prepend inherits = </_teapot_animCycle_offset_28>
+        )
+        {
+        }
+
+        over "teapot749" (
+            prepend inherits = </_teapot_animCycle_offset_24>
+        )
+        {
+        }
+
+        over "teapot750" (
+            prepend inherits = </_teapot_animCycle_offset_26>
+        )
+        {
+        }
+
+        over "teapot751" (
+            prepend inherits = </_teapot_animCycle_offset_4>
+        )
+        {
+        }
+
+        over "teapot752" (
+            prepend inherits = </_teapot_animCycle_offset_24>
+        )
+        {
+        }
+
+        over "teapot753" (
+            prepend inherits = </_teapot_animCycle_offset_46>
+        )
+        {
+        }
+
+        over "teapot754" (
+            prepend inherits = </_teapot_animCycle_offset_14>
+        )
+        {
+        }
+
+        over "teapot755" (
+            prepend inherits = </_teapot_animCycle_offset_38>
+        )
+        {
+        }
+
+        over "teapot756" (
+            prepend inherits = </_teapot_animCycle_offset_30>
+        )
+        {
+        }
+
+        over "teapot757" (
+            prepend inherits = </_teapot_animCycle_offset_36>
+        )
+        {
+        }
+
+        over "teapot758" (
+            prepend inherits = </_teapot_animCycle_offset_30>
+        )
+        {
+        }
+
+        over "teapot759" (
+            prepend inherits = </_teapot_animCycle_offset_20>
+        )
+        {
+        }
+
+        over "teapot760" (
+            prepend inherits = </_teapot_animCycle_offset_10>
+        )
+        {
+        }
+
+        over "teapot761" (
+            prepend inherits = </_teapot_animCycle_offset_4>
+        )
+        {
+        }
+
+        over "teapot762" (
+            prepend inherits = </_teapot_animCycle_offset_4>
+        )
+        {
+        }
+
+        over "teapot763" (
+            prepend inherits = </_teapot_animCycle_offset_4>
+        )
+        {
+        }
+
+        over "teapot764" (
+            prepend inherits = </_teapot_animCycle_offset_36>
+        )
+        {
+        }
+
+        over "teapot765" (
+            prepend inherits = </_teapot_animCycle_offset_40>
+        )
+        {
+        }
+
+        over "teapot766" (
+            prepend inherits = </_teapot_animCycle_offset_38>
+        )
+        {
+        }
+    }
+
+    over "ring037"
+    {
+        over "teapot767" (
+            prepend inherits = </_teapot_animCycle_offset_42>
+        )
+        {
+        }
+
+        over "teapot768" (
+            prepend inherits = </_teapot_animCycle_offset_16>
+        )
+        {
+        }
+
+        over "teapot769" (
+            prepend inherits = </_teapot_animCycle_offset_32>
+        )
+        {
+        }
+
+        over "teapot770" (
+            prepend inherits = </_teapot_animCycle_offset_38>
+        )
+        {
+        }
+
+        over "teapot771" (
+            prepend inherits = </_teapot_animCycle_offset_6>
+        )
+        {
+        }
+
+        over "teapot772" (
+            prepend inherits = </_teapot_animCycle_offset_0>
+        )
+        {
+        }
+
+        over "teapot773" (
+            prepend inherits = </_teapot_animCycle_offset_10>
+        )
+        {
+        }
+
+        over "teapot774" (
+            prepend inherits = </_teapot_animCycle_offset_42>
+        )
+        {
+        }
+
+        over "teapot775" (
+            prepend inherits = </_teapot_animCycle_offset_38>
+        )
+        {
+        }
+
+        over "teapot776" (
+            prepend inherits = </_teapot_animCycle_offset_6>
+        )
+        {
+        }
+
+        over "teapot777" (
+            prepend inherits = </_teapot_animCycle_offset_40>
+        )
+        {
+        }
+
+        over "teapot778" (
+            prepend inherits = </_teapot_animCycle_offset_8>
+        )
+        {
+        }
+
+        over "teapot779" (
+            prepend inherits = </_teapot_animCycle_offset_12>
+        )
+        {
+        }
+
+        over "teapot780" (
+            prepend inherits = </_teapot_animCycle_offset_8>
+        )
+        {
+        }
+
+        over "teapot781" (
+            prepend inherits = </_teapot_animCycle_offset_42>
+        )
+        {
+        }
+
+        over "teapot782" (
+            prepend inherits = </_teapot_animCycle_offset_38>
+        )
+        {
+        }
+
+        over "teapot783" (
+            prepend inherits = </_teapot_animCycle_offset_2>
+        )
+        {
+        }
+
+        over "teapot784" (
+            prepend inherits = </_teapot_animCycle_offset_0>
+        )
+        {
+        }
+
+        over "teapot785" (
+            prepend inherits = </_teapot_animCycle_offset_36>
+        )
+        {
+        }
+
+        over "teapot786" (
+            prepend inherits = </_teapot_animCycle_offset_18>
+        )
+        {
+        }
+
+        over "teapot787" (
+            prepend inherits = </_teapot_animCycle_offset_26>
+        )
+        {
+        }
+
+        over "teapot788" (
+            prepend inherits = </_teapot_animCycle_offset_30>
+        )
+        {
+        }
+
+        over "teapot789" (
+            prepend inherits = </_teapot_animCycle_offset_26>
+        )
+        {
+        }
+
+        over "teapot790" (
+            prepend inherits = </_teapot_animCycle_offset_8>
+        )
+        {
+        }
+
+        over "teapot791" (
+            prepend inherits = </_teapot_animCycle_offset_14>
+        )
+        {
+        }
+
+        over "teapot792" (
+            prepend inherits = </_teapot_animCycle_offset_28>
+        )
+        {
+        }
+
+        over "teapot793" (
+            prepend inherits = </_teapot_animCycle_offset_36>
+        )
+        {
+        }
+
+        over "teapot794" (
+            prepend inherits = </_teapot_animCycle_offset_16>
+        )
+        {
+        }
+
+        over "teapot795" (
+            prepend inherits = </_teapot_animCycle_offset_0>
+        )
+        {
+        }
+    }
+
+    over "ring038"
+    {
+        over "instancer_teapot038"
+        {
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_6>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring039"
+    {
+        over "teapot828" (
+            prepend inherits = </_teapot_animCycle_offset_12>
+        )
+        {
+        }
+
+        over "teapot829" (
+            prepend inherits = </_teapot_animCycle_offset_46>
+        )
+        {
+        }
+
+        over "teapot830" (
+            prepend inherits = </_teapot_animCycle_offset_20>
+        )
+        {
+        }
+
+        over "teapot831" (
+            prepend inherits = </_teapot_animCycle_offset_22>
+        )
+        {
+        }
+
+        over "teapot832" (
+            prepend inherits = </_teapot_animCycle_offset_20>
+        )
+        {
+        }
+
+        over "teapot833" (
+            prepend inherits = </_teapot_animCycle_offset_40>
+        )
+        {
+        }
+
+        over "teapot834" (
+            prepend inherits = </_teapot_animCycle_offset_38>
+        )
+        {
+        }
+
+        over "teapot835" (
+            prepend inherits = </_teapot_animCycle_offset_6>
+        )
+        {
+        }
+
+        over "teapot836" (
+            prepend inherits = </_teapot_animCycle_offset_30>
+        )
+        {
+        }
+
+        over "teapot837" (
+            prepend inherits = </_teapot_animCycle_offset_26>
+        )
+        {
+        }
+
+        over "teapot838" (
+            prepend inherits = </_teapot_animCycle_offset_42>
+        )
+        {
+        }
+
+        over "teapot839" (
+            prepend inherits = </_teapot_animCycle_offset_2>
+        )
+        {
+        }
+
+        over "teapot840" (
+            prepend inherits = </_teapot_animCycle_offset_26>
+        )
+        {
+        }
+
+        over "teapot841" (
+            prepend inherits = </_teapot_animCycle_offset_8>
+        )
+        {
+        }
+
+        over "teapot842" (
+            prepend inherits = </_teapot_animCycle_offset_26>
+        )
+        {
+        }
+
+        over "teapot843" (
+            prepend inherits = </_teapot_animCycle_offset_38>
+        )
+        {
+        }
+
+        over "teapot844" (
+            prepend inherits = </_teapot_animCycle_offset_20>
+        )
+        {
+        }
+
+        over "teapot845" (
+            prepend inherits = </_teapot_animCycle_offset_24>
+        )
+        {
+        }
+
+        over "teapot846" (
+            prepend inherits = </_teapot_animCycle_offset_16>
+        )
+        {
+        }
+
+        over "teapot847" (
+            prepend inherits = </_teapot_animCycle_offset_44>
+        )
+        {
+        }
+
+        over "teapot848" (
+            prepend inherits = </_teapot_animCycle_offset_40>
+        )
+        {
+        }
+
+        over "teapot849" (
+            prepend inherits = </_teapot_animCycle_offset_4>
+        )
+        {
+        }
+
+        over "teapot850" (
+            prepend inherits = </_teapot_animCycle_offset_2>
+        )
+        {
+        }
+
+        over "teapot851" (
+            prepend inherits = </_teapot_animCycle_offset_24>
+        )
+        {
+        }
+
+        over "teapot852" (
+            prepend inherits = </_teapot_animCycle_offset_14>
+        )
+        {
+        }
+
+        over "teapot853" (
+            prepend inherits = </_teapot_animCycle_offset_0>
+        )
+        {
+        }
+
+        over "teapot854" (
+            prepend inherits = </_teapot_animCycle_offset_32>
+        )
+        {
+        }
+
+        over "teapot855" (
+            prepend inherits = </_teapot_animCycle_offset_6>
+        )
+        {
+        }
+
+        over "teapot856" (
+            prepend inherits = </_teapot_animCycle_offset_30>
+        )
+        {
+        }
+
+        over "teapot857" (
+            prepend inherits = </_teapot_animCycle_offset_4>
+        )
+        {
+        }
+
+        over "teapot858" (
+            prepend inherits = </_teapot_animCycle_offset_34>
+        )
+        {
+        }
+    }
+
+    over "ring040"
+    {
+        over "instancer_teapot040"
+        {
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_40>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring041"
+    {
+        over "instancer_teapot041"
+        {
+            over "Prototypes"
+            {
+                over "teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_38>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring042"
+    {
+        over "instancer_teapot042"
+        {
+            over "Prototypes"
+            {
+                over "red_teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_42>
+                )
+                {
+                }
+
+                over "green_teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_28>
+                )
+                {
+                }
+
+                over "blue_teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_16>
+                )
+                {
+                }
+
+                over "teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_8>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring043"
+    {
+        over "instancer_teapot043"
+        {
+            over "Prototypes"
+            {
+                over "red_teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_30>
+                )
+                {
+                }
+
+                over "green_teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_46>
+                )
+                {
+                }
+
+                over "blue_teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_30>
+                )
+                {
+                }
+
+                over "teapot" (
+                    prepend inherits = </_teapot_animCycle_offset_4>
+                )
+                {
+                }
+            }
+        }
+    }
+
+    over "ring044"
+    {
+        over "teapot990" (
+            prepend inherits = </_teapot_animCycle_offset_2>
+        )
+        {
+        }
+
+        over "teapot991" (
+            prepend inherits = </_teapot_animCycle_offset_6>
+        )
+        {
+        }
+
+        over "teapot992" (
+            prepend inherits = </_teapot_animCycle_offset_38>
+        )
+        {
+        }
+
+        over "teapot993" (
+            prepend inherits = </_teapot_animCycle_offset_6>
+        )
+        {
+        }
+
+        over "teapot994" (
+            prepend inherits = </_teapot_animCycle_offset_32>
+        )
+        {
+        }
+
+        over "teapot995" (
+            prepend inherits = </_teapot_animCycle_offset_28>
+        )
+        {
+        }
+
+        over "teapot996" (
+            prepend inherits = </_teapot_animCycle_offset_16>
+        )
+        {
+        }
+
+        over "teapot997" (
+            prepend inherits = </_teapot_animCycle_offset_20>
+        )
+        {
+        }
+
+        over "teapot998" (
+            prepend inherits = </_teapot_animCycle_offset_12>
+        )
+        {
+        }
+
+        over "teapot999" (
+            prepend inherits = </_teapot_animCycle_offset_18>
+        )
+        {
+        }
+    }
+}
+
+class "_teapot_animCycle_offset_0" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot>
+)
+{
+    over "i_am_anim_offset_0"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_2" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 2)
+)
+{
+    over "i_am_anim_offset_2"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_4" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 4)
+)
+{
+    over "i_am_anim_offset_4"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_6" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 6)
+)
+{
+    over "i_am_anim_offset_6"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_8" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 8)
+)
+{
+    over "i_am_anim_offset_8"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_10" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 10)
+)
+{
+    over "i_am_anim_offset_10"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_12" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 12)
+)
+{
+    over "i_am_anim_offset_12"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_14" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 14)
+)
+{
+    over "i_am_anim_offset_14"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_16" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 16)
+)
+{
+    over "i_am_anim_offset_16"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_18" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 18)
+)
+{
+    over "i_am_anim_offset_18"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_20" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 20)
+)
+{
+    over "i_am_anim_offset_20"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_22" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 22)
+)
+{
+    over "i_am_anim_offset_22"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_24" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 24)
+)
+{
+    over "i_am_anim_offset_24"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_26" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 26)
+)
+{
+    over "i_am_anim_offset_26"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_28" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 28)
+)
+{
+    over "i_am_anim_offset_28"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_30" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 30)
+)
+{
+    over "i_am_anim_offset_30"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_32" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 32)
+)
+{
+    over "i_am_anim_offset_32"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_34" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 34)
+)
+{
+    over "i_am_anim_offset_34"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_36" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 36)
+)
+{
+    over "i_am_anim_offset_36"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_38" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 38)
+)
+{
+    over "i_am_anim_offset_38"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_40" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 40)
+)
+{
+    over "i_am_anim_offset_40"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_42" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 42)
+)
+{
+    over "i_am_anim_offset_42"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_44" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 44)
+)
+{
+    over "i_am_anim_offset_44"
+    {
+    }
+}
+
+class "_teapot_animCycle_offset_46" (
+    prepend references = @../assets/teapot/teapot_animCycle.usd@</teapot> (offset = 46)
+)
+{
+    over "i_am_anim_offset_46"
+    {
+    }
+}
+

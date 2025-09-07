@@ -1,0 +1,15 @@
+#usda 1.0
+(
+    defaultPrim = "Scene"
+    endTimeCode = 1
+    metersPerUnit = 1
+    startTimeCode = 1
+    subLayers = [
+        @./teapotScene_animCycle.usd@,
+        @./teapotScene_layoutOverrides.usd@,
+        @./teapotScene_camera.usd@,
+        @./teapotScene_layout.usd@
+    ]
+    upAxis = "Y"
+)
+
