@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <open_pbr_surface name="open_pbr_surface" type="surfaceshader">
+    <input name="base_color" type="color3" value="0.209884, 0.562091, 0.766" />
+    <input name="specular_roughness" type="float" value="0.15" />
+    <!-- TODO: Use subsurface for more realistic plastic material ? -->
+  </open_pbr_surface>
+  <surfacematerial name="plastic" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="open_pbr_surface" />
+  </surfacematerial>
+</materialx>
+
+

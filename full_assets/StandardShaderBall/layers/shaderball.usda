@@ -18,7 +18,12 @@ def Xform "standard_shader_ball_scene" (
     prepend variantSets = "surface_geometry"
 )
 {
-    def Scope "materials"
+    def Scope "materials" (
+        variants = {
+            string material_model = "OpenPBRSurface"
+        }
+        prepend variantSets = "material_model"
+    )
     {
         def Material "neutral"
         {
@@ -27,8 +32,6 @@ def Xform "standard_shader_ball_scene" (
 
             def NodeGraph "mtlx"
             {
-                token outputs:out.connect = </standard_shader_ball_scene/materials/neutral/mtlx/mtlxstandard_surface1.outputs:out>
-
                 def Shader "mtlxstandard_surface1"
                 {
                     uniform token info:id = "ND_standard_surface_surfaceshader"
@@ -134,6 +137,17 @@ def Xform "standard_shader_ball_scene" (
                     token outputs:out
                 }
 
+                # TODO: Consider using a MaterialX document to represent this look
+                def Shader "open_pbr_surface1"
+                {
+                    uniform token info:id = "ND_open_pbr_surface_surfaceshader"
+                    float inputs:emission_luminance.connect = </standard_shader_ball_scene/materials/neutral/mtlx/mtlxextract1.outputs:out>
+                    color3f inputs:emission_color.connect = </standard_shader_ball_scene/materials/neutral/mtlx/mtlxconvert1.outputs:out>
+                    float inputs:specular_weight = 0 
+                    float inputs:specular_roughness = 0 
+                    token outputs:out
+                }
+
                 def Shader "mtlximage1"
                 {
                     uniform token info:id = "ND_image_color3"
@@ -213,7 +227,6 @@ def Xform "standard_shader_ball_scene" (
 
         def Material "sss_bars"
         {
-            token outputs:mtlx:surface.connect = </standard_shader_ball_scene/materials/sss_bars/mtlxstandard_surface1.outputs:out>
             token outputs:surface.connect = </standard_shader_ball_scene/materials/sss_bars/usdpreviewsurface1.outputs:surface>
 
             def Shader "mtlxstandard_surface1"
@@ -320,6 +333,16 @@ def Xform "standard_shader_ball_scene" (
                 token outputs:out
             }
 
+            # TODO: Consider using a MaterialX document to represent this look
+            def Shader "open_pbr_surface1"
+            {
+                uniform token info:id = "ND_open_pbr_surface_surfaceshader"
+                color3f inputs:base_color.connect = </standard_shader_ball_scene/materials/sss_bars/mtlximage1.outputs:out>
+                float inputs:base_diffuse_roughness = 0.8
+                float inputs:specular_weight = 0 
+                token outputs:out
+            }
+
             def Shader "mtlximage1"
             {
                 uniform token info:id = "ND_image_color3"
@@ -360,7 +383,6 @@ def Xform "standard_shader_ball_scene" (
 
         def Material "uvgrid"
         {
-            token outputs:mtlx:surface.connect = </standard_shader_ball_scene/materials/uvgrid/mtlxstandard_surface1.outputs:out>
             token outputs:surface.connect = </standard_shader_ball_scene/materials/uvgrid/usdpreviewsurface1.outputs:surface>
 
             def Shader "usdpreviewsurface1"
@@ -489,6 +511,15 @@ def Xform "standard_shader_ball_scene" (
                 token outputs:out
             }
 
+            # TODO: Consider using a MaterialX document to represent this look
+            def Shader "open_pbr_surface1"
+            {
+                uniform token info:id = "ND_open_pbr_surface_surfaceshader"
+                color3f inputs:base_color.connect = </standard_shader_ball_scene/materials/uvgrid/mtlximage1.outputs:out>
+                float inputs:specular_weight = 0 
+                token outputs:out
+            }
+
             def Shader "mtlximage1"
             {
                 uniform token info:id = "ND_image_color3"
@@ -501,6 +532,47 @@ def Xform "standard_shader_ball_scene" (
             {
                 uniform token info:id = "ND_texcoord_vector2"
                 float2 outputs:out
+            }
+        }
+
+        variantSet "material_model" = {
+            "standard_surface" {
+                over "neutral"
+                {
+                    over "mtlx"
+                    {
+                        token outputs:out.connect = </standard_shader_ball_scene/materials/neutral/mtlx/mtlxstandard_surface1.outputs:out>
+                    }
+                }
+
+                over "sss_bars"
+                {
+                    token outputs:mtlx:surface.connect = </standard_shader_ball_scene/materials/sss_bars/mtlxstandard_surface1.outputs:out>
+                }
+
+                over "uvgrid"
+                {
+                    token outputs:mtlx:surface.connect = </standard_shader_ball_scene/materials/uvgrid/mtlxstandard_surface1.outputs:out>
+                }
+            }
+            "OpenPBRSurface" {
+                over "neutral"
+                {
+                    over "mtlx"
+                    {
+                        token outputs:out.connect = </standard_shader_ball_scene/materials/neutral/mtlx/open_pbr_surface1.outputs:out>
+                    }
+                }
+
+                over "sss_bars"
+                {
+                    token outputs:mtlx:surface.connect = </standard_shader_ball_scene/materials/sss_bars/open_pbr_surface1.outputs:out>
+                }
+
+                over "uvgrid"
+                {
+                    token outputs:mtlx:surface.connect = </standard_shader_ball_scene/materials/uvgrid/open_pbr_surface1.outputs:out>
+                }
             }
         }
     }

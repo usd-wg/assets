@@ -20,16 +20,15 @@ over "standard_shader_ball_scene" (
 {
     over "materials"
     {
-        def Scope "examples"
+        def Scope "examples" (
+            variants = {
+                string material_model = "OpenPBRSurface"
+            }
+            prepend variantSets = "material_model"
+        )
         {
-            def Scope "mtlx" (
-                prepend references = [
-                    @../example_materials/plastic.mtlx@</MaterialX/Materials>,
-                    @../example_materials/gold.mtlx@</MaterialX/Materials>,
-                    @../example_materials/glass.mtlx@</MaterialX/Materials>,
-                    @../example_materials/bubblegum.mtlx@</MaterialX/Materials>
-                ]
-            )
+            # Container to references MaterialX documents depending on selected `material_model` variant set
+            def Scope "mtlx"
             {
             }
 
@@ -65,6 +64,33 @@ over "standard_shader_ball_scene" (
                     {
                         uniform token info:id = "UsdPreviewSurface"
                         token outputs:surface
+                    }
+                }
+            }
+
+            variantSet "material_model" = {
+                "standard_surface" {
+                    over "mtlx" (
+                        prepend references = [
+                            @../example_materials/plastic.mtlx@</MaterialX/Materials>,
+                            @../example_materials/gold.mtlx@</MaterialX/Materials>,
+                            @../example_materials/glass.mtlx@</MaterialX/Materials>,
+                            @../example_materials/bubblegum.mtlx@</MaterialX/Materials>
+                        ]
+                    )
+                    {
+                    }
+                }
+                "OpenPBRSurface" {
+                    over "mtlx" (
+                        prepend references = [
+                            @../example_materials/plastic_openpbr.mtlx@</MaterialX/Materials>,
+                            @../example_materials/gold_openpbr.mtlx@</MaterialX/Materials>,
+                            @../example_materials/glass_openpbr.mtlx@</MaterialX/Materials>,
+                            @../example_materials/bubblegum_openpbr.mtlx@</MaterialX/Materials>
+                        ]
+                    )
+                    {
                     }
                 }
             }

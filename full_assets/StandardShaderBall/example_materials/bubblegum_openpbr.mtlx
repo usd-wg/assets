@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<materialx version="1.39">
+  <open_pbr_surface name="open_pbr_surface" type="surfaceshader">
+    <input name="subsurface_weight" type="float" value="1" />
+    <input name="specular_weight" type="float" value="0.383" />
+    <input name="specular_roughness" type="float" value="0.176" />
+    <input name="specular_ior" type="float" value="1.584" />
+    <input name="subsurface_color" type="color3" value="1, 0.22, 0.493" />
+    <input name="subsurface_radius_scale" type="color3" value="1, 0, 0.068" />
+    <input name="subsurface_radius" type="float" value="0.0325" />
+  </open_pbr_surface>
+  <surfacematerial name="bubblegum" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="open_pbr_surface" />
+  </surfacematerial>
+</materialx>

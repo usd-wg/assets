@@ -266,9 +266,13 @@ def Xform "standard_shader_ball_scene" (
 
     def Scope "materials"
     {
-        def Material "box_base"
+        def Material "box_base" (
+            variants = {
+                string material_model = "OpenPBRSurface"
+            }
+            prepend variantSets = "material_model"
+        )
         {
-            token outputs:mtlx:surface.connect = </standard_shader_ball_scene/materials/box_base/mtlxstandard_surface1.outputs:out>
             token outputs:surface.connect = </standard_shader_ball_scene/materials/box_base/usdpreviewsurface1.outputs:surface>
 
             def Shader "mtlxstandard_surface1"
@@ -374,6 +378,15 @@ def Xform "standard_shader_ball_scene" (
                 token outputs:out
             }
 
+            # TODO: Consider using a MaterialX document to represent this look
+            def Shader "open_pbr_surface1"
+            {
+                uniform token info:id = "ND_open_pbr_surface_surfaceshader"
+                color3f inputs:base_color.connect = </standard_shader_ball_scene/materials/box_base/mtlximage1.outputs:out>
+                float inputs:specular_weight = 0 
+                token outputs:out
+            }
+
             def Shader "mtlximage1"
             {
                 uniform token info:id = "ND_image_color3"
@@ -407,6 +420,15 @@ def Xform "standard_shader_ball_scene" (
                 uniform token info:id = "UsdPrimvarReader_float2"
                 string inputs:varname = "st"
                 float2 outputs:result
+            }
+
+            variantSet "material_model" = {
+                "standard_surface" {
+                    token outputs:mtlx:surface.connect = </standard_shader_ball_scene/materials/box_base/mtlxstandard_surface1.outputs:out>
+                }
+                "OpenPBRSurface" {
+                    token outputs:mtlx:surface.connect = </standard_shader_ball_scene/materials/box_base/open_pbr_surface1.outputs:out>
+                }
             }
         }
 

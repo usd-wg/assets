@@ -270,11 +270,12 @@ USDShade is used to define the materials on the scene objects. Two
     any standard USD implementation, and
 
   - *MaterialX*: a more sophisticated implementation that uses the
-    MaterialX definition of Autodesk Standard Surface.
+    MaterialX definition of either Autodesk Standard Surface (default) or
+    [OpenPBR Surface](https://github.com/AcademySoftwareFoundation/OpenPBR) depending on the selected `material_model` variant.
 
 All materials except for those applied to the primary material test
 surfaces are intended to be Lambertian diffuse. In the Autodesk Standard
-Surface case, this means that roughness is set to 0, which should revert
+Surface case, this means that roughness is set to 0 (in the OpenPBR Surface case, this means `specular_roughness` is 0), which should revert
 the included Oren-Nayar model to Lambertian.
 
 # Scene Dimensions
@@ -345,6 +346,20 @@ variants live on */standard\_shader\_ball\_scene*:
     
       - *usdpreview\_plastic* — diffuse plastic using the material with a layered specular
 
+Additional **material_model** variant sets allow switch the material model used at shading time:
+
+ - *<span class="underline">standard\_surface</span>* - Uses Autodesk Standard Surface material model for shading 
+
+ - *OpenPBRSurface* (default) - Uses [OpenPBR Surface](https://github.com/AcademySoftwareFoundation/OpenPBR)
+
+It is applied on the following prims:
+
+ - **/standard_shader_ball_scene/materials** - Container for the shader ball materials
+
+ - **/standard_shader_ball_scene/materials/examples** - Container for the shader ball example materials
+
+ - **/standard_shader_ball_scene/materials/box_base** - Material "template" used as a base for the shading of the environment box
+
 These examples not intended to represent "correct" materials. They are
 included for scene configuration testing convenience. Some USD Preview
 examples are also provided for render delegates without UsdMtlX support.
@@ -403,6 +418,8 @@ this specification document.
 1.1 2024-02-23 Changed the geometry winding order to right-handed, which
 should render the same for packages that support both winding orders. Also
 added normals to triangulated surface geometry. Camera transform clarified.
+1.2 2025-07-25 Added `material_model` variant set to switch between 
+Autodesk Standard Surface or OpenPBR Surface.
 
 # Contributors
 

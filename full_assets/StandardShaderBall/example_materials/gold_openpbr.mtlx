@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<materialx version="1.39" colorspace="lin_rec709">
+  <open_pbr_surface name="open_pbr_surface" type="surfaceshader">
+    <input name="base_color" type="color3" value="0.910751, 0.793992, 0.405919" />
+    <input name="specular_color" type="color3" value="0.995348, 0.983757, 0.765725" />
+    <input name="specular_roughness" type="float" value="0.01" />
+    <input name="base_metalness" type="float" value="1" />
+  </open_pbr_surface>
+  <surfacematerial name="gold" type="material">
+    <input name="surfaceshader" type="surfaceshader" nodename="open_pbr_surface" />
+  </surfacematerial>
+</materialx>
